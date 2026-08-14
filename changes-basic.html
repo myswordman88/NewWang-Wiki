@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>基础改动 | 新王觉醒</title>
+  <meta name="description" content="新王觉醒 Mod 基础改动：大箱子/大背包/大魔盒、装备显示与游戏百科、佣兵加强、Boss 连战，以及界面、生活质量和数值层面的全面优化。" />
+  <meta name="author" content="新王觉醒" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Serif+SC:wght@600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="主导航">
+      <a class="brand" href="index.html" aria-label="新王觉醒首页">
+        <span class="brand-text">新王觉醒 | 官方网站</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="打开菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li class="has-dropdown">
+          <a href="index.html#overview" aria-haspopup="true" aria-expanded="false">模组概览</a>
+          <ul class="dropdown">
+            <li><a href="feature.html">特色简介</a></li>
+            <li><a href="author.html">作者简介</a></li>
+            <li><a href="donate.html">赞助详情</a></li>
+            <li><a href="download.html">下载地址</a></li>
+            <li><a href="changelog.html">更新日志</a></li>
+            <li><a href="community.html">讨论社群</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#newbie" aria-haspopup="true" aria-expanded="false">新手专区</a>
+          <ul class="dropdown">
+            <li><a href="guide.html">安装指南</a></li>
+            <li><a href="faq.html">常见问题</a></li>
+            <li><a href="beginner.html">新手入门</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#changes" aria-haspopup="true" aria-expanded="false">全新系统</a>
+          <ul class="dropdown">
+            <li><a href="changes-basic.html">基础改动</a></li>
+            <li><a href="changes-awaken.html">觉醒系统</a></li>
+            <li><a href="changes-class.html">转职系统</a></li>
+            <li><a href="changes-recipe.html">合成配方</a></li>
+          </ul>
+        </li>
+                <li class="has-dropdown">
+          <a href="skills-overview.html" aria-haspopup="true" aria-expanded="false">职业技能</a>
+          <ul class="dropdown">
+            <li><a href="skills-overview.html">技能总览</a></li>
+            <li><a href="skills-sorceress.html">女巫</a></li>
+            <li><a href="skills-amazon.html">亚马逊</a></li>
+            <li><a href="skills-necro.html">死灵法师</a></li>
+            <li><a href="skills-paladin.html">圣骑士</a></li>
+            <li><a href="skills-barbarian.html">野蛮人</a></li>
+            <li><a href="skills-druid.html">德鲁伊</a></li>
+            <li><a href="skills-assassin.html">刺客</a></li>
+            <li><a href="skills-warlock.html">术士</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#equipment" aria-haspopup="true" aria-expanded="false">装备详情</a>
+                                  <ul class="dropdown">
+              <li><a href="equipment-system.html">装备系统</a></li>
+              <li><a href="equipment-donate.html">赞助装备</a></li>
+              <li><a href="equipment-special.html">特等装备</a></li>
+              <li><a href="equipment-magic.html">魔法装备</a></li>
+              <li><a href="equipment-rare.html">稀有装备</a></li>
+              <li><a href="equipment-set.html">套装装备</a></li>
+              <li><a href="equipment-rune.html">符文之语</a></li>
+              <li><a href="equipment-unique.html">暗金装备</a></li>
+              <li><a href="equipment-crafted.html">手工装备</a></li>
+              <li><a href="equipment-legend.html">传奇装备</a></li>
+              <li><a href="equipment-chaos.html">混沌装备</a></li>
+            </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#crafting" aria-haspopup="true" aria-expanded="false">装备打造</a>
+          <ul class="dropdown">
+            <li><a href="crafting-scroll.html">强化卷轴</a></li>
+            <li><a href="crafting-forge.html">锻造系统</a></li>
+            <li><a href="crafting-reforge.html">重铸与无形化</a></li>
+            <li><a href="crafting-rune.html">符文共鸣</a></li>
+            <li><a href="crafting-seal.html">封印词条</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#items" aria-haspopup="true" aria-expanded="false">物品和配方</a>
+          <ul class="dropdown">
+            <li><a href="items-recipe.html">合成配方</a></li>
+            <li><a href="items-new.html">新增物品</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section detail feature">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="index.html">首页</a><span aria-hidden="true">/</span>
+          <a href="index.html#changes">全新系统</a><span aria-hidden="true">/</span>
+          <span class="current">基础改动</span>
+        </nav>
+
+        <header class="section-head reveal">
+          <p class="section-kicker">全新系统 | <span class="kicker-num">3 · 1</span></p>
+          <h2>基础改动</h2>
+          <p class="section-lead">经验曲线、掉落率、怪物强度与技能伤害公式全面优化，并对背包、仓库、装备显示、佣兵与 Boss 连战等系统做了大量便利性功能改动。</p>
+        </header>
+
+        <!-- 3.1.1 功能性改动一览 -->
+        <article class="feature-section reveal">
+          <h3 class="feature-section-title">3.1.1 功能性改动一览</h3>
+
+          <div class="feature-subsection">
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">1. 大箱子 + 大背包 + 大魔盒</h4>
+              <p class="feature-block-text">全面支持<strong>无缩放</strong>的大箱子 / 大背包 / 大体积赫拉迪姆方块：</p>
+              <ul class="feature-list">
+                <li>玩家的「大背包」容量调整为 <strong class="feature-stat">15×11</strong>，不再进行任何缩放！</li>
+                <li>玩家的「赫拉迪姆方块」容量调整为 <strong class="feature-stat">10×10</strong>，不再进行任何缩放！</li>
+                <li>玩家的「个人仓库」和「共享仓库」容量调整为 <strong class="feature-stat">16×16</strong>，不再进行任何缩放！</li>
+                <li>仓库「通货页面」全面支持 <strong class="feature-stat">10×10</strong> 大容量魔盒，方便合成；除原版设定的符文 / 宝石 / 世界之石碎片堆叠外，还新增「打孔器」/「属性药水」/「技能书」等 Mod 物品。</li>
+              </ul>
+                            <div class="fig-row two">
+<figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p1_0.webp" alt="大背包界面截图" loading="lazy" decoding="async" />
+                <figcaption>大背包 — 15×11 超大容量</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p1_1.webp" alt="赫拉迪姆魔盒界面截图" loading="lazy" decoding="async" />
+                <figcaption>赫拉迪姆魔盒 — 10×10 大容量</figcaption>
+              </figure>              </div>
+
+                            <div class="fig-row two">
+<figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p1_2.webp" alt="个人/共享仓库界面截图" loading="lazy" decoding="async" />
+                <figcaption>个人仓库 / 共享仓库 — 16×16</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p2_0.webp" alt="通货页面魔盒截图" loading="lazy" decoding="async" />
+                <figcaption>通货页面 — 10×10 大容量魔盒</figcaption>
+              </figure>              </div>
+
+                            <div class="fig-row single">
+<figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p2_1.webp" alt="通货页面新增物品截图" loading="lazy" decoding="async" />
+                <figcaption>通货页面 — 新增物品堆叠</figcaption>
+              </figure>              </div>
+
+              <div class="feature-note">
+                <strong>手柄适配提示：</strong>手柄目前只做了背包和佣兵界面适配，仓库页面还未适配，只能显示部分内容，并且手柄界面布局比较“粗糙”，预计后期会彻底重绘。
+              </div>
+            </div>
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">2. 装备显示 + 吐槽补丁 + 游戏百科</h4>
+              <p class="feature-block-text">使用了「YteMod」（作者：老顽童，下载自凯恩之角论坛）。</p>
+              <ul class="feature-list">
+                <li><strong>吐槽补丁：</strong>大部分装备配备文字说明，评价其定位，帮助新手快速了解作用、使用场景与价值。</li>
+                <li><strong>更全的装备属性显示：</strong>大部分底材会标注对应有价值的暗金 / 套装与评级；在游戏界面点击右下方「+」号按钮或快捷键「H」查看详情。</li>
+                <li>武器额外显示<strong>攻击范围 / 攻击速度 / 装备孔数</strong>；防具额外显示<strong>基础防御 / 速度修正 / 装备孔数</strong>。</li>
+                <li><strong>游戏内置「百科全书」：</strong>点击玩家 HUD 界面中间的「书本」图标，打开「凯恩之书」即可在游戏中查询合成公式 / 符文之语 / 暗金装备属性 / 套装装备属性 / 底材信息等等。</li>
+              </ul>
+                            <div class="fig-row two">
+<figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p3_0.webp" alt="装备显示与吐槽补丁截图" loading="lazy" decoding="async" />
+                <figcaption>装备显示 — 吐槽补丁与详细属性</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p3_1.webp" alt="装备属性详情截图" loading="lazy" decoding="async" />
+                <figcaption>装备属性 — 攻击范围 / 速度 / 孔数</figcaption>
+              </figure>              </div>
+
+                            <div class="fig-row single">
+<figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p4_0.webp" alt="凯恩之书-方块公式截图" loading="lazy" decoding="async" />
+                <figcaption>帮助界面显示详细信息</figcaption>
+              </figure>              </div>
+
+                            <div class="fig-row three">
+<figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p4_1.webp" alt="凯恩之书-符文之语截图" loading="lazy" decoding="async" />
+                <figcaption>凯恩之书 — 合成公式</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p4_2.webp" alt="凯恩之书-套装截图" loading="lazy" decoding="async" />
+                <figcaption>凯恩之书 — 符文之语</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p4_3.webp" alt="凯恩之书-暗金截图" loading="lazy" decoding="async" />
+                <figcaption>凯恩之书 — 套装信息</figcaption>
+              </figure>              </div>
+
+            </div>
+            <div class="fig-row three">
+<figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p5_0.webp" alt="佣兵全装备界面截图" loading="lazy" decoding="async" />
+                <figcaption>凯恩之书 — 暗金武器</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p5_1.webp" alt="佣兵数值强化截图" loading="lazy" decoding="async" />
+                <figcaption>凯恩之书 — 暗金防具</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p5_2.webp" alt="佣兵装备悬停显示截图" loading="lazy" decoding="async" />
+                <figcaption>凯恩之书 — 普通装备</figcaption>
+              </figure>              </div>
+
+              <div class="fig-row two">
+            <figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p5_3.webp" alt="佣兵招募界面灵气截图" loading="lazy" decoding="async" />
+                <figcaption>凯恩之书 — 符文之语详细介绍</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p5_4.webp" alt="佣兵属性技能截图" loading="lazy" decoding="async" />
+                <figcaption>凯恩之书 — 暗金装备详细介绍</figcaption>
+              </figure>              </div>
+
+            </div>
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">3. 佣兵加强 &amp; 佣兵全装备</h4>
+              <ul class="feature-list">
+                <li>佣兵现在可以装备<strong>手套 / 腰带 / 鞋子 / 戒指×2 / 项链</strong>。</li>
+                <li><strong>佣兵数值强化：</strong>基础生命 / 生命成长 <strong class="feature-stat">+100%</strong>；基础防御 / 防御成长 <strong class="feature-stat">+200%</strong>；基础命中 / 命中成长 <strong class="feature-stat">+200%</strong>；基础力量 / 力量成长 <strong class="feature-stat">+100%</strong>。</li>
+                <li>雇佣兵招募界面能正确显示新增的灵气；雇佣兵属性页面能正确显示新增技能（上限 5 个，还有一个空位）。</li>
+                <li>基础敏捷 / 敏捷成长 <strong class="feature-stat">+100%</strong>；基础伤害 / 伤害成长 <strong class="feature-stat">+100%</strong>（由于属性翻倍，实际伤害数据提升量大约在 200%）。</li>
+                <li>佣兵技能改动：原有技能全部保留，额外新增灵气或被动技能。</li>
+                <li><strong>第一幕 弓箭手（罗格）：</strong>主手可装备十字弓，副手可装备弓矢 / 弩矢（即「箭袋」）；噩梦提供「活力灵气」/「冥想灵气」（等级 10 / 18，基于佣兵等级），地狱提供「专注灵气」（等级 12）。</li>
+                <li><strong>第二幕 枪兵米山：</strong>地狱提供「庇护灵气」（等级 18）。</li>
+                <li><strong>第三幕 铁狼法师：</strong>噩梦提供「火抗灵气」/「冰抗灵气」/「电抗灵气」（等级 8 / 18），地狱提供「拯救灵气」（等级 12）；另为测试需要，噩梦和地狱铁狼均携带被动技能「钢铁之肤」。</li>
+                <li><strong>第五幕 野蛮人：</strong>噩梦提供「力量灵气」/「活力灵气」/「圣火灵气」（等级 8 / 18），地狱提供「圣电灵气」（等级 18）。</li>
+              </ul>
+                            
+              <div class="fig-row two">
+            <figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p6_0.webp" alt="佣兵灵气详情截图" loading="lazy" decoding="async" />
+                <figcaption>佣兵灵气 — 各幕佣兵光环一览</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p6_1.webp" alt="Boss连战系统截图" loading="lazy" decoding="async" />
+                <figcaption>佣兵界面显示所有技能</figcaption>
+              </figure>              </div>
+               <div class="feature-note">此界面暂时只能显示雇佣兵的前三个技能（未来可能会重绘该界面）。「Boss 连战」系统详细介绍见下节「角色 UI」。</div>
+            </div>
+             
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">4. Boss 连战系统</h4>
+              <ul class="feature-list">
+                <li>所有难度下的所有关底 Boss 死亡后会自动复活若干次。</li>
+                <li>复活后的 Boss 会略微变强（生命 / 防御 / 命中 / 物理伤害增加），且死亡时会掉落物品。</li>
+                <li>现在所有关底 Boss 的非首杀染色率下调至原版数值；复活的关底 Boss 可以掉落属性药水 / 技能书 / 打孔器（注意难度要求）。</li>
+                <li>以上数值调整不影响「恐怖地带」的关底 Boss。</li>
+              </ul>
+             <table class="feature-table">
+                <thead>
+                  <tr><th>关底 Boss</th><th>关卡</th><th>复活次数</th><th>属性增强</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>安达利尔</td><td>第一幕</td><td>2</td><td>20%</td></tr>
+                  <tr><td>都瑞尔</td><td>第二幕</td><td>2</td><td>20%</td></tr>
+                  <tr><td>墨菲斯托</td><td>第三幕</td><td>2</td><td>20%</td></tr>
+                  <tr><td>迪亚波罗</td><td>第四幕</td><td>4</td><td>15%</td></tr>
+                  <tr><td>巴尔</td><td>第五幕</td><td>4</td><td>15%</td></tr>
+                </tbody>
+              </table>
+              <div class="feature-note">【注】复活的关底 Boss 可以掉落属性药水 / 技能书 / 打孔器，注意难度要求；此调整不影响「恐怖地带」的关底 Boss。</div>
+                            
+          </div>
+        </article>
+
+        <!-- 3.1.2 界面和外观改动一览 -->
+        <article class="feature-section reveal">
+          <h3 class="feature-section-title">3.1.2 界面和外观改动一览</h3>
+
+          <div class="feature-subsection">
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">1. 角色 UI（关底 Boss 连战）</h4>
+              <ul class="feature-list">
+                
+                <li>增加<strong>迷你血条</strong>功能（点击闪光的戒指开启或关闭）。</li>
+              </ul>
+               <div class="fig-row two">
+<figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p8_0.webp" alt="女巫皮肤美化截图" loading="lazy" decoding="async" />
+                <figcaption>「迷你血条」显示</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p8_1.webp" alt="刺客皮肤美化截图" loading="lazy" decoding="async" />
+                <figcaption>「迷你血条」开关</figcaption>
+              </figure>              </div>
+            </div>
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">2. 角色皮肤</h4>
+              <p class="feature-block-text">女巫和刺客的贴图适当美化。</p>
+                <div class="fig-row two">
+<figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p9_0.webp" alt="怪物哥特式血条截图" loading="lazy" decoding="async" />
+                <figcaption>法师贴图优化</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p9_1.webp" alt="怪物UI正面截图" loading="lazy" decoding="async" />
+                <figcaption>刺客贴图优化</figcaption>
+              </figure>              </div>
+
+                            <div class="fig-row four">
+<figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p9_2.webp" alt="怪物UI背面截图" loading="lazy" decoding="async" />
+                <figcaption>法师游戏中正面</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p9_3.webp" alt="恐怖使者高亮截图" loading="lazy" decoding="async" />
+                <figcaption>法师游戏中背面</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p9_4.webp" alt="恐怖使者文字显示截图" loading="lazy" decoding="async" />
+                <figcaption>刺客游戏中正面</figcaption>
+              </figure><figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p9_5.webp" alt="怪物UI细节截图" loading="lazy" decoding="async" />
+                <figcaption>刺客游戏中背面</figcaption>
+              </figure>              </div>            
+
+            </div>
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">3. 怪物 UI</h4>
+              <ul class="feature-list">
+                <li>怪物血条修改为更美观的哥特式。</li>
+                <li>恐怖地带的「使者」现在会高亮显示，并且名字中显示等级。</li>
+                <li>现在「恐怖使者」头上会有文字显示，让玩家更容易发现他。</li>
+              </ul>
+                           
+
+              <figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p9_6.webp" alt="怪物UI细节截图2" loading="lazy" decoding="async" />
+                <figcaption>怪物血条重绘</figcaption>
+              </figure>
+            </div>
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">4. 系统 UI</h4>
+              <p class="feature-block-text">自动跳过开场暴雪的 LOGO 动画。</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3.1.3 生活质量提升 -->
+        <article class="feature-section reveal">
+          <h3 class="feature-section-title">3.1.3 生活质量提升</h3>
+
+          <div class="feature-subsection">
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">1. 商店交易改动</h4>
+              <ul class="feature-list">
+                <li>NPC 交互界面支持<strong>左键快速购买</strong>，大幅提升物品批量购买效率。</li>
+                <li>需注意别误操作购买了昂贵且无用的物品。</li>
+                <li>感谢「YTEMOD」作者【老顽童】强大的技术力支持；感谢 B 站网友「蟹飞耳德」提供的修改方法。</li>
+              </ul>
+            </div>
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">2. 物品显示改动</h4>
+              <ul class="feature-list">
+                <li>现在 24 ~ 33 号符文掉落时自带「紫色光柱」，以防止玩家错过而抱憾终生。</li>
+                <li>「恐怖使者」的名字后面会备注其等级。</li>
+              </ul>
+              <figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p10_0.webp" alt="商店交易界面截图" loading="lazy" decoding="async" />
+                <figcaption>使者头部标记显示</figcaption>
+              </figure>
+              <figure class="feature-figure reveal">
+                <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E5%9F%BA%E7%A1%80%E6%94%B9%E5%8A%A8/p10_1.webp" alt="物品显示紫色光柱截图" loading="lazy" decoding="async" />
+                <figcaption>使者名称显示等级</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3.1.4 数值改动一览 -->
+        <article class="feature-section reveal">
+          <h3 class="feature-section-title">3.1.4 数值改动一览</h3>
+
+          <div class="feature-subsection">
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">1. 角色数值改动</h4>
+              <ul class="feature-list">
+                <li>角色每提升一级获得的<strong>属性点数从 5 点提升为 10 点</strong>。</li>
+                <li>角色每提升一级获得的<strong>技能点数从 1 点提升为 2 点</strong>。</li>
+                <li>跑动时耐力消耗速度减半。</li>
+              </ul>
+            </div>
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">2. 物品改动</h4>
+              <ul class="feature-list">
+                <li>回城书 / 鉴定书 的堆叠数量上限从 <strong class="feature-stat">20</strong> 提升至 <strong class="feature-stat">200</strong>；NPC 处贩卖的基础堆叠数量也大幅提升。</li>
+                <li>钥匙的堆叠数量上限从 <strong class="feature-stat">12</strong> 提升至 <strong class="feature-stat">200</strong>。</li>
+              </ul>
+            </div>
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">3. 装备改动</h4>
+              <ul class="feature-list">
+                <li>所有投掷武器的初始数量和堆叠上限从 <strong class="feature-stat">200</strong> 提升至 <strong class="feature-stat">500</strong>。</li>
+                <li>现在所有<strong>项链</strong>都可以打 1 个孔（镶嵌时视为「盾牌」）；所有<strong>戒指</strong>都可以打 1 个孔（镶嵌时视为「武器」）。</li>
+                <li>现在所有<strong>手套</strong>可以打 1~4（关联装备等级）个孔（视为「武器」）；所有<strong>腰带</strong>可以打 1~2 个孔（视为「防具」）；所有<strong>鞋子</strong>可以打 1~4 个孔（视为「防具」）。</li>
+                <li>咒符（背包里的板板）现在拥有<strong>稀有品质</strong>。</li>
+                <li>阿卡拉以跳楼价贩卖「赦免徽章」（洗点道具）——考虑到之前「无限洗点」需要加命令行参数略有门槛，此处再给一个毫无门槛的洗点方式方便新人。</li>
+                <li><strong>全新箭袋制作：</strong>现在「箭袋」作为一种装备，也拥有魔法 / 稀有 / 暗金 / 套装品质（暗金和套装品质箭袋暂未实装）；所有箭袋附带 100% 不消耗箭矢的词条；根据物品等级可打 1 / 2 / 3 个孔。</li>
+              </ul>
+            </div>
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">4. 技能改动</h4>
+              <ul class="feature-list">
+                <li><strong>德鲁伊</strong>在变形状态下可使用本职业所有技能及「传送术」。</li>
+                <li>所有「箭袋」支持 StaffMod，即可能出现 + 某个亚马逊技能等级的词条。</li>
+                <li>通用改动：现在城镇内可使用技能「传送术」；所有角色出生自带一个传送技能「失落的传送术」，初始消耗 20 点法力，冷却 10 秒，每提升 10 级冷却减少 1 秒。</li>
+                <li><strong>术士：</strong>「死亡印记」传送的恶魔数量上限从 3 增至 25；「血沸」触发的恶魔数量上限从 3 增至 25；召唤的「恶魔仆从」头像可正确堆叠显示；召唤恶魔上限为 3 只 + 1 只 / 每 5 点「恶魔专精」等级；适当提高束缚恶魔成功几率（基本几率约 +100%），且洗点时不会消失。</li>
+              </ul>
+            </div>
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">5. 掉落改动</h4>
+              <ul class="feature-list">
+                <li>装备掉落：全局暗金染色率提高（约 +100%）；全局稀有染色率提高（约 +50%）；全局超强装备掉率提高（约 +100%）。</li>
+                <li>符文掉落：符文全局掉率增加 <strong class="feature-stat">25%</strong>（原刷一局牛场期望 4 个，现期望 5 个）；全面调整各符文爆率分布，大幅提高高级符文掉率（#24~#33 约 10 倍左右，略低于「王者归来」）。</li>
+                <li>物品掉落：红门钥匙掉落几率提高 <strong class="feature-stat">100%</strong>。</li>
+                <li>Boss 掉落：所有关底 Boss <strong>永久首杀掉落</strong>；噩梦及以上难度的关底 Boss 均有几率掉落「打孔器」；综合掉率约噩梦 1.74% / 地狱 3.45%（Roll 7 次）；「属性药水」和「技能之书」掉率等同于「打孔器」。</li>
+                <li>终局掉落：所有「世界之石的碎片」全局爆率提升 <strong class="feature-stat">200%</strong>（即原来 3 倍）；「恐怖使者」额外掉落「打孔器」与终局野蛮人召唤材料（塔力克的痛苦 / 科里克的痛楚 / 马道克的愤怒 / 布尔凯索的噩梦 / 沃鲁斯克的终结）。</li>
+              </ul>
+            </div>
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">6. 怪物 / 难度改动</h4>
+              <ul class="feature-list">
+                <li>地狱难度下所有地图精英怪的数量上限提高 <strong class="feature-stat">100%</strong>。</li>
+              </ul>
+            </div>
+
+            <div class="feature-block">
+              <h4 class="feature-subsection-title">7. 其他改动</h4>
+              <ul class="feature-list">
+                <li><strong>怪物密度：</strong>普通难度增加 100%（即原来 2 倍）；噩梦难度增加 200%（即原来 3 倍）；地狱难度增加 300%（即原来 4 倍）。</li>
+                <li><strong>终局改动：</strong>恐怖地带击杀精英怪获得充能的几率从 2% 提升至 6%；每只怪物消耗充能升级为「恐惧使者」的几率从 1% 提升至 3%；「恐惧使者」NoDrop 几率从 23899 减少至 5899（破免板掉率从 1/240 提升至 1/60，至少需 4 级或以上恐惧使者才掉落）；目测刷取破免大板效率提升 60~80 倍。</li>
+                <li>召唤「超级大菠萝」的方式增加：现在除贩卖「乔丹之石」外，也可贩卖「30~33 号符文」召唤超级大菠萝。</li>
+                <li><strong>药剂与杂项：</strong>所有职业使用血瓶 / 蓝瓶的回复加成取消，回复量增加 100%，回复时间统一为血瓶 8 秒、蓝瓶 5 秒；血瓶回复量从 30/60/100/180/320 增加为 45/90/200/360/800；蓝瓶回复量从 20/40/80/150/250 增加为 30/60/160/300/700；所有职业耐力值不再受体力值加成，升级后不再增加耐力值，NPC 不再售卖体力药剂；回城书和辨识书最大堆叠从 20 增加为 100；关底 Boss 首杀常驻（安达利尔 / 都瑞尔 / 墨菲斯托 / 迪亚波罗 / 巴尔每次击杀掉落均与首杀相同）。</li>
+                <li><strong>游戏物品：</strong>现在游戏中所有装备均可打孔并镶嵌宝石或符文；腰带最多 2 孔、手套和鞋子最多 4 孔；戒指和护身符最多 1 孔；噩梦和地狱难度关底 Boss 均有几率掉落「属性药水」和「技能之书」。</li>
+                <li><strong>属性药水：</strong>使用后获得 5 点属性点数（力量 / 敏捷 / 体力 / 智力），使用上限 100 次。<strong>技能之书：</strong>使用后获得 1 点技能点数，使用上限 100 次。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <a class="btn btn-ghost detail-back" href="index.html">← 返回首页</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">王</span>
+        <span class="brand-text">新王觉醒</span>
+        <p class="footer-tag">觉醒之夜已经降临。</p>
+      </div>
+      <nav class="footer-links" aria-label="页脚导航">
+        <a href="index.html#overview">模组概览</a>
+        <a href="index.html#newbie">新手专区</a>
+        <a href="changelog.html">更新日志</a>
+        <a href="index.html#crafting">装备打造</a>
+      </nav>
+      <p class="footer-copy">© <span id="year">2026</span> 新王觉醒. 保留所有权利.</p>
+      <p class="version-badge">当前版本 v1.0.5</p>
+    </div>
+  </footer>
+
+  <script src="./js/main.js" defer></script>
+</body>
+</html>
