@@ -1,0 +1,294 @@
+﻿code,name_en,name_zh,name_zh_tw,category,type_raw,tier,durability,damage_min,damage_max,damage_avg,reqstr,reqdex,qlvl,max_sockets,sockets3,speed,rangeadder,img
+hax,Hand Axe,手斧,手斧,斧,axe,普通,28,3,6,4.5,0,0,3,2,2/2/2,0,0,assets/equipment/hand_axe.webp
+axe,Axe,斧,斧,斧,axe,普通,24,4,11,7.5,32,0,7,4,4/4/4,10,1,assets/equipment/axe.webp
+2ax,Double Axe,双刃斧,雙刃斧,斧,axe,普通,24,5,13,9.0,43,0,13,5,4/5/5,10,1,assets/equipment/double_axe.webp
+mpi,Military Pick,军用镐,軍用鎬,斧,axe,普通,26,7,11,9.0,49,33,19,6,4/5/6,-10,1,assets/equipment/military_pick.webp
+wax,War Axe,征战斧,征戰斧,斧,axe,普通,26,10,18,14.0,67,0,25,6,4/5/6,0,2,assets/equipment/war_axe.webp
+lax,Large Axe,重斧,重斧,斧,axe,普通,30,6,13,9.5,35,0,6,4,4/4/4,-10,1,assets/equipment/large_axe.webp
+bax,Broad Axe,阔斧,闊斧,斧,axe,普通,35,10,18,14.0,48,0,12,5,4/5/5,0,1,assets/equipment/broad_axe.webp
+btx,Battle Axe,战斧,戰斧,斧,axe,普通,40,12,32,22.0,54,0,17,5,4/5/5,10,1,assets/equipment/battle_axe.webp
+gax,Great Axe,巨斧,巨斧,斧,axe,普通,50,9,30,19.5,63,39,23,6,4/5/6,-10,2,assets/equipment/great_axe.webp
+gix,Giant Axe,巨人斧,巨人斧,斧,axe,普通,50,22,45,33.5,70,0,27,6,4/5/6,10,3,assets/equipment/giant_axe.webp
+wnd,Wand,魔杖,魔杖,魔杖,wand,普通,15,2,4,3.0,0,0,2,1,1/1/1,0,0,assets/equipment/wand.webp
+ywn,Yew Wand,紫杉魔杖,紫杉魔杖,魔杖,wand,普通,15,2,8,5.0,0,0,12,1,1/1/1,10,0,assets/equipment/yew_wand.webp
+bwn,Bone Wand,骸骨魔杖,骸骨魔杖,魔杖,wand,普通,15,3,7,5.0,0,0,18,2,2/2/2,-20,0,assets/equipment/bone_wand.webp
+gwn,Grim Wand,阴森魔杖,陰森魔杖,魔杖,wand,普通,15,5,11,8.0,0,0,26,2,2/2/2,0,0,assets/equipment/grim_wand.webp
+clb,Club,短棒,短棒,棍棒,club,普通,24,1,6,3.5,0,0,1,2,2/2/2,-10,0,assets/equipment/club.webp
+scp,Scepter,权杖,權杖,权杖,scep,普通,50,6,11,8.5,25,0,3,2,2/2/2,0,0,assets/equipment/scepter.webp
+gsc,Grand Scepter,庄严权杖,莊嚴權杖,权杖,scep,普通,60,8,18,13.0,37,0,15,3,3/3/3,10,1,assets/equipment/grand_scepter.webp
+wsp,War Scepter,征战权杖,征戰權杖,权杖,scep,普通,70,10,17,13.5,55,0,21,5,3/5/5,-10,1,assets/equipment/war_scepter.webp
+spc,Spiked Club,狼牙棒,狼牙棒,棍棒,club,普通,36,5,8,6.5,0,0,4,2,2/2/2,0,1,assets/equipment/spiked_club.webp
+mac,Mace,钉锤,釘鎚,钉头锤,mace,普通,60,3,10,6.5,27,0,8,2,2/2/2,0,0,assets/equipment/mace.webp
+mst,Morning Star,钉头锤,釘頭鎚,钉头锤,mace,普通,72,7,16,11.5,36,0,13,3,3/3/3,10,1,assets/equipment/morning_star.webp
+fla,Flail,连枷,連枷,钉头锤,mace,普通,30,1,24,12.5,41,35,19,5,3/4/5,-10,2,assets/equipment/flail.webp
+whm,War Hammer,战锤,戰鎚,锤,hamm,普通,55,19,29,24.0,53,0,25,4,3/4/4,20,0,assets/equipment/war_hammer.webp
+mau,Maul,重锤,重鎚,锤,hamm,普通,60,30,43,36.5,69,0,21,6,3/4/6,10,1,assets/equipment/maul.webp
+gma,Great Maul,巨型重锤,巨型重鎚,锤,hamm,普通,60,38,58,48.0,99,0,32,6,3/4/6,20,2,assets/equipment/great_maul.webp
+ssd,Short Sword,短剑,短劍,剑,swor,普通,24,2,7,4.5,0,0,1,2,2/2/2,0,0,assets/equipment/short_sword.webp
+scm,Scimitar,弯刀,彎刀,剑,swor,普通,22,2,6,4.0,0,21,5,2,2/2/2,-20,0,assets/equipment/scimitar.webp
+sbr,Saber,军刀,軍刀,剑,swor,普通,32,3,8,5.5,25,25,8,2,2/2/2,-10,0,assets/equipment/saber.webp
+flc,Falchion,弯刃大刀,彎刃大刀,剑,swor,普通,32,9,17,13.0,33,0,11,2,2/2/2,20,0,assets/equipment/falchion.webp
+crs,Crystal Sword,水晶剑,水晶劍,剑,swor,普通,20,5,15,10.0,43,0,11,6,3/4/6,0,1,assets/equipment/crystal_sword.webp
+bsd,Broad Sword,阔剑,闊劍,剑,swor,普通,32,7,14,10.5,48,0,15,4,3/4/4,0,0,assets/equipment/broad_sword.webp
+lsd,Long Sword,长剑,長劍,剑,swor,普通,44,3,19,11.0,55,39,20,4,3/4/4,-10,1,assets/equipment/long_sword.webp
+wsd,War Sword,征战剑,征戰劍,剑,swor,普通,44,8,20,14.0,71,45,27,3,3/3/3,0,1,assets/equipment/war_sword.webp
+2hs,Two-Handed Sword,双手剑,雙手劍,剑,swor,普通,44,2,9,5.5,35,27,10,3,3/3/3,0,2,assets/equipment/two_handed_sword.webp
+clm,Claymore,阔刃大剑,闊刃大劍,剑,swor,普通,50,5,12,8.5,47,0,17,4,3/4/4,10,2,assets/equipment/claymore.webp
+gis,Giant Sword,大剑,大劍,剑,swor,普通,50,3,16,9.5,56,34,21,4,3/4/4,0,2,assets/equipment/giant_sword.webp
+bsw,Bastard Sword,重剑,重劍,剑,swor,普通,40,7,19,13.0,62,0,24,4,3/4/4,10,1,assets/equipment/bastard_sword.webp
+flb,Flamberge,焰形剑,焰形劍,剑,swor,普通,50,9,15,12.0,70,49,27,5,3/4/5,-10,2,assets/equipment/flamberge.webp
+gsd,Great Sword,巨剑,巨劍,剑,swor,普通,50,12,20,16.0,100,60,33,6,3/4/6,10,2,assets/equipment/great_sword.webp
+dgr,Dagger,匕首,匕首,匕首,knif,普通,16,1,4,2.5,0,0,3,1,1/1/1,-20,0,assets/equipment/dagger.webp
+dir,Dirk,长匕首,長匕首,匕首,knif,普通,20,3,9,6.0,0,25,9,1,1/1/1,0,0,assets/equipment/dirk.webp
+kri,Kriss,波刃匕首,波刃匕首,匕首,knif,普通,24,2,11,6.5,0,45,17,3,2/3/3,-20,0,assets/equipment/kriss.webp
+bld,Blade,利刃匕首,利刃匕首,匕首,knif,普通,24,4,15,9.5,35,51,23,3,2/3/3,-10,0,assets/equipment/blade.webp
+tkf,Throwing Knife,飞刀,飛刀,飞刀,tkni,普通,4,2,3,2.5,0,21,2,2,1/2/2,0,0,assets/equipment/throwing_knife.webp
+tax,Throwing Axe,飞斧,飛斧,投掷斧,taxe,普通,6,4,7,5.5,0,40,7,2,1/2/2,10,0,assets/equipment/throwing_axe.webp
+bkf,Balanced Knife,平衡飞刀,平衡飛刀,飞刀,tkni,普通,8,1,8,4.5,0,51,13,2,1/2/2,-20,0,assets/equipment/balanced_knife.webp
+bal,Balanced Axe,平衡飞斧,平衡飛斧,投掷斧,taxe,普通,10,5,10,7.5,0,57,16,6,2/4/6,-10,0,assets/equipment/balanced_axe.webp
+jav,Javelin,标枪,標槍,标枪,jave,普通,2,1,5,3.0,0,0,1,3,1/2/3,-10,2,assets/equipment/javelin.webp
+pil,Pilum,长标枪,長標槍,标枪,jave,普通,3,4,9,6.5,0,45,10,3,1/2/3,0,2,assets/equipment/pilum.webp
+ssp,Short Spear,短矛,短矛,标枪,jave,普通,4,2,13,7.5,40,40,15,3,1/2/3,10,2,assets/equipment/short_spear.webp
+glv,Glaive,长刃枪,長刃槍,标枪,jave,普通,5,5,17,11.0,52,35,23,4,1/2/3,20,2,assets/equipment/glaive.webp
+tsp,Throwing Spear,飞矛,飛矛,标枪,jave,普通,6,5,15,10.0,0,65,29,4,1/2/3,-10,2,assets/equipment/throwing_spear.webp
+spr,Spear,长矛,長矛,长矛,spea,普通,30,3,15,9.0,0,20,5,3,3/3/3,-10,3,assets/equipment/spear.webp
+tri,Trident,三叉戟,三叉戟,长矛,spea,普通,35,9,15,12.0,38,24,9,4,3/4/4,0,3,assets/equipment/trident.webp
+brn,Brandistock,三叉枪,三叉槍,长矛,spea,普通,28,7,17,12.0,40,50,16,5,3/4/5,-20,4,assets/equipment/brandistock.webp
+spt,Spetum,勾刃枪,勾刃槍,长矛,spea,普通,28,15,23,19.0,54,35,20,6,3/4/6,0,4,assets/equipment/spetum.webp
+pik,Pike,步战矛,步戰矛,长矛,spea,普通,25,14,63,38.5,60,45,24,6,3/4/6,20,4,assets/equipment/pike.webp
+bar,Bardiche,月牙砍刀,月牙砍刀,长柄武器,pole,普通,50,1,27,14.0,40,0,5,3,3/3/3,10,2,assets/equipment/bardiche.webp
+vou,Voulge,枪斧,槍斧,长柄武器,pole,普通,50,6,21,13.5,50,0,11,4,3/4/4,0,2,assets/equipment/voulge.webp
+scy,Scythe,镰刀,鐮刀,长柄武器,pole,普通,65,8,20,14.0,41,41,15,5,3/4/5,-10,1,assets/equipment/scythe.webp
+pax,Poleaxe,长柄斧,長柄斧,长柄武器,pole,普通,65,18,39,28.5,62,0,21,5,3/4/5,10,3,assets/equipment/poleaxe.webp
+hal,Halberd,长戟,長戟,长柄武器,pole,普通,55,12,45,28.5,75,47,29,6,3/4/6,0,4,assets/equipment/halberd.webp
+wsc,War Scythe,征战镰刀,征戰鐮刀,长柄武器,pole,普通,55,15,36,25.5,80,80,34,6,3/4/6,-10,4,assets/equipment/war_scythe.webp
+sst,Short Staff,短杖,短杖,法杖,staf,普通,20,1,5,3.0,0,0,1,2,2/2/2,-10,1,assets/equipment/short_staff.webp
+lst,Long Staff,长杖,長杖,法杖,staf,普通,30,2,8,5.0,0,0,8,3,3/3/3,0,1,assets/equipment/long_staff.webp
+cst,Gnarled Staff,木节法杖,木節法杖,法杖,staf,普通,35,4,12,8.0,0,0,12,4,4/4/4,10,1,assets/equipment/gnarled_staff.webp
+bst,Battle Staff,战斗法杖,戰鬥法杖,法杖,staf,普通,40,6,13,9.5,0,0,17,4,4/4/4,0,1,assets/equipment/battle_staff.webp
+wst,War Staff,征战法杖,征戰法杖,法杖,staf,普通,50,12,28,20.0,0,0,24,6,5/6/6,20,1,assets/equipment/war_staff.webp
+sbw,Short Bow,短弓,短弓,弓,bow,普通,20,1,4,2.5,0,15,1,3,3/3/3,5,0,assets/equipment/short_bow.webp
+hbw,Hunter's Bow,猎弓,獵弓,弓,bow,普通,32,2,6,4.0,0,28,5,4,3/4/4,-10,0,assets/equipment/hunters_bow.webp
+lbw,Long Bow,长弓,長弓,弓,bow,普通,28,3,10,6.5,22,19,8,5,3/4/5,0,0,assets/equipment/long_bow.webp
+cbw,Composite Bow,复合弓,複合弓,弓,bow,普通,36,4,8,6.0,25,35,12,4,3/4/4,-10,0,assets/equipment/composite_bow.webp
+sbb,Short Battle Bow,战斗短弓,戰鬥短弓,弓,bow,普通,40,5,11,8.0,30,40,18,5,3/4/5,0,0,assets/equipment/short_battle_bow.webp
+lbb,Long Battle Bow,战斗长弓,戰鬥長弓,弓,bow,普通,44,3,18,10.5,40,50,23,6,3/4/6,10,0,assets/equipment/long_battle_bow.webp
+swb,Short War Bow,征战短弓,征戰短弓,弓,bow,普通,48,6,14,10.0,35,55,27,5,3/4/5,0,0,assets/equipment/short_war_bow.webp
+lwb,Long War Bow,征战长弓,征戰長弓,弓,bow,普通,55,3,23,13.0,50,65,31,6,3/4/6,10,0,assets/equipment/long_war_bow.webp
+lxb,Light Crossbow,轻弩,輕弩,弩,xbow,普通,30,6,9,7.5,21,27,6,3,3/3/3,-10,0,assets/equipment/light_crossbow.webp
+mxb,Crossbow,弩,弩,弩,xbow,普通,40,9,16,12.5,40,33,15,4,3/4/4,0,0,assets/equipment/crossbow.webp
+hxb,Heavy Crossbow,重弩,重弩,弩,xbow,普通,50,14,26,20.0,60,40,24,6,3/4/6,10,0,assets/equipment/heavy_crossbow.webp
+rxb,Repeating Crossbow,连弩,連弩,弩,xbow,普通,40,6,12,9.0,40,50,33,5,3/4/5,-40,0,assets/equipment/repeating_crossbow.webp
+9ha,Hatchet,短斧,短斧,斧,axe,扩展,28,10,21,15.5,25,25,31,2,2/2/2,0,0,assets/equipment/hand_axe.webp
+9ax,Cleaver,斩斧,斬斧,斧,axe,扩展,24,10,33,21.5,68,0,34,4,4/4/4,10,1,assets/equipment/axe.webp
+92a,Twin Axe,双面斧,雙面斧,斧,axe,扩展,24,13,38,25.5,85,0,39,5,4/5/5,10,1,assets/equipment/double_axe.webp
+9mp,Crowbill,鸦嘴镐,鴉嘴鎬,斧,axe,扩展,26,14,34,24.0,94,70,43,6,4/5/6,-10,1,assets/equipment/military_pick.webp
+9wa,Naga,那伽斧,那伽斧,斧,axe,扩展,26,16,45,30.5,121,0,48,6,4/5/6,0,2,assets/equipment/war_axe.webp
+9la,Military Axe,军斧,軍斧,斧,axe,扩展,30,14,34,24.0,73,0,34,4,4/4/4,-10,1,assets/equipment/large_axe.webp
+9ba,Bearded Axe,钩斧,鉤斧,斧,axe,扩展,35,21,49,35.0,92,0,38,5,4/5/5,0,1,assets/equipment/broad_axe.webp
+9bt,Tabar,长战斧,長戰斧,斧,axe,扩展,40,24,77,50.5,101,0,42,5,4/5/5,10,1,assets/equipment/battle_axe.webp
+9ga,Gothic Axe,哥德斧,哥德斧,斧,axe,扩展,50,18,70,44.0,115,79,46,6,4/5/6,-10,2,assets/equipment/great_axe.webp
+9gi,Ancient Axe,上古斧,上古斧,斧,axe,扩展,50,43,85,64.0,125,0,51,6,4/5/6,10,3,assets/equipment/giant_axe.webp
+9wn,Burnt Wand,焦木魔杖,焦木魔杖,魔杖,wand,扩展,15,8,18,13.0,25,0,31,1,1/1/1,0,0,assets/equipment/wand.webp
+9yw,Petrified Wand,石木魔杖,石木魔杖,魔杖,wand,扩展,15,8,24,16.0,25,0,38,2,2/2/2,10,0,assets/equipment/yew_wand.webp
+9bw,Tomb Wand,古墓魔杖,古墓魔杖,魔杖,wand,扩展,15,10,22,16.0,25,0,43,2,2/2/2,-20,0,assets/equipment/bone_wand.webp
+9gw,Grave Wand,墓地魔杖,墓地魔杖,魔杖,wand,扩展,15,13,29,21.0,25,0,49,2,2/2/2,0,0,assets/equipment/grim_wand.webp
+9cl,Cudgel,斗棍,鬥棍,棍棒,club,扩展,24,6,21,13.5,25,0,30,2,2/2/2,-10,0,assets/equipment/club.webp
+9sc,Rune Scepter,符文权杖,符文權杖,权杖,scep,扩展,50,13,24,18.5,58,0,31,2,2/2/2,0,0,assets/equipment/scepter.webp
+9qs,Holy Water Sprinkler,圣水礼杖,聖水禮杖,权杖,scep,扩展,60,14,36,25.0,76,0,40,3,3/3/3,10,1,assets/equipment/grand_scepter.webp
+9ws,Divine Scepter,圣恩权杖,聖恩權杖,权杖,scep,扩展,70,16,38,27.0,103,0,45,5,3/5/5,-10,1,assets/equipment/war_scepter.webp
+9sp,Barbed Club,倒刺棍棒,倒刺棍棒,棍棒,club,扩展,36,13,25,19.0,30,0,32,3,3/3/3,0,1,assets/equipment/spiked_club.webp
+9ma,Flanged Mace,凸缘钉锤,凸緣釘鎚,钉头锤,mace,扩展,60,15,23,19.0,61,0,35,2,2/2/2,0,0,assets/equipment/mace.webp
+9mt,Jagged Star,锯齿钉头锤,鋸齒釘頭鎚,钉头锤,mace,扩展,72,20,31,25.5,74,0,39,3,3/3/3,10,1,assets/equipment/morning_star.webp
+9fl,Knout,刑罪连枷,刑罪連枷,钉头锤,mace,扩展,30,13,35,24.0,82,73,43,5,3/4/5,-10,2,assets/equipment/flail.webp
+9wh,Battle Hammer,战斗铁锤,戰鬥鐵鎚,锤,hamm,扩展,55,35,58,46.5,100,0,48,4,3/4/4,20,0,assets/equipment/war_hammer.webp
+9m9,War Club,征战重锤,征戰重鎚,锤,hamm,扩展,60,53,78,65.5,124,0,45,6,3/4/6,10,1,assets/equipment/maul.webp
+9gm,Martel de Fer,长柄战锤,長柄戰鎚,锤,hamm,扩展,60,61,99,80.0,169,0,53,6,3/4/6,20,2,assets/equipment/great_maul.webp
+9ss,Gladius,罗马短剑,羅馬短劍,剑,swor,扩展,24,8,22,15.0,25,0,30,2,2/2/2,0,0,assets/equipment/short_sword.webp
+9sm,Cutlass,水手刀,水手刀,剑,swor,扩展,22,8,21,14.5,25,52,43,2,2/2/2,-30,0,assets/equipment/scimitar.webp
+9sb,Shamshir,波斯弯刀,波斯彎刀,剑,swor,扩展,32,10,24,17.0,58,58,35,2,2/2/2,-10,0,assets/equipment/saber.webp
+9fc,Tulwar,印度弯刀,印度彎刀,剑,swor,扩展,32,16,35,25.5,70,42,37,2,2/2/2,20,0,assets/equipment/falchion.webp
+9cr,Dimensional Blade,次元刃,次元刃,剑,swor,扩展,20,13,35,24.0,85,60,37,6,3/4/6,0,1,assets/equipment/crystal_sword.webp
+9bs,Battle Sword,战斗长剑,戰鬥長劍,剑,swor,扩展,32,16,34,25.0,92,43,40,4,3/4/4,0,0,assets/equipment/broad_sword.webp
+9ls,Rune Sword,符文剑,符文劍,剑,swor,扩展,44,10,42,26.0,103,79,44,4,3/4/4,-10,1,assets/equipment/long_sword.webp
+9wd,Ancient Sword,上古剑,上古劍,剑,swor,扩展,44,18,43,30.5,127,88,49,3,3/3/3,0,1,assets/equipment/war_sword.webp
+92h,Espandon,双手重剑,雙手重劍,剑,swor,扩展,44,8,26,17.0,73,61,37,3,3/3/3,0,2,assets/equipment/two_handed_sword.webp
+9cm,Dacian Falx,达西安长刀,達西安長刀,剑,swor,扩展,50,13,30,21.5,91,20,42,4,3/4/4,10,2,assets/equipment/claymore.webp
+9gs,Tusk Sword,长牙剑,長牙劍,剑,swor,扩展,50,10,37,23.5,104,71,45,4,3/4/4,0,2,assets/equipment/giant_sword.webp
+9b9,Gothic Sword,哥德剑,哥德劍,剑,swor,扩展,40,14,40,27.0,113,20,48,4,3/4/4,10,1,assets/equipment/bastard_sword.webp
+9fb,Zweihander,日耳曼大剑,日耳曼大劍,剑,swor,扩展,50,19,35,27.0,125,94,49,5,3/4/5,-10,2,assets/equipment/flamberge.webp
+9gd,Executioner Sword,处刑剑,處刑劍,剑,swor,扩展,50,24,40,32.0,170,110,54,6,3/4/6,10,2,assets/equipment/great_sword.webp
+9dg,Poignard,刺击短剑,刺擊短劍,匕首,knif,扩展,16,6,18,12.0,25,0,31,1,1/1/1,-20,0,assets/equipment/dagger.webp
+9di,Rondel,圆柄匕首,圓柄匕首,匕首,knif,扩展,20,10,26,18.0,25,58,36,1,1/1/1,0,0,assets/equipment/dirk.webp
+9kr,Cinquedeas,阔身短剑,闊身短劍,匕首,knif,扩展,24,15,31,23.0,25,88,42,3,2/3/3,-20,0,assets/equipment/kriss.webp
+9bl,Stilleto,窄刃匕首,窄刃匕首,匕首,knif,扩展,24,19,36,27.5,47,97,46,3,2/3/3,-10,0,assets/equipment/blade.webp
+9tk,Battle Dart,战斗飞镖,戰鬥飛鏢,飞刀,tkni,扩展,6,8,16,12.0,25,52,31,2,1/2/2,0,0,assets/equipment/throwing_knife.webp
+9ta,Francisca,法兰西飞斧,法蘭西飛斧,投掷斧,taxe,扩展,15,11,22,16.5,25,80,34,2,1/2/2,10,0,assets/equipment/throwing_axe.webp
+9bk,War Dart,征战飞镖,征戰飛鏢,飞刀,tkni,扩展,20,6,24,15.0,25,97,39,2,1/2/2,-20,0,assets/equipment/balanced_knife.webp
+9b8,Hurlbat,投斧,投斧,投掷斧,taxe,扩展,16,13,27,20.0,25,106,41,6,2/4/6,-10,0,assets/equipment/balanced_axe.webp
+9ja,War Javelin,征战标枪,征戰標槍,标枪,jave,扩展,10,6,19,12.5,25,25,30,3,1/2/3,-10,2,assets/equipment/javelin.webp
+9pi,Great Pilum,重型标枪,重型標槍,标枪,jave,扩展,12,11,26,18.5,25,88,37,3,1/2/3,0,2,assets/equipment/pilum.webp
+9s9,Simbilan,锐矛标枪,銳矛標槍,标枪,jave,扩展,14,8,32,20.0,80,80,40,3,1/2/3,10,2,assets/equipment/short_spear.webp
+9gl,Spiculum,尖刃枪,尖刃槍,标枪,jave,扩展,16,13,38,25.5,98,73,46,4,1/2/3,20,2,assets/equipment/glaive.webp
+9ts,Harpoon,鱼叉,魚叉,标枪,jave,扩展,18,13,35,24.0,25,118,51,4,1/2/3,-10,2,assets/equipment/throwing_spear.webp
+9sr,War Spear,征战长矛,征戰長矛,长矛,spea,扩展,30,10,37,23.5,25,25,33,3,3/3/3,-10,3,assets/equipment/spear.webp
+9tr,Fuscina,矛叉,矛叉,长矛,spea,扩展,35,19,37,28.0,77,25,36,4,3/4/4,0,3,assets/equipment/trident.webp
+9br,War Fork,征战军叉,征戰軍叉,长矛,spea,扩展,28,16,40,28.0,80,95,41,5,3/4/5,-20,4,assets/equipment/brandistock.webp
+9st,Yari,三尖枪,三尖槍,长矛,spea,扩展,28,29,59,44.0,101,0,44,6,3/4/6,0,4,assets/equipment/spetum.webp
+9p9,Lance,长枪,長槍,长矛,spea,扩展,25,27,114,70.5,110,88,47,6,3/4/6,20,4,assets/equipment/pike.webp
+9b7,Lochaber Axe,钩斧,鉤斧,长柄武器,pole,扩展,50,6,58,32.0,80,0,33,3,3/3/3,10,2,assets/equipment/bardiche.webp
+9vo,Bill,长柄锲,長柄鍥,长柄武器,pole,扩展,50,14,53,33.5,95,0,37,4,3/4/4,0,2,assets/equipment/voulge.webp
+9s8,Battle Scythe,战斗镰刀,戰鬥鐮刀,长柄武器,pole,扩展,65,18,45,31.5,82,82,40,5,3/4/5,-10,1,assets/equipment/scythe.webp
+9pa,Partizan,阔头枪,闊頭槍,长柄武器,pole,扩展,65,34,75,54.5,113,67,35,5,3/4/5,10,3,assets/equipment/poleaxe.webp
+9h9,Bec-de-Corbin,渡鸦喙,渡鴉喙,长柄武器,pole,扩展,55,13,85,49.0,133,91,51,6,3/4/6,0,4,assets/equipment/halberd.webp
+9wc,Grim Scythe,阴森镰刀,陰森鐮刀,长柄武器,pole,扩展,55,30,70,50.0,140,140,55,6,3/4/6,-10,4,assets/equipment/war_scythe.webp
+8ss,Jo Staff,棍杖,棍杖,法杖,staf,扩展,20,6,21,13.5,25,0,30,2,2/2/2,-10,1,assets/equipment/short_staff.webp
+8ls,Quarterstaff,长棍,長棍,法杖,staf,扩展,30,8,26,17.0,25,0,35,3,3/3/3,0,1,assets/equipment/long_staff.webp
+8cs,Cedar Staff,杉木法杖,杉木法杖,法杖,staf,扩展,35,11,32,21.5,25,0,38,4,4/4/4,10,1,assets/equipment/gnarled_staff.webp
+8bs,Gothic Staff,哥德法杖,哥德法杖,法杖,staf,扩展,40,14,34,24.0,25,0,42,4,4/4/4,0,1,assets/equipment/battle_staff.webp
+8ws,Rune Staff,符文法杖,符文法杖,法杖,staf,扩展,50,24,58,41.0,25,0,47,6,5/6/6,20,1,assets/equipment/war_staff.webp
+8sb,Edge Bow,锐弓,銳弓,弓,bow,扩展,20,6,19,12.5,25,43,30,3,3/3/3,5,0,assets/equipment/short_bow.webp
+8hb,Razor Bow,剃刀弓,剃刀弓,弓,bow,扩展,32,8,22,15.0,25,62,33,4,3/4/4,-10,0,assets/equipment/hunters_bow.webp
+8lb,Cedar Bow,杉木弓,杉木弓,弓,bow,扩展,28,10,29,19.5,53,49,35,5,3/4/5,0,0,assets/equipment/long_bow.webp
+8cb,Double Bow,双曲弓,雙曲弓,弓,bow,扩展,36,11,26,18.5,58,73,39,4,3/4/4,-10,0,assets/equipment/composite_bow.webp
+8s8,Short Siege Bow,攻城短弓,攻城短弓,弓,bow,扩展,40,13,30,21.5,65,80,43,5,3/4/5,0,0,assets/equipment/short_battle_bow.webp
+8l8,Long Siege Bow,攻城长弓,攻城長弓,弓,bow,扩展,44,10,42,26.0,80,95,46,6,3/4/6,10,0,assets/equipment/long_battle_bow.webp
+8sw,Rune Bow,符文弓,符文弓,弓,bow,扩展,48,14,35,24.5,73,103,49,5,3/4/5,0,0,assets/equipment/short_war_bow.webp
+8lw,Gothic Bow,哥德弓,哥德弓,弓,bow,扩展,55,10,50,30.0,95,118,52,6,3/4/6,10,0,assets/equipment/long_war_bow.webp
+8lx,Arbalest,钢弩,鋼弩,弩,xbow,扩展,30,14,27,20.5,52,61,34,3,3/3/3,-10,0,assets/equipment/light_crossbow.webp
+8mx,Siege Crossbow,攻城弩,攻城弩,弩,xbow,扩展,40,20,42,31.0,80,70,40,4,3/4/4,0,0,assets/equipment/crossbow.webp
+8hx,Ballista,砲弩,砲弩,弩,xbow,扩展,50,33,55,44.0,110,80,47,6,3/4/6,10,0,assets/equipment/heavy_crossbow.webp
+8rx,Chu-Ko-Nu,诸葛弩,諸葛弩,弩,xbow,扩展,40,14,32,23.0,80,95,54,5,3/4/5,-60,0,assets/equipment/repeating_crossbow.webp
+ktr,Katar,拳刃,拳刃,拳套,h2h,普通,48,4,7,5.5,20,20,1,2,2/2/2,-10,1,assets/equipment/katar.webp
+wrb,Wrist Blade,腕刃,腕刃,拳套,h2h,普通,52,5,9,7.0,33,33,9,2,2/2/2,0,1,assets/equipment/katar.webp
+axf,Hatchet Hands,斧手,斧手,拳套,h2h,普通,56,2,15,8.5,37,37,12,2,2/2/2,10,1,assets/equipment/hatchet_hands.webp
+ces,Cestus,刃拳,刃拳,拳套,h2h,普通,72,7,15,11.0,42,42,15,2,2/2/2,0,1,assets/equipment/hatchet_hands.webp
+clw,Claws,爪,爪,拳套,h2h,普通,64,8,15,11.5,46,46,18,3,2/3/3,-10,1,assets/equipment/claws.webp
+btl,Blade Talons,刃爪,刃爪,拳套,h2h,普通,69,10,14,12.0,50,50,21,3,2/3/3,-20,1,assets/equipment/claws.webp
+skr,Scissors Katar,剪刃,剪刃,拳套,h2h,普通,68,9,17,13.0,55,55,24,3,2/3/3,-10,1,assets/equipment/scissors_katar.webp
+9ar,Quhab,格斗刃,格鬥刃,拳套,h2h,扩展,48,11,24,17.5,57,57,28,3,2/3/3,0,1,assets/equipment/katar.webp
+9wb,Wrist Spike,腕刺,腕刺,拳套,h2h,扩展,56,13,27,20.0,66,66,32,2,2/2/2,-10,1,assets/equipment/katar.webp
+9xf,Fascia,格斗爪,格鬥爪,拳套,h2h,扩展,64,8,37,22.5,69,69,36,2,2/2/2,10,1,assets/equipment/hatchet_hands.webp
+9cs,Hand Scythe,手镰,手鐮,拳套,h2h2,扩展,72,16,37,26.5,73,73,41,2,2/2/2,-10,1,assets/equipment/hatchet_hands.webp
+9lw,Greater Claws,巨爪,巨爪,拳套,h2h2,扩展,52,18,37,27.5,76,76,45,3,2/3/3,-20,1,assets/equipment/claws.webp
+9tw,Greater Talons,巨鹰爪,巨鷹爪,拳套,h2h2,扩展,69,21,35,28.0,79,79,50,3,2/3/3,-30,1,assets/equipment/claws.webp
+9qr,Scissors Quhab,格斗剪刃,格鬥剪刃,拳套,h2h2,扩展,68,19,40,29.5,82,82,54,3,2/3/3,0,1,assets/equipment/scissors_katar.webp
+7ar,Suwayyah,穿击拳刃,穿擊拳刃,拳套,h2h2,精英,48,39,52,45.5,99,99,59,3,2/3/3,0,1,assets/equipment/katar.webp
+7wb,Wrist Sword,腕剑,腕劍,拳套,h2h2,精英,56,34,45,39.5,105,105,62,3,2/3/3,-10,1,assets/equipment/katar.webp
+7xf,War Fist,征战拳套,征戰拳套,拳套,h2h2,精英,64,44,53,48.5,108,108,68,2,2/2/2,10,1,assets/equipment/hatchet_hands.webp
+7cs,Battle Cestus,战斗刃拳,戰鬥刃拳,拳套,h2h2,精英,72,36,42,39.0,110,110,73,2,2/2/2,-10,1,assets/equipment/hatchet_hands.webp
+7lw,Feral Claws,蛮兽爪,蠻獸爪,拳套,h2h2,精英,52,22,53,37.5,113,113,78,3,2/3/3,-20,1,assets/equipment/claws.webp
+7tw,Runic Talons,符纹爪,符紋爪,拳套,h2h2,精英,69,24,44,34.0,115,115,81,3,2/3/3,-30,1,assets/equipment/claws.webp
+7qr,Scissors Suwayyah,穿击剪刃,穿擊剪刃,拳套,h2h2,精英,68,40,51,45.5,118,118,85,3,2/3/3,0,1,assets/equipment/scissors_katar.webp
+7ha,Tomahawk,轻斧,輕斧,斧,axe,精英,28,33,58,45.5,125,67,54,2,2/2/2,0,0,assets/equipment/hand_axe.webp
+7ax,Small Crescent,弯月斧,彎月斧,斧,axe,精英,24,38,60,49.0,115,83,61,4,4/4/4,10,1,assets/equipment/axe.webp
+72a,Ettin Axe,双头斧,雙頭斧,斧,axe,精英,24,33,66,49.5,145,45,70,5,4/5/5,10,1,assets/equipment/double_axe.webp
+7mp,War Spike,征战镐,征戰鎬,斧,axe,精英,26,30,48,39.0,133,54,79,6,4/5/6,-10,1,assets/equipment/military_pick.webp
+7wa,Berserker Axe,狂战斧,狂戰斧,斧,axe,精英,26,24,71,47.5,138,59,85,6,4/5/6,0,2,assets/equipment/war_axe.webp
+7la,Feral Axe,蛮野斧,蠻野斧,斧,axe,精英,30,25,123,74.0,196,0,57,4,4/4/4,-15,2,assets/equipment/large_axe.webp
+7ba,Silver-edged Axe,银刃斧,銀刃斧,斧,axe,精英,35,62,110,86.0,166,65,65,5,4/5/5,0,2,assets/equipment/broad_axe.webp
+7bt,Decapitator,斩首斧,斬首斧,斧,axe,精英,40,49,137,93.0,189,33,73,5,4/5/5,10,2,assets/equipment/battle_axe.webp
+7ga,Champion Axe,豪杰斧,豪傑斧,斧,axe,精英,50,59,94,76.5,167,59,82,6,4/5/6,-10,2,assets/equipment/great_axe.webp
+7gi,Glorious Axe,荣光斧,榮光斧,斧,axe,精英,50,60,124,92.0,164,55,85,6,4/5/6,10,3,assets/equipment/giant_axe.webp
+7wn,Polished Wand,抛光魔杖,拋光魔杖,魔杖,wand,精英,22,18,33,25.5,25,0,55,2,2/2/2,0,0,assets/equipment/wand.webp
+7yw,Ghost Wand,鬼魂魔杖,鬼魂魔杖,魔杖,wand,精英,14,20,40,30.0,25,0,65,2,2/2/2,10,0,assets/equipment/yew_wand.webp
+7bw,Lich Wand,巫妖魔杖,巫妖魔杖,魔杖,wand,精英,17,10,31,20.5,25,0,75,2,2/2/2,-20,0,assets/equipment/bone_wand.webp
+7gw,Unearthed Wand,埋骨魔杖,埋骨魔杖,魔杖,wand,精英,18,22,28,25.0,25,0,86,2,2/2/2,0,0,assets/equipment/grim_wand.webp
+7cl,Truncheon,打击棍,打擊棍,棍棒,club,精英,55,35,43,39.0,88,43,52,2,2/2/2,-10,0,assets/equipment/club.webp
+7sc,Mighty Scepter,强威权杖,強威權杖,权杖,scep,精英,50,40,52,46.0,125,65,62,2,2/2/2,0,0,assets/equipment/scepter.webp
+7qs,Seraph Rod,炽天使节杖,熾天使節杖,权杖,scep,精英,60,45,54,49.5,108,69,76,3,3/3/3,10,1,assets/equipment/grand_scepter.webp
+7ws,Caduceus,神使权杖,神使權杖,权杖,scep,精英,70,37,43,40.0,97,70,85,5,3/5/5,-10,1,assets/equipment/war_scepter.webp
+7sp,Tyrant Club,暴君棍棒,暴君棍棒,棍棒,club,精英,65,32,58,45.0,133,0,57,3,3/3/3,0,1,assets/equipment/spiked_club.webp
+7ma,Reinforced Mace,强化钉锤,強化釘鎚,钉头锤,mace,精英,60,41,49,45.0,145,46,63,2,2/2/2,0,0,assets/equipment/mace.webp
+7mt,Devil Star,妖鬼钉头锤,妖鬼釘頭鎚,钉头锤,mace,精英,72,43,53,48.0,153,44,70,3,3/3/3,10,1,assets/equipment/morning_star.webp
+7fl,Scourge,罪罚连枷,罪罰連枷,钉头锤,mace,精英,65,3,80,41.5,125,77,76,5,3/4/5,-10,2,assets/equipment/flail.webp
+7wh,Legendary Mallet,传说战锤,傳說戰鎚,锤,hamm,精英,65,50,61,55.5,189,0,82,4,3/4/4,20,1,assets/equipment/war_hammer.webp
+7m7,Ogre Maul,巨魔重锤,巨魔重鎚,锤,hamm,精英,60,77,106,91.5,225,0,69,6,3/4/6,10,1,assets/equipment/maul.webp
+7gm,Thunder Maul,雷霆重锤,雷霆重鎚,锤,hamm,精英,60,33,180,106.5,253,0,85,6,3/4/6,20,2,assets/equipment/great_maul.webp
+7ss,Falcata,法卡塔剑,法卡塔劍,剑,swor,精英,24,31,59,45.0,150,88,56,2,2/2/2,0,0,assets/equipment/short_sword.webp
+7sm,Ataghan,土耳其弯刀,土耳其彎刀,剑,swor,精英,22,26,46,36.0,138,95,61,2,2/2/2,-20,0,assets/equipment/scimitar.webp
+7sb,Elegant Blade,典雅弯刀,典雅彎刀,剑,swor,精英,32,33,45,39.0,109,122,63,2,2/2/2,-10,0,assets/equipment/saber.webp
+7fc,Hydra Edge,多头蛇刃,多頭蛇刃,剑,swor,精英,32,28,68,48.0,142,105,69,2,2/2/2,10,0,assets/equipment/falchion.webp
+7cr,Phase Blade,幻化之刃,幻化之刃,剑,swor,精英,32,31,35,33.0,25,136,73,6,3/4/6,-30,1,assets/equipment/crystal_sword.webp
+7bs,Conquest Sword,征服之剑,征服之劍,剑,swor,精英,32,37,53,45.0,142,112,78,4,3/4/4,0,0,assets/equipment/broad_sword.webp
+7ls,Cryptic Sword,绝秘剑,絕秘劍,剑,swor,精英,44,5,77,41.0,99,109,82,4,3/4/4,-10,1,assets/equipment/long_sword.webp
+7wd,Mythical Sword,秘仪剑,秘儀劍,剑,swor,精英,44,40,50,45.0,147,124,85,3,3/3/3,0,1,assets/equipment/war_sword.webp
+72h,Legend Sword,传说剑,傳說劍,剑,swor,精英,44,22,56,39.0,175,100,59,3,3/3/3,-15,2,assets/equipment/two_handed_sword.webp
+7cm,Highland Blade,高地剑,高地劍,剑,swor,精英,50,22,62,42.0,171,104,66,4,3/4/4,-5,2,assets/equipment/claymore.webp
+7gs,Balrog Blade,炎魔之刃,炎魔之刃,剑,swor,精英,50,15,75,45.0,185,87,71,4,3/4/4,0,2,assets/equipment/giant_sword.webp
+7b7,Champion Sword,豪杰大剑,豪傑大劍,剑,swor,精英,40,24,54,39.0,163,103,77,4,3/4/4,-10,2,assets/equipment/bastard_sword.webp
+7fb,Colossal Sword,巨神剑,巨神劍,剑,swor,精英,50,26,70,48.0,182,95,80,5,3/4/5,10,2,assets/equipment/flamberge.webp
+7gd,Colossus Blade,巨神刃,巨神刃,剑,swor,精英,50,25,65,45.0,189,110,85,6,3/4/6,5,2,assets/equipment/great_sword.webp
+7dg,Bone Knife,骸骨小刀,骸骨小刀,匕首,knif,精英,26,23,49,36.0,38,75,58,1,1/1/1,-20,0,assets/equipment/dagger.webp
+7di,Mithral Point,秘银尖刀,秘銀尖刀,匕首,knif,精英,55,37,53,45.0,55,98,70,1,1/1/1,0,0,assets/equipment/dirk.webp
+7kr,Fanged Knife,尖齿小刀,尖齒小刀,匕首,knif,精英,36,15,57,36.0,42,86,83,3,2/3/3,-20,0,assets/equipment/kriss.webp
+7bl,Legend Spike,传说尖刀,傳說尖刀,匕首,knif,精英,47,31,47,39.0,65,67,85,3,2/3/3,-10,0,assets/equipment/blade.webp
+7tk,Flying Knife,高速飞刀,高速飛刀,飞刀,tkni,精英,6,23,54,38.5,48,141,64,2,1/2/2,0,0,assets/equipment/throwing_knife.webp
+7ta,Flying Axe,高速飞斧,高速飛斧,投掷斧,taxe,精英,15,17,65,41.0,88,108,56,2,1/2/2,10,0,assets/equipment/throwing_axe.webp
+7bk,Winged Knife,刃翼飞刀,刃翼飛刀,飞刀,tkni,精英,20,27,35,31.0,45,142,77,2,1/2/2,-20,0,assets/equipment/balanced_knife.webp
+7b8,Winged Axe,刃翼飞斧,刃翼飛斧,投掷斧,taxe,精英,16,11,56,33.5,96,122,80,6,2/4/6,-10,0,assets/equipment/balanced_axe.webp
+7ja,Hyperion Javelin,亥伯龙标枪,亥伯龍標槍,标枪,jave,精英,10,21,57,39.0,98,123,54,3,1/2/3,-10,2,assets/equipment/javelin.webp
+7pi,Stygian Pilum,冥河标枪,冥河標槍,标枪,jave,精英,12,14,64,39.0,118,112,62,3,1/2/3,0,2,assets/equipment/pilum.webp
+7s7,Balrog Spear,炎魔长矛,炎魔長矛,标枪,jave,精英,14,33,63,48.0,127,95,71,3,1/2/3,10,2,assets/equipment/short_spear.webp
+7gl,Ghost Glaive,鬼魂刃枪,鬼魂刃槍,标枪,jave,精英,16,19,60,39.5,89,137,79,4,1/2/3,20,2,assets/equipment/glaive.webp
+7ts,Winged Harpoon,飞翼鱼叉,飛翼魚叉,标枪,jave,精英,18,27,35,31.0,76,145,85,4,1/2/3,-10,2,assets/equipment/throwing_spear.webp
+7sr,Hyperion Spear,亥伯龙矛,亥伯龍矛,长矛,spea,精英,30,35,119,77.0,155,120,58,3,3/3/3,-10,3,assets/equipment/spear.webp
+7tr,Stygian Pike,冥河战矛,冥河戰矛,长矛,spea,精英,35,29,144,86.5,168,97,66,4,3/4/4,0,3,assets/equipment/trident.webp
+7br,Mancatcher,捕人叉,捕人叉,长矛,spea,精英,28,42,92,67.0,132,134,74,5,3/4/5,-20,4,assets/equipment/brandistock.webp
+7st,Ghost Spear,鬼魂长矛,鬼魂長矛,长矛,spea,精英,28,18,155,86.5,122,163,83,6,3/4/6,0,4,assets/equipment/spetum.webp
+7p7,War Pike,征战长枪,征戰長槍,长矛,spea,精英,25,33,178,105.5,165,106,85,6,3/4/6,20,4,assets/equipment/pike.webp
+7o7,Ogre Axe,巨魔斧,巨魔斧,长柄武器,pole,精英,50,28,145,86.5,195,75,60,3,3/3/3,0,2,assets/equipment/bardiche.webp
+7vo,Colossus Voulge,巨神长柄斧,巨神長柄斧,长柄武器,pole,精英,50,17,165,91.0,210,55,64,4,3/4/4,10,2,assets/equipment/voulge.webp
+7s8,Thresher,斩镰,斬鐮,长柄武器,pole,精英,65,12,141,76.5,152,118,71,5,3/4/5,-10,1,assets/equipment/scythe.webp
+7pa,Cryptic Axe,绝秘斧,絕秘斧,长柄武器,pole,精英,65,33,150,91.5,165,103,79,5,3/4/5,10,3,assets/equipment/poleaxe.webp
+7h7,Great Poleaxe,巨型长柄斧,巨型長柄斧,长柄武器,pole,精英,55,46,127,86.5,179,99,84,6,3/4/6,0,4,assets/equipment/halberd.webp
+7wc,Giant Thresher,巨型斩镰,巨型斬鐮,长柄武器,pole,精英,55,40,114,77.0,188,140,85,6,3/4/6,-10,4,assets/equipment/war_scythe.webp
+6ss,Walking Stick,手杖,手杖,法杖,staf,精英,20,69,85,77.0,25,0,58,2,2/2/2,-10,1,assets/equipment/short_staff.webp
+6ls,Stalagmite,钟乳石杖,鐘乳石杖,法杖,staf,精英,30,75,107,91.0,63,35,66,3,3/3/3,10,1,assets/equipment/long_staff.webp
+6cs,Elder Staff,长者法杖,長者法杖,法杖,staf,精英,35,80,93,86.5,44,37,74,4,4/4/4,0,1,assets/equipment/gnarled_staff.webp
+6bs,Shillelagh,节瘤木杖,節瘤木杖,法杖,staf,精英,40,65,108,86.5,52,27,83,4,4/4/4,0,1,assets/equipment/battle_staff.webp
+6ws,Archon Staff,统御者法杖,統御者法杖,法杖,staf,精英,26,83,99,91.0,34,0,85,6,5/6/6,10,1,assets/equipment/war_staff.webp
+6sb,Spider Bow,蜘蛛弓,蜘蛛弓,弓,bow,精英,20,23,50,36.5,64,143,55,3,3/3/3,5,0,assets/equipment/short_bow.webp
+6hb,Blade Bow,刀锋弓,刀鋒弓,弓,bow,精英,32,21,41,31.0,76,119,60,4,3/4/4,-10,0,assets/equipment/hunters_bow.webp
+6lb,Shadow Bow,暗影弓,暗影弓,弓,bow,精英,28,15,59,37.0,52,188,63,5,3/4/5,0,0,assets/equipment/long_bow.webp
+6cb,Great Bow,巨弓,巨弓,弓,bow,精英,36,12,52,32.0,121,107,68,4,3/4/4,-10,0,assets/equipment/composite_bow.webp
+6s7,Diamond Bow,钻石弓,鑽石弓,弓,bow,精英,40,33,40,36.5,89,132,72,5,3/4/5,0,0,assets/equipment/short_battle_bow.webp
+6l7,Crusader Bow,圣教军长弓,聖教軍長弓,弓,bow,精英,44,15,63,39.0,97,121,77,6,3/4/6,10,0,assets/equipment/long_battle_bow.webp
+6sw,Ward Bow,庇护弓,庇護弓,弓,bow,精英,48,20,53,36.5,72,146,80,5,3/4/5,0,0,assets/equipment/short_war_bow.webp
+6lw,Hydra Bow,多头蛇弓,多頭蛇弓,弓,bow,精英,55,10,68,39.0,134,167,85,6,3/4/6,10,0,assets/equipment/long_war_bow.webp
+6lx,Pellet Bow,弹丸弩,彈丸弩,弩,xbow,精英,30,28,73,50.5,83,155,57,3,3/3/3,-10,0,assets/equipment/light_crossbow.webp
+6mx,Gorgon Crossbow,蛇魔弩,蛇魔弩,弩,xbow,精英,40,25,87,56.0,117,105,67,4,3/4/4,0,0,assets/equipment/crossbow.webp
+6hx,Colossus Crossbow,巨神弩,巨神弩,弩,xbow,精英,50,32,91,61.5,163,77,75,6,3/4/6,10,0,assets/equipment/heavy_crossbow.webp
+6rx,Demon Crossbow,恶魔弩,惡魔弩,弩,xbow,精英,40,26,40,33.0,141,98,84,5,3/4/5,-60,0,assets/equipment/repeating_crossbow.webp
+ob1,Eagle Orb,鹰之法珠,鷹之法珠,法球,orb,普通,20,2,5,3.5,0,0,1,4,2/2/2,-10,0,assets/equipment/eagle_orb.webp
+ob2,Sacred Globe,神圣天球,神聖天球,法球,orb,普通,30,3,8,5.5,0,0,8,4,2/2/2,-10,0,assets/equipment/sacred_globe.webp
+ob3,Smoked Sphere,拢烟之球,攏煙之球,法球,orb,普通,35,4,10,7.0,0,0,12,4,2/2/2,0,0,assets/equipment/smoked_sphere.webp
+ob4,Clasped Orb,握扣法珠,握扣法珠,法球,orb,普通,40,5,12,8.5,0,0,17,4,2/2/2,0,0,assets/equipment/clasped_orb.webp
+ob5,Jared's Stone,杰瑞德之石,傑瑞德之石,法球,orb,普通,50,8,18,13.0,0,0,24,4,2/3/3,10,0,assets/equipment/dragon_stone.webp
+am1,Stag Bow,猎鹿弓,獵鹿弓,弓,abow,普通,48,7,12,9.5,30,45,18,5,3/4/5,0,0,assets/equipment/stag_bow.webp
+am2,Reflex Bow,反射弓,反射弓,弓,abow,普通,55,9,19,14.0,35,60,27,5,3/4/5,10,0,assets/equipment/reflex_bow.webp
+am3,Maiden Spear,女战长矛,女戰長矛,长矛,aspe,普通,28,18,24,21.0,54,40,18,6,3/4/6,0,4,assets/equipment/maiden_spear.webp
+am4,Maiden Pike,女战长枪,女戰長槍,长矛,aspe,普通,25,23,55,39.0,63,52,27,6,3/4/6,10,4,assets/equipment/maiden_pike.webp
+am5,Maiden Javelin,女战标枪,女戰標槍,标枪,ajav,普通,6,8,14,11.0,33,47,23,3,1/2/3,-10,2,assets/equipment/maiden_javelin.webp
+ob6,Glowing Orb,灵光法珠,靈光法珠,法球,orb,扩展,20,8,21,14.5,0,0,32,4,2/2/2,-10,0,assets/equipment/eagle_orb.webp
+ob7,Crystalline Globe,水晶天球,水晶天球,法球,orb,扩展,30,10,26,18.0,0,0,37,4,2/2/2,-10,0,assets/equipment/sacred_globe.webp
+ob8,Cloudy Sphere,云雾之球,雲霧之球,法球,orb,扩展,35,11,29,20.0,0,0,41,4,2/2/2,0,0,assets/equipment/smoked_sphere.webp
+ob9,Sparkling Ball,闪耀之球,閃耀之球,法球,orb,扩展,40,13,32,22.5,0,0,46,4,2/2/2,0,0,assets/equipment/clasped_orb.webp
+oba,Swirling Crystal,涡流水晶,渦流水晶,法球,orb,扩展,50,18,42,30.0,0,0,50,4,2/3/3,10,0,assets/equipment/dragon_stone.webp
+am6,Ashwood Bow,梣木弓,梣木弓,弓,abow,扩展,48,16,29,22.5,56,77,39,5,3/4/5,0,0,assets/equipment/stag_bow.webp
+am7,Ceremonial Bow,仪礼弓,儀禮弓,弓,abow,扩展,55,19,41,30.0,73,110,47,5,3/4/5,10,0,assets/equipment/reflex_bow.webp
+am8,Ceremonial Spear,仪礼长矛,儀禮長矛,长矛,aspe,扩展,28,34,51,42.5,101,80,43,6,3/4/6,0,4,assets/equipment/maiden_spear.webp
+am9,Ceremonial Pike,仪礼长枪,儀禮長槍,长矛,aspe,扩展,25,42,101,71.5,115,98,51,6,3/4/6,20,4,assets/equipment/maiden_pike.webp
+ama,Ceremonial Javelin,仪礼标枪,儀禮標槍,标枪,ajav,扩展,6,18,35,26.5,25,109,35,6,1/2/3,-10,2,assets/equipment/maiden_javelin.webp
+obb,Heavenly Stone,天堂之石,天堂之石,法球,orb,精英,20,21,46,33.5,0,0,59,4,2/2/2,-10,0,assets/equipment/eagle_orb.webp
+obc,Eldritch Orb,异能法珠,異能法珠,法球,orb,精英,30,18,50,34.0,0,0,67,4,2/2/2,-10,0,assets/equipment/sacred_globe.webp
+obd,Demon Heart,恶魔心石,惡魔心石,法球,orb,精英,35,23,55,39.0,0,0,75,4,2/2/2,0,0,assets/equipment/smoked_sphere.webp
+obe,Vortex Orb,漩涡法珠,漩渦法珠,法球,orb,精英,40,12,66,39.0,0,0,84,4,2/2/2,0,0,assets/equipment/clasped_orb.webp
+obf,Dimensional Shard,次元法珠,次元法珠,法球,orb,精英,50,30,53,41.5,0,0,85,4,2/3/3,10,0,assets/equipment/dragon_stone.webp
+amb,Matriarchal Bow,女杰之弓,女傑之弓,弓,abow,精英,48,20,47,33.5,87,187,53,5,3/4/5,-10,0,assets/equipment/stag_bow.webp
+amc,Grand Matron Bow,主母之弓,主母之弓,弓,abow,精英,55,14,72,43.0,108,152,78,5,3/4/5,10,0,assets/equipment/reflex_bow.webp
+amd,Matriarchal Spear,女杰长矛,女傑長矛,长矛,aspe,精英,28,65,95,80.0,114,142,61,6,3/4/6,0,4,assets/equipment/maiden_spear.webp
+ame,Matriarchal Pike,女杰长枪,女傑長槍,长矛,aspe,精英,25,37,153,95.0,132,149,81,6,3/4/6,20,4,assets/equipment/maiden_pike.webp
+amf,Matriarchal Javelin,女杰标枪,女傑標槍,标枪,ajav,精英,6,30,54,42.0,107,151,65,3,1/2/3,-10,2,assets/equipment/maiden_javelin.webp
+aq0,Magic Arrows,弓箭,弓箭,其他,mboq,扩展,0,0,0,0,0,0,1,3,1/2/3,0,0,assets/equipment/arrows2.webp
+cq0,Magic Bolts,弩失,弩失,其他,mxbq,扩展,0,0,0,0,0,0,1,3,1/2/3,0,0,assets/equipment/bolts2.webp

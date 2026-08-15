@@ -1,0 +1,218 @@
+﻿code,name_en,name_zh,name_zh_tw,category,type_raw,tier,durability,defense_min,defense_max,defense_avg,reqstr,qlvl,max_sockets,sockets3,speed,img
+cap,Cap,便帽,便帽,头盔,helm,普通,12,3,5,4.0,0,1,2,2/2/2,0,assets/equipment/cap_hat.webp
+skp,Skull Cap,颅帽,顱帽,头盔,helm,普通,18,8,11,9.5,15,5,2,2/2/2,0,assets/equipment/skull_cap.webp
+hlm,Helm,头盔,頭盔,头盔,helm,普通,24,15,18,16.5,26,11,2,2/2/2,0,assets/equipment/helm.webp
+fhl,Full Helm,全罩盔,全罩盔,头盔,helm,普通,30,23,26,24.5,41,15,2,2/2/2,0,assets/equipment/full_helm.webp
+ghm,Great Helm,重盔,重盔,头盔,helm,普通,40,30,35,32.5,63,23,3,2/2/3,0,assets/equipment/great_helm.webp
+crn,Crown,王冠,王冠,头盔,helm,普通,50,25,45,35.0,55,29,3,2/2/3,0,assets/equipment/crown.webp
+msk,Mask,面具,面具,头盔,helm,普通,20,9,27,18.0,23,19,3,2/2/3,0,assets/equipment/mask.webp
+qui,Quilted Armor,棉布甲,棉布甲,铠甲,tors,普通,20,8,11,9.5,12,1,2,2/2/2,0,assets/equipment/quilted_armor.webp
+lea,Leather Armor,皮革甲,皮革甲,铠甲,tors,普通,24,14,17,15.5,15,3,2,2/2/2,0,assets/equipment/leather_armor.webp
+hla,Hard Leather Armor,硬皮甲,硬皮甲,铠甲,tors,普通,28,21,24,22.5,20,5,2,2/2/2,0,assets/equipment/hard_leather_armor.webp
+stu,Studded Leather,镶钉皮甲,鑲釘皮甲,铠甲,tors,普通,32,32,35,33.5,27,8,2,2/2/2,0,assets/equipment/studded_leather.webp
+rng,Ring Mail,环甲,環甲,铠甲,tors,普通,26,45,48,46.5,36,11,3,3/3/3,5,assets/equipment/ring_mail.webp
+scl,Scale Mail,鳞甲,鱗甲,铠甲,tors,普通,36,57,60,58.5,44,13,2,2/2/2,10,assets/equipment/scale_mail.webp
+chn,Chain Mail,锁链甲,鎖鍊甲,铠甲,tors,普通,45,72,75,73.5,48,15,2,2/2/2,5,assets/equipment/chain_mail.webp
+brs,Breast Plate,胸铠,胸鎧,铠甲,tors,普通,50,65,68,66.5,30,18,3,3/3/3,0,assets/equipment/breast_plate.webp
+spl,Splint Mail,板甲,板甲,铠甲,tors,普通,30,90,95,92.5,51,20,2,2/2/2,5,assets/equipment/splint_mail.webp
+plt,Plate Mail,铠甲,鎧甲,铠甲,tors,普通,60,108,116,112.0,65,24,2,2/2/2,10,assets/equipment/plate_mail.webp
+fld,Field Plate,野战铠甲,野戰鎧甲,铠甲,tors,普通,48,101,105,103.0,55,28,2,2/2/2,5,assets/equipment/field_plate.webp
+gth,Gothic Plate,哥德铠甲,哥德鎧甲,铠甲,tors,普通,55,128,135,131.5,70,32,4,3/4/4,5,assets/equipment/gothic_plate.webp
+ful,Full Plate Mail,全身铠甲,全身鎧甲,铠甲,tors,普通,70,150,161,155.5,80,37,4,3/4/4,10,assets/equipment/full_plate_mail.webp
+aar,Ancient Armor,上古铠甲,上古鎧甲,铠甲,tors,普通,60,218,233,225.5,100,40,4,3/4/4,5,assets/equipment/ancient_armor.webp
+ltp,Light Plate,轻型铠甲,輕型鎧甲,铠甲,tors,普通,60,90,107,98.5,41,35,3,3/3/3,0,assets/equipment/light_plate.webp
+buc,Buckler,小圆盾,小圓盾,盾牌,shie,普通,12,4,6,5.0,12,1,1,1/1/1,0,assets/equipment/buckler.webp
+sml,Small Shield,小型盾,小型盾,盾牌,shie,普通,16,8,10,9.0,22,5,2,2/2/2,0,assets/equipment/small_shield.webp
+lrg,Large Shield,大型盾,大型盾,盾牌,shie,普通,24,12,14,13.0,34,11,3,3/3/3,5,assets/equipment/large_shield.webp
+kit,Kite Shield,鸢盾,鳶盾,盾牌,shie,普通,30,16,18,17.0,47,15,3,3/3/3,0,assets/equipment/kite_shield.webp
+tow,Tower Shield,塔盾,塔盾,盾牌,shie,普通,60,22,25,23.5,75,22,3,3/3/3,10,assets/equipment/tower_shield.webp
+gts,Gothic Shield,哥德盾,哥德盾,盾牌,shie,普通,40,30,35,32.5,60,30,3,3/3/3,5,assets/equipment/gothic_shield.webp
+lgl,Leather Gloves,皮革手套,皮革手套,手套,glov,普通,12,2,3,2.5,0,3,4,1/2/4,0,assets/equipment/gloves_l.webp
+vgl,Heavy Gloves,厚皮手套,厚皮手套,手套,glov,普通,14,5,6,5.5,0,7,4,1/2/4,0,assets/equipment/heavy_gloves.webp
+mgl,Chain Gloves,炼甲手套,鍊甲手套,手套,glov,普通,16,8,9,8.5,25,12,4,1/2/4,0,assets/equipment/bracers_m.webp
+tgl,Light Gauntlets,轻型护手,輕型護手,手套,glov,普通,18,9,11,10.0,45,20,4,1/2/4,0,assets/equipment/light_gauntlets.webp
+hgl,Gauntlets,钢铁护手,鋼鐵護手,手套,glov,普通,24,12,15,13.5,60,27,4,1/2/4,0,assets/equipment/gaunlets_h.webp
+lbt,Boots,皮靴,皮靴,靴子,boot,普通,12,2,3,2.5,0,3,4,1/2/4,0,assets/equipment/leather_boots.webp
+vbt,Heavy Boots,重靴,重靴,靴子,boot,普通,14,5,6,5.5,18,7,4,1/2/4,0,assets/equipment/heavy_boots.webp
+mbt,Chain Boots,锁链靴,鎖鍊靴,靴子,boot,普通,16,8,9,8.5,30,12,4,1/2/4,0,assets/equipment/chain_boots.webp
+tbt,Light Plated Boots,轻铠靴,輕鎧靴,靴子,boot,普通,18,9,11,10.0,50,20,4,1/2/4,0,assets/equipment/light_plate_boots.webp
+hbt,Greaves,护胫,護脛,靴子,boot,普通,24,12,15,13.5,70,27,4,1/2/4,0,assets/equipment/plate_boots.webp
+lbl,Sash,束带,束帶,腰带,belt,普通,12,2,2,2.0,0,3,2,1/1/2,0,assets/equipment/sash_l.webp
+vbl,Light Belt,轻腰带,輕腰帶,腰带,belt,普通,14,3,3,3.0,0,7,2,1/1/2,0,assets/equipment/light_belt.webp
+mbl,Belt,腰带,腰帶,腰带,belt,普通,16,5,5,5.0,25,12,2,1/1/2,0,assets/equipment/belt_m.webp
+tbl,Heavy Belt,厚腰带,厚腰帶,腰带,belt,普通,18,6,6,6.0,45,20,2,1/1/2,0,assets/equipment/heavy_belt.webp
+hbl,Plated Belt,铠甲腰带,鎧甲腰帶,腰带,belt,普通,24,8,11,9.5,60,27,2,1/1/2,0,assets/equipment/girdle_h.webp
+bhm,Bone Helm,骸骨头盔,骸骨頭盔,头盔,helm,普通,40,33,36,34.5,25,22,2,2/2/2,0,assets/equipment/bone_helm.webp
+bsh,Bone Shield,骨盾,骨盾,盾牌,shie,普通,40,10,30,20.0,25,19,2,2/2/2,0,assets/equipment/bone_shield.webp
+spk,Spiked Shield,尖刺盾,尖刺盾,盾牌,shie,普通,40,15,25,20.0,30,11,2,2/2/2,0,assets/equipment/spiked_shield.webp
+xap,War Hat,战帽,戰帽,头盔,helm,扩展,12,45,53,49.0,20,34,2,2/2/2,0,assets/equipment/cap_hat.webp
+xkp,Sallet,便盔,便盔,头盔,helm,扩展,18,52,62,57.0,43,37,2,2/2/2,0,assets/equipment/skull_cap.webp
+xlm,Casque,兜盔,兜盔,头盔,helm,扩展,24,63,72,67.5,59,42,2,2/2/2,0,assets/equipment/helm.webp
+xhl,Basinet,轻盔,輕盔,头盔,helm,扩展,30,75,84,79.5,82,45,2,2/2/2,0,assets/equipment/full_helm.webp
+xhm,Winged Helm,翼盔,翼盔,头盔,helm,扩展,40,85,98,91.5,115,51,3,2/2/3,0,assets/equipment/great_helm.webp
+xrn,Grand Crown,庄严王冠,莊嚴王冠,头盔,helm,扩展,50,78,113,95.5,103,55,3,2/2/3,0,assets/equipment/crown.webp
+xsk,Death Mask,死亡面具,死亡面具,头盔,helm,扩展,20,54,86,70.0,55,48,3,2/2/3,0,assets/equipment/mask.webp
+xui,Ghost Armor,鬼魂战衣,鬼魂戰衣,铠甲,tors,扩展,20,102,117,109.5,38,34,2,2/2/2,0,assets/equipment/quilted_armor.webp
+xea,Serpentskin Armor,海蛇皮甲,海蛇皮甲,铠甲,tors,扩展,24,111,126,118.5,43,36,2,2/2/2,0,assets/equipment/leather_armor.webp
+xla,Demonhide Armor,魔皮护甲,魔皮護甲,铠甲,tors,扩展,28,122,136,129.0,50,37,2,2/2/2,0,assets/equipment/hard_leather_armor.webp
+xtu,Trellised Armor,格网护甲,格網護甲,铠甲,tors,扩展,32,138,153,145.5,61,40,2,2/2/2,0,assets/equipment/studded_leather.webp
+xng,Linked Mail,炼扣战甲,鍊扣戰甲,铠甲,tors,扩展,26,158,172,165.0,74,42,3,3/3/3,5,assets/equipment/ring_mail.webp
+xcl,Tigulated Mail,锁鳞战甲,鎖鱗戰甲,铠甲,tors,扩展,36,176,190,183.0,86,43,3,3/3/3,10,assets/equipment/scale_mail.webp
+xhn,Mesh Armor,铁网战甲,鐵網戰甲,铠甲,tors,扩展,45,198,213,205.5,92,45,3,3/3/3,5,assets/equipment/chain_mail.webp
+xrs,Cuirass,护胸甲,護胸甲,铠甲,tors,扩展,50,188,202,195.0,65,47,3,3/3/3,0,assets/equipment/breast_plate.webp
+xpl,Russet Armor,赤褐战甲,赤褐戰甲,铠甲,tors,扩展,30,225,243,234.0,97,49,3,3/3/3,5,assets/equipment/splint_mail.webp
+xlt,Templar Coat,圣堂骑士战甲,聖堂騎士戰甲,铠甲,tors,扩展,60,252,274,263.0,118,52,3,3/3/3,10,assets/equipment/plate_mail.webp
+xld,Sharktooth Armor,鲨齿战甲,鯊齒戰甲,铠甲,tors,扩展,48,242,258,250.0,103,55,3,3/3/3,5,assets/equipment/field_plate.webp
+xth,Embossed Plate,雕纹战甲,雕紋戰甲,铠甲,tors,扩展,55,282,303,292.5,125,58,4,3/4/4,5,assets/equipment/gothic_plate.webp
+xul,Chaos Armor,混沌战甲,混沌戰甲,铠甲,tors,扩展,70,315,342,328.5,140,61,4,3/4/4,10,assets/equipment/full_plate_mail.webp
+xar,Ornate Armor,华丽战甲,華麗戰甲,铠甲,tors,扩展,60,417,450,433.5,170,64,4,3/4/4,5,assets/equipment/ancient_armor.webp
+xtp,Mage Plate,法师铠甲,法師鎧甲,铠甲,tors,扩展,60,225,261,243.0,55,60,3,3/3/3,0,assets/equipment/light_plate.webp
+xuc,Defender,防御盾,防禦盾,盾牌,shie,扩展,68,41,49,45.0,38,34,1,1/1/1,0,assets/equipment/buckler.webp
+xml,Round Shield,圆型盾,圓型盾,盾牌,shie,扩展,64,47,55,51.0,53,37,2,2/2/2,0,assets/equipment/small_shield.webp
+xrg,Scutum,大圆盾,大圓盾,盾牌,shie,扩展,62,53,61,57.0,71,42,3,3/3/3,5,assets/equipment/large_shield.webp
+xit,Dragon Shield,龙盾,龍盾,盾牌,shie,扩展,76,59,67,63.0,91,45,3,3/3/3,0,assets/equipment/kite_shield.webp
+xow,Pavise,大盾,大盾,盾牌,shie,扩展,72,68,78,73.0,133,50,3,3/3/3,10,assets/equipment/tower_shield.webp
+xts,Ancient Shield,上古盾,上古盾,盾牌,shie,扩展,80,80,93,86.5,110,56,3,3/3/3,5,assets/equipment/gothic_shield.webp
+xlg,Demonhide Gloves,魔皮手套,魔皮手套,手套,glov,扩展,12,28,35,31.5,20,33,4,1/2/4,0,assets/equipment/gloves_l.webp
+xvg,Sharkskin Gloves,鲨皮手套,鯊皮手套,手套,glov,扩展,14,33,39,36.0,20,39,4,1/2/4,0,assets/equipment/heavy_gloves.webp
+xmg,Heavy Bracers,重型护腕,重型護腕,手套,glov,扩展,16,37,44,40.5,58,43,4,1/2/4,0,assets/equipment/bracers_m.webp
+xtg,Battle Gauntlets,战斗护手,戰鬥護手,手套,glov,扩展,18,39,47,43.0,88,49,4,1/2/4,0,assets/equipment/light_gauntlets.webp
+xhg,War Gauntlets,征战护手,征戰護手,手套,glov,扩展,24,43,53,48.0,110,54,4,1/2/4,0,assets/equipment/gaunlets_h.webp
+xlb,Demonhide Boots,魔皮长靴,魔皮長靴,靴子,boot,扩展,12,28,35,31.5,20,36,4,1/2/4,0,assets/equipment/leather_boots.webp
+xvb,Sharkskin Boots,鲨皮靴,鯊皮靴,靴子,boot,扩展,14,33,39,36.0,47,39,4,1/2/4,0,assets/equipment/heavy_boots.webp
+xmb,Mesh Boots,铁网靴,鐵網靴,靴子,boot,扩展,16,37,44,40.5,65,43,4,1/2/4,0,assets/equipment/chain_boots.webp
+xtb,Battle Boots,战斗靴,戰鬥靴,靴子,boot,扩展,18,39,47,43.0,95,49,4,1/2/4,0,assets/equipment/light_plate_boots.webp
+xhb,War Boots,征战靴,征戰靴,靴子,boot,扩展,24,43,53,48.0,125,54,4,1/2/4,0,assets/equipment/plate_boots.webp
+zlb,Demonhide Sash,魔皮束带,魔皮束帶,腰带,belt,扩展,12,29,34,31.5,20,36,2,1/1/2,0,assets/equipment/sash_l.webp
+zvb,Sharkskin Belt,鲨皮腰带,鯊皮腰帶,腰带,belt,扩展,14,31,36,33.5,20,39,2,1/1/2,0,assets/equipment/light_belt.webp
+zmb,Mesh Belt,铁网腰带,鐵網腰帶,腰带,belt,扩展,16,35,40,37.5,58,43,2,1/1/2,0,assets/equipment/belt_m.webp
+ztb,Battle Belt,战斗腰带,戰鬥腰帶,腰带,belt,扩展,18,37,42,39.5,88,49,2,1/1/2,0,assets/equipment/heavy_belt.webp
+zhb,War Belt,征战腰带,征戰腰帶,腰带,belt,扩展,24,41,52,46.5,110,54,2,1/1/2,0,assets/equipment/girdle_h.webp
+xh9,Grim Helm,阴森头盔,陰森頭盔,头盔,helm,扩展,40,60,125,92.5,58,50,2,2/2/2,0,assets/equipment/bone_helm.webp
+xsh,Grim Shield,阴森盾牌,陰森盾牌,盾牌,shie,扩展,70,50,150,100.0,58,48,2,2/2/2,0,assets/equipment/bone_shield.webp
+xpk,Barbed Shield,倒刺盾,倒刺盾,盾牌,shie,扩展,55,58,78,68.0,65,42,2,2/2/2,0,assets/equipment/spiked_shield.webp
+dr1,Wolf Head,狼头兽帽,狼頭獸帽,头盔,pelt,普通,20,8,11,9.5,16,4,3,2/3/3,0,assets/equipment/wolf_head.webp
+dr2,Hawk Helm,飞鹰头盔,飛鷹頭盔,头盔,pelt,普通,20,4,15,9.5,20,8,3,2/3/3,0,assets/equipment/hawk_helm.webp
+dr3,Antlers,巨角兽帽,巨角獸帽,头盔,pelt,普通,20,18,24,21.0,24,16,3,2/3/3,0,assets/equipment/antlers.webp
+dr4,Falcon Mask,猎鹰面具,獵鷹面具,头盔,pelt,普通,20,12,28,20.0,28,20,3,2/3/3,0,assets/equipment/falcon_mask.webp
+dr5,Spirit Mask,灵狼面具,靈狼面具,头盔,pelt,普通,20,22,35,28.5,30,24,3,2/3/3,0,assets/equipment/spirit_mask.webp
+ba1,Jawbone Cap,颚骨帽,顎骨帽,头盔,phlm,普通,25,10,15,12.5,25,4,3,2/3/3,0,assets/equipment/jawbone_cap.webp
+ba2,Fanged Helm,尖牙头盔,尖牙頭盔,头盔,phlm,普通,35,15,20,17.5,35,8,3,2/3/3,0,assets/equipment/fanged_helm.webp
+ba3,Horned Helm,尖角头盔,尖角頭盔,头盔,phlm,普通,45,25,30,27.5,45,16,3,2/3/3,0,assets/equipment/horned_helm.webp
+ba4,Assault Helmet,突击头盔,突擊頭盔,头盔,phlm,普通,50,30,35,32.5,55,20,3,2/3/3,0,assets/equipment/assault_helmet.webp
+ba5,Avenger Guard,复仇者护盔,復仇者護盔,头盔,phlm,普通,55,35,50,42.5,65,24,3,2/3/3,0,assets/equipment/avenger_guard.webp
+pa1,Targe,小盾,小盾,盾牌,ashd,普通,20,8,12,10.0,16,4,4,3/4/4,0,assets/equipment/targe.webp
+pa2,Rondache,轻圆盾,輕圓盾,盾牌,ashd,普通,30,10,18,14.0,26,8,4,3/4/4,0,assets/equipment/rondache.webp
+pa3,Heraldic Shield,纹章盾,紋章盾,盾牌,ashd,普通,40,16,26,21.0,40,16,4,3/4/4,0,assets/equipment/heraldic_shield.webp
+pa4,Aerin Shield,艾文之盾,艾文之盾,盾牌,ashd,普通,50,26,36,31.0,50,20,4,3/4/4,0,assets/equipment/aerin_shield.webp
+pa5,Crown Shield,冠冕之盾,冠冕之盾,盾牌,ashd,普通,60,30,40,35.0,65,24,4,3/4/4,0,assets/equipment/crown_shield.webp
+ne1,Preserved Head,防腐头颅,防腐頭顱,盾牌,head,普通,20,2,5,3.5,12,4,2,2/2/2,0,assets/equipment/preserved_head.webp
+ne2,Zombie Head,僵尸头颅,殭屍頭顱,盾牌,head,普通,20,4,8,6.0,14,8,2,2/2/2,0,assets/equipment/zombie_head.webp
+ne3,Unraveller Head,解绷者头颅,解繃者頭顱,盾牌,head,普通,20,6,10,8.0,18,16,2,2/2/2,0,assets/equipment/unraveller_head.webp
+ne4,Gargoyle Head,石像鬼头颅,石像鬼頭顱,盾牌,head,普通,20,10,16,13.0,20,20,2,2/2/2,0,assets/equipment/gargoyle_head.webp
+ne5,Demon Head,恶魔头颅,惡魔頭顱,盾牌,head,普通,20,15,20,17.5,25,24,2,2/2/2,0,assets/equipment/demon_head.webp
+ci0,Circlet,头环,頭環,头盔,circ,普通,35,20,30,25.0,0,24,2,1/2/2,0,assets/equipment/circlet.webp
+ci1,Coronet,宝冠,寶冠,头盔,circ,普通,30,30,40,35.0,0,52,2,1/2/2,0,assets/equipment/coronet.webp
+ci2,Tiara,头冠,頭冠,头盔,circ,扩展,25,40,50,45.0,0,70,3,1/2/3,0,assets/equipment/tiara.webp
+ci3,Diadem,权冠,權冠,头盔,circ,精英,20,50,60,55.0,0,85,3,1/2/3,0,assets/equipment/diadem.webp
+uap,Shako,军帽,軍帽,头盔,helm,精英,12,98,141,119.5,50,58,2,2/2/2,0,assets/equipment/cap_hat.webp
+ukp,Hydraskull,多头蛇颅盔,多頭蛇顱盔,头盔,helm,精英,18,101,145,123.0,84,63,2,2/2/2,0,assets/equipment/skull_cap.webp
+ulm,Armet,覆颊盔,覆頰盔,头盔,helm,精英,24,105,149,127.0,109,68,2,2/2/2,0,assets/equipment/helm.webp
+uhl,Giant Conch,巨螺盔,巨螺盔,头盔,helm,精英,30,110,154,132.0,142,54,2,2/2/2,0,assets/equipment/full_helm.webp
+uhm,Spired Helm,巨角头盔,巨角頭盔,头盔,helm,精英,40,114,159,136.5,192,79,3,2/2/3,0,assets/equipment/great_helm.webp
+urn,Corona,日冕之冠,日冕之冠,头盔,helm,精英,50,111,165,138.0,174,85,3,2/2/3,0,assets/equipment/crown.webp
+usk,Demonhead,恶魔头骨,惡魔頭骨,头盔,helm,精英,20,101,154,127.5,102,74,3,2/2/3,0,assets/equipment/mask.webp
+uui,Dusk Shroud,灰暮罩衣,灰暮罩衣,铠甲,tors,精英,20,361,467,414.0,77,65,4,3/4/4,0,assets/equipment/quilted_armor.webp
+uea,Wyrmhide,龙皮甲,龍皮甲,铠甲,tors,精英,24,364,470,417.0,84,67,4,3/4/4,0,assets/equipment/leather_armor.webp
+ula,Scarab Husk,圣甲虫壳皮甲,聖甲蟲殼皮甲,铠甲,tors,精英,28,369,474,421.5,95,68,4,3/4/4,0,assets/equipment/hard_leather_armor.webp
+utu,Wire Fleece,钢线毛皮甲,鋼線毛皮甲,铠甲,tors,精英,32,375,481,428.0,111,70,4,3/4/4,0,assets/equipment/studded_leather.webp
+ung,Diamond Mail,钻石锁甲,鑽石鎖甲,铠甲,tors,精英,26,383,489,436.0,131,72,4,3/4/4,5,assets/equipment/ring_mail.webp
+ucl,Loricated Mail,缀鳞战甲,綴鱗戰甲,铠甲,tors,精英,36,390,496,443.0,149,73,4,3/4/4,10,assets/equipment/scale_mail.webp
+uhn,Boneweave,骸骨网甲,骸骨網甲,铠甲,tors,精英,45,399,505,452.0,158,62,4,3/4/4,5,assets/equipment/chain_mail.webp
+urs,Great Hauberk,鳞铠胸甲,鱗鎧胸甲,铠甲,tors,精英,50,395,501,448.0,118,75,4,3/4/4,0,assets/equipment/breast_plate.webp
+upl,Balrog Skin,炎魔皮板甲,炎魔皮板甲,铠甲,tors,精英,30,410,517,463.5,165,76,4,3/4/4,5,assets/equipment/splint_mail.webp
+ult,Hellforge Plate,地狱锻甲,地獄鍛甲,铠甲,tors,精英,60,421,530,475.5,196,78,4,3/4/4,10,assets/equipment/plate_mail.webp
+uld,Kraken Shell,海怪之壳,海怪之殼,铠甲,tors,精英,48,417,523,470.0,174,81,4,3/4/4,5,assets/equipment/field_plate.webp
+uth,Lacquered Plate,漆护铠甲,漆護鎧甲,铠甲,tors,精英,55,433,541,487.0,208,82,4,3/4/4,5,assets/equipment/gothic_plate.webp
+uul,Shadow Plate,暗影铠甲,暗影鎧甲,铠甲,tors,精英,70,446,557,501.5,230,83,4,3/4/4,10,assets/equipment/full_plate_mail.webp
+uar,Sacred Armor,神圣战甲,神聖戰甲,铠甲,tors,精英,60,487,600,543.5,232,85,4,3/4/4,5,assets/equipment/ancient_armor.webp
+utp,Archon Plate,统御者铠甲,統御者鎧甲,铠甲,tors,精英,60,410,524,467.0,103,84,4,3/4/4,0,assets/equipment/light_plate.webp
+uuc,Heater,斗盾,斗盾,盾牌,shie,精英,88,95,110,102.5,77,58,2,2/2/2,0,assets/equipment/buckler.webp
+uml,Luna,圆月盾,圓月盾,盾牌,shie,精英,84,108,123,115.5,100,61,2,2/2/2,0,assets/equipment/small_shield.webp
+urg,Hyperion,亥伯龙盾,亥伯龍盾,盾牌,shie,精英,82,119,135,127.0,127,64,3,3/3/3,5,assets/equipment/large_shield.webp
+uit,Monarch,君主盾,君主盾,盾牌,shie,精英,86,133,148,140.5,156,72,4,3/3/4,0,assets/equipment/kite_shield.webp
+uow,Aegis,御塔盾,禦塔盾,盾牌,shie,精英,92,145,161,153.0,219,79,4,3/3/4,10,assets/equipment/tower_shield.webp
+uts,Ward,庇护盾,庇護盾,盾牌,shie,精英,100,153,170,161.5,185,84,4,3/3/4,5,assets/equipment/gothic_shield.webp
+ulg,Bramble Mitts,荆棘手套,荊棘手套,手套,glov,精英,12,54,62,58.0,50,57,4,1/2/4,0,assets/equipment/gloves_l.webp
+uvg,Vampirebone Gloves,吸血鬼骸骨手套,吸血鬼骸骨手套,手套,glov,精英,14,56,65,60.5,50,63,4,1/2/4,0,assets/equipment/heavy_gloves.webp
+umg,Vambraces,护臂,護臂,手套,glov,精英,16,59,67,63.0,106,69,4,1/2/4,0,assets/equipment/bracers_m.webp
+utg,Crusader Gauntlets,圣教军护手,聖教軍護手,手套,glov,精英,18,59,68,63.5,151,76,4,1/2/4,0,assets/equipment/light_gauntlets.webp
+uhg,Ogre Gauntlets,巨魔护手,巨魔護手,手套,glov,精英,24,62,71,66.5,185,85,4,1/2/4,0,assets/equipment/gaunlets_h.webp
+ulb,Wyrmhide Boots,龙皮靴,龍皮靴,靴子,boot,精英,12,54,62,58.0,50,60,4,1/2/4,0,assets/equipment/leather_boots.webp
+uvb,Scarabshell Boots,圣甲虫壳皮靴,聖甲蟲殼皮靴,靴子,boot,精英,14,56,65,60.5,91,66,4,1/2/4,0,assets/equipment/heavy_boots.webp
+umb,Boneweave Boots,骸骨网靴,骸骨網靴,靴子,boot,精英,16,59,67,63.0,118,72,4,1/2/4,0,assets/equipment/chain_boots.webp
+utb,Mirrored Boots,幻镜战靴,幻鏡戰靴,靴子,boot,精英,18,59,68,63.5,163,81,4,1/2/4,0,assets/equipment/light_plate_boots.webp
+uhb,Myrmidon Greaves,勇士护胫,勇士護脛,靴子,boot,精英,24,62,71,66.5,208,85,4,1/2/4,0,assets/equipment/plate_boots.webp
+ulc,Spiderweb Sash,蛛网束带,蛛網束帶,腰带,belt,精英,12,55,62,58.5,50,61,2,1/1/2,0,assets/equipment/sash_l.webp
+uvc,Vampirefang Belt,吸血鬼牙腰带,吸血鬼牙腰帶,腰带,belt,精英,14,56,63,59.5,50,68,2,1/1/2,0,assets/equipment/light_belt.webp
+umc,Mithril Coil,秘银腰带,秘銀腰帶,腰带,belt,精英,16,58,65,61.5,106,75,2,1/1/2,0,assets/equipment/belt_m.webp
+utc,Troll Belt,食人妖腰带,食人妖腰帶,腰带,belt,精英,18,59,66,62.5,151,82,2,1/1/2,0,assets/equipment/heavy_belt.webp
+uhc,Colossus Girdle,巨神腰带,巨神腰帶,腰带,belt,精英,24,61,71,66.0,185,85,2,1/1/2,0,assets/equipment/girdle_h.webp
+uh9,Bone Visage,骸骨面罩,骸骨面罩,头盔,helm,精英,40,100,157,128.5,106,84,3,2/2/3,0,assets/equipment/bone_helm.webp
+ush,Troll Nest,食人妖骨盾,食人妖骨盾,盾牌,shie,精英,74,158,173,165.5,106,76,3,3/3/3,0,assets/equipment/bone_shield.webp
+upk,Blade Barrier,刀刃刺盾,刀刃刺盾,盾牌,shie,精英,83,147,163,155.0,118,68,3,3/3/3,0,assets/equipment/spiked_shield.webp
+dr6,Alpha Helm,猛狼头盔,猛狼頭盔,头盔,pelt,扩展,20,52,62,57.0,44,35,3,2/3/3,0,assets/equipment/wolf_head.webp
+dr7,Griffon Headress,狮鹫兽头饰,獅鷲獸頭飾,头盔,pelt,扩展,20,46,68,57.0,50,40,3,2/3/3,0,assets/equipment/hawk_helm.webp
+dr8,Hunter's Guise,猎人面罩,獵人面罩,头盔,pelt,扩展,20,67,81,74.0,56,46,3,2/3/3,0,assets/equipment/antlers.webp
+dr9,Sacred Feathers,圣羽头饰,聖羽頭飾,头盔,pelt,扩展,20,58,87,72.5,62,50,3,2/3/3,0,assets/equipment/falcon_mask.webp
+dra,Totemic Mask,图腾面具,圖騰面具,头盔,pelt,扩展,20,73,98,85.5,65,55,3,2/3/3,0,assets/equipment/spirit_mask.webp
+ba6,Jawbone Visor,颚骨面甲,顎骨面甲,头盔,phlm,扩展,25,55,68,61.5,58,33,3,2/3/3,0,assets/equipment/jawbone_cap.webp
+ba7,Lion Helm,狮牙头盔,獅牙頭盔,头盔,phlm,扩展,35,63,75,69.0,73,38,3,2/3/3,0,assets/equipment/fanged_helm.webp
+ba8,Rage Mask,狂怒面具,狂怒面具,头盔,phlm,扩展,45,78,90,84.0,88,44,3,2/3/3,0,assets/equipment/horned_helm.webp
+ba9,Savage Helmet,凶蛮头盔,凶蠻頭盔,头盔,phlm,扩展,50,85,98,91.5,103,49,3,2/3/3,0,assets/equipment/assault_helmet.webp
+baa,Slayer Guard,杀手护盔,殺手護盔,头盔,phlm,扩展,55,93,120,106.5,118,54,3,2/3/3,0,assets/equipment/avenger_guard.webp
+pa6,Akaran Targe,阿卡拉圆盾,阿卡拉圓盾,盾牌,ashd,扩展,20,101,125,113.0,44,35,4,3/4/4,0,assets/equipment/targe.webp
+pa7,Akaran Rondache,阿卡拉轻圆盾,阿卡拉輕圓盾,盾牌,ashd,扩展,30,113,137,125.0,59,40,4,3/4/4,0,assets/equipment/rondache.webp
+pa8,Protector Shield,守护之盾,守護之盾,盾牌,ashd,扩展,40,129,153,141.0,69,46,4,3/4/4,0,assets/equipment/heraldic_shield.webp
+pa9,Gilded Shield,金纹盾,金紋盾,盾牌,ashd,扩展,50,144,168,156.0,89,51,4,3/4/4,0,assets/equipment/aerin_shield.webp
+paa,Royal Shield,皇家盾,皇家盾,盾牌,ashd,扩展,60,156,181,168.5,114,55,4,3/4/4,0,assets/equipment/crown_shield.webp
+ne6,Mummified Trophy,木乃伊首级,木乃伊首級,盾牌,head,扩展,20,38,48,43.0,38,33,2,2/2/2,0,assets/equipment/preserved_head.webp
+ne7,Fetish Trophy,鬼娃首级,鬼娃首級,盾牌,head,扩展,20,41,52,46.5,41,39,2,2/2/2,0,assets/equipment/zombie_head.webp
+ne8,Sexton Trophy,司事首级,司事首級,盾牌,head,扩展,20,44,55,49.5,47,45,2,2/2/2,0,assets/equipment/unraveller_head.webp
+ne9,Cantor Trophy,领唱者首级,領唱者首級,盾牌,head,扩展,20,50,64,57.0,50,49,2,2/2/2,0,assets/equipment/gargoyle_head.webp
+nea,Heirophant Trophy,祭司首级,祭司首級,盾牌,head,扩展,20,58,70,64.0,58,54,2,2/2/2,0,assets/equipment/demon_head.webp
+drb,Blood Spirit,血系灵兽帽,血系靈獸帽,头盔,pelt,精英,20,101,145,123.0,86,62,3,2/3/3,0,assets/equipment/wolf_head.webp
+drc,Sun Spirit,日阳灵兽帽,日陽靈獸帽,头盔,pelt,精英,20,98,147,122.5,95,69,3,2/3/3,0,assets/equipment/hawk_helm.webp
+drd,Earth Spirit,地土灵兽帽,地土靈獸帽,头盔,pelt,精英,20,107,152,129.5,104,76,3,2/3/3,0,assets/equipment/antlers.webp
+dre,Sky Spirit,天翔灵兽帽,天翔靈獸帽,头盔,pelt,精英,20,103,155,129.0,113,83,3,2/3/3,0,assets/equipment/falcon_mask.webp
+drf,Dream Spirit,幽梦灵兽帽,幽夢靈獸帽,头盔,pelt,精英,20,109,159,134.0,118,85,3,2/3/3,0,assets/equipment/spirit_mask.webp
+bab,Carnage Helm,屠杀头盔,屠殺頭盔,头盔,phlm,精英,25,102,147,124.5,106,60,3,2/3/3,0,assets/equipment/jawbone_cap.webp
+bac,Fury Visor,暴怒面甲,暴怒面甲,头盔,phlm,精英,35,105,150,127.5,129,66,3,2/3/3,0,assets/equipment/fanged_helm.webp
+bad,Destroyer Helm,毁灭者头盔,毀滅者頭盔,头盔,phlm,精英,45,111,156,133.5,151,73,3,2/3/3,0,assets/equipment/horned_helm.webp
+bae,Conqueror Crown,征服者盔冠,征服者盔冠,头盔,phlm,精英,50,114,159,136.5,174,80,3,2/3/3,0,assets/equipment/assault_helmet.webp
+baf,Guardian Crown,守护者盔冠,守護者盔冠,头盔,phlm,精英,55,117,168,142.5,196,85,3,2/3/3,0,assets/equipment/avenger_guard.webp
+pab,Sacred Targe,神圣小盾,神聖小盾,盾牌,ashd,精英,45,126,158,142.0,86,63,4,3/4/4,0,assets/equipment/targe.webp
+pac,Sacred Rondache,神圣轻圆盾,神聖輕圓盾,盾牌,ashd,精英,68,138,164,151.0,109,70,4,3/4/4,0,assets/equipment/rondache.webp
+pad,Ancient Shield,库拉斯特盾,庫拉斯特盾,盾牌,ashd,精英,55,154,172,163.0,124,74,4,3/4/4,0,assets/equipment/heraldic_shield.webp
+pae,Zakarum Shield,撒卡兰姆盾,撒卡蘭姆盾,盾牌,ashd,精英,65,169,193,181.0,142,82,4,3/4/4,0,assets/equipment/aerin_shield.webp
+paf,Vortex Shield,涡旋盾,渦旋盾,盾牌,ashd,精英,90,182,225,203.5,148,85,4,3/4/4,0,assets/equipment/crown_shield.webp
+neb,Minion Skull,仆从颅骨,僕從顱骨,盾牌,head,精英,20,95,139,117.0,77,59,2,2/2/2,0,assets/equipment/preserved_head.webp
+neg,Hellspawn Skull,地狱爪牙颅骨,地獄爪牙顱骨,盾牌,head,精英,20,96,141,118.5,82,67,2,2/2/2,0,assets/equipment/zombie_head.webp
+ned,Overseer Skull,督军颅骨,督軍顱骨,盾牌,head,精英,20,98,142,120.0,91,66,2,2/2/2,0,assets/equipment/unraveller_head.webp
+nee,Succubus Skull,魅魔颅骨,魅魔顱骨,盾牌,head,精英,20,100,146,123.0,95,81,2,2/2/2,0,assets/equipment/gargoyle_head.webp
+nef,Bloodlord Skull,鲜血之王颅骨,鮮血之王顱骨,盾牌,head,精英,20,103,148,125.5,106,85,2,2/2/2,0,assets/equipment/demon_head.webp
+wa1,Old Book,旧书,舊書,盾牌,grim,普通,20,2,5,3.5,12,4,2,2/2/2,0,assets/equipment/oldbook.webp
+wa2,Tome,秘典,秘典,盾牌,grim,普通,20,4,8,6.0,14,8,2,2/2/2,0,assets/equipment/tome_book.webp
+wa3,Codex,宝典,寶典,盾牌,grim,普通,20,6,10,8.0,18,16,2,2/2/2,0,assets/equipment/codex.webp
+wa4,Compendium,纲要,綱要,盾牌,grim,普通,20,10,16,13.0,20,20,2,2/2/2,0,assets/equipment/compendium.webp
+wa5,Grimoire,魔典,魔典,盾牌,grim,普通,20,15,20,17.5,25,24,2,2/2/2,0,assets/equipment/grimoire.webp
+wa6,Burnt Text,焦灼书册,焦灼書冊,盾牌,grim,扩展,20,38,48,43.0,38,33,2,2/2/2,0,assets/equipment/oldbook.webp
+wa7,Dark Tome,黑暗秘典,黑暗秘典,盾牌,grim,扩展,20,41,52,46.5,41,39,2,2/2/2,0,assets/equipment/tome_book.webp
+wa8,Dark Codex,黑暗宝典,黑暗寶典,盾牌,grim,扩展,20,44,55,49.5,47,45,2,2/2/2,0,assets/equipment/codex.webp
+wa9,Possessed Compendium,著魔纲要,著魔綱要,盾牌,grim,扩展,20,50,64,57.0,50,49,2,2/2/2,0,assets/equipment/compendium.webp
+waa,Possessed Grimoire,著魔魔典,著魔魔典,盾牌,grim,扩展,20,58,70,64.0,58,54,2,2/2/2,0,assets/equipment/grimoire.webp
+wab,Forgotten Volume,被遗忘的书册,被遺忘的書冊,盾牌,grim,精英,20,95,139,117.0,77,59,2,2/2/2,0,assets/equipment/oldbook.webp
+wac,Occult Tome,神秘秘典,神秘秘典,盾牌,grim,精英,20,96,141,118.5,82,67,2,2/2/2,0,assets/equipment/tome_book.webp
+wad,Occult Codex,神秘宝典,神秘寶典,盾牌,grim,精英,20,98,142,120.0,91,66,2,2/2/2,0,assets/equipment/codex.webp
+wae,Blasphemous Compendium,亵渎纲要,褻瀆綱要,盾牌,grim,精英,20,100,146,123.0,95,81,2,2/2/2,0,assets/equipment/compendium.webp
+waf,Blasphemous Grimoire,亵渎魔典,褻瀆魔典,盾牌,grim,精英,20,103,148,125.5,106,85,2,2/2/2,0,assets/equipment/grimoire.webp

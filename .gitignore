@@ -5,6 +5,3 @@
 .DS_Store
 Thumbs.db
 *.log
-
-# 用户上传的参考源（wolai 导出 HTML 等，非站点源码，不纳入版本控制）
-assets/
