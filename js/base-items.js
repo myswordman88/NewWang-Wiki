@@ -12,10 +12,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 3,
   "defense_max": 5,
-  "defense_avg": 4,
+  "defense_avg": 4.0,
   "reqstr": 0,
   "qlvl": 1,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/cap_hat.webp"
  },
  {
   "code": "skp",
@@ -28,10 +31,13 @@ window.BASE_ITEMS = [
   "durability": 18,
   "defense_min": 8,
   "defense_max": 11,
-  "defense_avg": 9,
+  "defense_avg": 9.5,
   "reqstr": 15,
   "qlvl": 5,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/skull_cap.webp"
  },
  {
   "code": "hlm",
@@ -44,10 +50,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 15,
   "defense_max": 18,
-  "defense_avg": 16,
+  "defense_avg": 16.5,
   "reqstr": 26,
   "qlvl": 11,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/helm.webp"
  },
  {
   "code": "fhl",
@@ -60,10 +69,13 @@ window.BASE_ITEMS = [
   "durability": 30,
   "defense_min": 23,
   "defense_max": 26,
-  "defense_avg": 24,
+  "defense_avg": 24.5,
   "reqstr": 41,
   "qlvl": 15,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/full_helm.webp"
  },
  {
   "code": "ghm",
@@ -76,10 +88,13 @@ window.BASE_ITEMS = [
   "durability": 40,
   "defense_min": 30,
   "defense_max": 35,
-  "defense_avg": 32,
+  "defense_avg": 32.5,
   "reqstr": 63,
   "qlvl": 23,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/2/3",
+  "speed": 0,
+  "img": "assets/equipment/great_helm.webp"
  },
  {
   "code": "crn",
@@ -92,10 +107,13 @@ window.BASE_ITEMS = [
   "durability": 50,
   "defense_min": 25,
   "defense_max": 45,
-  "defense_avg": 35,
+  "defense_avg": 35.0,
   "reqstr": 55,
   "qlvl": 29,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/2/3",
+  "speed": 0,
+  "img": "assets/equipment/crown.webp"
  },
  {
   "code": "msk",
@@ -108,10 +126,13 @@ window.BASE_ITEMS = [
   "durability": 20,
   "defense_min": 9,
   "defense_max": 27,
-  "defense_avg": 18,
+  "defense_avg": 18.0,
   "reqstr": 23,
   "qlvl": 19,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/2/3",
+  "speed": 0,
+  "img": "assets/equipment/mask.webp"
  },
  {
   "code": "qui",
@@ -124,10 +145,13 @@ window.BASE_ITEMS = [
   "durability": 20,
   "defense_min": 8,
   "defense_max": 11,
-  "defense_avg": 9,
+  "defense_avg": 9.5,
   "reqstr": 12,
   "qlvl": 1,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/quilted_armor.webp"
  },
  {
   "code": "lea",
@@ -140,10 +164,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 14,
   "defense_max": 17,
-  "defense_avg": 15,
+  "defense_avg": 15.5,
   "reqstr": 15,
   "qlvl": 3,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/leather_armor.webp"
  },
  {
   "code": "hla",
@@ -156,10 +183,13 @@ window.BASE_ITEMS = [
   "durability": 28,
   "defense_min": 21,
   "defense_max": 24,
-  "defense_avg": 22,
+  "defense_avg": 22.5,
   "reqstr": 20,
   "qlvl": 5,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/hard_leather_armor.webp"
  },
  {
   "code": "stu",
@@ -172,10 +202,13 @@ window.BASE_ITEMS = [
   "durability": 32,
   "defense_min": 32,
   "defense_max": 35,
-  "defense_avg": 33,
+  "defense_avg": 33.5,
   "reqstr": 27,
   "qlvl": 8,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/studded_leather.webp"
  },
  {
   "code": "rng",
@@ -188,10 +221,13 @@ window.BASE_ITEMS = [
   "durability": 26,
   "defense_min": 45,
   "defense_max": 48,
-  "defense_avg": 46,
+  "defense_avg": 46.5,
   "reqstr": 36,
   "qlvl": 11,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 5,
+  "img": "assets/equipment/ring_mail.webp"
  },
  {
   "code": "scl",
@@ -204,10 +240,13 @@ window.BASE_ITEMS = [
   "durability": 36,
   "defense_min": 57,
   "defense_max": 60,
-  "defense_avg": 58,
+  "defense_avg": 58.5,
   "reqstr": 44,
   "qlvl": 13,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 10,
+  "img": "assets/equipment/scale_mail.webp"
  },
  {
   "code": "chn",
@@ -220,10 +259,13 @@ window.BASE_ITEMS = [
   "durability": 45,
   "defense_min": 72,
   "defense_max": 75,
-  "defense_avg": 73,
+  "defense_avg": 73.5,
   "reqstr": 48,
   "qlvl": 15,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 5,
+  "img": "assets/equipment/chain_mail.webp"
  },
  {
   "code": "brs",
@@ -236,10 +278,13 @@ window.BASE_ITEMS = [
   "durability": 50,
   "defense_min": 65,
   "defense_max": 68,
-  "defense_avg": 66,
+  "defense_avg": 66.5,
   "reqstr": 30,
   "qlvl": 18,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 0,
+  "img": "assets/equipment/breast_plate.webp"
  },
  {
   "code": "spl",
@@ -252,10 +297,13 @@ window.BASE_ITEMS = [
   "durability": 30,
   "defense_min": 90,
   "defense_max": 95,
-  "defense_avg": 92,
+  "defense_avg": 92.5,
   "reqstr": 51,
   "qlvl": 20,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 5,
+  "img": "assets/equipment/splint_mail.webp"
  },
  {
   "code": "plt",
@@ -268,10 +316,13 @@ window.BASE_ITEMS = [
   "durability": 60,
   "defense_min": 108,
   "defense_max": 116,
-  "defense_avg": 112,
+  "defense_avg": 112.0,
   "reqstr": 65,
   "qlvl": 24,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 10,
+  "img": "assets/equipment/plate_mail.webp"
  },
  {
   "code": "fld",
@@ -284,10 +335,13 @@ window.BASE_ITEMS = [
   "durability": 48,
   "defense_min": 101,
   "defense_max": 105,
-  "defense_avg": 103,
+  "defense_avg": 103.0,
   "reqstr": 55,
   "qlvl": 28,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 5,
+  "img": "assets/equipment/field_plate.webp"
  },
  {
   "code": "gth",
@@ -300,10 +354,13 @@ window.BASE_ITEMS = [
   "durability": 55,
   "defense_min": 128,
   "defense_max": 135,
-  "defense_avg": 131,
+  "defense_avg": 131.5,
   "reqstr": 70,
   "qlvl": 32,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 5,
+  "img": "assets/equipment/gothic_plate.webp"
  },
  {
   "code": "ful",
@@ -316,10 +373,13 @@ window.BASE_ITEMS = [
   "durability": 70,
   "defense_min": 150,
   "defense_max": 161,
-  "defense_avg": 155,
+  "defense_avg": 155.5,
   "reqstr": 80,
   "qlvl": 37,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 10,
+  "img": "assets/equipment/full_plate_mail.webp"
  },
  {
   "code": "aar",
@@ -332,10 +392,13 @@ window.BASE_ITEMS = [
   "durability": 60,
   "defense_min": 218,
   "defense_max": 233,
-  "defense_avg": 225,
+  "defense_avg": 225.5,
   "reqstr": 100,
   "qlvl": 40,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 5,
+  "img": "assets/equipment/ancient_armor.webp"
  },
  {
   "code": "ltp",
@@ -348,10 +411,13 @@ window.BASE_ITEMS = [
   "durability": 60,
   "defense_min": 90,
   "defense_max": 107,
-  "defense_avg": 98,
+  "defense_avg": 98.5,
   "reqstr": 41,
   "qlvl": 35,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 0,
+  "img": "assets/equipment/light_plate.webp"
  },
  {
   "code": "buc",
@@ -364,10 +430,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 4,
   "defense_max": 6,
-  "defense_avg": 5,
+  "defense_avg": 5.0,
   "reqstr": 12,
   "qlvl": 1,
-  "max_sockets": 1
+  "max_sockets": 1,
+  "sockets3": "1/1/1",
+  "speed": 0,
+  "img": "assets/equipment/buckler.webp"
  },
  {
   "code": "sml",
@@ -380,10 +449,13 @@ window.BASE_ITEMS = [
   "durability": 16,
   "defense_min": 8,
   "defense_max": 10,
-  "defense_avg": 9,
+  "defense_avg": 9.0,
   "reqstr": 22,
   "qlvl": 5,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/small_shield.webp"
  },
  {
   "code": "lrg",
@@ -396,10 +468,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 12,
   "defense_max": 14,
-  "defense_avg": 13,
+  "defense_avg": 13.0,
   "reqstr": 34,
   "qlvl": 11,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 5,
+  "img": "assets/equipment/large_shield.webp"
  },
  {
   "code": "kit",
@@ -412,10 +487,13 @@ window.BASE_ITEMS = [
   "durability": 30,
   "defense_min": 16,
   "defense_max": 18,
-  "defense_avg": 17,
+  "defense_avg": 17.0,
   "reqstr": 47,
   "qlvl": 15,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 0,
+  "img": "assets/equipment/kite_shield.webp"
  },
  {
   "code": "tow",
@@ -428,10 +506,13 @@ window.BASE_ITEMS = [
   "durability": 60,
   "defense_min": 22,
   "defense_max": 25,
-  "defense_avg": 23,
+  "defense_avg": 23.5,
   "reqstr": 75,
   "qlvl": 22,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 10,
+  "img": "assets/equipment/tower_shield.webp"
  },
  {
   "code": "gts",
@@ -444,10 +525,13 @@ window.BASE_ITEMS = [
   "durability": 40,
   "defense_min": 30,
   "defense_max": 35,
-  "defense_avg": 32,
+  "defense_avg": 32.5,
   "reqstr": 60,
   "qlvl": 30,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 5,
+  "img": "assets/equipment/gothic_shield.webp"
  },
  {
   "code": "lgl",
@@ -460,10 +544,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 2,
   "defense_max": 3,
-  "defense_avg": 2,
+  "defense_avg": 2.5,
   "reqstr": 0,
   "qlvl": 3,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/gloves_l.webp"
  },
  {
   "code": "vgl",
@@ -476,10 +563,13 @@ window.BASE_ITEMS = [
   "durability": 14,
   "defense_min": 5,
   "defense_max": 6,
-  "defense_avg": 5,
+  "defense_avg": 5.5,
   "reqstr": 0,
   "qlvl": 7,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/heavy_gloves.webp"
  },
  {
   "code": "mgl",
@@ -492,10 +582,13 @@ window.BASE_ITEMS = [
   "durability": 16,
   "defense_min": 8,
   "defense_max": 9,
-  "defense_avg": 8,
+  "defense_avg": 8.5,
   "reqstr": 25,
   "qlvl": 12,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/bracers_m.webp"
  },
  {
   "code": "tgl",
@@ -508,10 +601,13 @@ window.BASE_ITEMS = [
   "durability": 18,
   "defense_min": 9,
   "defense_max": 11,
-  "defense_avg": 10,
+  "defense_avg": 10.0,
   "reqstr": 45,
   "qlvl": 20,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/light_gauntlets.webp"
  },
  {
   "code": "hgl",
@@ -524,10 +620,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 12,
   "defense_max": 15,
-  "defense_avg": 13,
+  "defense_avg": 13.5,
   "reqstr": 60,
   "qlvl": 27,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/gaunlets_h.webp"
  },
  {
   "code": "lbt",
@@ -540,10 +639,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 2,
   "defense_max": 3,
-  "defense_avg": 2,
+  "defense_avg": 2.5,
   "reqstr": 0,
   "qlvl": 3,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/leather_boots.webp"
  },
  {
   "code": "vbt",
@@ -556,10 +658,13 @@ window.BASE_ITEMS = [
   "durability": 14,
   "defense_min": 5,
   "defense_max": 6,
-  "defense_avg": 5,
+  "defense_avg": 5.5,
   "reqstr": 18,
   "qlvl": 7,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/heavy_boots.webp"
  },
  {
   "code": "mbt",
@@ -572,10 +677,13 @@ window.BASE_ITEMS = [
   "durability": 16,
   "defense_min": 8,
   "defense_max": 9,
-  "defense_avg": 8,
+  "defense_avg": 8.5,
   "reqstr": 30,
   "qlvl": 12,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/chain_boots.webp"
  },
  {
   "code": "tbt",
@@ -588,10 +696,13 @@ window.BASE_ITEMS = [
   "durability": 18,
   "defense_min": 9,
   "defense_max": 11,
-  "defense_avg": 10,
+  "defense_avg": 10.0,
   "reqstr": 50,
   "qlvl": 20,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/light_plate_boots.webp"
  },
  {
   "code": "hbt",
@@ -604,10 +715,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 12,
   "defense_max": 15,
-  "defense_avg": 13,
+  "defense_avg": 13.5,
   "reqstr": 70,
   "qlvl": 27,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/plate_boots.webp"
  },
  {
   "code": "lbl",
@@ -620,10 +734,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 2,
   "defense_max": 2,
-  "defense_avg": 2,
+  "defense_avg": 2.0,
   "reqstr": 0,
   "qlvl": 3,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/sash_l.webp"
  },
  {
   "code": "vbl",
@@ -636,10 +753,13 @@ window.BASE_ITEMS = [
   "durability": 14,
   "defense_min": 3,
   "defense_max": 3,
-  "defense_avg": 3,
+  "defense_avg": 3.0,
   "reqstr": 0,
   "qlvl": 7,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/light_belt.webp"
  },
  {
   "code": "mbl",
@@ -652,10 +772,13 @@ window.BASE_ITEMS = [
   "durability": 16,
   "defense_min": 5,
   "defense_max": 5,
-  "defense_avg": 5,
+  "defense_avg": 5.0,
   "reqstr": 25,
   "qlvl": 12,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/belt_m.webp"
  },
  {
   "code": "tbl",
@@ -668,10 +791,13 @@ window.BASE_ITEMS = [
   "durability": 18,
   "defense_min": 6,
   "defense_max": 6,
-  "defense_avg": 6,
+  "defense_avg": 6.0,
   "reqstr": 45,
   "qlvl": 20,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/heavy_belt.webp"
  },
  {
   "code": "hbl",
@@ -684,10 +810,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 8,
   "defense_max": 11,
-  "defense_avg": 9,
+  "defense_avg": 9.5,
   "reqstr": 60,
   "qlvl": 27,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/girdle_h.webp"
  },
  {
   "code": "bhm",
@@ -700,10 +829,13 @@ window.BASE_ITEMS = [
   "durability": 40,
   "defense_min": 33,
   "defense_max": 36,
-  "defense_avg": 34,
+  "defense_avg": 34.5,
   "reqstr": 25,
   "qlvl": 22,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/bone_helm.webp"
  },
  {
   "code": "bsh",
@@ -716,10 +848,13 @@ window.BASE_ITEMS = [
   "durability": 40,
   "defense_min": 10,
   "defense_max": 30,
-  "defense_avg": 20,
+  "defense_avg": 20.0,
   "reqstr": 25,
   "qlvl": 19,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/bone_shield.webp"
  },
  {
   "code": "spk",
@@ -732,10 +867,13 @@ window.BASE_ITEMS = [
   "durability": 40,
   "defense_min": 15,
   "defense_max": 25,
-  "defense_avg": 20,
+  "defense_avg": 20.0,
   "reqstr": 30,
   "qlvl": 11,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/spiked_shield.webp"
  },
  {
   "code": "xap",
@@ -748,10 +886,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 45,
   "defense_max": 53,
-  "defense_avg": 49,
+  "defense_avg": 49.0,
   "reqstr": 20,
   "qlvl": 34,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/cap_hat.webp"
  },
  {
   "code": "xkp",
@@ -764,10 +905,13 @@ window.BASE_ITEMS = [
   "durability": 18,
   "defense_min": 52,
   "defense_max": 62,
-  "defense_avg": 57,
+  "defense_avg": 57.0,
   "reqstr": 43,
   "qlvl": 37,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/skull_cap.webp"
  },
  {
   "code": "xlm",
@@ -780,10 +924,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 63,
   "defense_max": 72,
-  "defense_avg": 67,
+  "defense_avg": 67.5,
   "reqstr": 59,
   "qlvl": 42,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/helm.webp"
  },
  {
   "code": "xhl",
@@ -796,10 +943,13 @@ window.BASE_ITEMS = [
   "durability": 30,
   "defense_min": 75,
   "defense_max": 84,
-  "defense_avg": 79,
+  "defense_avg": 79.5,
   "reqstr": 82,
   "qlvl": 45,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/full_helm.webp"
  },
  {
   "code": "xhm",
@@ -812,10 +962,13 @@ window.BASE_ITEMS = [
   "durability": 40,
   "defense_min": 85,
   "defense_max": 98,
-  "defense_avg": 91,
+  "defense_avg": 91.5,
   "reqstr": 115,
   "qlvl": 51,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/2/3",
+  "speed": 0,
+  "img": "assets/equipment/great_helm.webp"
  },
  {
   "code": "xrn",
@@ -828,10 +981,13 @@ window.BASE_ITEMS = [
   "durability": 50,
   "defense_min": 78,
   "defense_max": 113,
-  "defense_avg": 95,
+  "defense_avg": 95.5,
   "reqstr": 103,
   "qlvl": 55,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/2/3",
+  "speed": 0,
+  "img": "assets/equipment/crown.webp"
  },
  {
   "code": "xsk",
@@ -844,10 +1000,13 @@ window.BASE_ITEMS = [
   "durability": 20,
   "defense_min": 54,
   "defense_max": 86,
-  "defense_avg": 70,
+  "defense_avg": 70.0,
   "reqstr": 55,
   "qlvl": 48,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/2/3",
+  "speed": 0,
+  "img": "assets/equipment/mask.webp"
  },
  {
   "code": "xui",
@@ -860,10 +1019,13 @@ window.BASE_ITEMS = [
   "durability": 20,
   "defense_min": 102,
   "defense_max": 117,
-  "defense_avg": 109,
+  "defense_avg": 109.5,
   "reqstr": 38,
   "qlvl": 34,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/quilted_armor.webp"
  },
  {
   "code": "xea",
@@ -876,10 +1038,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 111,
   "defense_max": 126,
-  "defense_avg": 118,
+  "defense_avg": 118.5,
   "reqstr": 43,
   "qlvl": 36,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/leather_armor.webp"
  },
  {
   "code": "xla",
@@ -892,10 +1057,13 @@ window.BASE_ITEMS = [
   "durability": 28,
   "defense_min": 122,
   "defense_max": 136,
-  "defense_avg": 129,
+  "defense_avg": 129.0,
   "reqstr": 50,
   "qlvl": 37,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/hard_leather_armor.webp"
  },
  {
   "code": "xtu",
@@ -908,10 +1076,13 @@ window.BASE_ITEMS = [
   "durability": 32,
   "defense_min": 138,
   "defense_max": 153,
-  "defense_avg": 145,
+  "defense_avg": 145.5,
   "reqstr": 61,
   "qlvl": 40,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/studded_leather.webp"
  },
  {
   "code": "xng",
@@ -924,10 +1095,13 @@ window.BASE_ITEMS = [
   "durability": 26,
   "defense_min": 158,
   "defense_max": 172,
-  "defense_avg": 165,
+  "defense_avg": 165.0,
   "reqstr": 74,
   "qlvl": 42,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 5,
+  "img": "assets/equipment/ring_mail.webp"
  },
  {
   "code": "xcl",
@@ -940,10 +1114,13 @@ window.BASE_ITEMS = [
   "durability": 36,
   "defense_min": 176,
   "defense_max": 190,
-  "defense_avg": 183,
+  "defense_avg": 183.0,
   "reqstr": 86,
   "qlvl": 43,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 10,
+  "img": "assets/equipment/scale_mail.webp"
  },
  {
   "code": "xhn",
@@ -956,10 +1133,13 @@ window.BASE_ITEMS = [
   "durability": 45,
   "defense_min": 198,
   "defense_max": 213,
-  "defense_avg": 205,
+  "defense_avg": 205.5,
   "reqstr": 92,
   "qlvl": 45,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 5,
+  "img": "assets/equipment/chain_mail.webp"
  },
  {
   "code": "xrs",
@@ -972,10 +1152,13 @@ window.BASE_ITEMS = [
   "durability": 50,
   "defense_min": 188,
   "defense_max": 202,
-  "defense_avg": 195,
+  "defense_avg": 195.0,
   "reqstr": 65,
   "qlvl": 47,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 0,
+  "img": "assets/equipment/breast_plate.webp"
  },
  {
   "code": "xpl",
@@ -988,10 +1171,13 @@ window.BASE_ITEMS = [
   "durability": 30,
   "defense_min": 225,
   "defense_max": 243,
-  "defense_avg": 234,
+  "defense_avg": 234.0,
   "reqstr": 97,
   "qlvl": 49,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 5,
+  "img": "assets/equipment/splint_mail.webp"
  },
  {
   "code": "xlt",
@@ -1004,10 +1190,13 @@ window.BASE_ITEMS = [
   "durability": 60,
   "defense_min": 252,
   "defense_max": 274,
-  "defense_avg": 263,
+  "defense_avg": 263.0,
   "reqstr": 118,
   "qlvl": 52,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 10,
+  "img": "assets/equipment/plate_mail.webp"
  },
  {
   "code": "xld",
@@ -1020,10 +1209,13 @@ window.BASE_ITEMS = [
   "durability": 48,
   "defense_min": 242,
   "defense_max": 258,
-  "defense_avg": 250,
+  "defense_avg": 250.0,
   "reqstr": 103,
   "qlvl": 55,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 5,
+  "img": "assets/equipment/field_plate.webp"
  },
  {
   "code": "xth",
@@ -1036,10 +1228,13 @@ window.BASE_ITEMS = [
   "durability": 55,
   "defense_min": 282,
   "defense_max": 303,
-  "defense_avg": 292,
+  "defense_avg": 292.5,
   "reqstr": 125,
   "qlvl": 58,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 5,
+  "img": "assets/equipment/gothic_plate.webp"
  },
  {
   "code": "xul",
@@ -1052,10 +1247,13 @@ window.BASE_ITEMS = [
   "durability": 70,
   "defense_min": 315,
   "defense_max": 342,
-  "defense_avg": 328,
+  "defense_avg": 328.5,
   "reqstr": 140,
   "qlvl": 61,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 10,
+  "img": "assets/equipment/full_plate_mail.webp"
  },
  {
   "code": "xar",
@@ -1068,10 +1266,13 @@ window.BASE_ITEMS = [
   "durability": 60,
   "defense_min": 417,
   "defense_max": 450,
-  "defense_avg": 433,
+  "defense_avg": 433.5,
   "reqstr": 170,
   "qlvl": 64,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 5,
+  "img": "assets/equipment/ancient_armor.webp"
  },
  {
   "code": "xtp",
@@ -1084,10 +1285,13 @@ window.BASE_ITEMS = [
   "durability": 60,
   "defense_min": 225,
   "defense_max": 261,
-  "defense_avg": 243,
+  "defense_avg": 243.0,
   "reqstr": 55,
   "qlvl": 60,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 0,
+  "img": "assets/equipment/light_plate.webp"
  },
  {
   "code": "xuc",
@@ -1100,10 +1304,13 @@ window.BASE_ITEMS = [
   "durability": 68,
   "defense_min": 41,
   "defense_max": 49,
-  "defense_avg": 45,
+  "defense_avg": 45.0,
   "reqstr": 38,
   "qlvl": 34,
-  "max_sockets": 1
+  "max_sockets": 1,
+  "sockets3": "1/1/1",
+  "speed": 0,
+  "img": "assets/equipment/buckler.webp"
  },
  {
   "code": "xml",
@@ -1116,10 +1323,13 @@ window.BASE_ITEMS = [
   "durability": 64,
   "defense_min": 47,
   "defense_max": 55,
-  "defense_avg": 51,
+  "defense_avg": 51.0,
   "reqstr": 53,
   "qlvl": 37,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/small_shield.webp"
  },
  {
   "code": "xrg",
@@ -1132,10 +1342,13 @@ window.BASE_ITEMS = [
   "durability": 62,
   "defense_min": 53,
   "defense_max": 61,
-  "defense_avg": 57,
+  "defense_avg": 57.0,
   "reqstr": 71,
   "qlvl": 42,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 5,
+  "img": "assets/equipment/large_shield.webp"
  },
  {
   "code": "xit",
@@ -1148,10 +1361,13 @@ window.BASE_ITEMS = [
   "durability": 76,
   "defense_min": 59,
   "defense_max": 67,
-  "defense_avg": 63,
+  "defense_avg": 63.0,
   "reqstr": 91,
   "qlvl": 45,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 0,
+  "img": "assets/equipment/kite_shield.webp"
  },
  {
   "code": "xow",
@@ -1164,10 +1380,13 @@ window.BASE_ITEMS = [
   "durability": 72,
   "defense_min": 68,
   "defense_max": 78,
-  "defense_avg": 73,
+  "defense_avg": 73.0,
   "reqstr": 133,
   "qlvl": 50,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 10,
+  "img": "assets/equipment/tower_shield.webp"
  },
  {
   "code": "xts",
@@ -1180,10 +1399,13 @@ window.BASE_ITEMS = [
   "durability": 80,
   "defense_min": 80,
   "defense_max": 93,
-  "defense_avg": 86,
+  "defense_avg": 86.5,
   "reqstr": 110,
   "qlvl": 56,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 5,
+  "img": "assets/equipment/gothic_shield.webp"
  },
  {
   "code": "xlg",
@@ -1196,10 +1418,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 28,
   "defense_max": 35,
-  "defense_avg": 31,
+  "defense_avg": 31.5,
   "reqstr": 20,
   "qlvl": 33,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/gloves_l.webp"
  },
  {
   "code": "xvg",
@@ -1212,10 +1437,13 @@ window.BASE_ITEMS = [
   "durability": 14,
   "defense_min": 33,
   "defense_max": 39,
-  "defense_avg": 36,
+  "defense_avg": 36.0,
   "reqstr": 20,
   "qlvl": 39,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/heavy_gloves.webp"
  },
  {
   "code": "xmg",
@@ -1228,10 +1456,13 @@ window.BASE_ITEMS = [
   "durability": 16,
   "defense_min": 37,
   "defense_max": 44,
-  "defense_avg": 40,
+  "defense_avg": 40.5,
   "reqstr": 58,
   "qlvl": 43,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/bracers_m.webp"
  },
  {
   "code": "xtg",
@@ -1244,10 +1475,13 @@ window.BASE_ITEMS = [
   "durability": 18,
   "defense_min": 39,
   "defense_max": 47,
-  "defense_avg": 43,
+  "defense_avg": 43.0,
   "reqstr": 88,
   "qlvl": 49,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/light_gauntlets.webp"
  },
  {
   "code": "xhg",
@@ -1260,10 +1494,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 43,
   "defense_max": 53,
-  "defense_avg": 48,
+  "defense_avg": 48.0,
   "reqstr": 110,
   "qlvl": 54,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/gaunlets_h.webp"
  },
  {
   "code": "xlb",
@@ -1276,10 +1513,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 28,
   "defense_max": 35,
-  "defense_avg": 31,
+  "defense_avg": 31.5,
   "reqstr": 20,
   "qlvl": 36,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/leather_boots.webp"
  },
  {
   "code": "xvb",
@@ -1292,10 +1532,13 @@ window.BASE_ITEMS = [
   "durability": 14,
   "defense_min": 33,
   "defense_max": 39,
-  "defense_avg": 36,
+  "defense_avg": 36.0,
   "reqstr": 47,
   "qlvl": 39,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/heavy_boots.webp"
  },
  {
   "code": "xmb",
@@ -1308,10 +1551,13 @@ window.BASE_ITEMS = [
   "durability": 16,
   "defense_min": 37,
   "defense_max": 44,
-  "defense_avg": 40,
+  "defense_avg": 40.5,
   "reqstr": 65,
   "qlvl": 43,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/chain_boots.webp"
  },
  {
   "code": "xtb",
@@ -1324,10 +1570,13 @@ window.BASE_ITEMS = [
   "durability": 18,
   "defense_min": 39,
   "defense_max": 47,
-  "defense_avg": 43,
+  "defense_avg": 43.0,
   "reqstr": 95,
   "qlvl": 49,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/light_plate_boots.webp"
  },
  {
   "code": "xhb",
@@ -1340,10 +1589,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 43,
   "defense_max": 53,
-  "defense_avg": 48,
+  "defense_avg": 48.0,
   "reqstr": 125,
   "qlvl": 54,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/plate_boots.webp"
  },
  {
   "code": "zlb",
@@ -1356,10 +1608,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 29,
   "defense_max": 34,
-  "defense_avg": 31,
+  "defense_avg": 31.5,
   "reqstr": 20,
   "qlvl": 36,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/sash_l.webp"
  },
  {
   "code": "zvb",
@@ -1372,10 +1627,13 @@ window.BASE_ITEMS = [
   "durability": 14,
   "defense_min": 31,
   "defense_max": 36,
-  "defense_avg": 33,
+  "defense_avg": 33.5,
   "reqstr": 20,
   "qlvl": 39,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/light_belt.webp"
  },
  {
   "code": "zmb",
@@ -1388,10 +1646,13 @@ window.BASE_ITEMS = [
   "durability": 16,
   "defense_min": 35,
   "defense_max": 40,
-  "defense_avg": 37,
+  "defense_avg": 37.5,
   "reqstr": 58,
   "qlvl": 43,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/belt_m.webp"
  },
  {
   "code": "ztb",
@@ -1404,10 +1665,13 @@ window.BASE_ITEMS = [
   "durability": 18,
   "defense_min": 37,
   "defense_max": 42,
-  "defense_avg": 39,
+  "defense_avg": 39.5,
   "reqstr": 88,
   "qlvl": 49,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/heavy_belt.webp"
  },
  {
   "code": "zhb",
@@ -1420,10 +1684,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 41,
   "defense_max": 52,
-  "defense_avg": 46,
+  "defense_avg": 46.5,
   "reqstr": 110,
   "qlvl": 54,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/girdle_h.webp"
  },
  {
   "code": "xh9",
@@ -1436,10 +1703,13 @@ window.BASE_ITEMS = [
   "durability": 40,
   "defense_min": 60,
   "defense_max": 125,
-  "defense_avg": 92,
+  "defense_avg": 92.5,
   "reqstr": 58,
   "qlvl": 50,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/bone_helm.webp"
  },
  {
   "code": "xsh",
@@ -1452,10 +1722,13 @@ window.BASE_ITEMS = [
   "durability": 70,
   "defense_min": 50,
   "defense_max": 150,
-  "defense_avg": 100,
+  "defense_avg": 100.0,
   "reqstr": 58,
   "qlvl": 48,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/bone_shield.webp"
  },
  {
   "code": "xpk",
@@ -1468,90 +1741,108 @@ window.BASE_ITEMS = [
   "durability": 55,
   "defense_min": 58,
   "defense_max": 78,
-  "defense_avg": 68,
+  "defense_avg": 68.0,
   "reqstr": 65,
   "qlvl": 42,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/spiked_shield.webp"
  },
  {
   "code": "dr1",
   "name_en": "Wolf Head",
   "name_zh": "狼头兽帽",
   "name_zh_tw": "狼頭獸帽",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "普通",
   "durability": 20,
   "defense_min": 8,
   "defense_max": 11,
-  "defense_avg": 9,
+  "defense_avg": 9.5,
   "reqstr": 16,
   "qlvl": 4,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/wolf_head.webp"
  },
  {
   "code": "dr2",
   "name_en": "Hawk Helm",
   "name_zh": "飞鹰头盔",
   "name_zh_tw": "飛鷹頭盔",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "普通",
   "durability": 20,
   "defense_min": 4,
   "defense_max": 15,
-  "defense_avg": 9,
+  "defense_avg": 9.5,
   "reqstr": 20,
   "qlvl": 8,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/hawk_helm.webp"
  },
  {
   "code": "dr3",
   "name_en": "Antlers",
   "name_zh": "巨角兽帽",
   "name_zh_tw": "巨角獸帽",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "普通",
   "durability": 20,
   "defense_min": 18,
   "defense_max": 24,
-  "defense_avg": 21,
+  "defense_avg": 21.0,
   "reqstr": 24,
   "qlvl": 16,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/antlers.webp"
  },
  {
   "code": "dr4",
   "name_en": "Falcon Mask",
   "name_zh": "猎鹰面具",
   "name_zh_tw": "獵鷹面具",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "普通",
   "durability": 20,
   "defense_min": 12,
   "defense_max": 28,
-  "defense_avg": 20,
+  "defense_avg": 20.0,
   "reqstr": 28,
   "qlvl": 20,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/falcon_mask.webp"
  },
  {
   "code": "dr5",
   "name_en": "Spirit Mask",
   "name_zh": "灵狼面具",
   "name_zh_tw": "靈狼面具",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "普通",
   "durability": 20,
   "defense_min": 22,
   "defense_max": 35,
-  "defense_avg": 28,
+  "defense_avg": 28.5,
   "reqstr": 30,
   "qlvl": 24,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/spirit_mask.webp"
  },
  {
   "code": "ba1",
@@ -1564,10 +1855,13 @@ window.BASE_ITEMS = [
   "durability": 25,
   "defense_min": 10,
   "defense_max": 15,
-  "defense_avg": 12,
+  "defense_avg": 12.5,
   "reqstr": 25,
   "qlvl": 4,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/jawbone_cap.webp"
  },
  {
   "code": "ba2",
@@ -1580,10 +1874,13 @@ window.BASE_ITEMS = [
   "durability": 35,
   "defense_min": 15,
   "defense_max": 20,
-  "defense_avg": 17,
+  "defense_avg": 17.5,
   "reqstr": 35,
   "qlvl": 8,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/fanged_helm.webp"
  },
  {
   "code": "ba3",
@@ -1596,10 +1893,13 @@ window.BASE_ITEMS = [
   "durability": 45,
   "defense_min": 25,
   "defense_max": 30,
-  "defense_avg": 27,
+  "defense_avg": 27.5,
   "reqstr": 45,
   "qlvl": 16,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/horned_helm.webp"
  },
  {
   "code": "ba4",
@@ -1612,10 +1912,13 @@ window.BASE_ITEMS = [
   "durability": 50,
   "defense_min": 30,
   "defense_max": 35,
-  "defense_avg": 32,
+  "defense_avg": 32.5,
   "reqstr": 55,
   "qlvl": 20,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/assault_helmet.webp"
  },
  {
   "code": "ba5",
@@ -1628,10 +1931,13 @@ window.BASE_ITEMS = [
   "durability": 55,
   "defense_min": 35,
   "defense_max": 50,
-  "defense_avg": 42,
+  "defense_avg": 42.5,
   "reqstr": 65,
   "qlvl": 24,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/avenger_guard.webp"
  },
  {
   "code": "pa1",
@@ -1644,10 +1950,13 @@ window.BASE_ITEMS = [
   "durability": 20,
   "defense_min": 8,
   "defense_max": 12,
-  "defense_avg": 10,
+  "defense_avg": 10.0,
   "reqstr": 16,
   "qlvl": 4,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/targe.webp"
  },
  {
   "code": "pa2",
@@ -1660,10 +1969,13 @@ window.BASE_ITEMS = [
   "durability": 30,
   "defense_min": 10,
   "defense_max": 18,
-  "defense_avg": 14,
+  "defense_avg": 14.0,
   "reqstr": 26,
   "qlvl": 8,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/rondache.webp"
  },
  {
   "code": "pa3",
@@ -1676,10 +1988,13 @@ window.BASE_ITEMS = [
   "durability": 40,
   "defense_min": 16,
   "defense_max": 26,
-  "defense_avg": 21,
+  "defense_avg": 21.0,
   "reqstr": 40,
   "qlvl": 16,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/heraldic_shield.webp"
  },
  {
   "code": "pa4",
@@ -1692,10 +2007,13 @@ window.BASE_ITEMS = [
   "durability": 50,
   "defense_min": 26,
   "defense_max": 36,
-  "defense_avg": 31,
+  "defense_avg": 31.0,
   "reqstr": 50,
   "qlvl": 20,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/aerin_shield.webp"
  },
  {
   "code": "pa5",
@@ -1708,90 +2026,108 @@ window.BASE_ITEMS = [
   "durability": 60,
   "defense_min": 30,
   "defense_max": 40,
-  "defense_avg": 35,
+  "defense_avg": 35.0,
   "reqstr": 65,
   "qlvl": 24,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/crown_shield.webp"
  },
  {
   "code": "ne1",
   "name_en": "Preserved Head",
   "name_zh": "防腐头颅",
   "name_zh_tw": "防腐頭顱",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "普通",
   "durability": 20,
   "defense_min": 2,
   "defense_max": 5,
-  "defense_avg": 3,
+  "defense_avg": 3.5,
   "reqstr": 12,
   "qlvl": 4,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/preserved_head.webp"
  },
  {
   "code": "ne2",
   "name_en": "Zombie Head",
   "name_zh": "僵尸头颅",
   "name_zh_tw": "殭屍頭顱",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "普通",
   "durability": 20,
   "defense_min": 4,
   "defense_max": 8,
-  "defense_avg": 6,
+  "defense_avg": 6.0,
   "reqstr": 14,
   "qlvl": 8,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/zombie_head.webp"
  },
  {
   "code": "ne3",
   "name_en": "Unraveller Head",
   "name_zh": "解绷者头颅",
   "name_zh_tw": "解繃者頭顱",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "普通",
   "durability": 20,
   "defense_min": 6,
   "defense_max": 10,
-  "defense_avg": 8,
+  "defense_avg": 8.0,
   "reqstr": 18,
   "qlvl": 16,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/unraveller_head.webp"
  },
  {
   "code": "ne4",
   "name_en": "Gargoyle Head",
   "name_zh": "石像鬼头颅",
   "name_zh_tw": "石像鬼頭顱",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "普通",
   "durability": 20,
   "defense_min": 10,
   "defense_max": 16,
-  "defense_avg": 13,
+  "defense_avg": 13.0,
   "reqstr": 20,
   "qlvl": 20,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/gargoyle_head.webp"
  },
  {
   "code": "ne5",
   "name_en": "Demon Head",
   "name_zh": "恶魔头颅",
   "name_zh_tw": "惡魔頭顱",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "普通",
   "durability": 20,
   "defense_min": 15,
   "defense_max": 20,
-  "defense_avg": 17,
+  "defense_avg": 17.5,
   "reqstr": 25,
   "qlvl": 24,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/demon_head.webp"
  },
  {
   "code": "ci0",
@@ -1804,10 +2140,13 @@ window.BASE_ITEMS = [
   "durability": 35,
   "defense_min": 20,
   "defense_max": 30,
-  "defense_avg": 25,
+  "defense_avg": 25.0,
   "reqstr": 0,
   "qlvl": 24,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/2/2",
+  "speed": 0,
+  "img": "assets/equipment/circlet.webp"
  },
  {
   "code": "ci1",
@@ -1820,10 +2159,13 @@ window.BASE_ITEMS = [
   "durability": 30,
   "defense_min": 30,
   "defense_max": 40,
-  "defense_avg": 35,
+  "defense_avg": 35.0,
   "reqstr": 0,
   "qlvl": 52,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/2/2",
+  "speed": 0,
+  "img": "assets/equipment/coronet.webp"
  },
  {
   "code": "ci2",
@@ -1836,10 +2178,13 @@ window.BASE_ITEMS = [
   "durability": 25,
   "defense_min": 40,
   "defense_max": 50,
-  "defense_avg": 45,
+  "defense_avg": 45.0,
   "reqstr": 0,
   "qlvl": 70,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "1/2/3",
+  "speed": 0,
+  "img": "assets/equipment/tiara.webp"
  },
  {
   "code": "ci3",
@@ -1852,10 +2197,13 @@ window.BASE_ITEMS = [
   "durability": 20,
   "defense_min": 50,
   "defense_max": 60,
-  "defense_avg": 55,
+  "defense_avg": 55.0,
   "reqstr": 0,
   "qlvl": 85,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "1/2/3",
+  "speed": 0,
+  "img": "assets/equipment/diadem.webp"
  },
  {
   "code": "uap",
@@ -1868,10 +2216,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 98,
   "defense_max": 141,
-  "defense_avg": 119,
+  "defense_avg": 119.5,
   "reqstr": 50,
   "qlvl": 58,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/cap_hat.webp"
  },
  {
   "code": "ukp",
@@ -1884,10 +2235,13 @@ window.BASE_ITEMS = [
   "durability": 18,
   "defense_min": 101,
   "defense_max": 145,
-  "defense_avg": 123,
+  "defense_avg": 123.0,
   "reqstr": 84,
   "qlvl": 63,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/skull_cap.webp"
  },
  {
   "code": "ulm",
@@ -1900,10 +2254,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 105,
   "defense_max": 149,
-  "defense_avg": 127,
+  "defense_avg": 127.0,
   "reqstr": 109,
   "qlvl": 68,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/helm.webp"
  },
  {
   "code": "uhl",
@@ -1916,10 +2273,13 @@ window.BASE_ITEMS = [
   "durability": 30,
   "defense_min": 110,
   "defense_max": 154,
-  "defense_avg": 132,
+  "defense_avg": 132.0,
   "reqstr": 142,
   "qlvl": 54,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/full_helm.webp"
  },
  {
   "code": "uhm",
@@ -1932,10 +2292,13 @@ window.BASE_ITEMS = [
   "durability": 40,
   "defense_min": 114,
   "defense_max": 159,
-  "defense_avg": 136,
+  "defense_avg": 136.5,
   "reqstr": 192,
   "qlvl": 79,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/2/3",
+  "speed": 0,
+  "img": "assets/equipment/great_helm.webp"
  },
  {
   "code": "urn",
@@ -1948,10 +2311,13 @@ window.BASE_ITEMS = [
   "durability": 50,
   "defense_min": 111,
   "defense_max": 165,
-  "defense_avg": 138,
+  "defense_avg": 138.0,
   "reqstr": 174,
   "qlvl": 85,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/2/3",
+  "speed": 0,
+  "img": "assets/equipment/crown.webp"
  },
  {
   "code": "usk",
@@ -1964,10 +2330,13 @@ window.BASE_ITEMS = [
   "durability": 20,
   "defense_min": 101,
   "defense_max": 154,
-  "defense_avg": 127,
+  "defense_avg": 127.5,
   "reqstr": 102,
   "qlvl": 74,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/2/3",
+  "speed": 0,
+  "img": "assets/equipment/mask.webp"
  },
  {
   "code": "uui",
@@ -1980,10 +2349,13 @@ window.BASE_ITEMS = [
   "durability": 20,
   "defense_min": 361,
   "defense_max": 467,
-  "defense_avg": 414,
+  "defense_avg": 414.0,
   "reqstr": 77,
   "qlvl": 65,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/quilted_armor.webp"
  },
  {
   "code": "uea",
@@ -1996,10 +2368,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 364,
   "defense_max": 470,
-  "defense_avg": 417,
+  "defense_avg": 417.0,
   "reqstr": 84,
   "qlvl": 67,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/leather_armor.webp"
  },
  {
   "code": "ula",
@@ -2012,10 +2387,13 @@ window.BASE_ITEMS = [
   "durability": 28,
   "defense_min": 369,
   "defense_max": 474,
-  "defense_avg": 421,
+  "defense_avg": 421.5,
   "reqstr": 95,
   "qlvl": 68,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/hard_leather_armor.webp"
  },
  {
   "code": "utu",
@@ -2028,10 +2406,13 @@ window.BASE_ITEMS = [
   "durability": 32,
   "defense_min": 375,
   "defense_max": 481,
-  "defense_avg": 428,
+  "defense_avg": 428.0,
   "reqstr": 111,
   "qlvl": 70,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/studded_leather.webp"
  },
  {
   "code": "ung",
@@ -2044,10 +2425,13 @@ window.BASE_ITEMS = [
   "durability": 26,
   "defense_min": 383,
   "defense_max": 489,
-  "defense_avg": 436,
+  "defense_avg": 436.0,
   "reqstr": 131,
   "qlvl": 72,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 5,
+  "img": "assets/equipment/ring_mail.webp"
  },
  {
   "code": "ucl",
@@ -2060,10 +2444,13 @@ window.BASE_ITEMS = [
   "durability": 36,
   "defense_min": 390,
   "defense_max": 496,
-  "defense_avg": 443,
+  "defense_avg": 443.0,
   "reqstr": 149,
   "qlvl": 73,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 10,
+  "img": "assets/equipment/scale_mail.webp"
  },
  {
   "code": "uhn",
@@ -2076,10 +2463,13 @@ window.BASE_ITEMS = [
   "durability": 45,
   "defense_min": 399,
   "defense_max": 505,
-  "defense_avg": 452,
+  "defense_avg": 452.0,
   "reqstr": 158,
   "qlvl": 62,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 5,
+  "img": "assets/equipment/chain_mail.webp"
  },
  {
   "code": "urs",
@@ -2092,10 +2482,13 @@ window.BASE_ITEMS = [
   "durability": 50,
   "defense_min": 395,
   "defense_max": 501,
-  "defense_avg": 448,
+  "defense_avg": 448.0,
   "reqstr": 118,
   "qlvl": 75,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/breast_plate.webp"
  },
  {
   "code": "upl",
@@ -2108,10 +2501,13 @@ window.BASE_ITEMS = [
   "durability": 30,
   "defense_min": 410,
   "defense_max": 517,
-  "defense_avg": 463,
+  "defense_avg": 463.5,
   "reqstr": 165,
   "qlvl": 76,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 5,
+  "img": "assets/equipment/splint_mail.webp"
  },
  {
   "code": "ult",
@@ -2124,10 +2520,13 @@ window.BASE_ITEMS = [
   "durability": 60,
   "defense_min": 421,
   "defense_max": 530,
-  "defense_avg": 475,
+  "defense_avg": 475.5,
   "reqstr": 196,
   "qlvl": 78,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 10,
+  "img": "assets/equipment/plate_mail.webp"
  },
  {
   "code": "uld",
@@ -2140,10 +2539,13 @@ window.BASE_ITEMS = [
   "durability": 48,
   "defense_min": 417,
   "defense_max": 523,
-  "defense_avg": 470,
+  "defense_avg": 470.0,
   "reqstr": 174,
   "qlvl": 81,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 5,
+  "img": "assets/equipment/field_plate.webp"
  },
  {
   "code": "uth",
@@ -2156,10 +2558,13 @@ window.BASE_ITEMS = [
   "durability": 55,
   "defense_min": 433,
   "defense_max": 541,
-  "defense_avg": 487,
+  "defense_avg": 487.0,
   "reqstr": 208,
   "qlvl": 82,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 5,
+  "img": "assets/equipment/gothic_plate.webp"
  },
  {
   "code": "uul",
@@ -2172,10 +2577,13 @@ window.BASE_ITEMS = [
   "durability": 70,
   "defense_min": 446,
   "defense_max": 557,
-  "defense_avg": 501,
+  "defense_avg": 501.5,
   "reqstr": 230,
   "qlvl": 83,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 10,
+  "img": "assets/equipment/full_plate_mail.webp"
  },
  {
   "code": "uar",
@@ -2188,10 +2596,13 @@ window.BASE_ITEMS = [
   "durability": 60,
   "defense_min": 487,
   "defense_max": 600,
-  "defense_avg": 543,
+  "defense_avg": 543.5,
   "reqstr": 232,
   "qlvl": 85,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 5,
+  "img": "assets/equipment/ancient_armor.webp"
  },
  {
   "code": "utp",
@@ -2204,10 +2615,13 @@ window.BASE_ITEMS = [
   "durability": 60,
   "defense_min": 410,
   "defense_max": 524,
-  "defense_avg": 467,
+  "defense_avg": 467.0,
   "reqstr": 103,
   "qlvl": 84,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/light_plate.webp"
  },
  {
   "code": "uuc",
@@ -2220,10 +2634,13 @@ window.BASE_ITEMS = [
   "durability": 88,
   "defense_min": 95,
   "defense_max": 110,
-  "defense_avg": 102,
+  "defense_avg": 102.5,
   "reqstr": 77,
   "qlvl": 58,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/buckler.webp"
  },
  {
   "code": "uml",
@@ -2236,10 +2653,13 @@ window.BASE_ITEMS = [
   "durability": 84,
   "defense_min": 108,
   "defense_max": 123,
-  "defense_avg": 115,
+  "defense_avg": 115.5,
   "reqstr": 100,
   "qlvl": 61,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/small_shield.webp"
  },
  {
   "code": "urg",
@@ -2252,10 +2672,13 @@ window.BASE_ITEMS = [
   "durability": 82,
   "defense_min": 119,
   "defense_max": 135,
-  "defense_avg": 127,
+  "defense_avg": 127.0,
   "reqstr": 127,
   "qlvl": 64,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 5,
+  "img": "assets/equipment/large_shield.webp"
  },
  {
   "code": "uit",
@@ -2268,10 +2691,13 @@ window.BASE_ITEMS = [
   "durability": 86,
   "defense_min": 133,
   "defense_max": 148,
-  "defense_avg": 140,
+  "defense_avg": 140.5,
   "reqstr": 156,
   "qlvl": 72,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/3/4",
+  "speed": 0,
+  "img": "assets/equipment/kite_shield.webp"
  },
  {
   "code": "uow",
@@ -2284,10 +2710,13 @@ window.BASE_ITEMS = [
   "durability": 92,
   "defense_min": 145,
   "defense_max": 161,
-  "defense_avg": 153,
+  "defense_avg": 153.0,
   "reqstr": 219,
   "qlvl": 79,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/3/4",
+  "speed": 10,
+  "img": "assets/equipment/tower_shield.webp"
  },
  {
   "code": "uts",
@@ -2300,10 +2729,13 @@ window.BASE_ITEMS = [
   "durability": 100,
   "defense_min": 153,
   "defense_max": 170,
-  "defense_avg": 161,
+  "defense_avg": 161.5,
   "reqstr": 185,
   "qlvl": 84,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/3/4",
+  "speed": 5,
+  "img": "assets/equipment/gothic_shield.webp"
  },
  {
   "code": "ulg",
@@ -2316,10 +2748,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 54,
   "defense_max": 62,
-  "defense_avg": 58,
+  "defense_avg": 58.0,
   "reqstr": 50,
   "qlvl": 57,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/gloves_l.webp"
  },
  {
   "code": "uvg",
@@ -2332,10 +2767,13 @@ window.BASE_ITEMS = [
   "durability": 14,
   "defense_min": 56,
   "defense_max": 65,
-  "defense_avg": 60,
+  "defense_avg": 60.5,
   "reqstr": 50,
   "qlvl": 63,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/heavy_gloves.webp"
  },
  {
   "code": "umg",
@@ -2348,10 +2786,13 @@ window.BASE_ITEMS = [
   "durability": 16,
   "defense_min": 59,
   "defense_max": 67,
-  "defense_avg": 63,
+  "defense_avg": 63.0,
   "reqstr": 106,
   "qlvl": 69,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/bracers_m.webp"
  },
  {
   "code": "utg",
@@ -2364,10 +2805,13 @@ window.BASE_ITEMS = [
   "durability": 18,
   "defense_min": 59,
   "defense_max": 68,
-  "defense_avg": 63,
+  "defense_avg": 63.5,
   "reqstr": 151,
   "qlvl": 76,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/light_gauntlets.webp"
  },
  {
   "code": "uhg",
@@ -2380,10 +2824,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 62,
   "defense_max": 71,
-  "defense_avg": 66,
+  "defense_avg": 66.5,
   "reqstr": 185,
   "qlvl": 85,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/gaunlets_h.webp"
  },
  {
   "code": "ulb",
@@ -2396,10 +2843,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 54,
   "defense_max": 62,
-  "defense_avg": 58,
+  "defense_avg": 58.0,
   "reqstr": 50,
   "qlvl": 60,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/leather_boots.webp"
  },
  {
   "code": "uvb",
@@ -2412,10 +2862,13 @@ window.BASE_ITEMS = [
   "durability": 14,
   "defense_min": 56,
   "defense_max": 65,
-  "defense_avg": 60,
+  "defense_avg": 60.5,
   "reqstr": 91,
   "qlvl": 66,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/heavy_boots.webp"
  },
  {
   "code": "umb",
@@ -2428,10 +2881,13 @@ window.BASE_ITEMS = [
   "durability": 16,
   "defense_min": 59,
   "defense_max": 67,
-  "defense_avg": 63,
+  "defense_avg": 63.0,
   "reqstr": 118,
   "qlvl": 72,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/chain_boots.webp"
  },
  {
   "code": "utb",
@@ -2444,10 +2900,13 @@ window.BASE_ITEMS = [
   "durability": 18,
   "defense_min": 59,
   "defense_max": 68,
-  "defense_avg": 63,
+  "defense_avg": 63.5,
   "reqstr": 163,
   "qlvl": 81,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/light_plate_boots.webp"
  },
  {
   "code": "uhb",
@@ -2460,10 +2919,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 62,
   "defense_max": 71,
-  "defense_avg": 66,
+  "defense_avg": 66.5,
   "reqstr": 208,
   "qlvl": 85,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "1/2/4",
+  "speed": 0,
+  "img": "assets/equipment/plate_boots.webp"
  },
  {
   "code": "ulc",
@@ -2476,10 +2938,13 @@ window.BASE_ITEMS = [
   "durability": 12,
   "defense_min": 55,
   "defense_max": 62,
-  "defense_avg": 58,
+  "defense_avg": 58.5,
   "reqstr": 50,
   "qlvl": 61,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/sash_l.webp"
  },
  {
   "code": "uvc",
@@ -2492,10 +2957,13 @@ window.BASE_ITEMS = [
   "durability": 14,
   "defense_min": 56,
   "defense_max": 63,
-  "defense_avg": 59,
+  "defense_avg": 59.5,
   "reqstr": 50,
   "qlvl": 68,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/light_belt.webp"
  },
  {
   "code": "umc",
@@ -2508,10 +2976,13 @@ window.BASE_ITEMS = [
   "durability": 16,
   "defense_min": 58,
   "defense_max": 65,
-  "defense_avg": 61,
+  "defense_avg": 61.5,
   "reqstr": 106,
   "qlvl": 75,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/belt_m.webp"
  },
  {
   "code": "utc",
@@ -2524,10 +2995,13 @@ window.BASE_ITEMS = [
   "durability": 18,
   "defense_min": 59,
   "defense_max": 66,
-  "defense_avg": 62,
+  "defense_avg": 62.5,
   "reqstr": 151,
   "qlvl": 82,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/heavy_belt.webp"
  },
  {
   "code": "uhc",
@@ -2540,10 +3014,13 @@ window.BASE_ITEMS = [
   "durability": 24,
   "defense_min": 61,
   "defense_max": 71,
-  "defense_avg": 66,
+  "defense_avg": 66.0,
   "reqstr": 185,
   "qlvl": 85,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "1/1/2",
+  "speed": 0,
+  "img": "assets/equipment/girdle_h.webp"
  },
  {
   "code": "uh9",
@@ -2556,10 +3033,13 @@ window.BASE_ITEMS = [
   "durability": 40,
   "defense_min": 100,
   "defense_max": 157,
-  "defense_avg": 128,
+  "defense_avg": 128.5,
   "reqstr": 106,
   "qlvl": 84,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/2/3",
+  "speed": 0,
+  "img": "assets/equipment/bone_helm.webp"
  },
  {
   "code": "ush",
@@ -2572,10 +3052,13 @@ window.BASE_ITEMS = [
   "durability": 74,
   "defense_min": 158,
   "defense_max": 173,
-  "defense_avg": 165,
+  "defense_avg": 165.5,
   "reqstr": 106,
   "qlvl": 76,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 0,
+  "img": "assets/equipment/bone_shield.webp"
  },
  {
   "code": "upk",
@@ -2588,90 +3071,108 @@ window.BASE_ITEMS = [
   "durability": 83,
   "defense_min": 147,
   "defense_max": 163,
-  "defense_avg": 155,
+  "defense_avg": 155.0,
   "reqstr": 118,
   "qlvl": 68,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "3/3/3",
+  "speed": 0,
+  "img": "assets/equipment/spiked_shield.webp"
  },
  {
   "code": "dr6",
   "name_en": "Alpha Helm",
   "name_zh": "猛狼头盔",
   "name_zh_tw": "猛狼頭盔",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 52,
   "defense_max": 62,
-  "defense_avg": 57,
+  "defense_avg": 57.0,
   "reqstr": 44,
   "qlvl": 35,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/wolf_head.webp"
  },
  {
   "code": "dr7",
   "name_en": "Griffon Headress",
   "name_zh": "狮鹫兽头饰",
   "name_zh_tw": "獅鷲獸頭飾",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 46,
   "defense_max": 68,
-  "defense_avg": 57,
+  "defense_avg": 57.0,
   "reqstr": 50,
   "qlvl": 40,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/hawk_helm.webp"
  },
  {
   "code": "dr8",
   "name_en": "Hunter's Guise",
   "name_zh": "猎人面罩",
   "name_zh_tw": "獵人面罩",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 67,
   "defense_max": 81,
-  "defense_avg": 74,
+  "defense_avg": 74.0,
   "reqstr": 56,
   "qlvl": 46,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/antlers.webp"
  },
  {
   "code": "dr9",
   "name_en": "Sacred Feathers",
   "name_zh": "圣羽头饰",
   "name_zh_tw": "聖羽頭飾",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 58,
   "defense_max": 87,
-  "defense_avg": 72,
+  "defense_avg": 72.5,
   "reqstr": 62,
   "qlvl": 50,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/falcon_mask.webp"
  },
  {
   "code": "dra",
   "name_en": "Totemic Mask",
   "name_zh": "图腾面具",
   "name_zh_tw": "圖騰面具",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 73,
   "defense_max": 98,
-  "defense_avg": 85,
+  "defense_avg": 85.5,
   "reqstr": 65,
   "qlvl": 55,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/spirit_mask.webp"
  },
  {
   "code": "ba6",
@@ -2684,10 +3185,13 @@ window.BASE_ITEMS = [
   "durability": 25,
   "defense_min": 55,
   "defense_max": 68,
-  "defense_avg": 61,
+  "defense_avg": 61.5,
   "reqstr": 58,
   "qlvl": 33,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/jawbone_cap.webp"
  },
  {
   "code": "ba7",
@@ -2700,10 +3204,13 @@ window.BASE_ITEMS = [
   "durability": 35,
   "defense_min": 63,
   "defense_max": 75,
-  "defense_avg": 69,
+  "defense_avg": 69.0,
   "reqstr": 73,
   "qlvl": 38,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/fanged_helm.webp"
  },
  {
   "code": "ba8",
@@ -2716,10 +3223,13 @@ window.BASE_ITEMS = [
   "durability": 45,
   "defense_min": 78,
   "defense_max": 90,
-  "defense_avg": 84,
+  "defense_avg": 84.0,
   "reqstr": 88,
   "qlvl": 44,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/horned_helm.webp"
  },
  {
   "code": "ba9",
@@ -2732,10 +3242,13 @@ window.BASE_ITEMS = [
   "durability": 50,
   "defense_min": 85,
   "defense_max": 98,
-  "defense_avg": 91,
+  "defense_avg": 91.5,
   "reqstr": 103,
   "qlvl": 49,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/assault_helmet.webp"
  },
  {
   "code": "baa",
@@ -2748,10 +3261,13 @@ window.BASE_ITEMS = [
   "durability": 55,
   "defense_min": 93,
   "defense_max": 120,
-  "defense_avg": 106,
+  "defense_avg": 106.5,
   "reqstr": 118,
   "qlvl": 54,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/avenger_guard.webp"
  },
  {
   "code": "pa6",
@@ -2764,10 +3280,13 @@ window.BASE_ITEMS = [
   "durability": 20,
   "defense_min": 101,
   "defense_max": 125,
-  "defense_avg": 113,
+  "defense_avg": 113.0,
   "reqstr": 44,
   "qlvl": 35,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/targe.webp"
  },
  {
   "code": "pa7",
@@ -2780,10 +3299,13 @@ window.BASE_ITEMS = [
   "durability": 30,
   "defense_min": 113,
   "defense_max": 137,
-  "defense_avg": 125,
+  "defense_avg": 125.0,
   "reqstr": 59,
   "qlvl": 40,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/rondache.webp"
  },
  {
   "code": "pa8",
@@ -2796,10 +3318,13 @@ window.BASE_ITEMS = [
   "durability": 40,
   "defense_min": 129,
   "defense_max": 153,
-  "defense_avg": 141,
+  "defense_avg": 141.0,
   "reqstr": 69,
   "qlvl": 46,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/heraldic_shield.webp"
  },
  {
   "code": "pa9",
@@ -2812,10 +3337,13 @@ window.BASE_ITEMS = [
   "durability": 50,
   "defense_min": 144,
   "defense_max": 168,
-  "defense_avg": 156,
+  "defense_avg": 156.0,
   "reqstr": 89,
   "qlvl": 51,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/aerin_shield.webp"
  },
  {
   "code": "paa",
@@ -2828,170 +3356,203 @@ window.BASE_ITEMS = [
   "durability": 60,
   "defense_min": 156,
   "defense_max": 181,
-  "defense_avg": 168,
+  "defense_avg": 168.5,
   "reqstr": 114,
   "qlvl": 55,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/crown_shield.webp"
  },
  {
   "code": "ne6",
   "name_en": "Mummified Trophy",
   "name_zh": "木乃伊首级",
   "name_zh_tw": "木乃伊首級",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 38,
   "defense_max": 48,
-  "defense_avg": 43,
+  "defense_avg": 43.0,
   "reqstr": 38,
   "qlvl": 33,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/preserved_head.webp"
  },
  {
   "code": "ne7",
   "name_en": "Fetish Trophy",
   "name_zh": "鬼娃首级",
   "name_zh_tw": "鬼娃首級",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 41,
   "defense_max": 52,
-  "defense_avg": 46,
+  "defense_avg": 46.5,
   "reqstr": 41,
   "qlvl": 39,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/zombie_head.webp"
  },
  {
   "code": "ne8",
   "name_en": "Sexton Trophy",
   "name_zh": "司事首级",
   "name_zh_tw": "司事首級",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 44,
   "defense_max": 55,
-  "defense_avg": 49,
+  "defense_avg": 49.5,
   "reqstr": 47,
   "qlvl": 45,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/unraveller_head.webp"
  },
  {
   "code": "ne9",
   "name_en": "Cantor Trophy",
   "name_zh": "领唱者首级",
   "name_zh_tw": "領唱者首級",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 50,
   "defense_max": 64,
-  "defense_avg": 57,
+  "defense_avg": 57.0,
   "reqstr": 50,
   "qlvl": 49,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/gargoyle_head.webp"
  },
  {
   "code": "nea",
   "name_en": "Heirophant Trophy",
   "name_zh": "祭司首级",
   "name_zh_tw": "祭司首級",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 58,
   "defense_max": 70,
-  "defense_avg": 64,
+  "defense_avg": 64.0,
   "reqstr": 58,
   "qlvl": 54,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/demon_head.webp"
  },
  {
   "code": "drb",
   "name_en": "Blood Spirit",
   "name_zh": "血系灵兽帽",
   "name_zh_tw": "血系靈獸帽",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "精英",
   "durability": 20,
   "defense_min": 101,
   "defense_max": 145,
-  "defense_avg": 123,
+  "defense_avg": 123.0,
   "reqstr": 86,
   "qlvl": 62,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/wolf_head.webp"
  },
  {
   "code": "drc",
   "name_en": "Sun Spirit",
   "name_zh": "日阳灵兽帽",
   "name_zh_tw": "日陽靈獸帽",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "精英",
   "durability": 20,
   "defense_min": 98,
   "defense_max": 147,
-  "defense_avg": 122,
+  "defense_avg": 122.5,
   "reqstr": 95,
   "qlvl": 69,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/hawk_helm.webp"
  },
  {
   "code": "drd",
   "name_en": "Earth Spirit",
   "name_zh": "地土灵兽帽",
   "name_zh_tw": "地土靈獸帽",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "精英",
   "durability": 20,
   "defense_min": 107,
   "defense_max": 152,
-  "defense_avg": 129,
+  "defense_avg": 129.5,
   "reqstr": 104,
   "qlvl": 76,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/antlers.webp"
  },
  {
   "code": "dre",
   "name_en": "Sky Spirit",
   "name_zh": "天翔灵兽帽",
   "name_zh_tw": "天翔靈獸帽",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "精英",
   "durability": 20,
   "defense_min": 103,
   "defense_max": 155,
-  "defense_avg": 129,
+  "defense_avg": 129.0,
   "reqstr": 113,
   "qlvl": 83,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/falcon_mask.webp"
  },
  {
   "code": "drf",
   "name_en": "Dream Spirit",
   "name_zh": "幽梦灵兽帽",
   "name_zh_tw": "幽夢靈獸帽",
-  "category": "铠甲",
+  "category": "头盔",
   "type_raw": "pelt",
   "tier": "精英",
   "durability": 20,
   "defense_min": 109,
   "defense_max": 159,
-  "defense_avg": 134,
+  "defense_avg": 134.0,
   "reqstr": 118,
   "qlvl": 85,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/spirit_mask.webp"
  },
  {
   "code": "bab",
@@ -3004,10 +3565,13 @@ window.BASE_ITEMS = [
   "durability": 25,
   "defense_min": 102,
   "defense_max": 147,
-  "defense_avg": 124,
+  "defense_avg": 124.5,
   "reqstr": 106,
   "qlvl": 60,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/jawbone_cap.webp"
  },
  {
   "code": "bac",
@@ -3020,10 +3584,13 @@ window.BASE_ITEMS = [
   "durability": 35,
   "defense_min": 105,
   "defense_max": 150,
-  "defense_avg": 127,
+  "defense_avg": 127.5,
   "reqstr": 129,
   "qlvl": 66,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/fanged_helm.webp"
  },
  {
   "code": "bad",
@@ -3036,10 +3603,13 @@ window.BASE_ITEMS = [
   "durability": 45,
   "defense_min": 111,
   "defense_max": 156,
-  "defense_avg": 133,
+  "defense_avg": 133.5,
   "reqstr": 151,
   "qlvl": 73,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/horned_helm.webp"
  },
  {
   "code": "bae",
@@ -3052,10 +3622,13 @@ window.BASE_ITEMS = [
   "durability": 50,
   "defense_min": 114,
   "defense_max": 159,
-  "defense_avg": 136,
+  "defense_avg": 136.5,
   "reqstr": 174,
   "qlvl": 80,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/assault_helmet.webp"
  },
  {
   "code": "baf",
@@ -3068,10 +3641,13 @@ window.BASE_ITEMS = [
   "durability": 55,
   "defense_min": 117,
   "defense_max": 168,
-  "defense_avg": 142,
+  "defense_avg": 142.5,
   "reqstr": 196,
   "qlvl": 85,
-  "max_sockets": 3
+  "max_sockets": 3,
+  "sockets3": "2/3/3",
+  "speed": 0,
+  "img": "assets/equipment/avenger_guard.webp"
  },
  {
   "code": "pab",
@@ -3084,10 +3660,13 @@ window.BASE_ITEMS = [
   "durability": 45,
   "defense_min": 126,
   "defense_max": 158,
-  "defense_avg": 142,
+  "defense_avg": 142.0,
   "reqstr": 86,
   "qlvl": 63,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/targe.webp"
  },
  {
   "code": "pac",
@@ -3100,10 +3679,13 @@ window.BASE_ITEMS = [
   "durability": 68,
   "defense_min": 138,
   "defense_max": 164,
-  "defense_avg": 151,
+  "defense_avg": 151.0,
   "reqstr": 109,
   "qlvl": 70,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/rondache.webp"
  },
  {
   "code": "pad",
@@ -3116,10 +3698,13 @@ window.BASE_ITEMS = [
   "durability": 55,
   "defense_min": 154,
   "defense_max": 172,
-  "defense_avg": 163,
+  "defense_avg": 163.0,
   "reqstr": 124,
   "qlvl": 74,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/heraldic_shield.webp"
  },
  {
   "code": "pae",
@@ -3132,10 +3717,13 @@ window.BASE_ITEMS = [
   "durability": 65,
   "defense_min": 169,
   "defense_max": 193,
-  "defense_avg": 181,
+  "defense_avg": 181.0,
   "reqstr": 142,
   "qlvl": 82,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/aerin_shield.webp"
  },
  {
   "code": "paf",
@@ -3148,329 +3736,392 @@ window.BASE_ITEMS = [
   "durability": 90,
   "defense_min": 182,
   "defense_max": 225,
-  "defense_avg": 203,
+  "defense_avg": 203.5,
   "reqstr": 148,
   "qlvl": 85,
-  "max_sockets": 4
+  "max_sockets": 4,
+  "sockets3": "3/4/4",
+  "speed": 0,
+  "img": "assets/equipment/crown_shield.webp"
  },
  {
   "code": "neb",
   "name_en": "Minion Skull",
   "name_zh": "仆从颅骨",
   "name_zh_tw": "僕從顱骨",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "精英",
   "durability": 20,
   "defense_min": 95,
   "defense_max": 139,
-  "defense_avg": 117,
+  "defense_avg": 117.0,
   "reqstr": 77,
   "qlvl": 59,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/preserved_head.webp"
  },
  {
   "code": "neg",
   "name_en": "Hellspawn Skull",
   "name_zh": "地狱爪牙颅骨",
   "name_zh_tw": "地獄爪牙顱骨",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "精英",
   "durability": 20,
   "defense_min": 96,
   "defense_max": 141,
-  "defense_avg": 118,
+  "defense_avg": 118.5,
   "reqstr": 82,
   "qlvl": 67,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/zombie_head.webp"
  },
  {
   "code": "ned",
   "name_en": "Overseer Skull",
   "name_zh": "督军颅骨",
   "name_zh_tw": "督軍顱骨",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "精英",
   "durability": 20,
   "defense_min": 98,
   "defense_max": 142,
-  "defense_avg": 120,
+  "defense_avg": 120.0,
   "reqstr": 91,
   "qlvl": 66,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/unraveller_head.webp"
  },
  {
   "code": "nee",
   "name_en": "Succubus Skull",
   "name_zh": "魅魔颅骨",
   "name_zh_tw": "魅魔顱骨",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "精英",
   "durability": 20,
   "defense_min": 100,
   "defense_max": 146,
-  "defense_avg": 123,
+  "defense_avg": 123.0,
   "reqstr": 95,
   "qlvl": 81,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/gargoyle_head.webp"
  },
  {
   "code": "nef",
   "name_en": "Bloodlord Skull",
   "name_zh": "鲜血之王颅骨",
   "name_zh_tw": "鮮血之王顱骨",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "head",
   "tier": "精英",
   "durability": 20,
   "defense_min": 103,
   "defense_max": 148,
-  "defense_avg": 125,
+  "defense_avg": 125.5,
   "reqstr": 106,
   "qlvl": 85,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/demon_head.webp"
  },
  {
   "code": "wa1",
   "name_en": "Old Book",
   "name_zh": "旧书",
   "name_zh_tw": "舊書",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "普通",
   "durability": 20,
   "defense_min": 2,
   "defense_max": 5,
-  "defense_avg": 3,
+  "defense_avg": 3.5,
   "reqstr": 12,
   "qlvl": 4,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/oldbook.webp"
  },
  {
   "code": "wa2",
   "name_en": "Tome",
   "name_zh": "秘典",
   "name_zh_tw": "秘典",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "普通",
   "durability": 20,
   "defense_min": 4,
   "defense_max": 8,
-  "defense_avg": 6,
+  "defense_avg": 6.0,
   "reqstr": 14,
   "qlvl": 8,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/tome_book.webp"
  },
  {
   "code": "wa3",
   "name_en": "Codex",
   "name_zh": "宝典",
   "name_zh_tw": "寶典",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "普通",
   "durability": 20,
   "defense_min": 6,
   "defense_max": 10,
-  "defense_avg": 8,
+  "defense_avg": 8.0,
   "reqstr": 18,
   "qlvl": 16,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/codex.webp"
  },
  {
   "code": "wa4",
   "name_en": "Compendium",
   "name_zh": "纲要",
   "name_zh_tw": "綱要",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "普通",
   "durability": 20,
   "defense_min": 10,
   "defense_max": 16,
-  "defense_avg": 13,
+  "defense_avg": 13.0,
   "reqstr": 20,
   "qlvl": 20,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/compendium.webp"
  },
  {
   "code": "wa5",
   "name_en": "Grimoire",
   "name_zh": "魔典",
   "name_zh_tw": "魔典",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "普通",
   "durability": 20,
   "defense_min": 15,
   "defense_max": 20,
-  "defense_avg": 17,
+  "defense_avg": 17.5,
   "reqstr": 25,
   "qlvl": 24,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/grimoire.webp"
  },
  {
   "code": "wa6",
   "name_en": "Burnt Text",
   "name_zh": "焦灼书册",
   "name_zh_tw": "焦灼書冊",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 38,
   "defense_max": 48,
-  "defense_avg": 43,
+  "defense_avg": 43.0,
   "reqstr": 38,
   "qlvl": 33,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/oldbook.webp"
  },
  {
   "code": "wa7",
   "name_en": "Dark Tome",
   "name_zh": "黑暗秘典",
   "name_zh_tw": "黑暗秘典",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 41,
   "defense_max": 52,
-  "defense_avg": 46,
+  "defense_avg": 46.5,
   "reqstr": 41,
   "qlvl": 39,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/tome_book.webp"
  },
  {
   "code": "wa8",
   "name_en": "Dark Codex",
   "name_zh": "黑暗宝典",
   "name_zh_tw": "黑暗寶典",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 44,
   "defense_max": 55,
-  "defense_avg": 49,
+  "defense_avg": 49.5,
   "reqstr": 47,
   "qlvl": 45,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/codex.webp"
  },
  {
   "code": "wa9",
   "name_en": "Possessed Compendium",
   "name_zh": "著魔纲要",
   "name_zh_tw": "著魔綱要",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 50,
   "defense_max": 64,
-  "defense_avg": 57,
+  "defense_avg": 57.0,
   "reqstr": 50,
   "qlvl": 49,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/compendium.webp"
  },
  {
   "code": "waa",
   "name_en": "Possessed Grimoire",
   "name_zh": "著魔魔典",
   "name_zh_tw": "著魔魔典",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "扩展",
   "durability": 20,
   "defense_min": 58,
   "defense_max": 70,
-  "defense_avg": 64,
+  "defense_avg": 64.0,
   "reqstr": 58,
   "qlvl": 54,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/grimoire.webp"
  },
  {
   "code": "wab",
   "name_en": "Forgotten Volume",
   "name_zh": "被遗忘的书册",
   "name_zh_tw": "被遺忘的書冊",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "精英",
   "durability": 20,
   "defense_min": 95,
   "defense_max": 139,
-  "defense_avg": 117,
+  "defense_avg": 117.0,
   "reqstr": 77,
   "qlvl": 59,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/oldbook.webp"
  },
  {
   "code": "wac",
   "name_en": "Occult Tome",
   "name_zh": "神秘秘典",
   "name_zh_tw": "神秘秘典",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "精英",
   "durability": 20,
   "defense_min": 96,
   "defense_max": 141,
-  "defense_avg": 118,
+  "defense_avg": 118.5,
   "reqstr": 82,
   "qlvl": 67,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/tome_book.webp"
  },
  {
   "code": "wad",
   "name_en": "Occult Codex",
   "name_zh": "神秘宝典",
   "name_zh_tw": "神秘寶典",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "精英",
   "durability": 20,
   "defense_min": 98,
   "defense_max": 142,
-  "defense_avg": 120,
+  "defense_avg": 120.0,
   "reqstr": 91,
   "qlvl": 66,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/codex.webp"
  },
  {
   "code": "wae",
   "name_en": "Blasphemous Compendium",
   "name_zh": "亵渎纲要",
   "name_zh_tw": "褻瀆綱要",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "精英",
   "durability": 20,
   "defense_min": 100,
   "defense_max": 146,
-  "defense_avg": 123,
+  "defense_avg": 123.0,
   "reqstr": 95,
   "qlvl": 81,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/compendium.webp"
  },
  {
   "code": "waf",
   "name_en": "Blasphemous Grimoire",
   "name_zh": "亵渎魔典",
   "name_zh_tw": "褻瀆魔典",
-  "category": "头盔",
+  "category": "盾牌",
   "type_raw": "grim",
   "tier": "精英",
   "durability": 20,
   "defense_min": 103,
   "defense_max": 148,
-  "defense_avg": 125,
+  "defense_avg": 125.5,
   "reqstr": 106,
   "qlvl": 85,
-  "max_sockets": 2
+  "max_sockets": 2,
+  "sockets3": "2/2/2",
+  "speed": 0,
+  "img": "assets/equipment/grimoire.webp"
  }
 ];
