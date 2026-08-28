@@ -1,0 +1,1695 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BD构建 | 新王觉醒</title>
+  <meta name="description" content="新王觉醒 Mod BD构建：玩家可自由添加装备与天赋树详情，构建并展示自己的配装思路（Build）。" />
+  <meta name="author" content="新王觉醒" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Serif+SC:wght@600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bd.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <div id="site-nav"></div>
+
+  <main id="main">
+    <section class="section detail feature">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="index.html">首页</a><span aria-hidden="true">/</span>
+          <a href="index.html#items">玩法构筑</a><span aria-hidden="true">/</span>
+          <span class="current">BD构建</span>
+        </nav>
+
+        <header class="section-head reveal">
+          <p class="section-kicker">玩法构筑 | <span class="kicker-num">8 · 2</span></p>
+          <h2>BD构建</h2>
+          <p class="section-lead">玩家可自由添加装备与天赋树详情，构建并展示自己的 BD（配装思路）。</p>
+        </header>
+
+        <!-- ===== BD 构筑模拟器框架 ===== -->
+        <article class="bd-builder reveal" id="bdBuilder">
+          <div class="bd-header">
+            <h2>构筑模拟器 <span class="bd-ver-badge">测试版 V 1.3.5</span></h2>
+            <div class="bd-save-controls">
+              <input type="text" id="bdTitle" class="bd-title-input" placeholder="给这套 BD 起个名字" maxlength="60" />
+              <label class="bd-public-toggle" title="勾选后其他人可在「BD展示」页看到这套配装">
+                <input type="checkbox" id="bdPublic" /> 公开发布
+              </label>
+              <button class="btn btn-primary" id="bdSave">保存</button>
+            </div>
+            <div class="bd-view-banner" id="bdViewBanner" hidden>
+              <span class="bd-view-note">查看模式 · 作者：<span id="bdViewAuthor">—</span></span>
+            </div>
+          </div>
+
+          <!-- 职业选择 -->
+          <div class="bd-class-row" id="classRow">
+            <label class="bd-radio active" data-class="amazon"><span class="dot"></span> 亚马逊</label>
+            <label class="bd-radio" data-class="sorceress"><span class="dot"></span> 法师</label>
+            <label class="bd-radio" data-class="necromancer"><span class="dot"></span> 死灵法师</label>
+            <label class="bd-radio" data-class="paladin"><span class="dot"></span> 圣骑士</label>
+            <label class="bd-radio" data-class="barbarian"><span class="dot"></span> 野蛮人</label>
+            <label class="bd-radio" data-class="druid"><span class="dot"></span> 德鲁伊</label>
+            <label class="bd-radio" data-class="assassin"><span class="dot"></span> 刺客</label>
+            <label class="bd-radio" data-class="warlock"><span class="dot"></span> 术士</label>
+          </div>
+
+          <!-- 视图切换：装备 / 技能（避免长页面上下滚动） -->
+          <div class="bd-section-tabs" id="sectionTabs" data-cur="equip">
+            <button type="button" class="bd-section-tab active" data-view="equip">装备</button>
+            <button type="button" class="bd-section-tab" data-view="skill">技能</button>
+          </div>
+
+          <!-- 主面板：左侧装备 + 右侧属性 -->
+          <div class="bd-panels">
+            <!-- 装备界面（玩家 / 佣兵 共用框架，内容独立维护） -->
+            <div class="bd-equip-panel">
+              <div class="bd-equip-header"><span>装备面板</span></div>
+              <div class="bd-equip-grid" id="equipGrid" data-owner="player">
+                <div class="bd-slot weapon has-img" data-slot="weapon" data-name=""><img src="assets/equipment/axe.webp" alt="武器"></div>
+                <div class="bd-slot helmet has-img" data-slot="helmet" data-name=""><img src="assets/equipment/helm.webp" alt="头盔"></div>
+                <div class="bd-slot amulet has-img" data-slot="amulet" data-name=""><img src="assets/equipment/amulet1.webp" alt="项链"></div>
+                <div class="bd-slot armor has-img" data-slot="armor" data-name=""><img src="assets/equipment/ancient_armor.webp" alt="护甲"></div>
+                <div class="bd-slot shield has-img" data-slot="shield" data-name=""><img src="assets/equipment/aerin_shield.webp" alt="盾牌"></div>
+                <div class="bd-slot ring-left has-img" data-slot="ring-left" data-name=""><img src="assets/equipment/ring1.webp" alt="戒指"></div>
+                <div class="bd-slot ring-right has-img" data-slot="ring-right" data-name=""><img src="assets/equipment/ring1.webp" alt="戒指"></div>
+                <div class="bd-slot gloves has-img" data-slot="gloves" data-name=""><img src="assets/equipment/heavy_gloves.webp" alt="手套"></div>
+                <div class="bd-slot belt has-img" data-slot="belt" data-name=""><img src="assets/equipment/heavy_belt.webp" alt="腰带"></div>
+                <div class="bd-slot boots has-img" data-slot="boots" data-name=""><img src="assets/equipment/heavy_boots.webp" alt="靴子"></div>
+              </div>
+              <div class="bd-equip-grid" id="equipGridMerc" data-owner="merc">
+                <div class="bd-slot weapon has-img" data-slot="weapon" data-name=""><img src="assets/equipment/axe.webp" alt="武器"></div>
+                <div class="bd-slot helmet has-img" data-slot="helmet" data-name=""><img src="assets/equipment/helm.webp" alt="头盔"></div>
+                <div class="bd-slot amulet has-img" data-slot="amulet" data-name=""><img src="assets/equipment/amulet1.webp" alt="项链"></div>
+                <div class="bd-slot armor has-img" data-slot="armor" data-name=""><img src="assets/equipment/ancient_armor.webp" alt="护甲"></div>
+                <div class="bd-slot shield has-img" data-slot="shield" data-name=""><img src="assets/equipment/aerin_shield.webp" alt="盾牌"></div>
+                <div class="bd-slot ring-left has-img" data-slot="ring-left" data-name=""><img src="assets/equipment/ring1.webp" alt="戒指"></div>
+                <div class="bd-slot ring-right has-img" data-slot="ring-right" data-name=""><img src="assets/equipment/ring1.webp" alt="戒指"></div>
+                <div class="bd-slot gloves has-img" data-slot="gloves" data-name=""><img src="assets/equipment/heavy_gloves.webp" alt="手套"></div>
+                <div class="bd-slot belt has-img" data-slot="belt" data-name=""><img src="assets/equipment/heavy_belt.webp" alt="腰带"></div>
+                <div class="bd-slot boots has-img" data-slot="boots" data-name=""><img src="assets/equipment/heavy_boots.webp" alt="靴子"></div>
+              </div>
+
+              <!-- 护符背包（玩家 / 佣兵 共用框架，内容独立维护） -->
+              <div class="bd-charm-panel">
+                <div class="bd-charm-header">
+                  <span>护符背包</span>
+                  <button type="button" class="bd-charm-pick" id="charmPickBtn">选择护符</button>
+                </div>
+                <div class="bd-charm-grid-wrap">
+                  <div class="bd-charm-grid" id="charmGrid" data-owner="player"></div>
+                  <div class="bd-charm-grid" id="charmGridMerc" data-owner="merc"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 属性面板（玩家 / 佣兵 共用框架，内容独立维护） -->
+            <div class="bd-stats-panel">
+              <div class="bd-stats-header">
+                <span>属性面板</span>
+                <div class="bd-stats-tabs">
+                  <button class="active" data-panel="player">玩家</button>
+                  <button data-panel="merc">佣兵</button>
+                </div>
+              </div>
+
+              <!-- 玩家属性 -->
+              <div class="bd-stats-body" data-owner="player">
+                <div class="bd-stat-group">
+                  <h4>属性</h4>
+                  <div class="bd-stat-row"><span>剩余属性点</span><span data-stat="leftpts">505</span></div>
+                  <div class="bd-stat-row bd-stat-row--attr">
+                    <div class="bd-stat-left-group">
+                      <span>力量</span>
+                      <div class="bd-plusminus">
+                        <button type="button" data-act="dec" data-attr="str">−</button>
+                        <input type="number" value="0" min="0" data-attr="str" />
+                        <button type="button" data-act="inc" data-attr="str">+</button>
+                      </div>
+                    </div>
+                    <span class="bd-stat-base" data-total="str">20</span>
+                  </div>
+                  <div class="bd-stat-row bd-stat-row--attr">
+                    <div class="bd-stat-left-group">
+                      <span>敏捷</span>
+                      <div class="bd-plusminus">
+                        <button type="button" data-act="dec" data-attr="dex">−</button>
+                        <input type="number" value="0" min="0" data-attr="dex" />
+                        <button type="button" data-act="inc" data-attr="dex">+</button>
+                      </div>
+                    </div>
+                    <span class="bd-stat-base" data-total="dex">25</span>
+                  </div>
+                  <div class="bd-stat-row bd-stat-row--attr">
+                    <div class="bd-stat-left-group">
+                      <span>体力</span>
+                      <div class="bd-plusminus">
+                        <button type="button" data-act="dec" data-attr="vit">−</button>
+                        <input type="number" value="0" min="0" data-attr="vit" />
+                        <button type="button" data-act="inc" data-attr="vit">+</button>
+                      </div>
+                    </div>
+                    <span class="bd-stat-base" data-total="vit">20</span>
+                  </div>
+                  <div class="bd-stat-row bd-stat-row--attr">
+                    <div class="bd-stat-left-group">
+                      <span>智力</span>
+                      <div class="bd-plusminus">
+                        <button type="button" data-act="dec" data-attr="eng">−</button>
+                        <input type="number" value="0" min="0" data-attr="eng" />
+                        <button type="button" data-act="inc" data-attr="eng">+</button>
+                      </div>
+                    </div>
+                    <span class="bd-stat-base" data-total="eng">15</span>
+                  </div>
+                  <!-- 精魂（新增，静态行无加减号） -->
+                  <div class="bd-stat-row"><span>精魂</span><span data-stat="soul">0</span></div>
+                </div>
+
+                <div class="bd-stat-group">
+                  <h4>生命与法力</h4>
+                  <div class="bd-stat-row"><span>生命</span><span data-stat="life">306</span></div>
+                  <div class="bd-stat-row"><span>生命回复</span><span data-stat="life-regen">0</span></div>
+                  <div class="bd-stat-row"><span>法力</span><span data-stat="mana">162</span></div>
+                  <div class="bd-stat-row"><span>法力恢复</span><span data-stat="regen">1.3</span></div>
+                </div>
+
+                <div class="bd-stat-group">
+                  <h4>物理</h4>
+                  <div class="bd-stat-row"><span>伤害增强%</span><span data-stat="dmg-pct">0%</span></div>
+                  <div class="bd-stat-row"><span>攻击命中率</span><span data-stat="acc-rating">0</span></div>
+                  <div class="bd-stat-row"><span>攻击速度</span><span data-stat="ias">0%</span></div>
+                  <div class="bd-stat-row"><span>物理强化</span><span data-stat="phys-dmg">0</span></div>
+                </div>
+
+                <div class="bd-stat-group">
+                  <h4>防御</h4>
+                  <div class="bd-stat-row"><span>防御力</span><span data-stat="def">0</span></div>
+                  <div class="bd-stat-row"><span>格挡%</span><span data-stat="block">0%</span></div>
+                  <div class="bd-stat-row"><span>攻击恢复%</span><span data-stat="fhr">0%</span></div>
+                  <div class="bd-stat-row"><span>施法速度</span><span data-stat="fcr">0%</span></div>
+                  <div class="bd-stat-row"><span>法术专注</span><span data-stat="cast-focus">0%</span></div>
+                </div>
+
+                <div class="bd-stat-group">
+                  <h4>其他</h4>
+                  <div class="bd-stat-row"><span>移动速度%</span><span data-stat="ms">0%</span></div>
+                </div>
+
+                <div class="bd-stat-group resist">
+                  <h4>抗性</h4>
+                  <div class="bd-stat-row"><span>火焰抗性</span><span data-stat="fr">-70%</span></div>
+                  <div class="bd-stat-row"><span>冰冷抗性</span><span data-stat="cr">-70%</span></div>
+                  <div class="bd-stat-row"><span>闪电抗性</span><span data-stat="lr">-70%</span></div>
+                  <div class="bd-stat-row"><span>毒素抗性</span><span data-stat="pr">-70%</span></div>
+                  <div class="bd-stat-row"><span>物理抗性</span><span data-stat="phys">0%</span></div>
+                  <div class="bd-stat-row"><span>魔法抗性</span><span data-stat="mag">0%</span></div>
+                </div>
+              </div>
+
+              <!-- 佣兵属性（仅 力量/敏捷/体力/智力 + 生命法力 + 六种抗性） -->
+              <div class="bd-stats-body" data-owner="merc">
+                <div class="bd-stat-group">
+                  <h4>属性</h4>
+                  <div class="bd-stat-row"><span>力量</span><span data-total="str">25</span></div>
+                  <div class="bd-stat-row"><span>敏捷</span><span data-total="dex">20</span></div>
+                  <div class="bd-stat-row"><span>体力</span><span data-total="vit">30</span></div>
+                  <div class="bd-stat-row"><span>智力</span><span data-total="eng">15</span></div>
+                </div>
+
+                <div class="bd-stat-group">
+                  <h4>生命与法力</h4>
+                  <div class="bd-stat-row"><span>生命</span><span data-stat="life">606</span></div>
+                  <div class="bd-stat-row"><span>法力</span><span data-stat="mana">162</span></div>
+                </div>
+
+                <div class="bd-stat-group resist">
+                  <h4>抗性</h4>
+                  <div class="bd-stat-row"><span>火焰抗性</span><span data-stat="fr">-70%</span></div>
+                  <div class="bd-stat-row"><span>冰冷抗性</span><span data-stat="cr">-70%</span></div>
+                  <div class="bd-stat-row"><span>闪电抗性</span><span data-stat="lr">-70%</span></div>
+                  <div class="bd-stat-row"><span>毒素抗性</span><span data-stat="pr">-70%</span></div>
+                  <div class="bd-stat-row"><span>物理抗性</span><span data-stat="phys">0%</span></div>
+                  <div class="bd-stat-row"><span>魔法抗性</span><span data-stat="mag">0%</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 技能界面（放在装备下方） -->
+          <div class="bd-skill-panel">
+            <!-- 常用技能：一行 10 个技能框 + 下方一行技能名字 -->
+            <div class="bd-fav-skills">
+              <div class="bd-fav-header">
+                <span>常用技能</span>
+                <label class="bd-fav-baselabel"><input type="checkbox" id="showBase"> 显示基础等级</label>
+              </div>
+              <div class="bd-fav-row" id="favSkills"><!-- 由 JS 生成 10 个技能框 --></div>
+              <div class="bd-fav-labels" id="favLabels"><!-- 由 JS 生成 10 个技能名字位 --></div>
+            </div>
+
+            <!-- 技能天赋页标题（右侧显示已分配/剩余点数，标题后显示当前职业） + 天赋树 -->
+            <div class="bd-skill-trees-title">
+              <span class="bd-title-left">技能天赋页 <span class="bd-class-name"></span></span>
+              <span class="bd-skill-points">已分配点数 <strong id="spentPoints">0</strong> 剩余点数 <strong id="leftPoints">110</strong></span>
+            </div>
+            <div class="bd-skill-trees" id="skillTrees">
+              <!-- 由 JS 按职业渲染 -->
+            </div>
+            <div class="bd-skill-hint">左键加点，右键减点，shift + 左键加满点数，shift + 右键清空点数</div>
+          </div>
+
+          <div class="bd-merc-note">佣兵没有主动技能树，仅需配置上方的装备面板与属性面板（力量 / 敏捷 / 体力 / 智力）。</div>
+        </article>
+
+        <a class="btn btn-ghost detail-back" href="index.html">← 返回首页</a>
+      </div>
+    </section>
+  </main>
+
+    <div id="site-footer"></div>
+
+  <script src="./js/shared.js" defer></script>
+  <script src="./js/main.js" defer></script>
+
+  <!-- BD 装备选择器所需数据：暗金 / 传奇&混沌 / 套装 / 符文之语（含套装卡片底材图数据） -->
+  <script src="./js/unique-items.js" defer></script>
+  <script src="./js/legend-items.js" defer></script>
+  <script src="./js/base-items.js" defer></script>
+  <script src="./js/weapon-items.js" defer></script>
+  <script src="./js/set-items.js" defer></script>
+  <script src="./js/runewords-items.js" defer></script>
+  <!-- 各页面卡片渲染模块（BD 页仅复用其渲染函数，见各文件页面守卫） -->
+  <script src="./js/unique-db.js" defer></script>
+  <script src="./js/legend-db.js" defer></script>
+  <script src="./js/set-db.js" defer></script>
+  <script src="./js/rune-db.js" defer></script>
+  <!-- BD 装备选择器：弹窗+筛选+卡片选择 -->
+  <script src="./js/bd-equip-picker.js" defer></script>
+  <!-- 职业技能数据（常用技能区使用：女巫/亚马逊/死灵法师） -->
+  <script src="./js/sorceress-skills.js" defer></script>
+  <script src="./js/amazon-skills.js" defer></script>
+  <script src="./js/necro-skills.js" defer></script>
+  
+
+  <!-- BD 模拟器框架脚本 -->
+  <script>
+    (function() {
+      'use strict';
+
+      // 示例数据：三系技能树（每系 3列×6行=18格，左侧带行标签：基础技能/一转/二转/三转）
+      // 以亚马逊真实技能填充，其余职业暂用亚马逊树占位，后续替换为真实数据
+      const ROW_LABELS = [
+        { label: '基础技能', span: 3 },
+        { label: '一转', span: 1 },
+        { label: '二转', span: 1 },
+        { label: '三转', span: 1 }
+      ];
+      const SKILL_TREES = {
+        amazon: [
+          {
+            name: '标枪和长矛技能',
+            rowLabels: ROW_LABELS,
+            nodes: [
+              {id:'a_jab', name:'戳刺', row:0, col:0, max:20},           // (1,1) Jab
+              {id:'a_charged', name:'充能一击', row:1, col:1, max:20},   // (2,2) Charged Strike
+              {id:'a_poisonjavelin', name:'剧毒标枪', row:1, col:2, max:20}, // (2,3) Poison Javelin
+              {id:'a_impale', name:'刺爆', row:2, col:0, max:20},        // (3,1) Impale
+              {id:'a_lightningbolt', name:'闪电枪', row:2, col:2, max:20}, // (3,3) Lightning Bolt
+              {id:'a_lightningstrike', name:'闪电强击', row:3, col:1, max:20}, // (4,2) Lightning Strike
+              {id:'a_plague', name:'瘟疫标枪', row:3, col:2, max:20},    // (4,3) Plague Javelin
+              {id:'a_fend', name:'疾刺', row:4, col:0, max:20},          // (5,1) Fend
+              {id:'a_javelinmastery', name:'枪矛专精', row:5, col:1, max:20}, // (6,2) Javlin Mastery
+              {id:'a_lightningfury', name:'闪电之怒', row:5, col:2, max:20} // (6,3) Lightning Fury
+            ]
+          },
+          {
+            name: '被动和魔法技能',
+            rowLabels: ROW_LABELS,
+            nodes: [
+              {id:'a_innersight', name:'心灵视野', row:0, col:0, max:20}, // (1,1) Inner Sight
+              {id:'a_penetrate', name:'精准攻势', row:0, col:2, max:20}, // (1,3) Penetrate
+              {id:'a_dodge', name:'闪躲', row:1, col:1, max:20},         // (2,2) Dodge
+              {id:'a_slow', name:'缓箭术', row:2, col:0, max:20},        // (3,1) Slow Missiles
+              {id:'a_avoid', name:'闪身', row:2, col:1, max:20},         // (3,2) Avoid
+              {id:'a_crit', name:'致命攻击', row:3, col:2, max:20},      // (4,3) Critical Strike
+              {id:'a_decoy', name:'诱饵', row:4, col:0, max:20},         // (5,1) Dopplezon
+              {id:'a_evade', name:'闪避', row:4, col:1, max:20},         // (5,2) Evade
+              {id:'a_valkyrie', name:'女武神', row:5, col:0, max:20},    // (6,1) Valkyrie
+              {id:'a_pierce', name:'贯穿攻势', row:5, col:2, max:20}     // (6,3) Pierce
+            ]
+          },
+          {
+            name: '弓弩技能',
+            rowLabels: ROW_LABELS,
+            nodes: [
+              {id:'a_magicarrow', name:'魔法箭', row:0, col:1, max:20},  // (1,2) Magic Arrow
+              {id:'a_firearrow', name:'火焰箭', row:0, col:2, max:20},   // (1,3) Fire Arrow
+              {id:'a_coldarrow', name:'冰霜箭', row:1, col:0, max:20},   // (2,1) Cold Arrow
+              {id:'a_multishot', name:'多重箭', row:1, col:1, max:20},   // (2,2) Multiple Shot
+              {id:'a_exploding', name:'爆裂箭', row:2, col:2, max:20},   // (3,3) Exploding Arrow
+              {id:'a_freezing', name:'冻结箭', row:3, col:0, max:20},    // (4,1) Freezing Arrow
+              {id:'a_guided', name:'导引箭', row:3, col:1, max:20},      // (4,2) Guided Arrow
+              {id:'a_strafe', name:'扫射', row:4, col:1, max:20},        // (5,2) Strafe
+              {id:'a_immolation', name:'炙炎箭', row:4, col:2, max:20},  // (5,3) Immolation Arrow
+              {id:'a_bowmastery', name:'弓弩专精', row:5, col:0, max:20} // (6,1) Bow Mastery
+            ]
+          }
+        ],
+        sorceress: [
+          {
+            name: '冰寒法术',
+            rowLabels: ROW_LABELS,
+            nodes: [
+              {id:'c_icebolt', name:'寒冰弹', row:0, col:1, max:20},         // (1,2) Ice Bolt
+              {id:'c_frostarmor', name:'冰封甲', row:0, col:2, max:20},      // (1,3) Frost Armor
+              {id:'c_icespike', name:'冰霜新星', row:1, col:0, max:20},      // (2,1) Ice Spike
+              {id:'c_glacialspike', name:'寒冰球', row:1, col:1, max:20},    // (2,2) Glacial Spike
+              {id:'c_shiverarmor', name:'碎冰甲', row:2, col:2, max:20},     // (3,3) Shiver Armor
+              {id:'c_frozenorb', name:'冰尖柱', row:3, col:1, max:20},       // (4,2) Frozen Orb
+              {id:'c_blizzard', name:'暴风雪', row:4, col:0, max:20},        // (5,1) Blizzard
+              {id:'c_chillingarmor', name:'寒冰甲', row:4, col:2, max:20},   // (5,3) Chilling Armor
+              {id:'c_frostnova', name:'冰封球', row:5, col:0, max:20},       // (6,1) Frost Nova
+              {id:'c_coldmastery', name:'冰冷支配', row:5, col:1, max:20}    // (6,2) Cold Mastery
+            ]
+          },
+          {
+            name: '闪电法术',
+            rowLabels: ROW_LABELS,
+            nodes: [
+              {id:'l_chargedbolt', name:'充能弹', row:0, col:1, max:20},       // (1,2) Charged Bolt
+              {id:'l_staticfield', name:'静电立场', row:1, col:0, max:20},    // (2,1) Static Field
+              {id:'l_telekinesis', name:'心灵传动', row:1, col:2, max:20},    // (2,3) Telekinesis
+              {id:'l_nova', name:'新星', row:2, col:0, max:20},               // (3,1) Nova
+              {id:'l_lightningarr', name:'闪电箭', row:2, col:1, max:20},     // (3,2) Lightning
+              {id:'l_chainlightning', name:'连锁闪电', row:3, col:1, max:20}, // (4,2) Chain Lightning
+              {id:'l_teleport', name:'传送术', row:3, col:2, max:20},         // (4,3) Teleport
+              {id:'l_thunderstorm', name:'雷电风暴', row:4, col:0, max:20},   // (5,1) Thunder Storm
+              {id:'l_energyshield', name:'能量护盾', row:4, col:2, max:20},   // (5,3) Energy Shield
+              {id:'l_lightningmastery', name:'闪电支配', row:5, col:1, max:20} // (6,2) Lightning Mastery
+            ]
+          },
+          {
+            name: '火焰法术',
+            rowLabels: ROW_LABELS,
+            nodes: [
+              {id:'f_firebolt', name:'火焰弹', row:0, col:1, max:20},        // (1,2) Fire Bolt
+              {id:'f_warmth', name:'温暖', row:0, col:2, max:20},            // (1,3) Warmth
+              {id:'f_inferno', name:'地狱火', row:1, col:0, max:20},         // (2,1) Inferno
+              {id:'f_warmthfire', name:'烈焰之径', row:2, col:0, max:20},    // (3,1) Blaze
+              {id:'f_fireball', name:'火球', row:2, col:1, max:20},          // (3,2) Fire Ball
+              {id:'f_walloffire', name:'火墙', row:3, col:0, max:20},        // (4,1) Fire Wall
+              {id:'f_firemastery', name:'火焰强化', row:3, col:2, max:20},   // (4,3) Enchant
+              {id:'f_meteor', name:'陨石', row:4, col:1, max:20},            // (5,2) Meteor
+              {id:'f_firegolem', name:'火焰支配', row:5, col:1, max:20},     // (6,2) Fire Mastery
+              {id:'f_hydra', name:'九头海蛇', row:5, col:2, max:20}          // (6,3) Hydra
+            ]
+          }
+        ]
+      };
+      // 其他职业先用亚马逊树占位，后续替换为真实数据
+      ['necromancer','paladin','barbarian','druid','assassin','warlock'].forEach(c => {
+        SKILL_TREES[c] = SKILL_TREES.amazon;
+      });
+
+      const state = {
+        class: 'amazon',
+        points: {},
+        fav: [],               // 常用技能 10 槽：{name,icon,en,tags,desc} 或 null（随 BD 保存/加载）
+        player: { attrs: { str: 0, dex: 0, vit: 0, eng: 0 } },
+        merc: { attrs: { str: 0, dex: 0, vit: 0, eng: 0 } }
+      };
+      let activePanel = 'player';   // 'player' | 'merc'
+      let BD_ID = null;          // 当前正在编辑的 BD 记录 id（从 ?id= 加载或保存后获得）
+      let BD_OWNER_ID = null;    // 该 BD 的拥有者 user_id（用于判断可否覆盖保存）
+      let viewMode = false;      // 查看模式：真正禁用编辑（仅非作者查看他人 BD 时生效）
+      let requestedView = false; // 是否请求查看模式（来自 BD展示 / view=1）；仅当访问者非作者时才真正进入
+      const builderEl = document.getElementById('bdBuilder');
+      function setBuilderLoading(on) {
+        if (builderEl) builderEl.classList.toggle('bd-loading', !!on);
+      }
+
+      const classRow = document.getElementById('classRow');
+      const skillTrees = document.getElementById('skillTrees');
+      const equipGrid = document.getElementById('equipGrid');   // 玩家装备 grid（兼容引用）
+      const equipGrids = document.querySelectorAll('.bd-equip-grid');
+      function gridFor(owner) {
+        return document.querySelector('.bd-equip-grid[data-owner="' + owner + '"]');
+      }
+
+      // 职业切换
+      classRow.addEventListener('click', function(e) {
+        if (viewMode) return;
+        const label = e.target.closest('.bd-radio');
+        if (!label) return;
+        classRow.querySelectorAll('.bd-radio').forEach(l => l.classList.remove('active'));
+        label.classList.add('active');
+        state.class = label.dataset.class;
+        renderSkills();
+      });
+
+      // 玩家 / 佣兵 面板切换（装备与属性共用框架，内容独立维护）
+      const statsTabs = document.querySelector('.bd-stats-tabs');
+      if (statsTabs) {
+        statsTabs.addEventListener('click', function (e) {
+          if (viewMode) return;
+          const btn = e.target.closest('button');
+          if (!btn || !btn.dataset.panel) return;
+          statsTabs.querySelectorAll('button').forEach(function (b) { b.classList.toggle('active', b === btn); });
+          setPanel(btn.dataset.panel);
+        });
+      }
+      function setPanel(panel) {
+        activePanel = panel;
+        document.body.classList.toggle('bd-mercmode', panel === 'merc');
+        if (panel === 'merc') setSectionView('equip');   // 佣兵无技能页：切佣兵时自动回到装备视图
+      }
+
+      // ---------- 视图切换：装备 / 技能（顶部 Tab 点击切换，避免长页滚动） ----------
+      function setSectionView(v) {
+        var tabs = document.getElementById('sectionTabs');
+        if (!tabs) return;
+        tabs.setAttribute('data-cur', v);
+        tabs.querySelectorAll('.bd-section-tab').forEach(function (b) {
+          b.classList.toggle('active', b.getAttribute('data-view') === v);
+        });
+        // 进入技能视图时以可见状态重渲染当前职业的技能树：
+        // 初始渲染发生在面板隐藏（display:none）时，部分浏览器图标可能未加载，
+        // 重渲染保证图标立即创建并加载（等价于点击一次职业单选框）
+        if (v === 'skill' && typeof renderSkills === 'function') renderSkills();
+      }
+      (function () {
+        var tabs = document.getElementById('sectionTabs');
+        if (!tabs) return;
+        tabs.addEventListener('click', function (e) {
+          var btn = e.target.closest('.bd-section-tab');
+          if (!btn) return;
+          var v = btn.getAttribute('data-view');
+          if (v === 'skill' && document.body.classList.contains('bd-mercmode')) {
+            // 佣兵模式无技能树：先切回玩家面板再进入技能视图
+            setPanel('player');
+            var statsTabs = document.querySelector('.bd-stats-tabs');
+            if (statsTabs) statsTabs.querySelectorAll('button').forEach(function (b) {
+              b.classList.toggle('active', b.dataset.panel === 'player');
+            });
+          }
+          setSectionView(v);
+          if (window.__bdTooltip) window.__bdTooltip.hide();
+          if (typeof hideFavTip === 'function') hideFavTip();
+        });
+      })();
+
+      // ---------- 属性面板实时计算：加点 + 装备加成 ----------
+      // 基础值（与 HTML 初始显示一致）
+      var STAT_BASE = {
+        player: {
+          str: 20, dex: 25, vit: 20, eng: 15,
+          life: 306, mana: 162, regen: 1.3, life_regen: 0, fcr: 0,
+          fr: -70, cr: -70, lr: -70, pr: -70, phys: 0, mag: 0,
+          left: 505, soul: 0,
+          dmg_pct: 0, acc_rating: 0, ias: 0, phys_dmg: 0,
+          def: 0, block: 0, fhr: 0, cast_focus: 0, ms: 0
+        },
+        merc: { str: 25, dex: 20, vit: 30, eng: 15, life: 606, mana: 162, regen: 1.3, fcr: 0, fr: -70, cr: -70, lr: -70, pr: -70, phys: 0, mag: 0 }
+      };
+      // 词缀数值取 min/max 中值（随机范围以中值计）
+      function statMid(p) {
+        var lo = parseFloat(p.min), hi = parseFloat(p.max);
+        if (isNaN(lo) && isNaN(hi)) return null;
+        if (isNaN(lo)) lo = 0; if (isNaN(hi)) hi = lo;
+        return Math.round((lo + hi) / 2);
+      }
+      // 累计某侧（玩家/佣兵）全部已装备词缀
+      function sumGear(owner) {
+        var acc = {
+          str: 0, dex: 0, vit: 0, eng: 0, life: 0, mana: 0, regen: 0, life_regen: 0, fcr: 0,
+          fr: 0, cr: 0, lr: 0, pr: 0, phys: 0, mag: 0,
+          dmg_pct: 0, acc_rating: 0, ias: 0, phys_dmg: 0,
+          def: 0, block: 0, fhr: 0, cast_focus: 0, ms: 0
+        };
+        var grid = gridFor(owner);
+        if (grid) grid.querySelectorAll('.bd-slot').forEach(function (slot) {
+          var it = slot.__item;
+          if (!it) return;
+          var props = it.props || it.self_props || (it._raw && (it._raw.props || it._raw.self_props)) || [];
+          props.forEach(function (p) {
+            var code = p && p.code; if (!code) return;
+            var v = statMid(p); if (v == null) return;
+            switch (code) {
+              case 'str': acc.str += v; break;
+              case 'dex': acc.dex += v; break;
+              case 'vit': acc.vit += v; break;
+              case 'eng': acc.eng += v; break;
+              case 'hp': acc.life += v; break;
+              case 'mana': acc.mana += v; break;
+              case 'regen-mana': acc.regen += v; break;
+              case 'hp-regen': case 'regen-hp': acc.life_regen += v; break;
+              case 'cast2': acc.fcr += v; break;
+              case 'res-all': acc.fr += v; acc.cr += v; acc.lr += v; acc.pr += v; break;
+              case 'res-fire': acc.fr += v; break;
+              case 'res-cold': acc.cr += v; break;
+              case 'res-ltng': acc.lr += v; break;
+              case 'res-pois': acc.pr += v; break;
+              case 'res-phys': case 'physres': acc.phys += v; break;
+              case 'res-mag': case 'magicres': acc.mag += v; break;
+              case 'dmg-pct': case 'damage-pct': acc.dmg_pct += v; break;
+              case 'acc-rating': case 'acc': acc.acc_rating += v; break;
+              case 'ias': case 'attack-speed': acc.ias += v; break;
+              case 'phys-dmg': case 'phys-damage': acc.phys_dmg += v; break;
+              case 'def': case 'defense': acc.def += v; break;
+              case 'block': case 'block-pct': acc.block += v; break;
+              case 'fhr': case 'hit-recovery': acc.fhr += v; break;
+              case 'cast-focus': case 'focus': acc.cast_focus += v; break;
+              case 'ms': case 'move-pct': acc.ms += v; break;
+            }
+          });
+        });
+        return acc;
+      }
+      // 重算并写回属性面板
+      function recomputeStats(owner) {
+        var body = document.querySelector('.bd-stats-body[data-owner="' + owner + '"]');
+        if (!body) return;
+        var gear = sumGear(owner);
+        var base = STAT_BASE[owner];
+        var a = state[owner].attrs || {};
+        ['str', 'dex', 'vit', 'eng'].forEach(function (k) {
+          var el = body.querySelector('[data-total="' + k + '"]');
+          if (el) el.textContent = base[k] + (a[k] || 0) + gear[k];
+        });
+        var leftEl = body.querySelector('[data-stat="leftpts"]');
+        if (leftEl) {
+          var spent = (a.str || 0) + (a.dex || 0) + (a.vit || 0) + (a.eng || 0);
+          leftEl.textContent = base.left - spent;
+        }
+        var lifeEl = body.querySelector('[data-stat="life"]'); if (lifeEl) lifeEl.textContent = base.life + gear.life;
+        var manaEl = body.querySelector('[data-stat="mana"]'); if (manaEl) manaEl.textContent = base.mana + gear.mana;
+        var regenEl = body.querySelector('[data-stat="regen"]'); if (regenEl) regenEl.textContent = (base.regen * (1 + gear.regen / 100)).toFixed(1);
+        var fcrEl = body.querySelector('[data-stat="fcr"]'); if (fcrEl) fcrEl.textContent = base.fcr + gear.fcr;
+        [['fr', 'fr'], ['cr', 'cr'], ['lr', 'lr'], ['pr', 'pr'], ['phys', 'phys'], ['mag', 'mag']].forEach(function (pair) {
+          var el = body.querySelector('[data-stat="' + pair[0] + '"]');
+          if (el) el.textContent = (base[pair[1]] + gear[pair[1]]) + '%';
+        });
+        // 新增属性（2026-08-19）：生命回复 / 精魂 / 物理 / 防御 / 其他
+        var lifeRegenEl = body.querySelector('[data-stat="life-regen"]');
+        if (lifeRegenEl) lifeRegenEl.textContent = base.life_regen + gear.life_regen;
+        var soulEl = body.querySelector('[data-stat="soul"]');
+        if (soulEl) soulEl.textContent = base.soul;
+        [['dmg-pct', 'dmg_pct', true], ['acc-rating', 'acc_rating', false], ['ias', 'ias', true],
+         ['phys-dmg', 'phys_dmg', false], ['def', 'def', false], ['block', 'block', true],
+         ['fhr', 'fhr', true], ['cast-focus', 'cast_focus', true], ['ms', 'ms', true]].forEach(function (pair) {
+          var el = body.querySelector('[data-stat="' + pair[0] + '"]');
+          if (el) el.textContent = (base[pair[1]] + gear[pair[1]]) + (pair[2] ? '%' : '');
+        });
+      }
+
+      // 属性加点 − / + 按钮（玩家 / 佣兵 各自独立绑定）
+      function bindAttrControls() {
+        document.querySelectorAll('.bd-stats-body').forEach(function (body) {
+          const owner = body.dataset.owner;
+          body.querySelectorAll('.bd-plusminus').forEach(function (group) {
+            const attr = group.querySelector('input').dataset.attr;
+            const input = group.querySelector('input');
+            group.querySelectorAll('button').forEach(function (btn) {
+              btn.addEventListener('click', function () {
+                if (viewMode) return;
+                const cur = parseInt(input.value, 10) || 0;
+                const delta = btn.dataset.act === 'inc' ? 1 : -1;
+                const next = Math.max(0, cur + delta);
+                input.value = next;
+                state[owner].attrs[attr] = next;
+                recomputeStats(owner);
+              });
+            });
+          });
+        });
+      }
+
+      // 装备槽点击：全部接入装备选择器（暗金/套装/符文之语）
+      const sampleGear = {};   // 占位数据已弃用（选择器已覆盖全部槽位）
+
+      // 选中回填：更新图片 + 追加名称标签 + 记录完整数据（供 hover 卡片）
+      function fillSlot(slot, it) {
+        var img = slot.querySelector('img');
+        if (img) {
+          if (it.img) img.src = 'assets/equipment/' + it.img + '.webp';
+          img.alt = it.name || img.alt;
+        }
+        var old = slot.querySelector('.bd-slot-name');
+        if (old) old.remove();
+        slot.dataset.name = it.name || '';
+        slot.dataset.kind = it.kind || '';
+        slot.__item = it || null;
+        slot.classList.toggle('filled', !!slot.dataset.name);
+        if (slot.dataset.name) {
+          var span = document.createElement('span');
+          span.className = 'bd-slot-name';
+          span.textContent = slot.dataset.name;
+          slot.appendChild(span);
+        }
+        // 符文装备：选中后常驻叠加符文图标（无需 hover）
+        showSlotRunes(slot);
+      }
+      function clearSlot(slot) {
+        removeSlotRunes(slot);
+        var old = slot.querySelector('.bd-slot-name');
+        if (old) old.remove();
+        slot.dataset.name = '';
+        slot.dataset.kind = '';
+        slot.__item = null;
+        slot.classList.remove('filled');
+        // 还原底材占位图（取消装备后回到初始状态）
+        var img = slot.querySelector('img');
+        if (img && slot.__baseImg) img.src = slot.__baseImg;
+      }
+
+      equipGrids.forEach(function (grid) {
+        grid.querySelectorAll('.bd-slot').forEach(function (slot) {
+          // 记录初始底材图（取消装备后还原）
+          var img0 = slot.querySelector('img');
+          slot.__baseImg = img0 ? img0.src : '';
+          // 右上角「×」取消装备按钮
+          var clearBtn = document.createElement('button');
+          clearBtn.type = 'button';
+          clearBtn.className = 'bd-slot-clear';
+          clearBtn.textContent = '×';
+          clearBtn.setAttribute('aria-label', '取消装备');
+          clearBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (viewMode) return;
+            clearSlot(slot);
+            recomputeStats(slot.closest('.bd-equip-grid').dataset.owner);
+          });
+          slot.appendChild(clearBtn);
+          slot.addEventListener('click', function () {
+            if (viewMode) return;
+            if (!window.bdEquipPicker) return;
+            const key = slot.dataset.slot;
+            // 戒指左右两槽共用「戒指」选择器
+            const pickerKey = (key === 'ring-left' || key === 'ring-right') ? 'ring' : key;
+            window.bdEquipPicker.open(pickerKey, function (it) {
+              fillSlot(slot, it);
+              recomputeStats(slot.closest('.bd-equip-grid').dataset.owner);
+            });
+          });
+          // hover 显示装备卡片（tooltip）
+          slot.addEventListener('mouseenter', function () { if (slot.__item) showTip(slot); });
+          slot.addEventListener('mouseleave', hideTip);
+        });
+      });
+
+      // ---------- hover 装备卡片（tooltip）：复用对应页面卡片渲染函数，保证完全一致 ----------
+      function tipEsc(s) {
+        return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+          return ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" })[c];
+        });
+      }
+      function renderTipHtml(it) {
+        if (!it || !it._raw) return "";
+        // 技能（法师技能树）：简易技能卡，结构与「常用技能」浮层完全一致（图标/名称/en/标签/说明）
+        if (it.kind === "skill" && it._raw) {
+          var sk = it._raw;
+          var tags = (sk.tags || []).map(function (t) {
+            return "<span>" + tipEsc(t) + "</span>";
+          }).join("");
+          return '<div class="bd-fav-tip bd-fav-tip-static">' +
+            '<div class="bd-fav-tip-head">' +
+              '<div class="bd-fav-tip-thumb">' + (sk.icon ? '<img src="assets/skills/' + tipEsc(sk.icon) + '" alt="" onerror="this.remove();">' : "") + '</div>' +
+              '<div class="bd-fav-tip-name"><b>' + tipEsc(sk.name || "") + '</b>' +
+                '<span class="en">' + tipEsc(sk.en || "") + '</span>' +
+              '</div>' +
+              (tags ? '<span class="bd-fav-tip-tags">' + tags + '</span>' : "") +
+            '</div>' +
+            (sk.desc ? '<p class="bd-fav-tip-desc">' + tipEsc(sk.desc) + '</p>' : "") +
+          "</div>";
+        }
+        // 暗金 → 暗金页卡片；套装 → 套装页部件卡片；符文 → 符文页卡片
+        if (it.kind === "unique" && window.__uniqueCardRender) {
+          return window.__uniqueCardRender(it._raw);
+        }
+        if (it.kind === "legend" && window.__legendCardRender) {
+          return window.__legendCardRender(it._raw);
+        }
+        if (it.kind === "set" && window.__setPartCardRender) {
+          return window.__setPartCardRender(it._raw, null);
+        }
+        if (it.kind === "rune" && window.__runeCardRender) {
+          return window.__runeCardRender(it._raw);
+        }
+        // 降级：渲染函数缺失时仅显示名称
+        return '<div class="bd-tip-fallback"><span class="bd-picker-name">' + tipEsc(it.name) + '</span>'
+          + (it.base ? '<span class="bd-picker-base">' + tipEsc(it.base) + '</span>' : '') + '</div>';
+      }
+      var tipEl = null;
+      var tipTimer = null;
+      var tipToken = 0;                 // 每次显示 tooltip 递增，用于取消过期的隐藏定时器
+      var tipSlot = null;               // 当前 hover 的槽位/卡片
+      function ensureTip() {
+        if (tipEl) return tipEl;
+        tipEl = document.createElement("div");
+        tipEl.id = "bdEquipTip";
+        tipEl.className = "bd-tip";
+        document.body.appendChild(tipEl);
+        return tipEl;
+      }
+      // 符文装备：在槽位装备图上常驻叠加对应符文图标（60% 透明，一行两个，自上而下）
+      // 用 position:fixed 跟随槽位实际尺寸，避免 slot 内部 flex+align-items 导致 inset:0 被压扁；
+      // 每个槽位独立跟踪（slot.__runeWrap），滚动/缩放时统一重定位
+      function showSlotRunes(slot) {
+        removeSlotRunes(slot);
+        if (!slot.__item || slot.__item.kind !== "rune") return;
+        var raw = slot.__item._raw;
+        if (!raw || !raw.runes || !raw.runes.length) return;
+        var wrap = document.createElement("div");
+        wrap.className = "bd-slot-runes";
+        var r = slot.getBoundingClientRect();
+        Object.assign(wrap.style, {
+          position: "fixed", left: r.left + "px", top: r.top + "px",
+          width: r.width + "px", height: r.height + "px"
+        });
+        raw.runes.forEach(function (x) {
+          var im = document.createElement("img");
+          im.src = "assets/runes/" + (x.code || "") + ".webp";
+          im.alt = x.zh || "";
+          wrap.appendChild(im);
+        });
+        document.body.appendChild(wrap);
+        slot.__runeWrap = wrap;
+      }
+      function removeSlotRunes(slot) {
+        if (slot && slot.__runeWrap) { slot.__runeWrap.remove(); slot.__runeWrap = null; }
+      }
+      // 页面滚动/缩放时同步所有常驻符文叠加层的位置
+      function repositionRuneWraps() {
+        document.querySelectorAll(".bd-equip-grid .bd-slot").forEach(function (s) {
+          if (!s.__runeWrap || !s.__item || s.__item.kind !== "rune") return;
+          var r = s.getBoundingClientRect();
+          Object.assign(s.__runeWrap.style, {
+            left: r.left + "px", top: r.top + "px",
+            width: r.width + "px", height: r.height + "px"
+          });
+        });
+      }
+      window.addEventListener("scroll", repositionRuneWraps, true);   // 捕获以覆盖内部滚动
+      window.addEventListener("resize", repositionRuneWraps);
+      function showTipAt(anchor, it) {
+        if (!it) return;
+        clearTimeout(tipTimer);        // 取消上次未完成的隐藏：修复打开弹窗/离开槽位时残留的 hide 定时器把刚显示的卡片隐藏
+        tipToken++;
+        tipSlot = anchor;
+        var el = ensureTip();
+        el.innerHTML = renderTipHtml(it);
+        el.style.display = "block";
+        el.style.opacity = "0";
+        void el.offsetWidth;             // 强制 reflow，使 opacity 过渡生效（淡入）
+        el.style.opacity = "1";
+        var r = anchor.getBoundingClientRect();
+        var w = el.offsetWidth, h = el.offsetHeight;
+        var isCharm = !!(anchor.classList && anchor.classList.contains('bd-charm-item'));
+        var x, y;
+        if (isCharm) {
+          // 护符：优先显示在右侧/左侧，避免卡片垂直堆叠遮挡背包上下排的小护符
+          x = r.right + 12;
+          y = r.top + r.height / 2 - h / 2;
+          if (x + w > window.innerWidth - 6) x = r.left - w - 12;   // 右侧放不下 → 左侧
+          y = Math.max(6, Math.min(y, window.innerHeight - h - 6));
+          if (x < 6) {   // 左右都放不下（窄屏）→ 回退上下居中
+            x = r.left + r.width / 2 - w / 2;
+            y = r.top - h - 10;
+            if (y < 6) y = r.bottom + 10;
+          }
+          x = Math.max(6, Math.min(x, window.innerWidth - w - 6));
+        } else {
+          x = r.left + r.width / 2 - w / 2;
+          y = r.top - h - 10;
+          if (y < 6) y = r.bottom + 10;
+          x = Math.max(6, Math.min(x, window.innerWidth - w - 6));
+        }
+        el.style.left = x + "px";
+        el.style.top = y + "px";
+      }
+      function showTip(slot) {
+        showTipAt(slot, slot.__item);
+      }
+      // 暴露给装备选择器弹窗：hover 卡片时预览属性卡片（复用同款 tooltip）
+      window.__bdTooltip = { show: showTipAt, hide: hideTip };
+      function hideTip() {
+        tipSlot = null;
+        if (!tipEl) return;
+        clearTimeout(tipTimer);
+        var token = tipToken;
+        tipEl.style.opacity = "0";       // 淡出后再隐藏（符文叠加常驻，不随 hover 移除）
+        tipTimer = setTimeout(function () {
+          if (token !== tipToken) return;   // 期间已有新的显示，跳过本次隐藏
+          if (tipEl) tipEl.style.display = "none";
+        }, 180);
+      }
+
+      // 渲染技能树（每系 3列×6行=18格，左侧带竖排行标签；职业含三系技能树并排展示）
+      function renderSkills() {
+        // 技能天赋页标题后显示当前职业（与顶部单选框对应；职业名颜色与单选框统一）
+        var clsEl = document.querySelector('.bd-skill-trees-title .bd-class-name');
+        if (clsEl) {
+          var active = classRow.querySelector('.bd-radio.active');
+          clsEl.textContent = active ? '· ' + active.textContent.trim() : '';
+          clsEl.setAttribute('data-class', active ? active.dataset.class : '');
+        }
+        const trees = SKILL_TREES[state.class] || SKILL_TREES.amazon;
+        skillTrees.innerHTML = '';
+
+        trees.forEach(tree => {
+          const wrap = document.createElement('div');
+          wrap.className = 'bd-skill-tree';
+          const title = document.createElement('h4');
+          title.textContent = tree.name;
+          wrap.appendChild(title);
+
+          // 左侧行标签：基础技能（跨3行）/ 一转 / 二转 / 三转
+          const labels = document.createElement('div');
+          labels.className = 'bd-skill-labels';
+          let rowStart = 1;
+          tree.rowLabels.forEach(lbl => {
+            const label = document.createElement('div');
+            label.className = 'bd-skill-label';
+            label.textContent = lbl.label;
+            label.style.gridRow = rowStart + ' / span ' + lbl.span;
+            labels.appendChild(label);
+            rowStart += lbl.span;
+          });
+          wrap.appendChild(labels);
+
+          const grid = document.createElement('div');
+          grid.className = 'bd-tree-grid';
+          // 6行3列共18格
+          for (let r = 0; r < 6; r++) {
+            for (let c = 0; c < 3; c++) {
+              const nodeData = tree.nodes.find(n => n.row === r && n.col === c);
+              const node = document.createElement('div');
+              const id = nodeData ? (state.class + '_' + tree.name + '_' + nodeData.id) : null;
+              const lvl = id ? (state.points[id] || 0) : 0;
+              node.className = 'bd-skill-node' + (lvl > 0 ? ' active' : '') + (nodeData ? '' : ' empty');
+              // 查找技能图标与数据（按当前职业取对应数据源：SORCERESS_DATA / AMAZON_DATA / NECRO_DATA）
+              // 注意：必须用 let 声明，让每个节点的 mouseenter 闭包捕获各自迭代的 skillData（var 会共享循环末值）
+              let skillData = null;
+              var classSkillData = (state.class === 'sorceress') ? window.SORCERESS_DATA
+                : (state.class === 'amazon') ? window.AMAZON_DATA
+                : (state.class === 'necromancer') ? window.NECRO_DATA
+                : null;
+              if (nodeData && classSkillData && classSkillData.skills && classSkillData.skills[nodeData.name]) {
+                skillData = classSkillData.skills[nodeData.name];
+              }
+              if (skillData && skillData.icon) {
+                var img = document.createElement('img');
+                img.className = 'bd-skill-icon';
+                img.src = 'assets/skills/' + skillData.icon;
+                img.alt = nodeData.name;
+                img.draggable = false;   // 防止 img 自身默认拖拽干扰节点整体拖放
+                // 不用 loading="lazy"：技能面板默认 display:none（视图 Tab），懒加载图片不会触发加载，
+                // 导致初始职业（亚马逊）的图标空白，切换职业 re-render 后才出现。图标量小，直接立即加载。
+                img.onerror = function () { this.remove(); };
+                node.appendChild(img);
+              }
+              var nameSpan = document.createElement('span');
+              nameSpan.className = 'bd-skill-name';
+              nameSpan.textContent = nodeData ? nodeData.name : '';
+              node.appendChild(nameSpan);
+              var lvlSpan = document.createElement('span');
+              lvlSpan.className = 'bd-skill-lvl';
+              lvlSpan.textContent = nodeData ? lvl : '';
+              node.appendChild(lvlSpan);
+              if (nodeData) {
+                node.title = nodeData.name + '（最高 ' + nodeData.max + ' 级）';
+                node.addEventListener('click', function (e) {
+                  if (node._justDragged) { node._justDragged = false; return; }  // 刚拖拽过：抑制误加点
+                  adjustSkill(id, e.shiftKey ? nodeData.max : 1);
+                });
+                node.addEventListener('contextmenu', e => {
+                  e.preventDefault();
+                  adjustSkill(id, e.shiftKey ? -(state.points[id] || 0) : -1);
+                });
+                if (skillData) {
+                  node.__skillData = skillData;   // 供手动拖拽（拖到常用技能栏）使用
+                  node.addEventListener('mouseenter', function () {
+                    if (window.__bdTooltip) window.__bdTooltip.show(node, { kind: 'skill', _raw: skillData, name: skillData.name, icon: skillData.icon, en: skillData.en || '', desc: skillData.desc || '', tags: skillData.tags || [] });
+                  });
+                  node.addEventListener('mouseleave', function () { if (window.__bdTooltip) window.__bdTooltip.hide(); });
+                }
+              }
+              grid.appendChild(node);
+            }
+          }
+          wrap.appendChild(grid);
+          skillTrees.appendChild(wrap);
+        });
+
+        updatePointDisplay();
+      }
+
+      function adjustSkill(id, delta) {
+        if (viewMode) return;
+        const cur = state.points[id] || 0;
+        const next = Math.max(0, cur + delta);
+        if (next === cur) return;
+        state.points[id] = next;
+        renderSkills();
+      }
+
+      function updatePointDisplay() {
+        const spent = Object.values(state.points).reduce((a,b) => a+b, 0);
+        document.getElementById('spentPoints').textContent = spent;
+        document.getElementById('leftPoints').textContent = 110 - spent;
+      }
+
+      // ---------- 护符背包（10 列 × 6 行，格子与戒指/项链同尺寸、紧密相连） ----------
+      // 【尺寸规则·2026-08-19 用户约定】按底材中文名映射占格：
+      //   小型咒符 → 1×1 / 大型咒符 → 1×2 / 特大咒符 → 1×3 / 咒符（无前缀，四种规格之一）→ 2×2；未知底材默认 1×1
+      function charmSize(it) {
+        var base = (it && (it.base || (it._raw && it._raw.base_zh) || "")) || "";
+        var map = { "小型咒符": [1, 1], "大型咒符": [1, 2], "特大咒符": [1, 3], "咒符": [2, 2] };
+        var hit = map[base];
+        return hit ? { w: hit[0], h: hit[1] } : { w: 1, h: 1 };
+      }
+      function charmGridFor(owner) {
+        return document.querySelector('.bd-charm-grid[data-owner="' + owner + '"]');
+      }
+      function charmCellSize(grid) {
+        var c = grid.querySelector('.bd-charm-cell');
+        return (c && c.offsetWidth) ? c.offsetWidth : 60;   // 跟随响应式缩放（60px / 移动端 52px）
+      }
+      function buildCharmGrids() {
+        document.querySelectorAll('.bd-charm-grid').forEach(function (grid) {
+          if (grid.querySelector('.bd-charm-cell')) return;
+          var frag = document.createDocumentFragment();
+          for (var i = 0; i < 60; i++) {
+            var c = document.createElement('div');
+            c.className = 'bd-charm-cell';
+            c.dataset.idx = i;
+            frag.appendChild(c);
+          }
+          grid.appendChild(frag);
+        });
+      }
+      function charmCellAt(grid, x, y) {
+        var cells = grid.querySelectorAll('.bd-charm-cell');
+        return cells[y * 10 + x];
+      }
+      function charmSpotFree(grid, x, y, w, h) {
+        for (var dy = 0; dy < h; dy++) {
+          for (var dx = 0; dx < w; dx++) {
+            var c = charmCellAt(grid, x + dx, y + dy);
+            if (!c || c.classList.contains('occ')) return false;
+          }
+        }
+        return true;
+      }
+      function findCharmSpot(grid, w, h) {
+        for (var y = 0; y <= 6 - h; y++) {
+          for (var x = 0; x <= 10 - w; x++) {
+            if (charmSpotFree(grid, x, y, w, h)) return { x: x, y: y };
+          }
+        }
+        return null;
+      }
+      function setCharmCells(grid, x, y, w, h, on) {
+        for (var dy = 0; dy < h; dy++) {
+          for (var dx = 0; dx < w; dx++) {
+            var c = charmCellAt(grid, x + dx, y + dy);
+            if (c) c.classList.toggle('occ', on);
+          }
+        }
+      }
+      function placeCharmAt(grid, x, y, w, h, it) {
+        if (x < 0 || y < 0 || x + w > 10 || y + h > 6 || !charmSpotFree(grid, x, y, w, h)) return false;
+        setCharmCells(grid, x, y, w, h, true);
+        var cs = charmCellSize(grid);
+        var item = document.createElement('div');
+        item.className = 'bd-charm-item';
+        item.style.left = (x * cs) + 'px';
+        item.style.top = (y * cs) + 'px';
+        item.style.width = (w * cs) + 'px';
+        item.style.height = (h * cs) + 'px';
+        var imgHtml = it.img
+          ? '<img src="assets/equipment/' + tipEsc(it.img) + '.webp" alt="" loading="lazy" onerror="this.remove();">'
+          : '';
+        item.innerHTML = imgHtml +
+          '<span class="bd-charm-name">' + tipEsc(it.name || '') + '</span>' +
+          '<button type="button" class="bd-charm-del" aria-label="移除护符">×</button>';
+        item.__data = { x: x, y: y, w: w, h: h, kind: it.kind, name: it.name, img: it.img, base: it.base, _raw: it._raw };
+        item.addEventListener('mouseenter', function () { if (window.__bdTooltip && item.__data) window.__bdTooltip.show(item, item.__data); });
+        item.addEventListener('mouseleave', function () { if (window.__bdTooltip) window.__bdTooltip.hide(); });
+        grid.appendChild(item);
+        return true;
+      }
+      function placeCharm(grid, it) {
+        var sz = charmSize(it);
+        var spot = findCharmSpot(grid, sz.w, sz.h);
+        if (!spot) { alert('护符背包空间不足，无法放入「' + (it.name || '') + '」。'); return false; }
+        return placeCharmAt(grid, spot.x, spot.y, sz.w, sz.h, it);
+      }
+      function removeCharmItem(grid, item) {
+        // 先隐藏悬停属性卡片，避免移除后 tooltip 残留
+        if (window.__bdTooltip && window.__bdTooltip.hide) window.__bdTooltip.hide();
+        var d = item.__data || {};
+        setCharmCells(grid, d.x, d.y, d.w, d.h, false);
+        item.remove();
+      }
+      function serializeCharms(owner) {
+        var grid = charmGridFor(owner);
+        if (!grid) return [];
+        return Array.prototype.slice.call(grid.querySelectorAll('.bd-charm-item')).map(function (it) {
+          var d = it.__data || {};
+          var raw = null;
+          try { raw = JSON.parse(JSON.stringify(d._raw || {})); } catch (e) { raw = {}; }
+          return { x: d.x, y: d.y, w: d.w, h: d.h, kind: d.kind, name: d.name, img: d.img, base: d.base, raw: raw };
+        });
+      }
+      function fillCharms(owner, list) {
+        var grid = charmGridFor(owner);
+        if (!grid || !list) return;
+        list.forEach(function (c) {
+          if (!c || c.name == null) return;
+          placeCharmAt(grid, c.x, c.y, c.w, c.h, { kind: c.kind, name: c.name, img: c.img, base: c.base, _raw: c.raw || {} });
+        });
+      }
+      buildCharmGrids();
+      var charmPickBtn = document.getElementById('charmPickBtn');
+      if (charmPickBtn) {
+        charmPickBtn.addEventListener('click', function () {
+          if (viewMode) return;
+          if (!window.bdEquipPicker) return;
+          var owner = activePanel || 'player';
+          window.bdEquipPicker.open('charm', function (it) {
+            placeCharm(charmGridFor(owner), it);
+          });
+        });
+      }
+      // 点击右上角「×」移除护符（点击护符本体不再删除；双击/单击均不会让护符消失）
+      document.querySelectorAll('.bd-charm-grid').forEach(function (grid) {
+        grid.addEventListener('click', function (e) {
+          if (viewMode) return;
+          var del = e.target.closest('.bd-charm-del');
+          if (!del) return;
+          var item = del.closest('.bd-charm-item');
+          if (item) removeCharmItem(grid, item);
+        });
+      });
+
+      // ---------- 护符拖拽：按住跟随鼠标，松手吸附到格子；越界/重叠自动回弹 ----------
+      (function () {
+        var drag = null;
+        document.querySelectorAll('.bd-charm-grid').forEach(function (grid) {
+          function begin(cx, cy) {
+            if (viewMode) return;
+            var item = dragStartTarget;
+            if (!item || !item.__data) return;
+            var d = item.__data;
+            var gr = grid.getBoundingClientRect();
+            var ir = item.getBoundingClientRect();
+            drag = {
+              item: item, d: d, grid: grid,
+              cs: charmCellSize(grid),
+              offX: cx - ir.left, offY: cy - ir.top,
+              gridLeft: gr.left, gridTop: gr.top,
+              sx: cx, sy: cy
+            };
+            item._dragMoved = false;
+            item.classList.add('bd-dragging');
+          }
+          var dragStartTarget = null;
+          grid.addEventListener('mousedown', function (e) {
+            if (viewMode) return;
+            if (e.target.closest('.bd-charm-del')) return;   // × 按钮不触发拖拽
+            var item = e.target.closest('.bd-charm-item');
+            if (!item || !item.__data) return;
+            e.preventDefault();
+            dragStartTarget = item;
+            begin(e.clientX, e.clientY);
+          });
+          grid.addEventListener('touchstart', function (e) {
+            if (viewMode) return;
+            if (e.target.closest('.bd-charm-del')) return;   // × 按钮不触发拖拽
+            var item = e.target.closest('.bd-charm-item');
+            if (!item || !item.__data) return;
+            var t = e.touches && e.touches[0];
+            if (!t) return;
+            dragStartTarget = item;
+            begin(t.clientX, t.clientY);
+          }, { passive: false });
+        });
+        function moveTo(cx, cy) {
+          if (!drag) return;
+          var cs = drag.cs, d = drag.d;
+          if (Math.abs(cx - drag.sx) + Math.abs(cy - drag.sy) > 4) drag.item._dragMoved = true;
+          var left = cx - drag.gridLeft - drag.offX;
+          var top = cy - drag.gridTop - drag.offY;
+          left = Math.max(0, Math.min(left, 10 * cs - d.w * cs));
+          top = Math.max(0, Math.min(top, 6 * cs - d.h * cs));
+          drag.item.style.left = left + 'px';
+          drag.item.style.top = top + 'px';
+        }
+        document.addEventListener('mousemove', function (e) { moveTo(e.clientX, e.clientY); });
+        document.addEventListener('touchmove', function (e) {
+          var t = e.touches && e.touches[0];
+          if (!t) return;
+          moveTo(t.clientX, t.clientY);
+          e.preventDefault();
+        }, { passive: false });
+        function drop(cx, cy) {
+          if (!drag) return;
+          var item = drag.item, d = drag.d, grid = drag.grid, cs = drag.cs;
+          item.classList.remove('bd-dragging');
+          var col = Math.max(0, Math.min(Math.round((cx - drag.gridLeft - drag.offX) / cs), 10 - d.w));
+          var row = Math.max(0, Math.min(Math.round((cy - drag.gridTop - drag.offY) / cs), 6 - d.h));
+          if ((col !== d.x || row !== d.y) && charmSpotFree(grid, col, row, d.w, d.h)) {
+            setCharmCells(grid, d.x, d.y, d.w, d.h, false);
+            d.x = col; d.y = row;
+            setCharmCells(grid, d.x, d.y, d.w, d.h, true);
+            item.style.left = (col * cs) + 'px';
+            item.style.top = (row * cs) + 'px';
+          } else {
+            item.style.left = (d.x * cs) + 'px';
+            item.style.top = (d.y * cs) + 'px';
+          }
+          drag = null;
+        }
+        document.addEventListener('mouseup', function (e) { drop(e.clientX, e.clientY); });
+        document.addEventListener('touchend', function (e) {
+          var c = e.changedTouches && e.changedTouches[0];
+          if (c) drop(c.clientX, c.clientY);
+        });
+      })();
+
+      // ---------- 常用技能（一行 10 框，选择已导入的职业技能） ----------
+      function favAllSkills() {
+        var out = [];
+        [["女巫", window.SORCERESS_DATA], ["亚马逊", window.AMAZON_DATA], ["死灵法师", window.NECRO_DATA]]
+          .forEach(function (p) {
+            var cls = p[0], data = p[1];
+            if (!data || !data.skills) return;
+            Object.keys(data.skills).forEach(function (k) {
+              var s = data.skills[k];
+              if (!s) return;
+              out.push({ cls: cls, name: k, en: s.en || "", icon: s.icon || "", desc: s.desc || "", tags: s.tags || [], lvl: s.lvl || "" });
+            });
+          });
+        return out;
+      }
+
+      // 技能选择弹窗（复用装备选择器的 .bd-modal 样式；按职业 Tab + 搜索 + 网格）
+      var favModal = null, favCls = "", favQ = "";
+      function renderFavList() {
+        var grid = document.getElementById("bdFavGrid");
+        var count = document.getElementById("bdFavCount");
+        var list = (favModal._data || []).filter(function (s) {
+          if (favCls && s.cls !== favCls) return false;
+          if (favQ && (s.name + " " + (s.en || "")).toLowerCase().indexOf(favQ.toLowerCase()) === -1) return false;
+          return true;
+        });
+        count.textContent = "共 " + list.length + " 个技能";
+        if (!list.length) { grid.innerHTML = '<p class="bd-picker-empty">没有匹配的技能。</p>'; return; }
+        grid.innerHTML = list.map(function (s, i) {
+          var img = s.icon
+            ? '<img class="bd-picker-thumb" src="assets/skills/' + tipEsc(s.icon) + '" alt="" loading="lazy" onerror="this.outerHTML=\'<div class=&quot;bd-picker-thumb-ph&quot;>无图</div>\';" />'
+            : '<div class="bd-picker-thumb-ph">无图</div>';
+          return '<button type="button" class="bd-picker-card" data-i="' + i + '">' + img +
+            '<span class="bd-picker-text"><span class="bd-picker-name">' + tipEsc(s.name) + '</span>' +
+            '<span class="bd-picker-base">' + tipEsc(s.cls + (s.lvl ? " · Lv" + s.lvl : "")) + '</span></span></button>';
+        }).join("");
+        grid.querySelectorAll(".bd-picker-card").forEach(function (card) {
+          card.addEventListener("click", function () {
+            var s = list[parseInt(card.getAttribute("data-i"), 10)];
+            if (s && typeof favModal._onSelect === "function") favModal._onSelect(s);
+            closeFavPicker();
+          });
+        });
+      }
+      function openFavPicker(onSelect) {
+        if (!favModal) {
+          favModal = document.createElement("div");
+          favModal.className = "bd-modal";
+          favModal.id = "bdFavPicker";
+          favModal.innerHTML =
+            '<div class="bd-modal-card" role="dialog" aria-label="选择常用技能">' +
+              '<header class="bd-modal-head">' +
+                '<h3 class="bd-modal-title">选择常用技能</h3>' +
+                '<button type="button" class="bd-modal-close" aria-label="关闭">×</button>' +
+              '</header>' +
+              '<div class="bd-modal-body">' +
+                '<div class="bd-picker-search-row">' +
+                  '<span class="bd-picker-search-icon" aria-hidden="true">⌕</span>' +
+                  '<input type="search" id="bdFavSearch" placeholder="搜索技能名…" autocomplete="off" />' +
+                '</div>' +
+                '<div class="bd-picker-bar" id="bdFavBar">' +
+                  '<span class="bd-picker-bar-label">职业</span>' +
+                  '<button type="button" class="bd-picker-chip active" data-cls="">全部</button>' +
+                  '<button type="button" class="bd-picker-chip" data-cls="女巫">女巫</button>' +
+                  '<button type="button" class="bd-picker-chip" data-cls="亚马逊">亚马逊</button>' +
+                  '<button type="button" class="bd-picker-chip" data-cls="死灵法师">死灵法师</button>' +
+                '</div>' +
+                '<p class="bd-picker-count" id="bdFavCount" aria-live="polite"></p>' +
+                '<div class="bd-picker-grid" id="bdFavGrid"></div>' +
+              '</div>' +
+            '</div>';
+          document.body.appendChild(favModal);
+          favModal.querySelector(".bd-modal-close").addEventListener("click", closeFavPicker);
+          favModal.addEventListener("click", function (e) { if (e.target === favModal) closeFavPicker(); });
+          document.getElementById("bdFavSearch").addEventListener("input", function () { favQ = this.value || ""; renderFavList(); });
+          document.getElementById("bdFavBar").addEventListener("click", function (e) {
+            var btn = e.target.closest(".bd-picker-chip");
+            if (!btn) return;
+            Array.prototype.forEach.call(this.querySelectorAll(".bd-picker-chip"), function (b) { b.classList.toggle("active", b === btn); });
+            favCls = btn.getAttribute("data-cls") || "";
+            renderFavList();
+          });
+          document.addEventListener("keydown", function (e) { if (e.key === "Escape" && favModal.style.display === "flex") closeFavPicker(); });
+        }
+        favModal._data = favAllSkills();
+        favModal._onSelect = onSelect;
+        favCls = ""; favQ = "";
+        var q = document.getElementById("bdFavSearch"); if (q) q.value = "";
+        renderFavList();
+        favModal.style.display = "flex";
+        document.body.classList.add("bd-modal-open");
+        if (q) q.focus();
+      }
+      function closeFavPicker() {
+        if (!favModal) return;
+        favModal.style.display = "none";
+        document.body.classList.remove("bd-modal-open");
+      }
+
+      // 常用技能槽位：生成（10 框 + 10 个名字位）/ 填充 / 清除
+      function buildFavSkills() {
+        var row = document.getElementById("favSkills");
+        var labels = document.getElementById("favLabels");
+        if (!row) return;
+        if (row.querySelector(".bd-fav-slot")) return;
+        for (var i = 0; i < 10; i++) {
+          var slot = document.createElement("div");
+          slot.className = "bd-fav-slot";
+          slot.dataset.idx = i;
+          slot.innerHTML = '<span class="bd-fav-plus">+</span>';
+          slot.addEventListener("click", function () {
+            if (viewMode) return;
+            if (this.classList.contains("filled")) return;   // 已填充：点本体不响应，用右上角 × 清除
+            var self = this;
+            openFavPicker(function (s) { fillFavSlot(self, s); });
+          });
+          // 拖拽：技能树节点可拖入；已填充槽位可在行内拖动换位（手动拖拽，见下方全局 drag 管理器）
+          row.appendChild(slot);
+          if (labels) {
+            var lab = document.createElement("div");
+            lab.className = "bd-fav-label";
+            lab.dataset.idx = i;
+            lab.textContent = "";
+            labels.appendChild(lab);
+          }
+        }
+      }
+      // 交换/移动两个常用技能槽位：目标先获得源内容，源再回填目标内容（空槽=移动，非空=交换）
+      function swapFavSlots(a, b) {
+        var sa = a.__skill || null;
+        var sb = b.__skill || null;
+        if (sa) fillFavSlot(b, sa); else clearFavSlot(b);
+        if (sb) fillFavSlot(a, sb); else clearFavSlot(a);
+      }
+      function favLabelFor(slot) {
+        var labels = document.getElementById("favLabels");
+        if (!labels) return null;
+        return labels.querySelector('.bd-fav-label[data-idx="' + slot.dataset.idx + '"]');
+      }
+      // 记录常用技能到 state.fav（随 BD 保存/加载，与选择器选择等价）
+      function syncFavState() {
+        var list = [];
+        document.querySelectorAll('#favSkills .bd-fav-slot').forEach(function (s) {
+          var sk = s.__skill || null;
+          list.push(sk ? { name: sk.name, icon: sk.icon || '', en: sk.en || '', tags: sk.tags || [], desc: sk.desc || '' } : null);
+        });
+        state.fav = list;
+      }
+      function fillFavSlot(slot, s) {
+        if (!s) { clearFavSlot(slot); return; }
+        slot.innerHTML = '<img src="assets/skills/' + tipEsc(s.icon || "") + '" alt="" onerror="this.remove();">' +
+          '<button type="button" class="bd-fav-del" aria-label="移除技能">×</button>';
+        slot.__skill = s;
+        slot.classList.add("filled");
+        var lab = favLabelFor(slot);
+        if (lab) lab.textContent = s.name || "";
+        syncFavState();
+      }
+      function clearFavSlot(slot) {
+        hideFavTip();
+        slot.innerHTML = '<span class="bd-fav-plus">+</span>';
+        slot.__skill = null;
+        slot.classList.remove("filled");
+        var lab = favLabelFor(slot);
+        if (lab) lab.textContent = "";
+        syncFavState();
+      }
+
+      // ---------- 技能/常用技能 手动拖拽（不依赖 HTML5 DnD，跨浏览器可靠） ----------
+      // 技能树节点 → 拖到常用技能槽 = 填充；已填充槽 → 拖到空槽 = 移动 / 拖到有技能槽 = 交换
+      (function () {
+        var drag = null;          // {type:'skill'|'fav', source, sx, sy, moved}
+        var overSlot = null;
+        var ghost = null;         // 跟随鼠标的幽灵图标
+        function favSlotAt(x, y) {
+          var slots = document.querySelectorAll('#favSkills .bd-fav-slot');
+          for (var i = 0; i < slots.length; i++) {
+            var r = slots[i].getBoundingClientRect();
+            if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return slots[i];
+          }
+          return null;
+        }
+        function setOver(slot) {
+          if (overSlot === slot) return;
+          if (overSlot) overSlot.classList.remove('drag-over');
+          overSlot = slot;
+          if (overSlot) overSlot.classList.add('drag-over');
+        }
+        function makeGhost(source) {
+          var imgEl = source.querySelector('img');
+          if (!imgEl) return;
+          var g = document.createElement('img');
+          g.src = imgEl.src;
+          g.alt = '';
+          g.className = 'bd-drag-ghost';
+          g.style.cssText = 'position:fixed;width:56px;height:56px;object-fit:cover;' +
+            'border-radius:8px;border:1px solid rgba(243,229,171,0.7);' +
+            'box-shadow:0 6px 20px rgba(0,0,0,0.6);pointer-events:none;z-index:9600;' +
+            'opacity:0.92;left:-999px;top:-999px;';
+          document.body.appendChild(g);
+          ghost = g;
+        }
+        function moveGhost(x, y) {
+          if (ghost) {
+            ghost.style.left = (x - 28) + 'px';
+            ghost.style.top = (y - 28) + 'px';
+          }
+        }
+        function removeGhost() {
+          if (ghost) { ghost.remove(); ghost = null; }
+        }
+        function beginDrag(e, type, source) {
+          if (viewMode) return;
+          var t = (e.touches && e.touches[0]) || e;
+          if (type === 'fav' && !source.__skill) return;   // 空槽不可拖
+          drag = { type: type, source: source, sx: t.clientX, sy: t.clientY, moved: false };
+        }
+        function moveDrag(x, y) {
+          if (!drag) return;
+          if (!drag.moved && (Math.abs(x - drag.sx) + Math.abs(y - drag.sy) > 4)) {
+            drag.moved = true;
+            drag.source.classList.add('bd-dragging');
+            makeGhost(drag.source);          // 拖动开始：创建跟随鼠标的幽灵图标
+          }
+          moveGhost(x, y);
+          if (drag.moved) setOver(favSlotAt(x, y));
+        }
+        function endDrag(x, y) {
+          if (!drag) return;
+          var d = drag;
+          drag = null;
+          setOver(null);
+          removeGhost();
+          d.source.classList.remove('bd-dragging');
+          if (!d.moved) return;                       // 未移动：保持默认点击行为
+          d.source._justDragged = true;               // 抑制随后的 click（技能节点误加点）
+          var target = favSlotAt(x, y);
+          if (!target || target === d.source) return;
+          if (d.type === 'skill') {
+            if (d.source.__skillData) fillFavSlot(target, d.source.__skillData);
+          } else if (d.type === 'fav') {
+            swapFavSlots(d.source, target);
+          }
+        }
+        document.addEventListener('mousedown', function (e) {
+          var node = e.target.closest ? e.target.closest('.bd-skill-node') : null;
+          if (node && !node.classList.contains('empty') && node.__skillData) { beginDrag(e, 'skill', node); return; }
+          if (e.target.closest && e.target.closest('.bd-fav-del')) return;   // × 按钮不触发拖拽
+          var slot = e.target.closest ? e.target.closest('.bd-fav-slot') : null;
+          if (slot) beginDrag(e, 'fav', slot);
+        });
+        document.addEventListener('mousemove', function (e) { moveDrag(e.clientX, e.clientY); });
+        document.addEventListener('mouseup', function (e) { endDrag(e.clientX, e.clientY); });
+        document.addEventListener('touchstart', function (e) {
+          var t = e.touches && e.touches[0]; if (!t) return;
+          var node = e.target.closest ? e.target.closest('.bd-skill-node') : null;
+          if (node && !node.classList.contains('empty') && node.__skillData) { beginDrag(e, 'skill', node); return; }
+          if (e.target.closest && e.target.closest('.bd-fav-del')) return;
+          var slot = e.target.closest ? e.target.closest('.bd-fav-slot') : null;
+          if (slot) beginDrag(e, 'fav', slot);
+        }, { passive: true });
+        document.addEventListener('touchmove', function (e) {
+          var t = e.touches && e.touches[0]; if (!t) return;
+          moveDrag(t.clientX, t.clientY);
+          if (drag && drag.moved) e.preventDefault();   // 拖动中阻止页面滚动
+        }, { passive: false });
+        document.addEventListener('touchend', function (e) {
+          var c = e.changedTouches && e.changedTouches[0];
+          if (c) endDrag(c.clientX, c.clientY);
+        });
+      })();
+
+      // 技能框 hover → 技能卡片浮层（仅图标/名称/标签/说明，不展开更多内容）
+      var favTipEl = null, favTipTimer = null;
+      function ensureFavTip() {
+        if (favTipEl) return favTipEl;
+        favTipEl = document.createElement("div");
+        favTipEl.className = "bd-fav-tip";
+        document.body.appendChild(favTipEl);
+        return favTipEl;
+      }
+      function showFavTip(slot) {
+        var s = slot.__skill;
+        if (!s) return;
+        var el = ensureFavTip();
+        var tags = (s.tags || []).map(function (t) { return "<span>" + tipEsc(t) + "</span>"; }).join("");
+        el.innerHTML = '<div class="bd-fav-tip-head">' +
+          '<div class="bd-fav-tip-thumb">' + (s.icon ? '<img src="assets/skills/' + tipEsc(s.icon) + '" alt="" onerror="this.remove();">' : "") + '</div>' +
+          '<div class="bd-fav-tip-name"><b>' + tipEsc(s.name) + '</b>' +
+          '<span class="en">' + tipEsc(s.en || "") + '</span>' + '</div>' +
+          (tags ? '<span class="bd-fav-tip-tags">' + tags + '</span>' : "") +
+        '</div>' +
+        (s.desc ? '<p class="bd-fav-tip-desc">' + tipEsc(s.desc) + '</p>' : "");
+        el.classList.add("on");
+        var r = slot.getBoundingClientRect();
+        var w = el.offsetWidth || 280, h = el.offsetHeight || 200;
+        var x = r.left + r.width / 2 - w / 2;
+        var y = r.top - h - 10;
+        if (y < 6) y = r.bottom + 10;
+        x = Math.max(6, Math.min(x, window.innerWidth - w - 6));
+        el.style.left = x + "px"; el.style.top = y + "px";
+      }
+      function hideFavTip() {
+        clearTimeout(favTipTimer);
+        if (favTipEl) favTipEl.classList.remove("on");
+      }
+      (function () {
+        var row = document.getElementById("favSkills");
+        if (!row) return;
+        row.addEventListener("click", function (e) {
+          if (viewMode) return;
+          var del = e.target.closest(".bd-fav-del");
+          if (del) clearFavSlot(del.closest(".bd-fav-slot"));
+        });
+        row.addEventListener("mouseover", function (e) {
+          var slot = e.target.closest(".bd-fav-slot");
+          if (slot && slot.classList.contains("filled")) { clearTimeout(favTipTimer); showFavTip(slot); }
+        });
+        row.addEventListener("mouseout", function (e) {
+          var slot = e.target.closest(".bd-fav-slot");
+          if (slot && slot.classList.contains("filled")) favTipTimer = setTimeout(hideFavTip, 80);
+        });
+      })();
+      buildFavSkills();
+
+      // ---------- BD 云端保存 / 加载 ----------
+      function collectBuild() {
+        var title = (document.getElementById('bdTitle').value || '').trim() || '未命名 BD';
+        return {
+          class: state.class,
+          points: state.points,
+          fav: state.fav,
+          player: { attrs: state.player.attrs, equip: serializeEquip('player'), charmGrid: serializeCharms('player') },
+          merc: { attrs: state.merc.attrs, equip: serializeEquip('merc'), charmGrid: serializeCharms('merc') },
+          title: title,
+          is_public: !!document.getElementById('bdPublic').checked
+        };
+      }
+      function serializeEquip(owner) {
+        var grid = gridFor(owner);
+        if (!grid) return [];
+        return Array.prototype.slice.call(grid.querySelectorAll('.bd-slot')).map(function (slot) {
+          var it = slot.__item;
+          if (!it || !slot.dataset.name) return { slot: slot.dataset.slot, empty: true };
+          var raw = null;
+          try { raw = JSON.parse(JSON.stringify(it._raw || {})); } catch (e) { raw = {}; }
+          return {
+            slot: slot.dataset.slot, kind: it.kind || '', name: it.name || '',
+            img: it.img || '', code: it.code || '', base: it.base || '', raw: raw
+          };
+        });
+      }
+
+      function applyBuild(data) {
+        if (!data) return;
+        state.class = data.class || 'amazon';
+        state.points = data.points || {};
+        // 恢复常用技能槽位：用原始数据副本遍历（fillFavSlot 内部 syncFavState 会重写 state.fav，
+        // 若直接读 state.fav[i] 会在第 2 格起读到 null，导致只恢复第一格）
+        var favList = data.fav || [];
+        document.querySelectorAll('#favSkills .bd-fav-slot').forEach(function (slot, i) {
+          var s = favList[i];
+          if (s) fillFavSlot(slot, s); else clearFavSlot(slot);
+        });
+        // 兼容旧结构（attrs/equip 直接挂在 data 顶层）：迁到 player 之下
+        var pd = data.player || {};
+        var md = data.merc || {};
+        state.player.attrs = pd.attrs || data.attrs || { str: 0, dex: 0, vit: 0, eng: 0 };
+        state.merc.attrs = md.attrs || { str: 0, dex: 0, vit: 0, eng: 0 };
+        classRow.querySelectorAll('.bd-radio').forEach(function (l) {
+          l.classList.toggle('active', l.dataset.class === state.class);
+        });
+        fillEquip('player', pd.equip || data.equip || []);
+        fillEquip('merc', md.equip || []);
+        fillCharms('player', pd.charmGrid || []);
+        fillCharms('merc', md.charmGrid || []);
+        ['player', 'merc'].forEach(function (owner) {
+          document.querySelectorAll('.bd-stats-body[data-owner="' + owner + '"] .bd-plusminus input').forEach(function (inp) {
+            var a = inp.dataset.attr;
+            var v = state[owner].attrs[a];
+            if (v != null) inp.value = v;
+          });
+        });
+        var t = document.getElementById('bdTitle'); if (t) t.value = data.title || '';
+        var p = document.getElementById('bdPublic'); if (p) p.checked = !!data.is_public;
+        renderSkills();
+        recomputeStats('player');
+        recomputeStats('merc');
+      }
+      function fillEquip(owner, items) {
+        var grid = gridFor(owner);
+        if (!grid || !items) return;
+        items.forEach(function (e) {
+          var slot = grid.querySelector('.bd-slot[data-slot="' + e.slot + '"]');
+          if (!slot) return;
+          if (e.empty || !e.name) { clearSlot(slot); return; }
+          fillSlot(slot, { kind: e.kind, name: e.name, img: e.img, code: e.code, base: e.base, _raw: e.raw || {} });
+        });
+      }
+
+      function loadBuild(id) {
+        if (!window.sbClient) return;
+        window.sbClient.from('bds').select('*').eq('id', id).single().then(function (res) {
+          if (res.error) throw res.error;
+          var d = res.data;
+          BD_ID = d.id; BD_OWNER_ID = d.user_id;
+          // 查看模式（来自 BD展示 / view=1）仅对非作者生效；作者本人始终可编辑自己的 BD（公开/私有皆然）
+          if (requestedView) {
+            var me = window.Auth && window.Auth.getUser();
+            if (me && me.id === d.user_id) {
+              exitViewMode();      // 作者本人：切回编辑态
+            } else {
+              viewMode = true;
+              enterViewMode(d.author_name);
+            }
+          }
+          applyBuild({
+            class: d.class, title: d.title, is_public: d.is_public,
+            points: (d.data && d.data.points) || {},
+            fav: (d.data && d.data.fav) || [],
+            player: (d.data && d.data.player) || null,
+            merc: (d.data && d.data.merc) || null
+          });
+          setBuilderLoading(false);
+        }).catch(function (e) {
+          console.warn('加载 BD 失败', e);
+          exitViewMode();
+          setBuilderLoading(false);
+        });
+      }
+
+      function saveBuild() {
+        if (viewMode) return;
+        if (!window.sbClient) {
+          alert('云端保存未配置：请在 js/config.js 填写 Supabase 信息，或先用浏览器本地暂存。');
+          return;
+        }
+        if (!window.Auth || !Auth.isLoggedIn()) {
+          if (confirm('保存 BD 需要登录，是否现在登录？')) Auth.openModal();
+          return;
+        }
+        var payload = collectBuild();
+        var user = Auth.getUser();
+        var isOwner = BD_ID && BD_OWNER_ID === user.id;
+        var record = {
+          user_id: user.id,
+          title: payload.title,
+          class: payload.class,
+          data: {
+            points: payload.points,
+            fav: payload.fav,
+            player: payload.player,
+            merc: payload.merc
+          },
+          is_public: payload.is_public,
+          author_name: (user.email || '').split('@')[0]
+        };
+        var op = isOwner
+          ? window.sbClient.from('bds').update(record).eq('id', BD_ID).select().single()
+          : window.sbClient.from('bds').insert(record).select().single();
+        op.then(function (res) {
+          if (res.error) throw res.error;
+          BD_ID = res.data.id; BD_OWNER_ID = user.id;
+          if (window.location.search.indexOf('id=') === -1) {
+            history.replaceState(null, '', 'bd-build.html?id=' + BD_ID);
+          }
+          alert(isOwner ? '已更新保存！' : '已保存为新 BD！' + (payload.is_public ? '（已公开发布）' : '（仅自己可见）'));
+        }).catch(function (e) { alert('保存失败：' + ((e && e.message) || e)); });
+      }
+
+      document.getElementById('bdSave').addEventListener('click', saveBuild);
+
+      function enterViewMode(authorName) {
+        document.body.classList.add('bd-viewmode');
+        var ban = document.getElementById('bdViewBanner'); if (ban) ban.hidden = false;
+        var av = document.getElementById('bdViewAuthor'); if (av) av.textContent = authorName || '匿名';
+      }
+      function exitViewMode() {
+        document.body.classList.remove('bd-viewmode');
+        var ban = document.getElementById('bdViewBanner'); if (ban) ban.hidden = true;
+      }
+
+      // 初始化：若带 ?id= 则加载该 BD；带 view=1 则进入只读查看模式
+      (function boot() {
+        var params = new URLSearchParams(location.search);
+        var id = params.get('id');
+        if (params.get('view') === '1') requestedView = true; // 仅标记；是否真正进入查看模式由 loadBuild 依据归属决定
+        if (!id) return;
+        // 带 id 加载既有 BD：立即进入加载态，隐藏保存控件并显示「加载中」，避免编辑态/占位装备闪现约 1 秒
+        setBuilderLoading(true);
+        if (window.Auth && window.Auth.ready) {
+          window.Auth.ready.then(function () { loadBuild(id); });
+        } else {
+          setTimeout(function () { loadBuild(id); }, 1000);
+        }
+      })();
+
+      // 初始化
+      bindAttrControls();
+      renderSkills();
+      recomputeStats('player');
+      recomputeStats('merc');
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+/* 符文之语：筛选 + 卡片网格（金色符文主题，复用全局 .base-divider / .prop-text / .prop-num） */
+
+:root {
+  --rune-gold: #e8b339;
+  --rune-gold-dim: #c8962a;
+  --rune-gold-bg: rgba(232, 179, 57, 0.14);
+  --rune-glow: rgba(232, 179, 57, 0.16);
+  --rune-card-bg: rgba(22, 19, 14, 0.72);
+  --rune-card-border: rgba(255, 255, 255, 0.08);
+  --rune-stone-bg: #3a352e;
+  --rune-stone-border: #5c5346;
+  --rune-prop-blue: #8ec5ff;
+}
+
+/* ---------- 搜索栏 ---------- */
+.rune-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+.rune-search-icon {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.2rem;
+  color: var(--text-mute);
+  pointer-events: none;
+}
+.rune-search-input {
+  flex: 1;
+  width: 100%;
+  padding: 0.7rem 1rem 0.7rem 2.6rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.rune-search-input:focus {
+  border-color: var(--rune-gold-dim);
+  box-shadow: 0 0 0 2px var(--rune-glow);
+}
+.rune-filter-toggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.65rem 1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.rune-filter-toggle:hover,
+.rune-filter-toggle[aria-expanded="true"] {
+  border-color: var(--rune-gold-dim);
+  color: var(--rune-gold);
+  background: var(--rune-gold-bg);
+}
+.rune-filter-toggle .caret {
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+.rune-filter-toggle[aria-expanded="true"] .caret {
+  transform: rotate(180deg);
+}
+
+/* ---------- 筛选面板 ---------- */
+.rune-filter-panel {
+  margin-bottom: 1rem;
+}
+.rune-filter-panel[hidden] {
+  display: none;
+}
+/* 修复：子类筛选行在被隐藏时（非武器/全部主类）必须真正隐藏，
+   否则 .rune-filter-row 的 display:flex 会盖过 UA 的 [hidden]{display:none}，
+   导致误选的武器子类按钮仍可见且保持高亮 */
+.rune-filter-row[hidden] {
+  display: none;
+}
+.rune-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.rune-filter-row:last-child {
+  border-bottom: none;
+}
+.rune-filter-main .rune-chip-btn {
+  font-weight: 600;
+}
+.rune-filter-sub {
+  padding-left: 0.1rem;
+}
+.rune-chip-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-dim);
+  font-size: 0.86rem;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.rune-chip-btn:hover {
+  border-color: var(--rune-gold-dim);
+  color: var(--rune-gold);
+}
+.rune-chip-btn.active {
+  background: var(--rune-gold-bg);
+  border-color: var(--rune-gold);
+  color: var(--rune-gold);
+}
+.rune-chip-btn .count {
+  margin-left: 0.35rem;
+  font-size: 0.72rem;
+  opacity: 0.8;
+}
+
+/* ---------- 工具栏 ---------- */
+.rune-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.rune-count {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+.rune-count strong {
+  color: var(--rune-gold);
+}
+.rune-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+/* ---------- 分体排序按钮（左箭头逆序 / 右选择需要等级，复用基底装备暗黑核风格） ---------- */
+.rune-sort-control {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-1);
+  overflow: visible;
+}
+.rune-sort-control:focus-within {
+  border-color: var(--rune-gold-dim);
+}
+.rune-sort-dir,
+.rune-sort-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  transition: color 0.2s, background 0.2s;
+}
+.rune-sort-dir {
+  border-right: 1px solid var(--border);
+  padding-inline: 0.6rem;
+  color: var(--text-mute);
+}
+.rune-sort-dir:hover {
+  color: var(--rune-gold);
+  background: var(--rune-gold-bg);
+}
+.rune-sort-dir.active {
+  color: var(--rune-gold);
+  background: rgba(232, 179, 57, 0.12);
+  text-shadow: 0 0 8px rgba(255, 215, 154, 0.45);
+}
+.rune-sort-dir-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+.rune-sort-trigger {
+  min-width: 104px;
+  justify-content: space-between;
+  color: var(--text);
+  white-space: nowrap;
+}
+.rune-sort-trigger:hover {
+  color: var(--rune-gold);
+  background: var(--rune-gold-bg);
+}
+.rune-sort-trigger[aria-expanded="true"] {
+  color: var(--rune-gold);
+}
+.rune-sort-arrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: var(--text-mute);
+  transition: color 0.2s;
+}
+
+/* 按当前搜索词临时排序按钮（搜索后动态出现） */
+.rune-propsort-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--rune-gold-bg);
+  border: 1px solid var(--rune-gold-dim);
+  border-radius: var(--radius-sm);
+  color: var(--rune-gold);
+  font-size: 0.86rem;
+  font-family: var(--font-display);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.rune-propsort-btn:hover {
+  border-color: var(--rune-gold);
+  box-shadow: 0 0 10px rgba(232, 179, 57, 0.25);
+}
+.rune-propsort-btn.active {
+  background: linear-gradient(180deg, rgba(232, 179, 57, 0.22), rgba(232, 179, 57, 0.10));
+  border-color: var(--rune-gold);
+  color: var(--rune-gold);
+  box-shadow: 0 0 12px rgba(232, 179, 57, 0.35);
+}
+.rune-propsort-btn[hidden] {
+  display: none;
+}
+.rune-propsort-dir {
+  font-size: 1rem;
+  line-height: 1;
+}
+.rune-sort-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 20;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.35rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.rune-sort-menu:not([hidden]) {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.rune-sort-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  color: var(--text-dim);
+  text-align: left;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s, padding-left 0.2s, border-color 0.2s;
+}
+.rune-sort-option:hover,
+.rune-sort-option:focus-visible {
+  color: var(--rune-gold);
+  background: var(--rune-gold-bg);
+  border-left-color: var(--rune-gold-dim);
+  padding-left: 1.1rem;
+}
+.rune-sort-option.active {
+  color: var(--rune-gold);
+  background: rgba(232, 179, 57, 0.12);
+  border-left-color: var(--rune-gold);
+}
+.rune-sort-option::after {
+  content: "";
+  display: inline-block;
+  width: 0.85em;
+  text-align: center;
+  color: var(--rune-gold);
+  font-size: 0.8rem;
+}
+.rune-sort-option.active[data-dir="asc"]::after { content: "▲"; }
+.rune-sort-option.active[data-dir="desc"]::after { content: "▼"; }
+
+/* ---------- 卡片网格（桌面三列，平板两列，手机单列） ---------- */
+.rune-grid {
+  display: grid;
+  /* minmax(0,1fr) 保证 3 列时卡片可收缩、整行不超出容器/页面宽度 */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+@media (max-width: 1024px) {
+  .rune-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .rune-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------- 卡片 ---------- */
+.rune-card {
+  background: var(--rune-card-bg);
+  border: 1px solid var(--rune-card-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;   /* 防止卡片内长内容把列宽撑破，配合 minmax(0,1fr) 确保不溢出 */
+  transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  /* 99 张卡片：离屏卡片跳过布局/绘制，消除进入页面时的卡顿；同时离屏图片不会提前加载 */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 420px;
+}
+.rune-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--rune-gold-dim);
+  box-shadow: 0 6px 22px var(--rune-glow);
+  background: rgba(32, 27, 18, 0.82);
+}
+
+/* 顶部：名称 + 需要等级 */
+.rune-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+.rune-name-wrap {
+  min-width: 0;
+}
+.rune-name {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--rune-gold);
+  margin: 0;
+  line-height: 1.25;
+  text-shadow: 0 0 16px var(--rune-glow);
+}
+.rune-name-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--text-mute);
+}
+.rune-name-meta .label {
+  color: var(--text-dim);
+}
+.rune-req {
+  flex-shrink: 0;
+  margin-top: -0.3rem;      /* 再往右上角移动一点点 */
+  margin-right: -0.3rem;
+  padding: 0.35rem 0.65rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+.rune-req strong {
+  color: var(--rune-gold);
+}
+
+/* 副标题：孔数 + 类型 */
+.rune-subtitle {
+  margin: 0.35rem 0 0.15rem;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+}
+.rune-subtitle .sockets {
+  color: var(--text);
+}
+.rune-subtitle .types {
+  color: var(--text-mute);
+}
+
+/* 符文组合（图片占位 + 名称 + 元信息） */
+.rune-combo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0.75rem 0;
+}
+.rune-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  min-width: 52px;
+}
+.rune-stone {
+  width: 48px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+.rune-slot-name {
+  font-size: 0.84rem;
+  color: var(--rune-gold);
+  font-weight: 600;
+}
+.rune-slot-meta {
+  font-size: 0.86rem;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  font-weight: 600;
+}
+
+/* 属性词条：默认 #6c6cff，仅范围数字使用 .prop-num 金色 */
+.rune-props {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.rune-props li {
+  color: #6c6cff;
+  padding-left: 0.1rem;
+}
+/* 强制属性文字 #6c6cff：覆盖 set-db.css 中 .prop-text 的全局淡蓝 */
+.rune-props .prop-text {
+  color: #6c6cff;
+}
+
+/* 搜索命中：命中的属性行高亮（金色左边框 + 暖金渐变底 + 微发光） */
+.rune-props li.rune-prop-hl {
+  background: linear-gradient(90deg, rgba(232, 179, 57, 0.20), rgba(232, 179, 57, 0.03));
+  border-left: 3px solid var(--rune-gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding-left: 0.6rem;
+  margin-left: -0.1rem;
+  box-shadow: 0 0 10px rgba(232, 179, 57, 0.22);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.rune-props li.rune-prop-hl .prop-text,
+.rune-props li.rune-prop-hl .prop-num {
+  color: #c9d2ff;
+}
+
+/* 属性词条与符文共鸣之间的虚线分隔 */
+.rune-reson-divider {
+  border-top-style: dashed;
+  margin-top: 0.75rem;
+}
+
+/* 符文共鸣占位（内容未来补充） */
+.rune-reson {
+  margin-top: 0.75rem;
+}
+.rune-reson-title {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #5fc97a;
+}
+.rune-reson-body {
+  min-height: 1.4em;
+  margin: 0;
+}
+
+/* 空状态 */
+.rune-empty {
+  text-align: center;
+  color: var(--text-mute);
+  padding: 2rem 1rem;
+}
+.rune-empty[hidden] {
+  display: none;
+}
+
+/* 响应式微调 */
+@media (max-width: 480px) {
+  .rune-search-wrap {
+    flex-wrap: wrap;
+  }
+  .rune-search-input {
+    min-width: 0;
+  }
+  .rune-filter-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+  .rune-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .rune-tools {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

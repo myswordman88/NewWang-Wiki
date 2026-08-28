@@ -38,7 +38,7 @@
     var thumb = (it.name_zh || it.name_en || "?").charAt(0);
     var twName = it.name_zh_tw && it.name_zh_tw !== it.name_zh ? it.name_zh_tw : it.name_zh;
     var hasImg = !!(it.img && it.img.length);
-    var thumbCls = "base-thumb" + (hasImg ? " has-img" : "");
+    var thumbCls = "base-thumb" + (hasImg ? " has-img" : "") + ((it.category === "首饰" || it.category === "戒指" || it.category === "项链" || it.category === "毒蛇项链") ? " jewel" : "");
     var imgTag = hasImg
       ? '<img src="' + esc(it.img) + '" alt="' + esc(it.name_zh) + '" loading="lazy" onload="' + ONLOAD_ATTR + '" />'
       : '<img src="" alt="" loading="lazy" aria-hidden="true" />';
@@ -58,8 +58,7 @@
       + '<div class="base-card-body">'
       + '<h3 class="base-name">' + esc(it.name_zh) + "</h3>"
       + '<div class="base-subtitle">'
-      + '<span class="base-tier tier-' + esc(it.tier) + '">' + esc(it.tier) + "</span>"
-      + '<span class="base-dot" aria-hidden="true">·</span>'
+      + (it.tier ? '<span class="base-tier tier-' + esc(it.tier) + '">' + esc(it.tier) + "</span>" + '<span class="base-dot" aria-hidden="true">·</span>' : "")
       + '<span class="base-cat">' + esc(it.category) + "</span>"
       + "</div>"
       + '<div class="base-en-name"><span class="base-name-label">英</span> ' + esc(it.name_en) + "</div>"
@@ -80,8 +79,8 @@
       + "</div>"
       + "</div>"
       + '<div class="base-card-bot">'
-      + '<span class="base-qlvl">Qlvl <strong>' + esc(it.qlvl) + "</strong></span>"
-      + '<span class="base-sockets">最大孔数 <strong>' + esc(it.sockets3 ? it.sockets3.replace(/\//g, " / ") : it.max_sockets) + "</strong></span>"
+      + '<span class="base-req base-qlvl">Qlvl <strong>' + esc(it.qlvl) + "</strong></span>"
+      + '<span class="base-req base-sockets">最大孔数 <strong>' + esc(it.sockets3 ? it.sockets3.replace(/\//g, " / ") : it.max_sockets) + "</strong></span>"
       + "</div>"
       + "</div>"
       + "</article>";
@@ -116,8 +115,7 @@
       + '<div class="base-card-body">'
       + '<h3 class="base-name">' + esc(it.name_zh) + "</h3>"
       + '<div class="base-subtitle">'
-      + '<span class="base-tier tier-' + esc(it.tier) + '">' + esc(it.tier) + "</span>"
-      + '<span class="base-dot" aria-hidden="true">·</span>'
+      + (it.tier ? '<span class="base-tier tier-' + esc(it.tier) + '">' + esc(it.tier) + "</span>" + '<span class="base-dot" aria-hidden="true">·</span>' : "")
       + '<span class="base-cat">' + esc(it.category) + "</span>"
       + "</div>"
       + '<div class="base-en-name"><span class="base-name-label">英</span> ' + esc(it.name_en) + "</div>"
@@ -140,8 +138,8 @@
       + "</div>"
       + "</div>"
       + '<div class="base-card-bot">'
-      + '<span class="base-qlvl">Qlvl <strong>' + esc(it.qlvl) + "</strong></span>"
-      + '<span class="base-sockets">最大孔数 <strong>' + esc(it.sockets3 ? it.sockets3.replace(/\//g, " / ") : it.max_sockets) + "</strong></span>"
+      + '<span class="base-req base-qlvl">Qlvl <strong>' + esc(it.qlvl) + "</strong></span>"
+      + '<span class="base-req base-sockets">最大孔数 <strong>' + esc(it.sockets3 ? it.sockets3.replace(/\//g, " / ") : it.max_sockets) + "</strong></span>"
       + "</div>"
       + "</div>"
       + "</article>";
@@ -153,7 +151,7 @@
       data: function () { return window.BASE_ITEMS || []; },
       card: armorCard,
       catLabel: { "铠甲": "衣服" },
-      quickCats: ["头盔", "铠甲", "盾牌", "腰带", "靴子", "手套"],
+      quickCats: ["头盔", "铠甲", "盾牌", "腰带", "靴子", "手套", "戒指", "项链"],
       sorts: [
         { key: "default", label: "默认（编号）", dir: "asc" },
         { key: "name", label: "名称", dir: "asc" },
@@ -194,11 +192,13 @@
     var data = getData();
     var cats = uniq(data.map(function (d) { return d.category; }));
     var TIER_ORDER = ["普通", "扩展", "精英"];
-    var tiers = uniq(data.map(function (d) { return d.tier; })).sort(function (a, b) {
-      var ia = TIER_ORDER.indexOf(a), ib = TIER_ORDER.indexOf(b);
-      if (ia === -1) ia = 99; if (ib === -1) ib = 99;
-      return ia - ib;
-    });
+    var tiers = uniq(data.map(function (d) { return d.tier; }))
+      .filter(function (t) { return t && t !== "饰品"; })
+      .sort(function (a, b) {
+        var ia = TIER_ORDER.indexOf(a), ib = TIER_ORDER.indexOf(b);
+        if (ia === -1) ia = 99; if (ib === -1) ib = 99;
+        return ia - ib;
+      });
     CAT.innerHTML = '<option value="">全部</option>' + cats.map(function (c) {
       return '<option value="' + esc(c) + '">' + esc(c) + "</option>";
     }).join("");

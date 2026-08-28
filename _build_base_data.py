@@ -4,14 +4,14 @@
 - 按 objects.json 中文名上标映射 tier（¹=普通，²=扩展，³=精英）
 - 排除空 code 与 M01-M09（召唤物专用，不在游戏中）
 - 中文名取自 objects.json 官方本地化表 zhCN
-输出：assets/mod/armor_zh.csv（干净版） + js/base-items.js（window.BASE_ITEMS）
+输出：resource/mod/armor_zh.csv（干净版） + js/base-items.js（window.BASE_ITEMS）
 """
 import csv, json, re, os
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ARMOR = os.path.join(ROOT, "assets", "mod", "armor.txt")
-OBJ = os.path.join(ROOT, "assets", "mod", "objects.json")
-CSV_OUT = os.path.join(ROOT, "assets", "mod", "armor_zh.csv")
+ARMOR = os.path.join(ROOT, "resource", "mod", "armor.txt")
+OBJ = os.path.join(ROOT, "resource", "mod", "objects.json")
+CSV_OUT = os.path.join(ROOT, "resource", "mod", "armor_zh.csv")
 JS_OUT = os.path.join(ROOT, "js", "base-items.js")
 
 # type -> 大类（分组，贴合暗黑核分类）
@@ -62,7 +62,7 @@ def load_objects():
 OBJMAP = load_objects()
 
 # npcs.json：spelldescstr 值 -> zhTW（含三档孔数描述的本地化文本）
-NPC_OUT = os.path.join(ROOT, "assets", "mod", "npcs.json")
+NPC_OUT = os.path.join(ROOT, "resource", "mod", "npcs.json")
 def load_npcs():
     with open(NPC_OUT, encoding="utf-8") as f:
         data = json.load(f)
@@ -96,9 +96,9 @@ def parse_sockets(zhtw):
         return parts
     return [parts[0], parts[0], parts[0]]
 
-# 图片映射：assets/sprite/items.json 是 [{code:{asset:"分类/文件名"}}, ...]
+# 图片映射：resource/sprite/items.json 是 [{code:{asset:"分类/文件名"}}, ...]
 # 图片文件名 = asset 的 basename；多个 tier 的 code 可能共用同一张图（如 cap/xap/uap 都指向 cap_hat）
-SPRITE_MAP = os.path.join(ROOT, "assets", "sprite", "items.json")
+SPRITE_MAP = os.path.join(ROOT, "resource", "mod", "items.json")
 EQUIP_WEBP_DIR = os.path.join(ROOT, "assets", "equipment")
 IMG_REL = "assets/equipment/"
 
@@ -201,6 +201,45 @@ with open(ARMOR, encoding="utf-8") as f:
             "speed": speed,
             "img": resolve_img(code),
         })
+
+# 首饰（护身符/戒指）不在 armor.txt 里，这里显式补上，避免套装卡片找不到图。重跑本脚本也会保留。
+# 图片指向「原版随机变体图」：amulet.webp / ring.webp 是 mod 新增的固定图（已删除），
+# 改回原版 amulet1.webp / ring1.webp；vip 仍走 items.json 默认映射（viper_amulet.webp）。
+JEWELRY = {
+    "amu": ("项链", "Amulet", "amulet1", "项链"),
+    "rin": ("戒指", "Ring", "ring1", "戒指"),
+    "vip": ("毒蛇项链", "Viper Amulet", "viper_amulet", "项链"),
+}
+have_codes = {r["code"] for r in rows}
+for code, (zh, en, stem, cat) in JEWELRY.items():
+    if code in have_codes:
+        continue
+    if stem:
+        p = os.path.join(EQUIP_WEBP_DIR, stem + ".webp")
+        img = (IMG_REL + stem + ".webp") if os.path.exists(p) else ""
+    else:
+        img = resolve_img(code)
+    if not img:
+        continue  # 没有对应 webp 则跳过（以后补图会自动生效）
+    rows.append({
+        "code": code,
+        "name_en": en,
+        "name_zh": zh,
+        "name_zh_tw": zh,
+        "category": cat,
+        "type_raw": "",
+        "tier": "普通",
+        "durability": 0,
+        "defense_min": 0,
+        "defense_max": 0,
+        "defense_avg": 0,
+        "reqstr": 0,
+        "qlvl": 0,
+        "max_sockets": 0,
+        "sockets3": "",
+        "speed": 0,
+        "img": img,
+    })
 
 # 写干净 CSV
 fields = ["code", "name_en", "name_zh", "name_zh_tw", "category", "type_raw", "tier",

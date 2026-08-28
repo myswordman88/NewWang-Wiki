@@ -1,0 +1,50 @@
+/* 全局响应式（<=768 / <=420），置于最后以保证覆盖 */
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 768px) {
+  .feature-grid { grid-template-columns: 1fr; }
+  .feature-hero { margin-bottom: 2rem; }
+  .feature-section { margin-bottom: 2.4rem; }
+  .nav-toggle { display: flex; }
+  .nav-menu {
+    position: fixed; inset: 68px 0 auto 0; flex-direction: column; align-items: stretch; gap: 0;
+    background: rgba(10, 8, 9, 0.98); backdrop-filter: blur(12px);
+    padding: 0.5rem clamp(1.1rem, 4vw, 2.5rem) 1.2rem; border-bottom: 1px solid var(--border);
+    max-height: calc(100dvh - 68px); overflow-y: auto;
+    transform: translateY(-12px); opacity: 0; pointer-events: none;
+    transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+  }
+  .nav-menu.open { transform: none; opacity: 1; pointer-events: auto; }
+  .nav-menu > li { width: 100%; border-bottom: 1px solid var(--border); }
+  .nav-menu > li:last-child { border-bottom: none; }
+  .nav-menu > li > a {
+    display: flex; justify-content: space-between; padding: 0.95rem 0; border-radius: 0;
+    font-size: 1rem;
+  }
+  .nav-menu > li > a:hover { background: transparent; }
+  .nav-menu > li > a::after { transform: none !important; }
+
+  /* 移动端子菜单默认隐藏，展开时显示 */
+  .dropdown {
+    position: static; transform: none; opacity: 1; pointer-events: auto;
+    display: none; min-width: auto; max-width: none;
+    background: transparent; border: none; box-shadow: none;
+    padding: 0 0 0.6rem 0.8rem;
+  }
+  .dropdown::before { display: none; }
+  .dropdown a {
+    padding: 0.55rem 0; color: var(--text-mute);
+    border-left: 2px solid var(--border);
+  }
+  .dropdown a:hover,
+  .dropdown a:focus-visible { border-left-color: var(--accent); background: transparent; padding-left: 0; color: var(--accent-light); }
+  .nav-menu > li.has-dropdown.open > .dropdown { display: block; }
+  .nav-menu > li.has-dropdown.open > a { color: var(--accent-light); }
+
+  .hero-meta { gap: 0.8rem; }
+}
+
+@media (max-width: 420px) {
+  .hero-actions { flex-direction: column; }
+  .btn { width: 100%; }
+}

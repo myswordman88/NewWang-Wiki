@@ -1,0 +1,941 @@
+/* BD 构筑模拟器专用样式（框架版）—— 仅 bd-build.html 引用 */
+
+    /* ===== BD 构筑模拟器专用样式（框架版） ===== */
+    .bd-builder {
+      --bd-bg: rgba(10, 10, 15, 0.75);
+      --bd-panel: rgba(18, 18, 24, 0.92);
+      --bd-border: rgba(201, 161, 74, 0.35);
+      --bd-border-strong: rgba(201, 161, 74, 0.65);
+      --bd-gold: #c9a14a;
+      --bd-gold-light: #e8c468;
+      --bd-red: #e0533f;
+      --bd-green: #79d17e;
+      --bd-blue: #8ec5ff;
+      --bd-text: #e6e2d6;
+      --bd-text-dim: #9b958a;
+      --bd-slot-empty: rgba(255,255,255,0.06);
+      --bd-slot-hover: rgba(201, 161, 74, 0.18);
+
+      background: var(--bd-bg);
+      border: 1px solid var(--bd-border);
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem 1.6rem;
+      margin-top: 1.2rem;
+      color: var(--bd-text);
+    }
+
+    /* 头部 */
+    .bd-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 0.35rem;
+    }
+    .bd-header h2 {
+      margin: 0; font-family: var(--font-title, 'Noto Serif SC', serif);
+      font-size: 1.55rem; letter-spacing: 0.04em; color: var(--bd-gold-light);
+    }
+    /* 「测试版 V 1.3.5」徽章 */
+    .bd-ver-badge {
+      display: inline-block; vertical-align: middle;
+      margin-left: 0.6rem;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+      color: var(--bd-gold-light);
+      background: rgba(201, 161, 74, 0.12);
+      border: 1px solid var(--bd-border-strong);
+      border-radius: 4px;
+      padding: 0.12rem 0.5rem;
+      white-space: nowrap;
+    }
+    .bd-version {
+      font-size: 0.78rem; color: var(--bd-text-dim); margin-bottom: 1rem;
+    }
+
+    /* 职业单选 */
+    .bd-class-row {
+      display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem;
+      margin-bottom: 1.2rem; padding-bottom: 1rem;
+      border-bottom: 1px solid var(--bd-border);
+    }
+    .bd-radio {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      cursor: pointer; font-size: 0.95rem; color: var(--bd-text-dim);
+      user-select: none; transition: color 0.2s;
+    }
+    .bd-radio:hover { color: var(--bd-text); }
+    .bd-radio input { display: none; }
+    .bd-radio .dot {
+      width: 16px; height: 16px; border-radius: 50%;
+      border: 2px solid var(--bd-text-dim); position: relative;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .bd-radio .dot::after {
+      content: ''; position: absolute; inset: 3px; border-radius: 50%;
+      background: var(--bd-gold); transform: scale(0); transition: transform 0.2s;
+    }
+    .bd-radio.active { color: var(--bd-gold-light); font-weight: 700; }
+    .bd-radio.active .dot { border-color: var(--bd-gold); box-shadow: 0 0 8px rgba(201,161,74,0.35); }
+    .bd-radio.active .dot::after { transform: scale(1); }
+    /* 职业名颜色（暗黑2经典职业色；技能天赋页标题后的职业文字共用同色） */
+    .bd-radio[data-class="sorceress"], .bd-class-name[data-class="sorceress"]   { color: #aaa0ff; }   /* 法师 淡紫 */
+    .bd-radio[data-class="amazon"],    .bd-class-name[data-class="amazon"]      { color: #ffff64; }   /* 亚马逊 金黄 */
+    .bd-radio[data-class="necromancer"],.bd-class-name[data-class="necromancer"]{ color: #4cff4c; }   /* 死灵 绿 */
+    .bd-radio[data-class="paladin"],   .bd-class-name[data-class="paladin"]     { color: #ffa0a0; }   /* 圣骑 粉红 */
+    .bd-radio[data-class="barbarian"], .bd-class-name[data-class="barbarian"]   { color: #ff7e00; }   /* 野蛮人 橙红 */
+    .bd-radio[data-class="druid"],     .bd-class-name[data-class="druid"]       { color: #abab20; }   /* 德鲁伊 黄绿 */
+    .bd-radio[data-class="assassin"],  .bd-class-name[data-class="assassin"]    { color: #ff9a55; }   /* 刺客 橙 */
+    .bd-radio[data-class="warlock"],   .bd-class-name[data-class="warlock"]     { color: #b288ff; }   /* 术士 紫 */
+    .bd-radio[data-class="sorceress"]:hover,
+    .bd-radio[data-class="amazon"]:hover,
+    .bd-radio[data-class="necromancer"]:hover,
+    .bd-radio[data-class="paladin"]:hover,
+    .bd-radio[data-class="barbarian"]:hover,
+    .bd-radio[data-class="druid"]:hover,
+    .bd-radio[data-class="assassin"]:hover,
+    .bd-radio[data-class="warlock"]:hover { filter: brightness(1.15); }
+
+    /* 视图切换 Tab：装备 / 技能 */
+    .bd-section-tabs {
+      display: flex; gap: 0.4rem; margin-bottom: 1rem;
+      border-bottom: 1px solid var(--bd-border);
+      padding-bottom: 0.6rem;
+    }
+    .bd-section-tab {
+      background: transparent; border: 1px solid var(--bd-border);
+      color: var(--bd-text-dim); border-radius: 4px;
+      padding: 0.32rem 0.9rem; font-size: 0.85rem;
+      cursor: pointer; transition: all 0.2s;
+      font-weight: 700; letter-spacing: 0.08em;
+    }
+    .bd-section-tab:hover { border-color: var(--bd-border-strong); color: var(--text, #ece4da); }
+    .bd-section-tab.active {
+      border-color: var(--bd-gold);
+      color: var(--bd-gold-light);
+      box-shadow: 0 0 10px rgba(201, 161, 74, 0.25);
+    }
+    /* 视图显隐：默认显示装备视图；data-cur="skill" 时切换到技能面板 */
+    .bd-section-tabs[data-cur="skill"] ~ .bd-panels { display: none; }
+    .bd-section-tabs[data-cur="skill"] ~ .bd-skill-panel { display: block; }
+    /* 佣兵模式下技能视图不可用：禁用技能 tab（点击由 JS 切回玩家面板） */
+    body.bd-mercmode .bd-section-tab[data-view="skill"] { opacity: 0.45; pointer-events: none; }
+
+    /* 主面板：装备 + 属性 */
+    .bd-panels {
+      display: grid; grid-template-columns: 1.8fr 300px; gap: 1.2rem;
+      align-items: stretch;
+    }
+    @media (max-width: 1024px) {
+      .bd-panels { grid-template-columns: 1fr; }
+    }
+
+    /* 装备区 */
+    .bd-equip-panel {
+      background: var(--bd-panel);
+      border: 1px solid var(--bd-border);
+      border-radius: 6px;
+      padding: 0.6rem;
+      padding-bottom: 20px;
+    }
+
+    /* 纸娃娃装备格 */
+    .bd-equip-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 130px);
+      grid-template-rows: 120px 117px 117px 120px;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+    .bd-slot {
+      width: 120px; height: 120px;
+      background: rgba(8, 8, 14, 0.62);   /* 空槽更深的灰色 */
+      border: 2px solid var(--bd-border);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--bd-text-dim); font-size: 0.72rem; text-align: center;
+      cursor: pointer; position: relative;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+    .bd-slot::before {
+      content: attr(data-slot); position: absolute; bottom: 2px; left: 0; right: 0;
+      font-size: 0.6rem; color: var(--bd-text-dim); text-transform: capitalize;
+      opacity: 0.7;
+    }
+    .bd-slot:hover {
+      background: var(--bd-slot-hover);
+      border-color: var(--bd-border-strong);
+      box-shadow: 0 0 10px rgba(201,161,74,0.18);
+    }
+    .bd-slot.filled {
+      border-color: var(--bd-gold);
+      background: rgba(201,161,74,0.12);
+      color: var(--bd-gold-light); font-weight: 700;
+      font-size: 0.68rem; line-height: 1.1;
+    }
+    /* 已选装备：边框颜色提示品质（特异性高于 .filled 默认金边与 hover 金边） */
+    .bd-slot.filled[data-kind="unique"]  { border-color: #cebc86; }
+    .bd-slot.filled[data-kind="set"]     { border-color: #7fe08a; }
+    .bd-slot.filled[data-kind="rune"]    { border-color: #ff8fc7; }
+    .bd-slot.filled[data-kind="legend"]  { border-color: #ff944d; }
+    /* 槽内装备图：等比缩放铺满框，不变形 */
+    .bd-slot img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: contain;
+      padding: 4px;
+      pointer-events: none;
+    }
+    /* 空槽：底材占位图 40% 透明，一眼可辨该部位未装备（已选装备图保持 100%） */
+    .bd-slot:not(.filled) img { opacity: 0.4; }
+    .bd-slot.has-img::before { display: none; }
+
+    /* 暗黑2 纸娃娃位置 */
+    .bd-slot.helmet    { grid-column: 3; grid-row: 1; }
+    .bd-slot.amulet    { grid-column: 4; grid-row: 1; width: 60px; height: 60px; align-self: end; }
+    .bd-slot.weapon    { grid-column: 1; grid-row: 2 / span 2; width: 120px; height: 180px; align-self: center; transform: translateX(60px); }
+    .bd-slot.armor     { grid-column: 3; grid-row: 2 / span 2; width: 120px; height: 180px; align-self: center; }
+    .bd-slot.shield    { grid-column: 5; grid-row: 2 / span 2; width: 120px; height: 180px; align-self: center; transform: translateX(-60px); }
+    /* 手套/靴子固定与中间腰带保持约 70px 间距（不与 weapon/shield 同列对齐）：基于 130px 列宽换算 translateX(±86px) */
+    .bd-slot.gloves    { grid-column: 1; grid-row: 4; transform: translateX(86px); }
+    .bd-slot.belt      { grid-column: 3; grid-row: 4; }
+    .bd-slot.boots     { grid-column: 5; grid-row: 4; transform: translateX(-86px); }
+    /* 双戒指与护甲（衣服）下端齐平：同处中间两行带垂直居中，环 60px / 护甲 180px，上移 (242-60)/2 与护甲底缘对齐 = translateY(60px)；左右各向中间靠拢 20px（左 +20 / 右 -20），到护甲中心均 118px，保持等距对称 */
+    .bd-slot.ring-left { grid-column: 2; grid-row: 2 / span 2; width: 60px; height: 60px; align-self: center; transform: translate(60px, 60px); }
+    .bd-slot.ring-right{ grid-column: 4; grid-row: 2 / span 2; width: 60px; height: 60px; align-self: center; transform: translate(0px, 60px); }
+
+    /* 护符背包：10 列 × 6 行，格子与戒指/项链同尺寸（60px），紧密相连无间隙 */
+    .bd-charm-panel {
+      margin-top: 1.7rem;
+      padding-top: 1.3rem;   /* 与装备面板之间留出空间 */
+      /* 顶部粗分隔线：3px 金色渐变（中间亮、两端淡出） */
+      background: linear-gradient(90deg, transparent 2%, rgba(243, 229, 171, 0.6) 50%, transparent 98%) top / 100% 3px no-repeat;
+    }
+    .bd-charm-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 0.55rem;
+    }
+    .bd-charm-header > span {
+      font-size: 0.95rem; color: var(--bd-gold-light, #f3e5ab);
+      font-weight: 700;                 /* 与「装备面板」标题一致 */
+    }
+    .bd-charm-pick {
+      font-family: var(--font-ui); font-size: 0.78rem; letter-spacing: 0.05em;
+      padding: 0.3rem 0.8rem; border-radius: 4px; cursor: pointer;
+      background: rgba(243, 229, 171, 0.10); border: 1px solid rgba(243, 229, 171, 0.45);
+      color: #f3e5ab; transition: all 0.2s var(--ease);
+    }
+    .bd-charm-pick:hover { background: rgba(243, 229, 171, 0.20); border-color: #f3e5ab; }
+    .bd-charm-grid-wrap { overflow-x: auto; }
+    .bd-charm-grid {
+      position: relative;
+      display: grid; grid-template-columns: repeat(10, 60px); grid-template-rows: repeat(6, 60px);
+      gap: 0; width: 600px; max-width: 100%;
+      margin: 0 auto;                 /* 横向居中于装备面板 */
+      border-top: 1px solid rgba(255,255,255,0.14);
+      border-left: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.02);
+    }
+    .bd-charm-grid[data-owner="merc"] { display: none; }
+    body.bd-mercmode .bd-charm-grid[data-owner="player"] { display: none; }
+    body.bd-mercmode .bd-charm-grid[data-owner="merc"] { display: grid; }
+    .bd-charm-cell {
+      box-sizing: border-box; width: 60px; height: 60px;
+      border-right: 1px solid rgba(255,255,255,0.10);
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      background: transparent;
+    }
+    .bd-charm-cell.occ { background: rgba(243, 229, 171, 0.05); }
+    .bd-charm-item {
+      position: absolute; z-index: 2; box-sizing: border-box;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: rgba(20, 22, 28, 0.92);
+      border: 1px solid rgba(243, 229, 171, 0.55);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5), inset 0 0 8px rgba(243,229,171,0.08);
+      cursor: grab; overflow: hidden;
+      touch-action: none;
+      transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    }
+    .bd-charm-item:hover { border-color: #ffd79a; box-shadow: 0 0 14px rgba(243,229,171,0.25), inset 0 0 10px rgba(243,229,171,0.12); }
+    .bd-charm-item.bd-dragging,
+    .bd-charm-item:active { cursor: grabbing; }
+    .bd-charm-item.bd-dragging {
+      z-index: 50; opacity: 0.92;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6), 0 0 18px rgba(243,229,171,0.40);
+    }
+    .bd-charm-item img { max-width: 80%; max-height: 72%; object-fit: contain; pointer-events: none; }
+    .bd-charm-name {
+      max-width: 94%; margin-top: 0.12rem; padding: 0 0.2rem;
+      font-size: 0.58rem; line-height: 1.15; text-align: center;
+      color: #ffd06b; text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      pointer-events: none;
+    }
+    .bd-viewmode .bd-charm-item { cursor: default; }
+    .bd-viewmode .bd-charm-pick { display: none; }
+    /* 右下角「×」移除按钮：悬停护符时显示（属性卡片悬浮在上方，故按钮放下方避免遮挡） */
+    .bd-charm-del {
+      position: absolute; bottom: 2px; right: 2px; z-index: 3;
+      width: 36px; height: 36px; line-height: 1; font-size: 1.6rem; font-weight: 700;   /* 放大 2 倍（原 18px） */
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 8px;                     /* 圆角正方形 */
+      color: #fff; cursor: pointer; padding: 0;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.15s var(--ease), background 0.15s var(--ease);
+    }
+    .bd-charm-item:hover .bd-charm-del,
+    .bd-charm-item.bd-dragging .bd-charm-del { opacity: 1; pointer-events: auto; }
+    .bd-charm-del:hover { background: #cf4a3a; border-color: #cf4a3a; }
+    .bd-viewmode .bd-charm-del { display: none; }
+
+    /* 常用技能：一行 10 框（技能面板内，天赋树上方） */
+    .bd-fav-skills {
+      position: relative;
+      margin-bottom: 1.6rem;
+      padding-bottom: 2.3rem;   /* 技能名字行下方空一行再显示分割线 */
+    }
+    .bd-fav-skills::after {     /* 分割线：常用技能 与 技能天赋页 之间 */
+      content: '';
+      position: absolute; left: 2%; right: 2%; bottom: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(243, 229, 171, 0.55), transparent);
+    }
+    .bd-fav-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 0.7rem;
+      font-size: 0.95rem; color: var(--bd-gold-light, #f3e5ab); font-weight: 700;   /* 与区域标题一致 */
+    }
+    /* 「显示基础等级」勾选框：透明底，方框颜色与文字一致 */
+    .bd-fav-baselabel {
+      font-size: 0.78rem; font-weight: 400; color: var(--text-dim, #b4a89c);
+      display: inline-flex; align-items: center; gap: 0.35rem; cursor: pointer;
+    }
+    .bd-fav-baselabel input[type="checkbox"] {
+      width: 14px; height: 14px; padding: 0; margin: 0; box-sizing: border-box;
+      appearance: none; -webkit-appearance: none; -moz-appearance: none;
+      background: transparent; border: 1px solid var(--text-dim, #b4a89c); border-radius: 3px;
+      cursor: pointer; position: relative;
+    }
+    .bd-fav-baselabel input[type="checkbox"]:checked {
+      background: var(--text-dim, #b4a89c);
+    }
+    .bd-fav-baselabel input[type="checkbox"]:checked::after {
+      content: '✓'; color: #101218; font-size: 11px; position: absolute; left: 2px; top: -2px; line-height: 14px;
+    }
+    .bd-fav-row {
+      display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px;
+    }
+    /* 技能名字行：与上方技能框一一对应 */
+    .bd-fav-labels {
+      display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px;
+      margin-top: 6px;
+    }
+    .bd-fav-label {
+      font-size: 0.9rem; color: var(--bd-text-dim, #b4a89c);   /* 字号 +3（原 0.72rem） */
+      text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      line-height: 1.3; min-height: 1.3em;
+    }
+    .bd-fav-slot {
+      position: relative; aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px dashed rgba(255, 255, 255, 0.25);
+      border-radius: 6px; cursor: pointer; overflow: hidden;
+      transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+    }
+    .bd-fav-slot:hover { border-color: rgba(243, 229, 171, 0.6); background: rgba(243, 229, 171, 0.06); }
+    .bd-fav-slot.filled { border-style: solid; border-color: rgba(243, 229, 171, 0.5); cursor: grab; }
+    .bd-fav-slot.filled:active { cursor: grabbing; }
+    .bd-fav-slot.drag-over {
+      border-color: var(--bd-gold);
+      background: rgba(201, 161, 74, 0.18);
+      box-shadow: 0 0 12px rgba(201, 161, 74, 0.35);
+    }
+    /* 拖拽中（技能树节点 / 常用技能槽） */
+    .bd-skill-node.bd-dragging, .bd-fav-slot.bd-dragging {
+      opacity: 0.55;
+      outline: 2px dashed var(--bd-gold);
+      outline-offset: 2px;
+    }
+    .bd-fav-slot .bd-fav-plus { color: #6f6f80; font-size: 1.2rem; line-height: 1; }
+    .bd-fav-slot.filled { border-style: solid; border-color: rgba(243, 229, 171, 0.5); }
+    .bd-fav-slot img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+    .bd-fav-del {
+      position: absolute; top: 2px; right: 2px; z-index: 3;
+      width: 36px; height: 36px; line-height: 1; font-size: 1.6rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 8px;                     /* 圆角正方形 */
+      color: #fff; cursor: pointer; padding: 0;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.15s var(--ease), background 0.15s var(--ease);
+    }
+    .bd-fav-slot:hover .bd-fav-del { opacity: 1; pointer-events: auto; }
+    .bd-fav-del:hover { background: #cf4a3a; border-color: #cf4a3a; }
+    .bd-viewmode .bd-fav-del { display: none; }
+    .bd-viewmode .bd-fav-slot { cursor: default; }
+
+    /* 技能天赋页标题（右侧显示已分配/剩余点数） */
+    .bd-skill-trees-title {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+      margin: 0 0 0.85rem;
+      font-size: 0.95rem; color: var(--bd-gold-light, #f3e5ab); font-weight: 700;
+    }
+    .bd-class-name {          /* 标题后当前职业（与顶部单选框对应；颜色由 [data-class] 职业色规则决定） */
+      font-size: 0.85rem; font-weight: 600; margin-left: 0.4rem;
+    }
+    .bd-skill-points {
+      font-size: 0.85rem; color: var(--bd-text-dim, #b4a89c); font-weight: 400;
+      white-space: nowrap;
+    }
+    .bd-skill-points strong { color: var(--bd-gold-light, #f3e5ab); margin: 0 0.25rem; }
+
+    /* 常用技能 hover 技能卡片浮层（仅图标/名称/标签/说明，不展开更多内容） */
+    .bd-fav-tip {
+      position: fixed; z-index: 9500;
+      width: 280px; max-height: 70vh; overflow: auto;
+      background: linear-gradient(180deg, #17171f, #0e0e15);
+      border: 1px solid rgba(243, 229, 171, 0.4);
+      border-radius: 10px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+      padding: 0.65rem 0.9rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.12s var(--ease);
+    }
+    .bd-fav-tip.on { opacity: 1; }
+    .bd-fav-tip-head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.3rem; }
+    .bd-fav-tip-thumb {
+      width: 44px; height: 44px; flex-shrink: 0; border-radius: 8px; overflow: hidden;
+      background: #23262e; border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bd-fav-tip-thumb img { width: 100%; height: 100%; object-fit: contain; }
+    .bd-fav-tip-name { flex: 1; min-width: 0; }
+    .bd-fav-tip-name b { font-size: 1rem; color: var(--text, #ece4da); }
+    .bd-fav-tip-name .en { display: block; font-size: 0.82rem; color: var(--text-mute, #7c7167); }
+    .bd-fav-tip-tags { display: inline-flex; gap: 0.28rem; flex-wrap: wrap; flex-shrink: 0; }
+    .bd-fav-tip-tags span {
+      font-size: 0.7rem; padding: 0.04rem 0.4rem; border-radius: 4px;
+      background: rgba(255, 255, 255, 0.06); color: var(--text-dim, #b4a89c);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .bd-fav-tip-desc { font-size: 0.84rem; color: var(--text-dim, #b4a89c); line-height: 1.65; margin: 0.3rem 0 0; }
+
+    /* 天赋树节点 hover：技能卡在通用 tooltip 容器内时，静态复用浮层外观（与常用技能卡片完全一致） */
+    .bd-tip .bd-fav-tip-static {
+      position: static; width: 100%; max-height: none;
+      opacity: 1; transition: none;
+    }
+
+    /* 属性面板 */
+    .bd-stats-panel {
+      background: var(--bd-panel);
+      border: 1px solid var(--bd-border);
+      border-radius: 6px;
+      padding: 0.9rem 1rem 20px;
+    }
+    .bd-stats-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 0.9rem;
+      font-size: 0.95rem; color: var(--bd-gold-light); font-weight: 700;
+    }
+    .bd-stats-tabs { display: flex; gap: 0.4rem; }
+    .bd-stats-tabs button {
+      background: transparent; border: 1px solid var(--bd-border);
+      color: var(--bd-text-dim); border-radius: 4px; padding: 0.25rem 0.55rem;
+      font-size: 0.78rem; cursor: pointer; transition: all 0.2s;
+    }
+    /* 玩家标签：金色 */
+    .bd-stats-tabs button[data-panel="player"].active,
+    .bd-stats-tabs button[data-panel="player"]:hover {
+      color: var(--bd-gold-light); border-color: var(--bd-gold);
+      background: rgba(201, 161, 74, 0.12);
+    }
+    /* 佣兵标签：蓝色 */
+    .bd-stats-tabs button[data-panel="merc"].active,
+    .bd-stats-tabs button[data-panel="merc"]:hover {
+      color: var(--bd-blue); border-color: var(--bd-blue);
+      background: rgba(142, 197, 255, 0.12);
+    }
+
+    .bd-stat-group { margin-bottom: 0.9rem; }
+    .bd-stat-group h4 {
+      margin: 0 0 0.4rem; font-size: 0.86rem; color: var(--bd-gold);
+      letter-spacing: 0.03em; border-bottom: 1px solid var(--bd-border);
+      padding-bottom: 0.25rem;
+    }
+    .bd-stat-row {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.85rem; padding: 0.22rem 0;
+      color: var(--bd-text);
+    }
+    .bd-stat-row span:first-child { color: var(--bd-text-dim); }
+
+    /* 抗性：一行两个并排 */
+    .bd-stat-group.resist {
+      display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.2rem;
+    }
+    .bd-stat-group.resist h4 { grid-column: 1 / -1; }
+
+    /* 装备面板标题（与属性面板标题一致） */
+    .bd-equip-header {
+      display: flex; align-items: center;
+      margin-bottom: 0.9rem;
+      font-size: 0.95rem; color: var(--bd-gold-light); font-weight: 700;
+    }
+    /* 属性加点 − / + 横向控件 */
+    .bd-stat-left-group { display: inline-flex; align-items: center; gap: 0.6rem; }
+    .bd-plusminus { display: inline-flex; align-items: center; gap: 0.3rem; }
+    .bd-plusminus button {
+      width: 22px; height: 22px; line-height: 1; padding: 0;
+      background: rgba(0,0,0,0.35); border: 1px solid var(--bd-border);
+      color: var(--bd-gold-light); border-radius: 3px; cursor: pointer;
+      font-size: 1rem; font-weight: 700; transition: all 0.15s;
+    }
+    .bd-plusminus button:hover { border-color: var(--bd-gold); background: rgba(201,161,74,0.18); }
+    .bd-plusminus button:active { transform: translateY(1px); }
+    .bd-plusminus input {
+      width: 38px; background: rgba(0,0,0,0.35); border: 1px solid var(--bd-border);
+      color: var(--bd-text); text-align: center; border-radius: 3px;
+      font-size: 0.82rem; padding: 0.15rem 0;
+      /* 去除浏览器原生的上下箭头（数字步进器） */
+      -moz-appearance: textfield;
+      appearance: none;
+    }
+    .bd-plusminus input::-webkit-outer-spin-button,
+    .bd-plusminus input::-webkit-inner-spin-button {
+      -webkit-appearance: none; margin: 0;
+    }
+    .bd-plusminus input:focus { outline: none; border-color: var(--bd-gold); }
+    .bd-stat-base { color: var(--bd-text); }
+
+    /* 技能区 */
+    .bd-skill-panel {
+      display: none;               /* 默认隐藏：由「装备/技能」视图 Tab 控制显隐 */
+      margin-top: 1.2rem;
+      background: var(--bd-panel);
+      border: 1px solid var(--bd-border);
+      border-radius: 6px;
+      padding: 1rem 1rem 1.6rem;
+    }
+    .bd-skill-header {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.88rem; color: var(--bd-text-dim);
+      margin-bottom: 0.8rem;
+    }
+    .bd-skill-header strong { color: var(--bd-gold-light); margin: 0 0.25rem; }
+    .bd-skill-header label { display: inline-flex; align-items: center; gap: 0.35rem; cursor: pointer; }
+    .bd-skill-trees {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
+      justify-items: center;
+    }
+    @media (max-width: 900px) {
+      .bd-skill-trees { grid-template-columns: 1fr; }
+    }
+    .bd-skill-tree {
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(201,161,74,0.22);
+      border-radius: 4px;
+      padding: 0.7rem 0.9rem 0.9rem;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto 1fr;
+      gap: 0.7rem 0.7rem;
+      justify-content: center;
+    }
+    .bd-skill-tree h4 {
+      grid-column: 1 / -1; text-align: center; margin: 0;
+      font-size: 0.86rem; color: var(--bd-gold-light); letter-spacing: 0.04em;
+    }
+    .bd-skill-labels {
+      display: grid;
+      grid-template-rows: repeat(6, 72px);
+      row-gap: 16px;
+      align-items: center;
+    }
+    .bd-skill-label {
+      font-size: 0.78rem; color: var(--bd-gold-light);
+      writing-mode: vertical-rl; text-orientation: upright;
+      letter-spacing: 0.08em; text-align: center;
+      padding: 0.3rem 0.1rem;
+    }
+    .bd-tree-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 72px);
+      grid-template-rows: repeat(6, 72px);
+      gap: 16px 12px;
+      position: relative;
+    }
+    .bd-skill-node {
+      width: 67px; height: 67px;
+      background: var(--bd-slot-empty);
+      border: 2px solid var(--bd-border);
+      border-radius: 4px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: var(--bd-text-dim); font-size: 0.75rem; text-align: center;
+      cursor: pointer; position: relative; overflow: hidden;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+      user-select: none;
+    }
+    .bd-skill-node:hover {
+      border-color: var(--bd-border-strong);
+      background: var(--bd-slot-hover);
+    }
+    .bd-skill-node.active {
+      border-color: var(--bd-gold);
+      background: rgba(201,161,74,0.18);
+      color: var(--bd-gold-light); font-weight: 700;
+      box-shadow: 0 0 10px rgba(201,161,74,0.22);
+    }
+    .bd-skill-icon { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }   /* 图标铺满节点方框 */
+    .bd-skill-name { display: none; }    /* 已有图标时不显示文字 */
+    .bd-skill-lvl {
+      position: absolute; top: 2px; right: 4px;
+      font-size: 0.85rem; font-weight: 700; line-height: 1;
+      color: #fff; text-shadow: 0 1px 2px #000;
+      pointer-events: none;
+    }
+    .bd-skill-node .lvl {                  /* 兼容旧 .lvl（保留 fallback） */
+      position: absolute; bottom: -20px; left: 0; right: 0;
+      text-align: center; font-size: 0.75rem; color: var(--bd-text);
+    }
+    .bd-skill-node.empty { background: transparent; }
+    .bd-skill-node.empty .bd-skill-lvl { display: none; }
+
+    /* 技能连线示意 */
+    .bd-tree-line {
+      position: absolute; background: rgba(201,161,74,0.28);
+      z-index: 0; pointer-events: none;
+    }
+
+    .bd-skill-hint {
+      margin-top: 0.9rem; font-size: 0.78rem; color: var(--bd-text-dim);
+      text-align: center;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 640px) {
+      .bd-equip-grid { grid-template-columns: repeat(5, 52px); grid-template-rows: 52px 78px 78px 52px; gap: 7px; }
+      .bd-slot { width: 52px; height: 52px; font-size: 0.58rem; }
+      .bd-slot.weapon, .bd-slot.armor, .bd-slot.shield { height: 119px; transform: none; }
+      .bd-slot.amulet, .bd-slot.ring-left, .bd-slot.ring-right, .bd-slot.gloves, .bd-slot.boots { width: 52px; height: 52px; transform: none; }
+      .bd-charm-grid { grid-template-columns: repeat(10, 52px); grid-template-rows: repeat(6, 52px); width: 520px; }
+      .bd-charm-cell { width: 52px; height: 52px; }
+      .bd-tree-grid { grid-template-columns: repeat(3, 56px); grid-template-rows: repeat(6, 56px); gap: 12px 10px; }
+      .bd-skill-labels { grid-template-rows: repeat(6, 56px); row-gap: 12px; }
+      .bd-skill-label { font-size: 0.7rem; }
+      .bd-skill-node { width: 56px; height: 56px; font-size: 0.65rem; }
+      .bd-skill-node .lvl { bottom: -16px; font-size: 0.65rem; }
+    }
+
+    /* ============================================================ */
+    /*  BD 装备选择器弹窗（暗金/套装/符文之语） */
+    /* ============================================================ */
+    .bd-modal {
+      position: fixed; inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      z-index: 9000;
+      display: none; align-items: flex-start; justify-content: center;
+      padding: 4vh 1rem;
+      backdrop-filter: blur(2px);
+    }
+    .bd-modal-card {
+      width: min(960px, 100%);
+      max-height: 92vh;
+      background: linear-gradient(180deg, #14141c, #0e0e15);
+      border: 1px solid var(--border, rgba(255, 255, 255, 0.10));
+      border-radius: 12px;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+      display: flex; flex-direction: column;
+      overflow: hidden;
+    }
+    .bd-modal-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.8rem 1.2rem;
+      border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    }
+    .bd-modal-title { margin: 0; font-size: 1.05rem; color: #e8b339; font-family: var(--font-ui, sans-serif); }
+    .bd-modal-close {
+      width: 32px; height: 32px;
+      background: transparent; border: 1px solid transparent;
+      color: #b9b9c8; font-size: 1.4rem; line-height: 1;
+      border-radius: 6px; cursor: pointer; transition: color .2s, border-color .2s;
+    }
+    .bd-modal-close:hover { color: #ff8c8c; border-color: rgba(255, 140, 140, 0.4); }
+    .bd-modal-body { padding: 1rem 1.2rem 1.4rem; overflow-y: auto; }
+    /* 搜索行 */
+    .bd-picker-search-row {
+      display: flex; align-items: center;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border, rgba(255, 255, 255, 0.10));
+      border-radius: 8px; padding: 0 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .bd-picker-search-icon { color: #8ec5ff; font-size: 1rem; margin-right: 0.4rem; }
+    .bd-picker-search-row input {
+      flex: 1; background: transparent; border: 0; outline: 0;
+      color: #e8e8ee; font-size: 0.95rem; padding: 0.55rem 0; font-family: inherit;
+    }
+    .bd-picker-search-row input::placeholder { color: #6f6f80; }
+    /* 筛选按钮组（品质行） */
+    .bd-picker-bar {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .bd-picker-bar-label {
+      color: #8ec5ff; font-size: 0.85rem; font-family: var(--font-ui, sans-serif);
+      letter-spacing: 0.05em; margin-right: 0.2rem;
+    }
+    .bd-picker-chip {
+      padding: 0.3rem 0.9rem; font-size: 0.85rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
+      border-radius: 999px; cursor: pointer;
+      color: #b9b9c8; transition: color .2s, border-color .2s, background .2s, box-shadow .2s;
+    }
+    .bd-picker-chip:hover { border-color: #e8b339; color: #e8b339; }
+    .bd-picker-chip.active {
+      color: #0d0d14; background: linear-gradient(135deg, #f0c75a, #e0a83c);
+      border-color: #e0a83c; font-weight: 700;
+      box-shadow: 0 0 12px rgba(224, 168, 60, 0.35);
+    }
+    /* 武器类型筛选行（子类）：同胶囊但更小；「拳套（爪）」前换行 */
+    .bd-picker-bar--sub { margin-top: 0.2rem; }
+    .bd-picker-chip--sub { padding: 0.22rem 0.7rem; font-size: 0.8rem; }
+    .bd-picker-break { flex-basis: 100%; height: 0; }
+    .bd-picker-count { margin: 0 0 0.4rem; font-size: 0.85rem; color: #b9b9c8; }
+    .bd-picker-empty { color: #b9b9c8; font-size: 0.95rem; padding: 2rem 0; text-align: center; }
+    /* 卡片网格 3 列 */
+    .bd-picker-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem;
+      padding: 0.2rem 0;
+    }
+    @media (max-width: 720px) { .bd-picker-grid { grid-template-columns: repeat(2, 1fr); } }
+    .bd-picker-card {
+      display: flex; align-items: center; gap: 0.7rem;
+      padding: 0.55rem 0.7rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+      border-radius: 8px;
+      color: inherit; text-align: left;
+      cursor: pointer;
+      transition: border-color .2s, background .2s, transform .2s;
+    }
+    .bd-picker-card:hover {
+      border-color: #e8b339;
+      background: rgba(232, 179, 57, 0.08);
+      transform: translateY(-1px);
+    }
+    .bd-picker-thumb, .bd-picker-thumb-ph {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 6px;
+    }
+    .bd-picker-thumb-ph { display: flex; align-items: center; justify-content: center; color: #6f6f80; font-size: 0.72rem; }
+    .bd-picker-text { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+    .bd-picker-name {
+      color: #ffd06b; font-size: 0.92rem; font-weight: 600;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    /* 套装部件名称用绿色（本页 BD 选择器卡片） */
+    .bd-picker-card--set .bd-picker-name { color: #7fe08a; }
+    .bd-picker-base {
+      color: #8a8a98; font-size: 0.78rem;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+
+    /* 装备槽名称标签（叠加在图底部） */
+    .bd-slot-name {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 1px 2px;
+      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.85));
+      color: #ffd06b; font-size: 0.62rem; line-height: 1.1;
+      text-align: center;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      pointer-events: none;
+    }
+    .bd-slot { position: relative; overflow: hidden; }
+
+    /* 取消装备按钮（右上角 ×，hover 显示） */
+    .bd-slot-clear {
+      position: absolute; top: 3px; right: 3px; z-index: 3;
+      display: none; align-items: center; justify-content: center;
+      width: 40px; height: 40px;              /* 放大 2 倍（原 20px）更醒目 */
+      background: rgba(0, 0, 0, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 8px;                     /* 圆角正方形 */
+      color: #fff; font-size: 1.7rem; line-height: 1; padding: 0;
+      cursor: pointer; transition: background 0.15s, border-color 0.15s;
+    }
+    .bd-slot:hover .bd-slot-clear { display: flex; }
+    .bd-slot-clear:hover { background: #cf4a3a; border-color: #cf4a3a; }
+    /* 查看模式只读：不显示取消按钮 */
+    .bd-viewmode .bd-slot-clear { display: none; }
+
+    /* 符文装备：常驻叠加在槽位装备图上的符文图标（60% 透明，一行两个，自上而下；大小与项链图一致） */
+    .bd-slot-runes {
+      position: fixed;   /* 由 JS 跟随槽位实际尺寸定位 */
+      display: flex; flex-wrap: wrap;
+      justify-content: center; align-content: center;
+      gap: 4px; padding: 4px;
+      background: rgba(0, 0, 0, 0.26);   /* 轻微加深即可，避免压暗符文装备图 */
+      pointer-events: none;
+      z-index: 8500;     /* 低于选择器弹窗(9000)与 tooltip(9500)：弹窗弹出时不得被符文层遮挡 */
+    }
+    /* 选择器弹窗打开时彻底隐藏符文叠加层，避免透过半透明遮罩（0.78）造成视觉遮挡 */
+    body.bd-modal-open .bd-slot-runes { display: none; }
+    .bd-slot-runes img {
+      width: 52px; height: 52px;
+      object-fit: contain;
+      opacity: 0.85;           /* 符文图标更清晰 */
+      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
+    }
+
+    /* 装备槽 hover 卡片（tooltip）：承载与对应页面完全一致的卡片（卡片自带背景/边框） */
+    .bd-tip {
+      display: none;
+      position: fixed; z-index: 9500;
+      width: 320px; max-width: calc(100vw - 16px);
+      padding: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.18s ease;
+    }
+    /* tooltip 内卡片强制不透明背景：页面中卡片半透明透出页面底色，弹层中需不透出背后内容 */
+    .bd-tip .unique-card { background: #16130e; }
+    .bd-tip .rune-card  { background: #16130e; }
+    .bd-tip .base-card  { background: #14141c; }
+    /* tooltip 内套装部件名称用绿色（与选择器列表一致；仅影响 BD 弹层，不影响套装页） */
+    .bd-tip .base-card .base-name { color: #7fe08a; }
+    /* 降级：渲染函数缺失时仅显示名称 */
+    .bd-tip-fallback {
+      display: flex; flex-direction: column; gap: 0.2rem;
+      background: linear-gradient(180deg, #181822, #101019);
+      border: 1px solid rgba(232, 179, 57, 0.35);
+      border-radius: 10px;
+      padding: 0.7rem 0.85rem;
+      box-shadow: 0 10px 36px rgba(0, 0, 0, 0.65);
+      font-size: 0.82rem;
+    }
+
+    /* 保存控件：标题输入 + 公开开关 + 保存按钮 */
+    .bd-save-controls {
+      display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap;
+    }
+    .bd-title-input {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--bd-border);
+      border-radius: 6px;
+      color: var(--bd-text);
+      font-size: 0.9rem;
+      padding: 0.5rem 0.7rem;
+      min-width: 200px;
+      outline: none;
+    }
+    .bd-title-input:focus { border-color: var(--bd-gold); }
+    .bd-title-input::placeholder { color: var(--bd-text-dim); }
+    .bd-public-toggle {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.85rem; color: var(--bd-text-dim); cursor: pointer;
+      user-select: none;
+    }
+    /* 公开发布勾选框：透明背景 + 白色边框（醒目）+ 白色对勾 */
+    .bd-public-toggle input {
+      appearance: none; -webkit-appearance: none;
+      width: 18px; height: 18px; margin: 0; flex-shrink: 0;
+      background: transparent;
+      border: 2px solid #ffffff;
+      border-radius: 4px;
+      cursor: pointer; position: relative;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .bd-public-toggle input:hover { box-shadow: 0 0 8px rgba(255, 255, 255, 0.35); }
+    .bd-public-toggle input:checked { background: rgba(255, 255, 255, 0.10); }
+    .bd-public-toggle input:checked::after {
+      content: ''; position: absolute; left: 5px; top: 1px;
+      width: 5px; height: 10px;
+      border: solid #ffffff; border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    .bd-public-toggle input:focus-visible {
+      outline: none; box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    }
+
+    /* 保存按钮：扁平简洁风格（覆盖全局 .btn-primary 的渐变/内阴影/上浮） */
+    #bdSave {
+      background: #d65f52;
+      background-image: none;
+      color: #fff5ee;
+      border: 1px solid #cf4a3a;
+      border-radius: 6px;
+      box-shadow: none;
+      padding: 0.55rem 1.4rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+    #bdSave:hover {
+      background: #b53b2d;
+      border-color: #b53b2d;
+      transform: none;
+      filter: none;
+      box-shadow: none;
+    }
+    #bdSave:active { background: #a3342a; border-color: #a3342a; }
+
+    /* 查看模式（从 BD 展示页带 view=1 进入，只读）：禁用编辑交互，但保留装备 hover 卡片 */
+    .bd-viewmode .bd-class-row,
+    .bd-viewmode .bd-plusminus,
+    .bd-viewmode .bd-skill-node,
+    .bd-viewmode .bd-skill-header label { pointer-events: none; }
+    .bd-viewmode .bd-skill-node { cursor: default; }
+    .bd-viewmode .bd-slot { cursor: default; }
+    /* 查看模式：隐藏发布相关控件（标题/公开勾选/保存），仅显示作者横幅 */
+    .bd-viewmode .bd-save-controls { display: none; }
+    .bd-viewmode .bd-view-banner { display: flex; margin-top: 0; margin-left: auto; }
+    /* 默认隐藏查看横幅：编辑模式不显示；仅 body.bd-viewmode 时由上方规则显示 */
+    .bd-view-banner {
+      display: none; align-items: center; gap: 1rem; flex-wrap: wrap;
+      margin-top: 0.6rem; padding: 0.55rem 0.9rem;
+      background: rgba(0, 0, 0, 0.3); border: 1px solid var(--bd-border);
+      border-radius: 6px; font-size: 0.85rem; color: var(--bd-text-dim);
+    }
+    .bd-view-note { color: var(--bd-text-dim); }
+    .bd-view-note #bdViewAuthor { color: var(--bd-gold); font-weight: 600; }
+
+    /* 加载态：从 BD展示 / 我的BD 打开既有 BD 时立即进入，避免保存按钮与占位装备图闪现约 1 秒 */
+    .bd-loading .bd-save-controls { visibility: hidden; }
+    .bd-equip-panel { position: relative; }
+    .bd-loading .bd-equip-panel::after {
+      content: "加载中…";
+      position: absolute; inset: 0; z-index: 6;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(10, 10, 15, 0.6);
+      border-radius: 6px;
+      color: var(--bd-gold); font-size: 1rem; letter-spacing: 0.18em;
+      pointer-events: none;
+    }
+
+    /* ============================================================ */
+    /*  佣兵面板：与玩家共用装备/属性框架，但内容独立维护           */
+    /* ============================================================ */
+    /* 装备面板：两套 grid 切换显示 */
+    .bd-equip-grid[data-owner="merc"] { display: none; }
+    body.bd-mercmode .bd-equip-grid[data-owner="player"] { display: none; }
+    body.bd-mercmode .bd-equip-grid[data-owner="merc"] { display: grid; }
+
+    /* 属性面板：两套 body 切换显示（默认玩家） */
+    .bd-stats-body[data-owner="merc"] { display: none; }
+    body.bd-mercmode .bd-stats-body[data-owner="player"] { display: none; }
+    body.bd-mercmode .bd-stats-body[data-owner="merc"] { display: block; }
+
+    /* 佣兵无主动技能树：隐藏技能面板并显示提示 */
+    body.bd-mercmode .bd-skill-panel { display: none; }
+    .bd-merc-note {
+      display: none;
+      margin-top: 1.2rem; padding: 0.9rem 1rem;
+      background: var(--bd-panel); border: 1px dashed var(--bd-border);
+      border-radius: 6px; color: var(--bd-text-dim);
+      font-size: 0.85rem; text-align: center;
+    }
+    body.bd-mercmode .bd-merc-note { display: block; }

@@ -178,16 +178,13 @@ TEMPLATE = '''<!DOCTYPE html>
           <a href="index.html#equipment" aria-haspopup="true" aria-expanded="false">装备详情</a>
           <ul class="dropdown">
             <li><a href="equipment-system.html">装备系统</a></li>
-            <li><a href="equipment-donate.html">赞助装备</a></li>
             <li><a href="equipment-special.html">特等装备</a></li>
-            <li><a href="equipment-magic.html">魔法装备</a></li>
-            <li><a href="equipment-rare.html">稀有装备</a></li>
+            <li><a href="equipment-magic.html">魔法&稀有</a></li>
             <li><a href="equipment-set.html">套装装备</a></li>
             <li><a href="equipment-rune.html">符文之语</a></li>
             <li><a href="equipment-unique.html">暗金装备</a></li>
             <li><a href="equipment-crafted.html">手工装备</a></li>
-            <li><a href="equipment-legend.html">传奇装备</a></li>
-            <li><a href="equipment-chaos.html">混沌装备</a></li>
+            <li><a href="equipment-legend.html">传奇&混沌</a></li>
           </ul>
         </li>
         <li class="has-dropdown">

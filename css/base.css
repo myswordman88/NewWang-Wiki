@@ -1,0 +1,127 @@
+/* 基础：变量 / reset / 排版 / 容器 / 按钮 / 无障碍 / 滚动揭示 */
+
+/* =========================================================
+   新王觉醒 官网样式 —— 暗黑奇幻（Dark Fantasy）风格
+   设计：近黑暖调底 + 余烬红(主) + 古铜金(强调) + 紫雾
+   衬线中文(Noto Serif SC)史诗感 + 拉丁展示体(Cinzel/Rajdhani)
+   金属铭牌按钮 + 切角面板 + HUD 边角；无背景光晕
+   12 大板块 + 下拉导航
+   移动优先响应式，保留原结构与全部交互
+   ========================================================= */
+
+:root {
+  /* 颜色（暗黑奇幻） */
+  --bg: #0a0809;
+  --bg-alt: #100b0d;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-2: rgba(255, 255, 255, 0.06);
+  --border: rgba(214, 180, 150, 0.10);
+  --border-strong: rgba(224, 83, 63, 0.55);
+
+  --text: #ece4da;          /* 羊皮纸白 */
+  --text-dim: #b4a89c;
+  --text-mute: #7c7167;
+  --head: #f6efe6;
+
+  --accent: #e0533f;        /* 余烬红 */
+  --accent-light: #ff8a6b;
+  --accent-2: #c9a14a;      /* 古铜金 */
+  --accent-deep: #8e1f1a;   /* 血红 */
+  --violet: #7a4fb0;
+  --crimson: #ff4d6d;
+  --gold-soft: #ffd79a;
+
+  /* 字体 */
+  --font: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  --font-display: "Cinzel", "Noto Serif SC", "PingFang SC", "Microsoft YaHei", serif;
+  --font-ui: "Rajdhani", "Noto Serif SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  /* 布局 */
+  --maxw: 1200px;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --gap: clamp(1rem, 2.5vw, 1.6rem);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- 基础 ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 76px; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0; font-family: var(--font); background: var(--bg); color: var(--text);
+  line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.15; margin: 0 0 0.5em; font-weight: 800; color: var(--head);
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+p { margin: 0 0 1em; }
+
+.container {
+  width: 100%; max-width: var(--maxw); margin-inline: auto;
+  padding-inline: clamp(1.1rem, 4vw, 2.5rem);
+}
+
+/* 无障碍 */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; background: var(--accent); color: #2a0f0c;
+  padding: 0.6rem 1rem; border-radius: 0 0 8px 0; z-index: 200;
+}
+.skip-link:focus { left: 0; outline: 3px solid var(--text); }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 3px; border-radius: 4px; }
+
+/* ---------- 按钮（金属铭牌 / 游戏化） ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.82rem 1.7rem; border-radius: 5px;
+  font-family: var(--font-ui); font-weight: 700; font-size: 1.02rem;
+  letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.2s var(--ease), box-shadow 0.25s var(--ease), filter 0.2s var(--ease), border-color 0.2s var(--ease);
+  will-change: transform;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background: linear-gradient(180deg, #e0533f 0%, #9c241c 100%);
+  color: #fff5ee;
+  border: 1px solid rgba(201, 161, 74, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), inset 0 -3px 8px rgba(0, 0, 0, 0.45);
+}
+.btn-primary:hover {
+  filter: brightness(1.07);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.36), inset 0 -3px 8px rgba(0, 0, 0, 0.45);
+}
+.btn-ghost {
+  background: linear-gradient(180deg, rgba(46, 32, 28, 0.7), rgba(20, 14, 13, 0.7));
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.btn-ghost:hover { border-color: var(--accent); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+
+/* ---------- 滚动揭示动画 ---------- */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}

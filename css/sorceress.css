@@ -1,0 +1,326 @@
+/* 女巫职业技能页：技能卡片 + 筛选 + 觉醒（冰冷系先行，三系配色预留） */
+
+/* 技能信息页整体文字放大一号（2026-08-19 用户要求）：根字号 16px → 17px，
+ * 所有 rem 文字与间距同比例放大；仅作用于带 .skills-page 的三个职业技能页。 */
+html.skills-page { font-size: 17px; }
+
+:root {
+  --sorc-cold: #8ec5ff;        /* 冰冷系主色（蓝） */
+  --sorc-cold-dim: #5a94d8;
+  --sorc-cold-bg: rgba(142, 197, 255, 0.10);
+  --sorc-fire: #ff8a5c;        /* 火焰系主色（橙红） */
+  --sorc-fire-bg: rgba(255, 138, 92, 0.10);
+  --sorc-light: #f3e5ab;       /* 闪电系主色（金黄） */
+  --sorc-light-bg: rgba(243, 229, 171, 0.10);
+  --sorc-card-bg: rgba(16, 18, 24, 0.72);
+  --sorc-card-border: rgba(255, 255, 255, 0.08);
+  --sorc-num: #f3e5ab;         /* 数值淡黄 */
+  --sorc-label: #8ec5ff;       /* 标签蓝 */
+}
+
+/* ---------- 顶部筛选条 ---------- */
+.sorc-toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;
+  margin: 0 0 1.6rem; padding: 0.9rem 1rem;
+  background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius);
+}
+.sorc-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.sorc-tab {
+  padding: 0.38rem 0.95rem; border-radius: 999px; cursor: pointer;
+  font-family: var(--font-ui); font-size: 0.85rem; letter-spacing: 0.06em;
+  color: var(--text-dim); background: transparent; border: 1px solid var(--border);
+  transition: all 0.2s var(--ease);
+}
+.sorc-tab:hover { color: var(--text); border-color: var(--accent-2); }
+.sorc-tab.active { color: #101218; background: var(--accent-light); border-color: var(--accent-light); }
+.sorc-tab[data-tree="cold"].active { background: var(--sorc-cold); border-color: var(--sorc-cold); }
+.sorc-tab[data-tree="fire"].active { background: var(--sorc-fire); border-color: var(--sorc-fire); }
+.sorc-tab[data-tree="lightning"].active { background: var(--sorc-light); border-color: var(--sorc-light); color: #101218; }
+.sorc-search {
+  flex: 1; min-width: 160px; padding: 0.5rem 0.9rem;
+  background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  color: var(--text); font-size: 0.9rem; outline: none;
+}
+.sorc-search:focus { border-color: var(--sorc-cold-dim); box-shadow: 0 0 0 2px var(--sorc-cold-bg); }
+.sorc-count { margin-left: auto; font-size: 0.85rem; color: var(--text-mute); white-space: nowrap; }
+
+/* ---------- 系别区块标题 ---------- */
+.sorc-tree-title {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-family: var(--font-ui); font-size: 1.05rem; letter-spacing: 0.08em;
+  color: var(--sorc-cold); margin: 1.6rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+}
+.sorc-tree-title[data-tree="fire"] { color: var(--sorc-fire); }
+.sorc-tree-title[data-tree="lightning"] { color: var(--sorc-light); }
+/* 亚马逊三系配色：枪矛=青蓝 / 生存=翠绿 / 弓弩=琥珀 */
+.sorc-tree-title[data-tree="javelin"] { color: #5cc8c8; }
+.sorc-tree-title[data-tree="survival"] { color: #96dc96; }
+.sorc-tree-title[data-tree="bow"] { color: #f3c16b; }
+.sorc-tree-title .cnt { font-size: 0.8rem; color: var(--text-mute); letter-spacing: 0.02em; }
+/* 系别名称强调色（仅特定系别；骨毒系=毒绿，呼应「毒」主题） */
+.sorc-tree-name.accent-poison { color: #5fe39a; }
+
+/* ---------- 技能卡片（单列长条形） ---------- */
+.sorc-grid { display: grid; gap: 0.9rem; grid-template-columns: 1fr; margin-bottom: 1.2rem; }
+.sorc-card {
+  background: var(--sorc-card-bg); border: 1px solid var(--sorc-card-border); border-radius: var(--radius);
+  overflow: hidden; cursor: pointer;
+  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.sorc-card:hover { border-color: var(--sorc-cold-dim); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(142, 197, 255, 0.10); }
+.sorc-card.open { border-color: var(--sorc-cold); }
+.sorc-card[data-tree="fire"]:hover { border-color: var(--sorc-fire); }
+.sorc-card[data-tree="lightning"]:hover { border-color: #d9c27a; }
+
+/* 卡片头：左图标 + 中间名称区 + 右侧 meta（前置/学习等级） */
+.sorc-card-head { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 1.1rem; }
+.sorc-thumb {
+  flex-shrink: 0; width: 72px; height: 72px; border-radius: 10px; overflow: hidden;
+  background: #23262e; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center;
+}
+.sorc-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.sorc-title { flex: 1; min-width: 0; }
+.sorc-name { display: flex; align-items: baseline; gap: 0.55rem; flex-wrap: wrap; }
+.sorc-name b { font-family: var(--font-ui); font-size: 1.18rem; color: var(--text); letter-spacing: 0.04em; }
+.sorc-name .en { font-size: 1rem; color: var(--text-mute); font-weight: 400; letter-spacing: 0.02em; }
+/* 标签：与英文名同行，基线对齐 */
+.sorc-tags { display: inline-flex; gap: 0.35rem; flex-wrap: wrap; margin-left: 0.2rem; }
+.sorc-tag {
+  font-size: 0.88rem; padding: 0.08rem 0.55rem; border-radius: 4px; letter-spacing: 0.04em;
+  background: rgba(255,255,255,0.05); color: var(--text-dim); border: 1px solid rgba(255,255,255,0.18);
+}
+/* ===== 标签统一配色方案（按语义调用 .sorc-tag.tag--*）===== */
+.sorc-tag.tag--active  { background: rgba(70,160,255,0.14);  color: #8fd0ff; border-color: rgba(120,190,255,0.55); }
+.sorc-tag.tag--passive { background: rgba(60,200,140,0.14);  color: #74e3a6; border-color: rgba(110,231,168,0.55); }
+.sorc-tag.tag--summon  { background: rgba(160,110,255,0.16); color: #c9a6ff; border-color: rgba(190,150,255,0.60); }
+.sorc-tag.tag--corpse  { background: rgba(220,90,70,0.14);   color: #ff9a88; border-color: rgba(255,140,120,0.55); }
+.sorc-tag.tag--buff    { background: rgba(230,180,60,0.16);  color: #ffd36b; border-color: rgba(255,210,120,0.60); }
+/* 终极：发光样式 */
+.sorc-tag.tag--ultimate {
+  background: linear-gradient(180deg, rgba(255,224,138,0.22), rgba(255,180,80,0.14));
+  color: #ffe6a0; border-color: rgba(255,210,120,0.75);
+  box-shadow: 0 0 6px rgba(255,200,90,0.55), inset 0 0 4px rgba(255,220,140,0.35);
+  animation: sorc-ult-glow 1.8s ease-in-out infinite;
+}
+@keyframes sorc-ult-glow {
+  0%,100% { box-shadow: 0 0 5px rgba(255,200,90,0.45), inset 0 0 3px rgba(255,220,140,0.30); }
+  50%     { box-shadow: 0 0 12px rgba(255,210,110,0.85), inset 0 0 6px rgba(255,225,150,0.50); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sorc-tag.tag--ultimate { animation: none; }
+}
+
+/* 右侧 meta 区：前置技能框（左）+ 学习等级（右上）——两框完全同尺寸 */
+.sorc-meta { flex-shrink: 0; display: flex; align-items: center; gap: 0.6rem; }
+.sorc-prereqs { display: flex; gap: 0.5rem; align-items: flex-start; }
+.sorc-prereq,
+.sorc-lvl {
+  flex-shrink: 0; text-align: center;
+  min-width: 76px; padding: 0.42rem 0.7rem;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: var(--radius-sm);
+}
+.sorc-prereq .picon {
+  width: 30px; height: 30px; margin: 0.25rem auto 0; border-radius: 5px; overflow: hidden;
+  background: #23262e; border: 1px solid rgba(255,255,255,0.10); display: flex; align-items: center; justify-content: center;
+}
+.sorc-prereq .picon img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.sorc-prereq .plabel,
+.sorc-lvl .l { display: block; font-size: 0.78rem; color: var(--text-mute); letter-spacing: 0.08em; }
+.sorc-lvl .v { display: block; font-family: var(--font-ui); font-size: 1.18rem; color: var(--sorc-num); margin-top: 0.2rem; }
+/* 文字型前置（转职/觉醒门槛）：单格纯文字，无图标，沿用基础框尺寸与【学习等级】一致 */
+.sorc-prereq--text .ptext { display: block; white-space: nowrap; font-family: var(--font-ui); font-size: 0.92rem; color: var(--sorc-num); margin-top: 0.32rem; }
+
+/* 卡片摘要（紧贴名称行下方，收起时可见） */
+.sorc-desc { margin: 0.35rem 0 0; font-size: 0.92rem; color: var(--text-dim); line-height: 1.65; }
+
+/* 卡片详情（展开）：4 个区域用亮色分割线隔开 */
+.sorc-detail { display: none; border-top: 1px solid var(--border); padding: 0.2rem 1rem 1rem; }
+.sorc-card.open .sorc-detail { display: block; }
+.sorc-sec { margin-top: 0; padding-top: 0.5rem; }
+.sorc-sec + .sorc-sec { border-top: 2px solid rgba(142, 197, 255, 0.35); }
+/* 区域标题（可点击折叠）；同时保留觉醒指南 h5 的字体 */
+.sorc-sec-h,
+.sorc-guide h5 {
+  font-family: var(--font-ui); font-size: 0.95rem; letter-spacing: 0.1em; color: var(--sorc-label);
+  margin: 0 0 0.4rem;
+}
+.sorc-sec-h {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 0; padding: 0.25rem 0; cursor: pointer; user-select: none;
+}
+.sorc-sec-h:hover { color: var(--sorc-cold); }
+.sorc-sec-arrow { color: var(--text-mute); font-size: 0.95rem; transition: transform 0.25s var(--ease); }
+.sorc-sec.open .sorc-sec-arrow { transform: rotate(180deg); color: var(--sorc-cold); }
+.sorc-sec-body { display: none; padding: 0.15rem 0 0.5rem; }
+.sorc-sec.open .sorc-sec-body { display: block; }
+.sorc-sec ul { margin: 0; padding-left: 1.1rem; color: #c4c6c7; line-height: 1.75; font-size: 0.88rem; }
+.sorc-sec li { margin: 0.15rem 0; }
+.sorc-sec .num { color: var(--sorc-num); }
+.sorc-sec .dim { color: var(--text-mute); }
+
+/* 等级数值行（技能信息中形如 伤害：xxx | 6 / 2 / ...） */
+.sorc-numrow { font-family: var(--font-mono); font-size: 0.85rem; color: var(--sorc-num); letter-spacing: 0.03em; }
+
+/* T 级数据（表格） */
+.sorc-tdata { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.4rem; margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px solid rgba(142, 197, 255, 0.18); }
+.sorc-tdata .td {
+  text-align: center; padding: 0.4rem 0.3rem; border-radius: 6px;
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+}
+.sorc-tdata .td b { display: block; font-size: 0.75rem; color: var(--sorc-num); letter-spacing: 0.05em; }
+.sorc-tdata .td span { display: block; font-size: 0.75rem; color: var(--text-dim); line-height: 1.4; margin-top: 0.15rem; }
+
+/* ---------- 传奇词缀卡片（位于「词缀加成」区域内） ---------- */
+.sorc-leg-grid { display: grid; gap: 0.6rem; }
+.sorc-leg-card {
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; cursor: pointer;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.sorc-leg-card:hover { border-color: rgba(243, 229, 171, 0.45); background: rgba(243, 229, 171, 0.04); transform: translateY(-1px); }
+.sorc-leg-card.open { border-color: rgba(243, 229, 171, 0.65); box-shadow: 0 4px 14px rgba(243, 229, 171, 0.10); }
+.sorc-leg-card-head {
+  display: flex; align-items: center; gap: 0.8rem; padding: 0.65rem 0.95rem;
+}
+.sorc-leg-card-head b {
+  font-family: var(--font-ui); font-size: 1.05rem; letter-spacing: 0.06em;
+  color: var(--sorc-num); text-shadow: 0 0 6px rgba(243, 229, 171, 0.25);
+}
+.sorc-leg-summary { flex: 1; min-width: 0; font-size: 0.88rem; color: var(--text); line-height: 1.5; }
+.sorc-leg-card .sorc-arrow { margin-left: 0; font-size: 1.4rem; transition: transform 0.25s var(--ease); }
+.sorc-leg-card.open .sorc-arrow { transform: rotate(180deg); color: var(--sorc-num); }
+.sorc-leg-card-body { display: none; padding: 0 0.9rem 0.85rem; }
+.sorc-leg-card.open .sorc-leg-card-body { display: block; }
+
+/* 传奇词缀板块标题：橙色 + 闪亮呼吸效果 */
+.sorc-sec--legendary > .sorc-sec-h {
+  color: #ff9a3c;
+  text-shadow: 0 0 6px rgba(255, 154, 60, 0.45);
+  animation: sorc-leg-glow 2.4s ease-in-out infinite;
+}
+.sorc-sec--legendary > .sorc-sec-h:hover { color: #ffb066; }
+.sorc-sec--legendary > .sorc-sec-h .sorc-sec-arrow,
+.sorc-sec--legendary.open > .sorc-sec-h .sorc-sec-arrow { color: #ff9a3c; }
+@keyframes sorc-leg-glow {
+  0%, 100% { text-shadow: 0 0 5px rgba(255, 154, 60, 0.40); }
+  50%      { text-shadow: 0 0 14px rgba(255, 170, 80, 0.85), 0 0 5px rgba(255, 205, 145, 0.55); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sorc-sec--legendary > .sorc-sec-h { animation: none; }
+}
+
+/* 传奇词缀卡片内 T1~T5 竖排：一行一个（T 标签在左，描述在右） */
+.sorc-leg-card-body .sorc-tdata { grid-template-columns: 1fr; gap: 0.45rem; margin-top: 0.25rem; padding-top: 0; border-top: none; }
+.sorc-leg-card-body .sorc-tdata .td {
+  display: flex; align-items: baseline; gap: 0.7rem; text-align: left;
+  padding: 0.5rem 0.75rem;
+}
+.sorc-leg-card-body .sorc-tdata .td b { display: inline; font-size: 0.85rem; margin: 0; }
+.sorc-leg-card-body .sorc-tdata .td span { display: block; margin-top: 0; flex: 1; font-size: 0.82rem; color: var(--text); line-height: 1.5; }
+
+/* 主技能卡片 meta 区：传奇词缀徽章（与前置/学习等级同尺寸） */
+.sorc-legbadge {
+  flex-shrink: 0; text-align: center;
+  min-width: 76px; padding: 0.42rem 0.7rem;
+  background: rgba(255, 154, 60, 0.10); border: 1px solid rgba(255, 154, 60, 0.5); border-radius: var(--radius-sm);
+}
+.sorc-legbadge .llabel {
+  display: block; font-size: 0.78rem; color: #ff9a3c; letter-spacing: 0.08em;
+  text-shadow: 0 0 5px rgba(255, 154, 60, 0.45);
+}
+.sorc-legbadge .ln { display: block; margin-top: 0.2rem; font-family: var(--font-ui); font-size: 0.95rem; color: var(--text); line-height: 1.18; }
+
+/* 展开提示箭头（放大 3 倍） */
+.sorc-arrow { margin-left: auto; color: var(--text-mute); font-size: 2.4rem; line-height: 1; transition: transform 0.25s var(--ease); }
+.sorc-card.open .sorc-arrow { transform: rotate(180deg); color: var(--sorc-cold); }
+
+/* ---------- 觉醒区块 ---------- */
+.sorc-guide {
+  background: rgba(243,229,171,0.06); border: 1px solid rgba(243,229,171,0.25);
+  border-radius: var(--radius); padding: 1rem 1.2rem; margin-bottom: 1.2rem;
+}
+.sorc-guide h5 { font-family: var(--font-ui); font-size: 0.9rem; letter-spacing: 0.1em; color: var(--sorc-num); margin: 0 0 0.5rem; }
+.sorc-guide p { margin: 0; font-size: 0.88rem; color: var(--text-dim); line-height: 1.85; }
+.sorc-guide p strong { color: var(--sorc-num); font-weight: 600; }
+
+.sorc-awake-grid { display: grid; gap: 0.9rem; grid-template-columns: 1fr; }
+.sorc-awake {
+  background: var(--sorc-card-bg); border: 1px solid var(--sorc-card-border); border-radius: var(--radius);
+  padding: 0.9rem 1.05rem;
+}
+.sorc-awake-head { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+.sorc-awake-lv {
+  flex-shrink: 0; font-family: var(--font-ui); font-size: 0.9rem; letter-spacing: 0.06em;
+  padding: 0.25rem 0.7rem; border-radius: 6px;
+  background: var(--sorc-cold-bg); color: var(--sorc-label); border: 1px solid rgba(142,197,255,0.35);
+}
+.sorc-awake-head b { font-family: var(--font-ui); font-size: 1.08rem; color: var(--text); letter-spacing: 0.05em; }
+.sorc-awake .eff { font-size: 0.9rem; color: var(--text); line-height: 1.7; margin: 0.3rem 0; }
+.sorc-awake .val { font-size: 0.85rem; color: var(--text-dim); line-height: 1.7; }
+.sorc-awake .val .num { color: var(--sorc-num); }
+.sorc-awake .note { font-size: 0.8rem; color: var(--text-mute); line-height: 1.6; margin-top: 0.4rem; border-top: 1px dashed var(--border); padding-top: 0.4rem; }
+.sorc-awake .soon { font-size: 0.85rem; color: var(--text-mute); font-style: italic; margin: 0.3rem 0 0; }
+
+/* 觉醒 1-9 阶标签：九色渐变（灰→白→蓝→黄→绿→粉→暗金→橙→红） */
+.sorc-awake-lv-1 { background: rgba(180,178,180,0.12); color: #b8b6b8; border-color: rgba(180,178,180,0.45); }
+.sorc-awake-lv-2 { background: rgba(255,255,255,0.12); color: #f2f2f2; border-color: rgba(255,255,255,0.45); }
+.sorc-awake-lv-3 { background: rgba(142,197,255,0.14); color: #8ec5ff; border-color: rgba(142,197,255,0.45); }
+.sorc-awake-lv-4 { background: rgba(243,229,171,0.14); color: #f3e5ab; border-color: rgba(243,229,171,0.45); }
+.sorc-awake-lv-5 { background: rgba(150,220,150,0.14); color: #96dc96; border-color: rgba(150,220,150,0.45); }
+.sorc-awake-lv-6 { background: rgba(255,158,190,0.14); color: #ff9ebe; border-color: rgba(255,158,190,0.45); }
+.sorc-awake-lv-7 { background: rgba(214,168,90,0.16); color: #d6a85a; border-color: rgba(214,168,90,0.5); }
+.sorc-awake-lv-8 { background: rgba(255,158,92,0.14); color: #ff9e5c; border-color: rgba(255,158,92,0.45); }
+.sorc-awake-lv-9 { background: rgba(255,102,102,0.14); color: #ff6666; border-color: rgba(255,102,102,0.45); }
+
+/* ---------- 标签筛选按钮（搜索栏下方） ---------- */
+.sorc-tagbar { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.4rem; }
+.sorc-tagbtn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: var(--font-ui); font-size: 0.82rem; letter-spacing: 0.04em;
+  padding: 0.3rem 0.8rem; border-radius: 999px; cursor: pointer;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text-dim);
+  transition: all 0.2s var(--ease);
+}
+.sorc-tagbtn:hover { color: var(--text); border-color: var(--accent-2); }
+.sorc-tagbtn.active { color: #101218; background: var(--accent-light); border-color: var(--accent-light); font-weight: 600; }
+.sorc-tagbtn .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+/* ---------- 觉醒大卡片（可折叠，仿技能卡片） ---------- */
+.sorc-awake-card {
+  background: var(--sorc-card-bg); border: 1px solid var(--sorc-card-border); border-radius: var(--radius);
+  overflow: hidden; margin-bottom: 1rem;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.sorc-awake-card:hover { border-color: var(--sorc-cold-dim); }
+.sorc-awake-card.open { border-color: var(--sorc-cold); box-shadow: 0 8px 24px rgba(142, 197, 255, 0.08); }
+.sorc-awake-card-head {
+  display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.1rem; cursor: pointer; user-select: none;
+}
+.sorc-awake-card-head:hover { background: rgba(142, 197, 255, 0.04); }
+.sorc-awake-card-title { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+.sorc-awake-card-title b { font-family: var(--font-ui); font-size: 1.18rem; color: var(--text); letter-spacing: 0.04em; }
+.sorc-awake-card-sub { font-size: 0.85rem; color: var(--text-mute); }
+.sorc-awake-card-body { display: none; border-top: 1px solid var(--border); padding: 0.4rem 1rem 1rem; }
+.sorc-awake-card.open .sorc-awake-card-body { display: block; }
+.sorc-awake-card .sorc-arrow { margin-left: 0; font-size: 1.8rem; transition: transform 0.25s var(--ease); }
+.sorc-awake-card:not(.open) .sorc-arrow { transform: rotate(-90deg); color: var(--text-mute); }
+.sorc-awake-card.open .sorc-arrow { transform: rotate(0deg); color: var(--sorc-cold); }
+
+/* 觉醒区块标题与上方技能网格之间留约两行间距 */
+.awake-title { margin-top: 4rem; }
+
+/* 空态 */
+.sorc-empty { text-align: center; padding: 2.5rem 1rem; color: var(--text-mute); font-size: 0.95rem; border: 1px dashed var(--border); border-radius: var(--radius); }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 860px) {
+  .sorc-toolbar { flex-direction: column; align-items: stretch; }
+  .sorc-count { margin-left: 0; text-align: right; }
+  .sorc-card-head { flex-wrap: wrap; }
+  .sorc-meta { width: 100%; flex-wrap: wrap; }
+}
+@media (max-width: 520px) {
+  .sorc-thumb { width: 60px; height: 60px; }
+  .sorc-name b { font-size: 1.05rem; }
+  .sorc-name .en { font-size: 0.9rem; }
+}

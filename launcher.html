@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>启动器相关 | 新王觉醒</title>
+  <meta name="description" content="新王觉醒 Mod 启动器相关：D2RLoader 介绍、插件与补丁机制、预装清单与官方资源站。" />
+  <meta name="author" content="新王觉醒" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Serif+SC:wght@600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <div id="site-nav"></div>
+
+  <main id="main">
+    <section class="section detail feature">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="index.html">首页</a><span aria-hidden="true">/</span>
+          <a href="index.html#newbie">新手专区</a><span aria-hidden="true">/</span>
+          <span class="current">启动器相关</span>
+        </nav>
+
+        <header class="section-head reveal">
+          <p class="section-kicker">新手专区 | <span class="kicker-num">2 · 3</span></p>
+          <h2>启动器相关</h2>
+          <p class="section-lead">认识 D2RLoader 启动器，了解插件与补丁的工作机制，查看「新王觉醒」预装清单与官方资源站。</p>
+        </header>
+
+        <!-- 2.3.1 启动器介绍（D2RLoader） -->
+        <details class="fold-card launcher-step">
+          <summary class="fold-card-head">
+            <span class="fold-card-title">2.3.1 启动器介绍（D2RLoader）</span>
+            <span class="fold-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="fold-card-body">
+            <div class="feature-subsection">
+              <p class="feature-block-text">D2RLoader 是一款针对《暗黑破坏神 II：重制版》的模组加载器。（作者为国外大佬：Dimentio）</p>
+              <p class="feature-block-text">其目标是恢复《暗黑破坏神 II：重制版》中缺失的传统功能、完善模组支持，并为模组制作者提供更优质的开发工具。</p>
+              <p class="feature-block-text">对于玩家而言，D2RLoader 能让启动、配置以及游玩已支持的模组变得更便捷，其中也包含与好友进行 TCP/IP 联机游戏的功能。</p>
+              <p class="feature-block-text">对于模组制作者来说，该工具可助力其开发功能、管理模组文件、排查问题，并为更高级的模组提供支持。</p>
+              <div class="feature-note">
+                <p><strong>「隔壁大王」：</strong>D2RLoader 是一款划时代的强大启动器，它本身自带一些突破游戏框架的便利功能，诸如：通货仓库超过 99 堆叠上限 / 共享仓库数量扩展 / 显示物品词条范围 等等；与此同时 D2RLoader 是一个开放的平台，支持玩家自己制作「插件」和「补丁」来实现各种不同的功能。当前版本的「新王觉醒」Mod 已经和 D2RLoader 深度绑定，基本上必须使用该启动器才能正常游玩。</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- 2.3.2 插件和补丁 -->
+        <details class="fold-card launcher-step">
+          <summary class="fold-card-head">
+            <span class="fold-card-title">2.3.2 插件和补丁</span>
+            <span class="fold-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="fold-card-body">
+            <div class="feature-subsection">
+              <p class="feature-block-text hang"><strong>「插件」：</strong>多为 .DLL 文件，放置于 <span class="guide-path">d2rloader/plugins</span> 文件夹内，实现特定功能，由玩家或作者本人制作；部分插件匹配 <span class="guide-path">.toml</span> 设置文件，放置于 <span class="guide-path">d2rloader/config</span> 文件夹内，通过修改该文件调整插件的参数。</p>
+              <p class="feature-block-text hang"><strong>「补丁」：</strong>多为 .json 文件，放置于 <span class="guide-path">d2rloader/patches</span> 文件夹内，功能相对较为简单，一般无需 .toml 设置文件。</p>
+              <p class="feature-block-text hang"><strong>使用方法：</strong>将「插件」或「补丁」放入指定文件夹内，需要的话调整 .toml 设置文件中的参数，用 D2RLoader 启动游戏，在角色选择界面可以查看当前「插件」或「补丁」的运行情况（是否正常），进入游戏后即可享受其功能。</p>
+              <p class="feature-block-text hang"><strong>下载方法：</strong>在 D2RLoader 的 Discord 论坛上有专门的「插件」或「补丁」下载区，可以在论坛上直接下载，文件体积一般都很小。</p>
+              <div class="feature-note">
+                <p><strong>「隔壁大王」：</strong>当前版本的「新王觉醒」会直接在 MOD 文件内打包一定数量的「插件」和「补丁」（模组功能需要），启动模组后即可享受其带来的便利功能。</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- 2.3.3 「新王觉醒」预装插件和补丁一览 -->
+        <details class="fold-card launcher-step">
+          <summary class="fold-card-head">
+            <span class="fold-card-title">2.3.3 「新王觉醒」预装插件和补丁一览</span>
+            <span class="fold-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="fold-card-body">
+            <div class="feature-subsection">
+              <h4 class="feature-subsection-title">「新王觉醒」预装补丁</h4>
+              <ul class="feature-list">
+                <li><strong>Auto-Collect Player Corpse</strong>：玩家死后自动拾取掉落装备</li>
+                <li><strong>Disable Run Defense and Block Penalties</strong>：去除跑动中的防御和格挡惩罚</li>
+                <li><strong>DenOfEvilCounterFix</strong>：修复第一个任务计数器 BUG（将在 D2RLoader V 1.2.0 版本修复）<span class="text-mute">[ 作者：yinyin333333 ]</span></li>
+                <li><strong>Runewords in All Item Qualities</strong>：全品质装备可制作符文之语<span class="text-mute">[ 作者：yinyin333333 ]</span></li>
+                <li><strong>Level 100+ Characters</strong>：允许 100 级以上玩家加入游戏<span class="text-mute">[ 作者：RuffNecKk ]</span></li>
+                <li><strong>Thorns/Burn Kill Credit</strong>：荆棘 / 燃烧击杀归属<span class="text-mute">[ 作者：RuffNecKk ]</span></li>
+                <li><strong>Gold Capacities</strong>：增加金币数量上限<span class="text-mute">[ 作者：RuffNecKk ]</span></li>
+              </ul>
+
+              <h4 class="feature-subsection-title">「新王觉醒」预装插件</h4>
+              <ul class="feature-list">
+                <li><strong>Bind And Summon</strong>：增强束缚恶魔以及召唤物下线保留<span class="text-mute">[ 作者：yinyin333333 ]</span></li>
+                <li><strong>PlayerFlyingCollision</strong>：玩家飞行碰撞体<span class="text-mute">[ 作者：yinyin333333 ]</span></li>
+                <li><strong>D2rl-Charm-Inv</strong>：护符背包<span class="text-mute">[ 作者：dimentio ]</span></li>
+                <li><strong>AutoMap Plugin</strong>：小地图显怪<span class="text-mute">[ 作者：NpZIk ]</span></li>
+                <li><strong>Floating Damage</strong>：伤害显示<span class="text-mute">[ 作者：RuffNecKk ]</span></li>
+                <li><strong>Monster Display</strong>：怪物属性显示<span class="text-mute">[ 作者：yinyin333333 ]</span></li>
+                <li><strong>Stash Search</strong>：仓库搜索<span class="text-mute">[ 作者：yinyin333333 ]</span></li>
+                <li><strong>Bulk Currency Deposit</strong>：通货批量储存<span class="text-mute">[ 作者：RuffNecKk ]</span></li>
+                <li><strong>Remote Stash</strong>：远程仓库<span class="text-mute">[ 作者：RuffNecKk ]</span></li>
+                <li><strong>Charm Aura Trigger Fix</strong>：修复咒符灵气死亡和切换地图的自动触发<span class="text-mute">[ 作者：RuffNecKk ]</span></li>
+                <li><strong>Enhanced Damage Min/Max Fix</strong>：修复 ED 和最大最小伤害 BUG<span class="text-mute">[ 作者：RuffNecKk ]</span></li>
+                <li><strong>Vendor Stock Refresh</strong>：商人库存可刷新<span class="text-mute">[ 作者：RuffNecKk ]</span></li>
+                <li><strong>RedPortalOriginTown</strong>：红门补丁<span class="text-mute">[ 作者：yinyin333333 ]</span></li>
+                <li><strong>d2rl-xinwang-toolbox</strong>：新王工具箱<span class="text-mute">[ 作者：隔壁大王团队 ]</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 2.3.4 启动器相关资源站 -->
+        <details class="fold-card launcher-step">
+          <summary class="fold-card-head">
+            <span class="fold-card-title">2.3.4 启动器相关资源站</span>
+            <span class="fold-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="fold-card-body">
+            <div class="feature-subsection">
+              <ul class="feature-list">
+                <li><strong>D2RLoader 官网：</strong><a class="guide-link" href="https://d2rloader.net/" target="_blank" rel="noopener noreferrer">https://d2rloader.net/</a></li>
+                <li><strong>Discord 论坛：</strong><a class="guide-link" href="https://discord.com/channels/1500767723540447272" target="_blank" rel="noopener noreferrer">https://discord.com/channels/1500767723540447272</a></li>
+                <li><strong>赞助启动器作者 Dimentio：</strong><a class="guide-link" href="https://ko-fi.com/d2rloader" target="_blank" rel="noopener noreferrer">https://ko-fi.com/d2rloader</a></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <a class="btn btn-ghost detail-back" href="index.html">← 返回首页</a>
+      </div>
+    </section>
+  </main>
+
+    <div id="site-footer"></div>
+
+  <script src="./js/shared.js" defer></script>
+  <script src="./js/main.js" defer></script>
+
+</body>
+</html>

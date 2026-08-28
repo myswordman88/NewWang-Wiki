@@ -16,95 +16,7 @@
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
 
-  <header class="site-header" id="top">
-    <nav class="nav container" aria-label="主导航">
-      <a class="brand" href="index.html" aria-label="新王觉醒首页">
-        <span class="brand-text">新王觉醒 | 官方网站</span>
-      </a>
-
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="打开菜单">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav-menu" id="navMenu">
-        <li class="has-dropdown">
-          <a href="index.html#overview" aria-haspopup="true" aria-expanded="false">模组概览</a>
-          <ul class="dropdown">
-            <li><a href="feature.html">特色简介</a></li>
-            <li><a href="author.html">作者简介</a></li>
-            <li><a href="donate.html">赞助详情</a></li>
-            <li><a href="download.html">下载地址</a></li>
-            <li><a href="changelog.html">更新日志</a></li>
-            <li><a href="community.html">讨论社群</a></li>
-          </ul>
-        </li>
-        <li class="has-dropdown">
-          <a href="index.html#newbie" aria-haspopup="true" aria-expanded="false">新手专区</a>
-          <ul class="dropdown">
-            <li><a href="guide.html">安装指南</a></li>
-            <li><a href="faq.html">常见问题</a></li>
-            <li><a href="beginner.html">新手入门</a></li>
-          </ul>
-        </li>
-        <li class="has-dropdown">
-          <a href="index.html#changes" aria-haspopup="true" aria-expanded="false">全新系统</a>
-          <ul class="dropdown">
-            <li><a href="changes-basic.html">基础改动</a></li>
-            <li><a href="changes-awaken.html">觉醒系统</a></li>
-            <li><a href="changes-class.html">转职系统</a></li>
-            <li><a href="changes-recipe.html">合成配方</a></li>
-          </ul>
-        </li>
-                <li class="has-dropdown">
-          <a href="skills-overview.html" aria-haspopup="true" aria-expanded="false">职业技能</a>
-          <ul class="dropdown">
-            <li><a href="skills-overview.html">技能总览</a></li>
-            <li><a href="skills-sorceress.html">女巫</a></li>
-            <li><a href="skills-amazon.html">亚马逊</a></li>
-            <li><a href="skills-necro.html">死灵法师</a></li>
-            <li><a href="skills-paladin.html">圣骑士</a></li>
-            <li><a href="skills-barbarian.html">野蛮人</a></li>
-            <li><a href="skills-druid.html">德鲁伊</a></li>
-            <li><a href="skills-assassin.html">刺客</a></li>
-            <li><a href="skills-warlock.html">术士</a></li>
-          </ul>
-        </li>
-        <li class="has-dropdown">
-          <a href="index.html#equipment" aria-haspopup="true" aria-expanded="false">装备详情</a>
-                                  <ul class="dropdown">
-              <li><a href="equipment-system.html">装备系统</a></li>
-              <li><a href="equipment-donate.html">赞助装备</a></li>
-              <li><a href="equipment-special.html">基底装备</a></li>
-              <li><a href="equipment-magic.html">魔法装备</a></li>
-              <li><a href="equipment-rare.html">稀有装备</a></li>
-              <li><a href="equipment-set.html">套装装备</a></li>
-              <li><a href="equipment-rune.html">符文之语</a></li>
-              <li><a href="equipment-unique.html">暗金装备</a></li>
-              <li><a href="equipment-crafted.html">手工装备</a></li>
-              <li><a href="equipment-legend.html">传奇装备</a></li>
-              <li><a href="equipment-chaos.html">混沌装备</a></li>
-            </ul>
-        </li>
-        <li class="has-dropdown">
-          <a href="index.html#crafting" aria-haspopup="true" aria-expanded="false">装备打造</a>
-          <ul class="dropdown">
-            <li><a href="crafting-scroll.html">强化卷轴</a></li>
-            <li><a href="crafting-forge.html">锻造系统</a></li>
-            <li><a href="crafting-reforge.html">重铸与无形化</a></li>
-            <li><a href="crafting-rune.html">符文共鸣</a></li>
-            <li><a href="crafting-seal.html">封印词条</a></li>
-          </ul>
-        </li>
-        <li class="has-dropdown">
-          <a href="index.html#items" aria-haspopup="true" aria-expanded="false">物品和配方</a>
-          <ul class="dropdown">
-            <li><a href="items-recipe.html">合成配方</a></li>
-            <li><a href="items-new.html">新增物品</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <div id="site-nav"></div>
 
   <main id="main">
     <section class="section detail feature">
@@ -120,322 +32,860 @@
           <h2>觉醒系统</h2>
           <p class="section-lead">角色在特定等级可觉醒，获得专属被动与全新技能形态。</p>
         </header>
-
-        <article class="feature-section reveal">
-      <h2 class="feature-section-title">3.2.1 觉醒系统简介</h2>
-      <div class="feature-block">
-        <p class="feature-block-text">觉醒是「新王觉醒」Mod 中独特且极其重要的角色成长系统。角色通过收集并逐级升级<b>奈非天法典</b>，在特定等级依次觉醒，逐步解锁专属被动与全新技能形态。</p>
-        <ul class="feature-list">
-          <li>新增物品<b>「王之馈赠」</b>：角色出生时自动生成物品「王之馈赠」。</li>
-          <li>将「王之馈赠」放入<b>魔盒</b>点击合成，即可得到<b>「转职护符」</b>与<b>「奈非天法典」</b>。</li>
-          <li>新增物品<b>「奈非天法典」</b>：所有属性 <strong class="feature-stat">+1 点</strong>。</li>
-        </ul>
-        <div class="fig-row two uniform">
-          <figure class="feature-figure reveal">
-            <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E8%A7%89%E9%86%92%E7%B3%BB%E7%BB%9F/image.webp" loading="lazy" decoding="async" alt="新建角色就会获得的礼物" />
-            <figcaption>新建角色就会获得的「礼物」</figcaption>
-          </figure>
-          <figure class="feature-figure reveal">
-            <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E8%A7%89%E9%86%92%E7%B3%BB%E7%BB%9F/image_1.webp" loading="lazy" decoding="async" alt="奈非天法典（所有属性 +1 点）" />
-            <figcaption>奈非天法典（所有属性 +1 点）</figcaption>
-          </figure>
+      <article class="feature-section reveal">
+        <h2 class="feature-section-title">3.2.1 觉醒系统简介</h2>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">何谓觉醒</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+          <p class="feature-block-text">觉醒是「新王觉醒」Mod 中独特且极其重要的角色成长系统。角色通过收集并逐级升级「奈非天法典」，在特定等级依次觉醒，逐步解锁专属被动与全新技能形态。</p>
         </div>
-      </div>
-    </article>
-<article class="feature-section reveal">
-      <h2 class="feature-section-title">3.2.2 各职业觉醒详情</h2>
-      <p class="feature-note">觉醒方法指南：角色等级达到 <strong class="feature-stat">10 / 20 / 30 / 40 / 50 / 60 / 70</strong> 级时，可分别进行一次觉醒。将「破碎的奈非天法典」（出生礼包附送）与对应号数符文放入魔盒合成，即可逐级获得该系的觉醒法典。</p>
-      <div class="feature-subsection">
-        <h3 class="feature-subsection-title">冰冷系觉醒 <span class="muted">（法师）</span></h3>
-        <ol class="feature-list awaken-steps">
-          <li>觉醒1阶方法：「破碎的奈非天法典」（出生礼包附送）+ 1号符文 = 觉醒1阶法典|法师|冰冷系（<strong class="feature-stat">角色等级 ≥10级</strong>）</li>
-          <li>觉醒2阶方法：「觉醒1阶法典|法师|冰冷系」+ 8号符文 = 觉醒2阶法典|法师|冰冷系（<strong class="feature-stat">角色等级 ≥20级</strong>）</li>
-          <li>觉醒3阶方法：「觉醒2阶法典|法师|冰冷系」+ 12号符文 = 觉醒3阶法典|法师|冰冷系（<strong class="feature-stat">角色等级 ≥30级</strong>）</li>
-          <li>觉醒4阶方法：「觉醒3阶法典|法师|冰冷系」+ 16号符文 = 觉醒4阶法典|法师|冰冷系（<strong class="feature-stat">角色等级 ≥40级</strong>）</li>
-          <li>觉醒5阶方法：「觉醒4阶法典|法师|冰冷系」+ 20号符文 = 觉醒5阶法典|法师|冰冷系（<strong class="feature-stat">角色等级 ≥50级</strong>）</li>
-          <li>觉醒6阶方法：「觉醒5阶法典|法师|冰冷系」+ 24号符文 = 觉醒6阶法典|法师|冰冷系（<strong class="feature-stat">角色等级 ≥60级</strong>）</li>
-          <li>觉醒7阶方法：「觉醒6阶法典|法师|冰冷系」+ 28号符文 = 觉醒7阶法典|法师|冰冷系（<strong class="feature-stat">角色等级 ≥70级</strong>）</li>
-        </ol>
-        <p class="feature-note">彩色文字表示已生效的觉醒效果；灰色文字表示未生效的觉醒效果。</p>
-        <ul class="feature-list">
-          <li>「觉醒效果」：冰冻或冻结敌人的时间增加</li>
-          <li>「觉醒数值」：冰冻 / 冻结时间增加：<strong class="feature-stat">50%</strong> + <strong class="feature-stat">1%</strong> / 每1点「角色等级」</li>
-          <li>「觉醒效果」：击杀敌人后有几率爆裂出冰弹</li>
-          <li>「觉醒数值」：触发几率：<strong class="feature-stat">15%</strong> + <strong class="feature-stat">2%</strong> / 每1阶「觉醒阶级」</li>
-          <li>冰弹伤害：Cold | 25 / 2 / 4 / 6 / 8 / 10 / 45 / 3 / 5 / 7 / 9 / 17 | HitShift = 8</li>
-          <li>冰冻时间：4秒</li>
-          <li>属性/协同加成：「加成系数」— [ 20 ]【角色等级】：+ <strong class="feature-stat">20 %</strong>冰霜伤害 / 每5点「角色等级」</li>
-          <li>【智力】：+ <strong class="feature-stat">20 %</strong> 冰霜伤害 / 每10点「角色等级」</li>
-          <li>【3阶觉醒「深耕」】可增加本技能伤害</li>
-          <li>词缀加成：「法术专注」：该词缀可以增加技能造成的元素伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>【法术贯穿】：投射物有几率穿透目标</li>
-          <li>【苦痛延伸】：施加给敌人的负面状态的时间增加</li>
-          <li>「觉醒效果」：投入冰霜系的技能点数提供额外 冰霜技能 伤害加成</li>
-          <li>「觉醒数值」：每3点投入冰霜系的技能点数提供的伤害加成：<strong class="feature-stat">1%</strong> × 对应技能的「加成系数」</li>
-          <li>「注」：此被动效果也对「碎冰 | 2阶觉醒 」和「冰霜绽放 | 7阶觉醒 」生效</li>
-          <li>「觉醒效果」：击杀敌人时有几率进入「冷静」状态</li>
-          <li>「觉醒数值」：「冷静」状态：提升智力和金币获取量智力提升：50点 + 1点 / 每1点「角色等级」</li>
-          <li>金币获取量提升：<strong class="feature-stat">50%</strong> + <strong class="feature-stat">1%</strong> / 每1点「角色等级」</li>
-          <li>触发几率：<strong class="feature-stat">5%</strong> + <strong class="feature-stat">1%</strong> / 从5阶开始的每1阶「觉醒阶级」</li>
-          <li>持续时间：6秒（受【持久增益】加成影响）</li>
-          <li>「觉醒效果」：所有冰霜系技能等级上限+5</li>
-          <li>「觉醒效果」：「冷静」状态下冻结周围敌人</li>
-          <li>作用范围：15码（享受【范围扩大】的加成）</li>
-          <li>「觉醒效果」：击中敌人时有几率爆裂绽放冰封球</li>
-          <li>「觉醒数值」：触发几率：<strong class="feature-stat">5%</strong> + <strong class="feature-stat">1%</strong> / 从7阶开始的每1阶「觉醒阶级」</li>
-          <li>冰弹伤害：Cold | 200 / 0 / 0 / 0 / 0 / 0 / 300 / 0 / 0 / 0 / 0 / 0 | HitShift = 8</li>
-          <li>冰冻时间：4秒</li>
-          <li>属性/协同加成：「加成系数」— [ 5 ]【角色等级】：+ <strong class="feature-stat">5 %</strong>冰霜伤害 / 每5点「角色等级」</li>
-          <li>【智力】：+ <strong class="feature-stat">5 %</strong> 冰霜伤害 / 每10点「角色等级」</li>
-          <li>【3阶觉醒「深耕」】可增加本技能伤害</li>
-          <li>词缀加成：「法术专注」：该词缀可以增加技能造成的元素伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>【法术贯穿】：投射物有几率穿透目标</li>
-          <li>【苦痛延伸】：施加给敌人的负面状态的时间增加</li>
-        </ul>
-        <figure class="feature-figure reveal">
-          <img src="https://pub-2c9e779ff6804644883f17859b0108be.r2.dev/%E8%A7%89%E9%86%92%E7%B3%BB%E7%BB%9F/image_2.webp" loading="lazy" decoding="async" alt="冰冷系觉醒效果" />
-          <figcaption>冰冷系觉醒效果一览</figcaption>
-        </figure>
-      </div>
-      <div class="feature-subsection">
-        <h3 class="feature-subsection-title">闪电系觉醒 <span class="muted">（法师）</span></h3>
-        <ol class="feature-list awaken-steps">
-          <li>觉醒1阶方法：「破碎的奈非天法典」（出生礼包附送）+ 2号符文 = 觉醒1阶法典|法师|闪电系（<strong class="feature-stat">角色等级 ≥10级</strong>）</li>
-          <li>觉醒2阶方法：「觉醒1阶法典|法师|闪电系」+ 8号符文 = 觉醒2阶法典|法师|闪电系（<strong class="feature-stat">角色等级 ≥20级</strong>）</li>
-          <li>觉醒3阶方法：「觉醒2阶法典|法师|闪电系」+ 12号符文 = 觉醒3阶法典|法师|闪电系（<strong class="feature-stat">角色等级 ≥30级</strong>）</li>
-          <li>觉醒4阶方法：「觉醒3阶法典|法师|闪电系」+ 16号符文 = 觉醒4阶法典|法师|闪电系（<strong class="feature-stat">角色等级 ≥40级</strong>）</li>
-          <li>觉醒5阶方法：「觉醒4阶法典|法师|闪电系」+ 20号符文 = 觉醒5阶法典|法师|闪电系（<strong class="feature-stat">角色等级 ≥50级</strong>）</li>
-          <li>觉醒6阶方法：「觉醒5阶法典|法师|闪电系」+ 24号符文 = 觉醒6阶法典|法师|闪电系（<strong class="feature-stat">角色等级 ≥60级</strong>）</li>
-          <li>觉醒7阶方法：「觉醒6阶法典|法师|闪电系」+ 28号符文 = 觉醒7阶法典|法师|闪电系（<strong class="feature-stat">角色等级 ≥70级</strong>）</li>
-        </ol>
-        <p class="feature-note">彩色文字表示已生效的觉醒效果；灰色文字表示未生效的觉醒效果。</p>
-        <ul class="feature-list">
-          <li>「觉醒效果」：有几率施放双倍弹道 「仅对闪电技能有效」</li>
-          <li>「觉醒数值」：双倍弹道几率：<strong class="feature-stat">10%</strong> + <strong class="feature-stat">1%</strong> / 每10点「角色等级」</li>
-          <li>「觉醒效果」：击杀敌人后有几率进入「迅捷」状态</li>
-          <li>「觉醒数值」：「迅捷」状态：提升施法速度和移动速度施法速度：+<strong class="feature-stat">15%</strong> + <strong class="feature-stat">1%</strong> / 每9点「角色等级」</li>
-          <li>移动速度：+<strong class="feature-stat">15%</strong> + <strong class="feature-stat">1%</strong> / 每9点「角色等级」</li>
-          <li>触发几率：<strong class="feature-stat">5%</strong> + <strong class="feature-stat">1%</strong> / 从3阶开始的每1阶「觉醒阶级」</li>
-          <li>持续时间：6秒（受【持久增益】加成影响）</li>
-          <li>「觉醒效果」：投入闪电系的技能点数提供额外 闪电技能 伤害加成</li>
-          <li>「觉醒数值」：每3点投入闪电系的技能点数提供的伤害加成：<strong class="feature-stat">1%</strong> × 对应技能的「加成系数」</li>
-          <li>「注」：此被动效果也对「雷暴领域 | 6阶觉醒 」和「神圣电击 | 7阶觉醒 」生效</li>
-          <li>「觉醒效果」：攻击有几率击晕敌人</li>
-          <li>「觉醒数值」：晕眩几率：<strong class="feature-stat">5%</strong> + <strong class="feature-stat">1%</strong> / 每15点「角色等级」（「迅捷」状态下几率增加<strong class="feature-stat">10%</strong>）</li>
-          <li>晕眩时间：1秒 + 0.2秒 / 每15点「角色等级」（「迅捷」状态下持续时间翻倍）</li>
-          <li>「觉醒效果」：所有闪电系技能等级上限+5</li>
-          <li>「觉醒效果」：「迅捷」状态下持续电击周围敌人</li>
-          <li>「觉醒数值」：作用范围：15码</li>
-          <li>攻击间隔：50帧 （相当于每2秒攻击1次）</li>
-          <li>技能伤害：ltng  | 50 / 1 / 1 / 1 / 1 / 1 / 250 / 1 / 1 / 1 / 1 / 1 | HitShift = 8</li>
-          <li>属性/协同加成：「加成系数」— [ 5 ]【角色等级】：+ <strong class="feature-stat">5 %</strong>闪电伤害 / 每5点「角色等级」</li>
-          <li>【智力】：+ <strong class="feature-stat">5 %</strong> 闪电伤害 / 每10点「角色等级」</li>
-          <li>【3阶觉醒「深耕」】可增加本技能伤害</li>
-          <li>词缀加成：「法术专注」：该词缀可以增加技能造成的元素伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>【高效灵气】：增加灵气的生效速度</li>
-          <li>【范围扩大】：使范围性伤害技能的作用范围扩大</li>
-          <li>「觉醒效果」：击中敌人时有几率发射「不稳电流」</li>
-          <li>「觉醒数值」：触发几率：<strong class="feature-stat">20%</strong> + <strong class="feature-stat">5%</strong> / 从8阶开始的每1阶「觉醒阶级」</li>
-          <li>技能伤害：ltng  | 25 / 1 / 1 / 1 / 1 / 1 / 500 / 1 / 1 / 1 / 1 / 1 | HitShift = 8</li>
-          <li>属性/协同加成：「加成系数」— [ 6 ]【角色等级】：+ <strong class="feature-stat">6 %</strong>闪电伤害 / 每5点「角色等级」</li>
-          <li>【智力】：+ <strong class="feature-stat">6 %</strong> 闪电伤害 / 每10点「角色等级」</li>
-          <li>【3阶觉醒「深耕」】可增加本技能伤害</li>
-          <li>词缀加成：「法术专注」：该词缀可以增加技能造成的元素伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>【法术贯穿】：投射物有几率穿透目标</li>
-        </ul>
+      </details>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">诞生礼物 · 王之馈赠</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+          <p class="feature-block-text">角色出生时自动生成物品「王之馈赠」；将其放入「魔盒」点击合成，即可得到「转职护符」与「奈非天法典」。</p>
         </div>
-      <div class="feature-subsection">
-        <h3 class="feature-subsection-title">火焰系觉醒 <span class="muted">（法师）</span></h3>
-        <ol class="feature-list awaken-steps">
-          <li>觉醒1阶方法：「破碎的奈非天法典」（出生礼包附送）+ 3号符文 = 觉醒1阶法典|法师|火焰系（<strong class="feature-stat">角色等级 ≥10级</strong>）</li>
-          <li>觉醒2阶方法：「觉醒1阶法典|法师|火焰系」+ 8号符文 = 觉醒2阶法典|法师|火焰系（<strong class="feature-stat">角色等级 ≥20级</strong>）</li>
-          <li>觉醒3阶方法：「觉醒2阶法典|法师|火焰系」+ 12号符文 = 觉醒3阶法典|法师|火焰系（<strong class="feature-stat">角色等级 ≥30级</strong>）</li>
-          <li>觉醒4阶方法：「觉醒3阶法典|法师|火焰系」+ 16号符文 = 觉醒4阶法典|法师|火焰系（<strong class="feature-stat">角色等级 ≥40级</strong>）</li>
-          <li>觉醒5阶方法：「觉醒4阶法典|法师|火焰系」+ 20号符文 = 觉醒5阶法典|法师|火焰系（<strong class="feature-stat">角色等级 ≥50级</strong>）</li>
-          <li>觉醒6阶方法：「觉醒5阶法典|法师|火焰系」+ 24号符文 = 觉醒6阶法典|法师|火焰系（<strong class="feature-stat">角色等级 ≥60级</strong>）</li>
-          <li>觉醒7阶方法：「觉醒6阶法典|法师|火焰系」+ 28号符文 = 觉醒7阶法典|法师|火焰系（<strong class="feature-stat">角色等级 ≥70级</strong>）</li>
-        </ol>
-        <p class="feature-note">彩色文字表示已生效的觉醒效果；灰色文字表示未生效的觉醒效果。</p>
-        <ul class="feature-list">
-          <li>「觉醒效果」：法力值越低法力恢复速度越快</li>
-          <li>「觉醒数值」：每失去<strong class="feature-stat">1%</strong>法力值，获得（<strong class="feature-stat">1%</strong> + <strong class="feature-stat">1%</strong> / 每10点「角色等级」）法力恢复</li>
-          <li>「觉醒效果」：被击中时有几率施放火焰波</li>
-          <li>「觉醒数值」：触发几率：<strong class="feature-stat">15%</strong> +  <strong class="feature-stat">2%</strong> / 从3阶开始的每1阶「觉醒阶级」</li>
-          <li>火焰波数量：4道 （7阶「觉醒阶级」时变为8道）</li>
-          <li>技能伤害：Fire  | 20 / 1 / 1 / 1 / 1 / 1 / 35 / 1 / 1 / 1 / 1 / 1 | HitShift = 8</li>
-          <li>属性/协同加成：「加成系数」— [ 20 ]【角色等级】：+ <strong class="feature-stat">20 %</strong>火焰伤害 / 每5点「角色等级」</li>
-          <li>【智力】：+ <strong class="feature-stat">20 %</strong> 火焰伤害 / 每10点「角色等级」</li>
-          <li>【3阶觉醒「深耕」】可增加本技能伤害</li>
-          <li>词缀加成：「法术专注」：该词缀可以增加技能造成的元素伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>【法术贯穿】：投射物有几率穿透目标</li>
-          <li>「觉醒效果」：投入火焰系的技能点数提供额外 火焰技能 伤害加成</li>
-          <li>「觉醒数值」：每3点投入火焰系的技能点数提供的伤害加成：<strong class="feature-stat">1%</strong> × 对应技能的「加成系数」</li>
-          <li>「注」：此被动效果也对「焚甲| 2阶觉醒 」「火焰爆燃 | 6阶觉醒 」和「地狱烈焰 | 7阶觉醒 」生效</li>
-          <li>「觉醒效果」：击杀敌人时有几率进入「浩劫」状态</li>
-          <li>「觉醒数值」：「浩劫」状态：获得火焰技能伤害加成</li>
-          <li>火焰技能伤害加成：<strong class="feature-stat">15%</strong> + <strong class="feature-stat">1%</strong> / 每5点「角色等级」</li>
-          <li>触发几率：<strong class="feature-stat">5%</strong> + <strong class="feature-stat">1%</strong> / 从5阶开始的每1阶「觉醒阶级」</li>
-          <li>持续时间：6秒（受【持久增益】加成影响）</li>
-          <li>「觉醒效果」：所有火焰系技能等级上限+5</li>
-          <li>「觉醒效果」：击杀敌人时有几率爆炸</li>
-          <li>「觉醒数值」：触发几率：<strong class="feature-stat">20%</strong> + <strong class="feature-stat">2%</strong> / 从7阶开始的每1阶「觉醒阶级」</li>
-          <li>爆炸范围：8码</li>
-          <li>技能伤害：Fire  | 100 / 1 / 1 / 1 / 1 / 1 / 150 / 1 / 1 / 1 / 1 / 1 | HitShift = 8</li>
-          <li>属性/协同加成：「加成系数」— [ 10 ]【角色等级】：+ <strong class="feature-stat">10 %</strong>火焰伤害 / 每5点「角色等级」</li>
-          <li>【智力】：+ <strong class="feature-stat">10 %</strong> 火焰伤害 / 每10点「角色等级」</li>
-          <li>【3阶觉醒「深耕」】可增加本技能伤害</li>
-          <li>词缀加成：「法术专注」：该词缀可以增加技能造成的元素伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>「觉醒效果」：击中敌人时有几率「点燃」目标「点燃」：持续灼烧敌人造成无视任何防御的 「真实伤害」</li>
-          <li>「觉醒数值」：触发几率：<strong class="feature-stat">20%</strong> + <strong class="feature-stat">5%</strong> / 从8阶开始的每1阶「觉醒阶级」</li>
-          <li>持续时间：4秒</li>
-          <li>技能伤害：Fire  | 15 / 0 / 0 / 0 / 0 / 0 / 20 / 0 / 0 / 0 / 0 / 0 | HitShift = 8</li>
-          <li>属性/协同加成：「加成系数」— [ 2 ]【角色等级】：+ <strong class="feature-stat">2 %</strong>火焰伤害 / 每5点「角色等级」</li>
-          <li>【智力】：+ <strong class="feature-stat">2 %</strong> 火焰伤害 / 每10点「角色等级」</li>
-          <li>【3阶觉醒「深耕」】可增加本技能伤害</li>
-          <li>词缀加成：「法术专注」：该词缀可以增加技能造成的元素伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>【苦痛延伸】：施加给敌人的负面状态的时间增加</li>
-          <li>【强效腐蚀】：增加持续伤害</li>
-        </ul>
+      </details>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">核心道具 · 奈非天法典</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+          <p class="feature-block-text">「奈非天法典」使所有属性 <strong class="feature-stat">+1 点</strong>，是「觉醒」系统的核心道具。若不慎遗失，可新建小号获取后通过【共享仓库】转移给大号。</p>
         </div>
-      <div class="feature-subsection">
-        <h3 class="feature-subsection-title">枪矛系觉醒 <span class="muted">（亚马逊）</span></h3>
-        <ol class="feature-list awaken-steps">
-          <li>觉醒1阶方法：「破碎的奈非天法典」（出生礼包附送）+ 1号符文 = 觉醒1阶法典|亚马逊|枪矛系（<strong class="feature-stat">角色等级 ≥10级</strong>）</li>
-          <li>觉醒2阶方法：「觉醒1阶法典|亚马逊|枪矛系」+ 8号符文 = 觉醒2阶法典|亚马逊|枪矛系（<strong class="feature-stat">角色等级 ≥20级</strong>）</li>
-          <li>觉醒3阶方法：「觉醒2阶法典|亚马逊|枪矛系」+ 12号符文 = 觉醒3阶法典|亚马逊|枪矛系（<strong class="feature-stat">角色等级 ≥30级</strong>）</li>
-          <li>觉醒4阶方法：「觉醒3阶法典|亚马逊|枪矛系」+ 16号符文 = 觉醒4阶法典|亚马逊|枪矛系（<strong class="feature-stat">角色等级 ≥40级</strong>）</li>
-          <li>觉醒5阶方法：「觉醒4阶法典|亚马逊|枪矛系」+ 20号符文 = 觉醒5阶法典|亚马逊|枪矛系（<strong class="feature-stat">角色等级 ≥50级</strong>）</li>
-          <li>觉醒6阶方法：「觉醒5阶法典|亚马逊|枪矛系」+ 24号符文 = 觉醒6阶法典|亚马逊|枪矛系（<strong class="feature-stat">角色等级 ≥60级</strong>）</li>
-          <li>觉醒7阶方法：「觉醒6阶法典|亚马逊|枪矛系」+ 28号符文 = 觉醒7阶法典|亚马逊|枪矛系（<strong class="feature-stat">角色等级 ≥70级</strong>）</li>
-        </ol>
-        <p class="feature-note">彩色文字表示已生效的觉醒效果；灰色文字表示未生效的觉醒效果。</p>
-        <ul class="feature-list">
-          <li>「觉醒效果」：根据血量百分比缓慢恢复生命值</li>
-          <li>「觉醒数值」：每秒回复生命值：1点 + 1点 / 每10点「角色等级」</li>
-          <li>血量大于<strong class="feature-stat">70%</strong>：回复量<strong class="feature-stat">100%</strong></li>
-          <li>血量大于<strong class="feature-stat">40%</strong>且小于<strong class="feature-stat">70%</strong>：回复量<strong class="feature-stat">200%</strong></li>
-          <li>血量小于<strong class="feature-stat">40%</strong>：回复量<strong class="feature-stat">300%</strong></li>
-          <li>「觉醒效果」：连击系统激活</li>
-          <li>「觉醒数值」：不同的技能拥有不同的「连击特效」，具体参见每个技能描述中的「连击」字段「连击系统」说明：每5次 攻击 后，强化下一次攻击的效果【注】：所有技能（包括攻击技能、强化技能、召唤技能、位移技能等等）、普通攻击、投掷攻击、多段攻击均视作一次 攻击</li>
-          <li>【注】：以上技能无论是否击中敌人，均视作一次 攻击</li>
-          <li>「觉醒效果」：投入枪矛系的技能点数提供额外 枪矛技能 伤害加成</li>
-          <li>「觉醒数值」：每3点投入枪矛系的技能点数提供的伤害加成：<strong class="feature-stat">1%</strong> × 对应技能的「加成系数」</li>
-          <li>「注」：此被动效果也对「雷神之怒 | 6阶觉醒 」生效</li>
-          <li>「觉醒效果」：击杀敌人时有几率获得「荆棘之盾」</li>
-          <li>「觉醒数值」：「荆棘之盾」：吸收物理伤害并反弹敌人的近战伤害</li>
-          <li>触发几率：<strong class="feature-stat">10%</strong> + <strong class="feature-stat">1%</strong> / 从5阶开始的每1阶「觉醒阶级」</li>
-          <li>物理伤害吸收量：最大生命值的<strong class="feature-stat">6%</strong> + <strong class="feature-stat">1%</strong> / 每10点「角色等级」</li>
-          <li>反弹伤害：DMG | 15 / 6 / 12 / 18 / 24 / 30 | HitShift = 8</li>
-          <li>持续时间：10秒</li>
-          <li>属性/协同加成：「加成系数」— [ 5 ]【角色等级】：+ <strong class="feature-stat">5 %</strong>反弹伤害 / 每5点「角色等级」</li>
-          <li>【力量】：+<strong class="feature-stat">5%</strong> 反弹伤害  / 每10点</li>
-          <li>【敏捷】：+<strong class="feature-stat">5%</strong> 反弹伤害  / 每10点</li>
-          <li>【体力】：+<strong class="feature-stat">2%</strong> 伤害吸收量 / 每10点「×乘算」</li>
-          <li>【智力】：+<strong class="feature-stat">5%</strong> 反弹伤害 / 每10点</li>
-          <li>【3阶觉醒「深耕」】可增加本技能伤害</li>
-          <li>词缀加成：【复仇荆棘】：增加反弹伤害</li>
-          <li>【持久增益】：增加增益技能的持续时间</li>
-          <li>「觉醒效果」：所有枪矛系技能等级上限+5</li>
-          <li>「觉醒效果」：攻击时有几率释放「雷神之怒」</li>
-          <li>「觉醒数值」：「雷神之怒」：对附近敌人降下雷电造成闪电伤害</li>
-          <li>触发几率：<strong class="feature-stat">20%</strong>（16次独立计算，期望为3.2道闪电）「连击可增加触发几率」</li>
-          <li>技能伤害：ltng  | 25 / 1 / 1 / 1 / 1 / 1 / 500 / 1 / 1 / 1 / 1 / 1 | HitShift = 8</li>
-          <li>属性/协同加成：「加成系数」— [ 6 ]【角色等级】：+ <strong class="feature-stat">6 %</strong>闪电伤害 / 每5点「角色等级」</li>
-          <li>【智力】：+ <strong class="feature-stat">6 %</strong> 闪电伤害 / 每10点「角色等级」</li>
-          <li>【3阶觉醒「深耕」】可增加本技能伤害</li>
-          <li>词缀加成：「法术专注」：该词缀可以增加技能造成的元素伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>「觉醒效果」：击杀敌人时有几率化身为「雷霆武神」</li>
-          <li>「觉醒数值」：「雷霆武神」：提升属性并将所有非闪电的附加伤害转换为额外闪电伤害</li>
-          <li>力量/敏捷/智力/体力提升：1点 / 每1点「角色等级」</li>
-          <li>转换闪电伤害比例：<strong class="feature-stat">100%</strong></li>
-          <li>触发几率：<strong class="feature-stat">8%</strong> + <strong class="feature-stat">2%</strong> / 从8阶开始的每1阶「觉醒阶级」</li>
-          <li>持续时间：10秒（受【持久增益】加成）</li>
-          <li>属性/协同加成：「加成系数」— [ 5 ]【角色等级】：+ <strong class="feature-stat">5 %</strong>转换的闪电伤害 / 每5点「角色等级」</li>
-          <li>【智力】：+ <strong class="feature-stat">5 %</strong> 转换的闪电伤害 / 每10点「角色等级」</li>
-          <li>【3阶觉醒「深耕」】可增加本技能伤害</li>
-          <li>词缀加成：【持久增益】：增加增益技能的持续时间</li>
-        </ul>
+      </details>
+      </article>
+      <article class="feature-section reveal">
+        <h2 class="feature-section-title">3.2.2 转职说明</h2>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">转职说明</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+          <ul class="feature-list">
+            <li>转职系统乃「魔王降临」中的特色技能系统，现在融入「新王觉醒」并且简化。</li>
+            <li>当角色完成「1 阶觉醒」时视作完成「一转」，然后就可以学习天赋树中的「一转技能」。</li>
+            <li>当角色完成「4 阶觉醒」时视作完成「二转」，然后就可以学习天赋树中的「二转技能」。</li>
+            <li>当角色完成「7 阶觉醒」时视作完成「三转」，然后就可以学习天赋树中的「三转技能」。</li>
+            <li>【注】：游戏过程中务必把「隔壁大王的转职护符」始终放在「咒符物品栏」内使其生效。</li>
+          </ul>
         </div>
-      <div class="feature-subsection">
-        <h3 class="feature-subsection-title">生存系觉醒 <span class="muted">（亚马逊）</span></h3>
-        <ol class="feature-list awaken-steps">
-          <li>觉醒1阶方法：「破碎的奈非天法典」（出生礼包附送）+ 2号符文 = 觉醒1阶法典|亚马逊|生存系（<strong class="feature-stat">角色等级 ≥10级</strong>）</li>
-          <li>觉醒2阶方法：「觉醒1阶法典|亚马逊|生存系」+ 8号符文 = 觉醒2阶法典|亚马逊|生存系（<strong class="feature-stat">角色等级 ≥20级</strong>）</li>
-          <li>觉醒3阶方法：「觉醒2阶法典|亚马逊|生存系」+ 12号符文 = 觉醒3阶法典|亚马逊|生存系（<strong class="feature-stat">角色等级 ≥30级</strong>）</li>
-          <li>觉醒4阶方法：「觉醒3阶法典|亚马逊|生存系」+ 16号符文 = 觉醒4阶法典|亚马逊|生存系（<strong class="feature-stat">角色等级 ≥40级</strong>）</li>
-          <li>觉醒5阶方法：「觉醒4阶法典|亚马逊|生存系」+ 20号符文 = 觉醒5阶法典|亚马逊|生存系（<strong class="feature-stat">角色等级 ≥50级</strong>）</li>
-          <li>觉醒6阶方法：「觉醒5阶法典|亚马逊|生存系」+ 24号符文 = 觉醒6阶法典|亚马逊|生存系（<strong class="feature-stat">角色等级 ≥60级</strong>）</li>
-          <li>觉醒7阶方法：「觉醒6阶法典|亚马逊|生存系」+ 28号符文 = 觉醒7阶法典|亚马逊|生存系（<strong class="feature-stat">角色等级 ≥70级</strong>）</li>
-        </ol>
-        <p class="feature-note">彩色文字表示已生效的觉醒效果；灰色文字表示未生效的觉醒效果。</p>
-        <ul class="feature-list">
-          <li>「觉醒效果」：击杀敌人后有几率进入「风行者」状态</li>
-          <li>「觉醒数值」：「风行者」状态：提升攻击速度和移动速度</li>
-          <li>攻击速度和移动速度：<strong class="feature-stat">10%</strong> + <strong class="feature-stat">1%</strong> / 每10点「角色等级」</li>
-          <li>触发几率：<strong class="feature-stat">5%</strong> + <strong class="feature-stat">1%</strong> / 从2阶开始的每1阶「觉醒阶级」</li>
-          <li>持续时间：6秒（受【持久增益】加成影响）</li>
-          <li>「觉醒效果」：连击系统激活</li>
-          <li>「觉醒数值」：不同的技能拥有不同的「连击特效」，具体参见每个技能描述中的「连击」字段「连击系统」说明：每5次 攻击 后，强化下一次攻击的效果【注】：所有技能（包括攻击技能、强化技能、召唤技能、位移技能等等）、普通攻击、投掷攻击、多段攻击均视作一次 攻击</li>
-          <li>【注】：以上技能无论是否击中敌人，均视作一次 攻击</li>
-          <li>「觉醒效果」：投入生存系的技能点数提供额外 被动技能 数值和 召唤物 加成</li>
-          <li>「觉醒数值」：每10点投入生存系的技能点数提供以下属性（对应被动技能）「精准攻势」：<strong class="feature-stat">5%</strong>准确率加成</li>
-          <li>「致命攻势」：<strong class="feature-stat">1%</strong> 暴击率</li>
-          <li>「贯穿攻势」：<strong class="feature-stat">1%</strong> 穿透几率</li>
-          <li>「闪躲 / 闪身 / 闪避」：<strong class="feature-stat">1%</strong> 三闪几率</li>
-          <li>每 10 点投入生存系的技能点数提升 召唤物 的以下属性<strong class="feature-stat">10%</strong> 生命加成</li>
-          <li><strong class="feature-stat">10%</strong> 防御加成</li>
-          <li><strong class="feature-stat">10%</strong> 准确率加成</li>
-          <li><strong class="feature-stat">10%</strong> 伤害加成</li>
-          <li><strong class="feature-stat">1%</strong> 攻击和移动速度加成</li>
-          <li>「觉醒效果」：击中敌人时有几率触发「旋风」</li>
-          <li>「觉醒数值」：触发几率：<strong class="feature-stat">5%</strong> + <strong class="feature-stat">1%</strong> / 从5阶开始的每1阶「觉醒阶级」</li>
-          <li>「旋风」持续时间：2秒</li>
-          <li>「风行者」状态下旋风持续时间翻倍且向周围发射小旋风</li>
-          <li>「旋风」物理伤害：DMG | 100 / 1 / 1 / 1 / 1 / 1 / 250 / 2 / 2 / 2 / 2 / 2 | HitShift = 8</li>
-          <li>属性/协同加成：「加成系数」— [ 5 ]【角色等级】：+ <strong class="feature-stat">5 %</strong>旋风物理伤害 / 每5点「角色等级」</li>
-          <li>【力量】：+<strong class="feature-stat">5%</strong> 旋风物理伤害  / 每10点</li>
-          <li>【敏捷】：+<strong class="feature-stat">5%</strong>旋风物理伤害  / 每10点</li>
-          <li>【3阶觉醒「深耕」】可增加本技能伤害</li>
-          <li>词缀加成：「物理强化」：该词缀可以增加技能造成的最终物理伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>「觉醒效果」：所有生存系技能等级上限+5</li>
-          <li>「觉醒效果」：强化角色和周围的友军</li>
-          <li>「觉醒数值」：伤害加成：<strong class="feature-stat">100%</strong> + <strong class="feature-stat">15%</strong> / 每10点「角色等级」</li>
-          <li>粉碎性打击：<strong class="feature-stat">20%</strong> + <strong class="feature-stat">2%</strong> /  每10点「角色等级」</li>
-          <li>攻击速度加成：<strong class="feature-stat">20%</strong> + <strong class="feature-stat">2%</strong> /  每10点「角色等级」</li>
-          <li>词缀加成：【范围扩大】：使「战争号令」的作用范围扩大</li>
-          <li>「觉醒效果」：击中敌人时有几率召唤「幻影分身」</li>
-          <li>「觉醒数值」：触发几率：<strong class="feature-stat">1%</strong></li>
-          <li>「幻影分身」等级：30级 + 5级 / 从8阶开始的每1阶「觉醒阶级」</li>
-          <li>持续时间：30秒（受【持久增益】加成）</li>
-          <li>技能信息：最大召唤数量：5个 （上限 = 15）</li>
-          <li>生命值加成：<strong class="feature-stat">20%</strong> / 每1点技能等级</li>
-          <li>准确率加成：<strong class="feature-stat">50%</strong> + <strong class="feature-stat">15%</strong> / 每1点技能等级</li>
-          <li>防御力：80点 + 35点 / 每1点技能等级</li>
-          <li>防御力加成：<strong class="feature-stat">10%</strong> / 每1点技能等级</li>
-          <li>伤害加成：<strong class="feature-stat">10%</strong> / 每1点技能等级</li>
-          <li>持续时间：10秒 + 5秒 / 每1点技能等级</li>
-          <li>物理伤害：DMG | 9 / 3 / 5 / 11 / 13 / 16 / 16 / 4 / 7 / 12 / 15 / 17 | HitShift = 8</li>
-          <li>附加魔法伤害：Mag | 9 / 3 / 5 / 11 / 13 / 16 / 16 / 4 / 7 / 12 / 15 / 17 | HitShift = 8 |</li>
-          <li>属性/协同加成：「加成系数」— [ 8 ]【女武神】【心灵视野】【缓箭术】：+<strong class="feature-stat">8%</strong>召唤物物理伤害 和 附加魔法伤害 / 每1点基础技能等级</li>
-          <li>【力量】：+<strong class="feature-stat">8%</strong> 召唤物物理伤害 / 每10点</li>
-          <li>【敏捷】：+<strong class="feature-stat">8%</strong> 召唤物物理伤害 / 每10点</li>
-          <li>【体力】：+<strong class="feature-stat">8%</strong> 召唤物生命加成 / 每10点</li>
-          <li>【智力】：+<strong class="feature-stat">8%</strong> 附加魔法伤害 / 每10点</li>
-          <li>词缀加成：「物理强化」：该词缀可以增加 幻影分身 造成的物理伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>「法术专注」：该词缀可以增加 幻影分身 造成的元素伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>【召唤·人多势众】：增加召唤物的最大数量【注：该词缀对精英召唤物只有1/3的效果且向下取整，即+3后才能使精英召唤物最大数量+1】</li>
-          <li>【召唤·铜墙铁壁】：增加召唤物的防御力和元素抗性</li>
-          <li>【召唤·千锤百炼】：增加召唤物的最大生命值百分比</li>
-          <li>【召唤·身经百战】：增加召唤物的攻击准确率和伤害百分比</li>
-          <li>【召唤·快刀乱麻】：增加召唤物的攻击速度和移动速度</li>
-          <li>【召唤·摧枯拉朽】：增加召唤物的物理点伤</li>
-          <li>词缀加成：【持久增益】：增加增益技能的持续时间</li>
-          <li>传奇词缀「分裂射击」：遠程攻擊的召喚物獲得「多重散射」（T1~T5）T级详细数据（点击箭头展开）T1：远程召唤物「多重散射」+1</li>
-          <li>T2：远程召唤物「多重散射」+2</li>
-          <li>T3：远程召唤物「多重散射」+3</li>
-          <li>T4：远程召唤物「多重散射」+4</li>
-          <li>T5：远程召唤物「多重散射」+5</li>
-        </ul>
+      </details>
+      </article>
+      <article class="feature-section reveal">
+        <h2 class="feature-section-title">3.2.3 各职业觉醒详情</h2>
+      <p class="feature-note">由于 <span class="awaken-key">法师</span> 和 <span class="awaken-key">亚马逊</span> 两个职业最早制作，从 <span class="awaken-key">死灵法师</span> 开始引入全新技能框架，所以 <span class="awaken-key">法师</span> 和 <span class="awaken-key">亚马逊</span> 两个职业的觉醒等级和转职机制均和其他职业不同，等下一轮重做后会保持各职业一致。</p>
+      <h3 class="feature-subsection-title">法师（三系觉醒）</h3>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">冰冷系觉醒</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+        <details class="fold-card awaken-sub awaken-method">
+          <summary class="fold-card-head"><span class="fold-card-title">觉醒方法（1~7阶）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">觉醒条件：角色等级达到 10 / 20 / 30 / 40 / 50 / 60 / 70 级时，可分别进行一次觉醒</p>
+            <ol class="feature-list awaken-steps">
+              <li>冰冷系 | 觉醒 1 阶方法 ： 「破碎的奈非天法典」 （出生礼包附送）+ 1 号符文 = 觉醒 1 阶法典 | 法师 | 冰冷系 （角色等级 ≥10 级）</li>
+              <li>冰冷系 | 觉醒 2 阶方法 ： 「觉醒 1 阶法典 | 法师 | 冰冷系 」 + 8 号符文 = 觉醒 2 阶法典 | 法师 | 冰冷系 （角色等级 ≥20 级）</li>
+              <li>冰冷系 | 觉醒 3 阶方法 ： 「觉醒 2 阶法典 | 法师 | 冰冷系 」 + 12 号符文 = 觉醒 3 阶法典 | 法师 | 冰冷系 （角色等级 ≥30 级）</li>
+              <li>冰冷系 | 觉醒 4 阶方法 ： 「觉醒 3 阶法典 | 法师 | 冰冷系 」 + 16 号符文 = 觉醒 4 阶法典 | 法师 | 冰冷系 （角色等级 ≥40 级）</li>
+              <li>冰冷系 | 觉醒 5 阶方法 ： 「觉醒 4 阶法典 | 法师 | 冰冷系 」 + 20 号符文 = 觉醒 5 阶法典 | 法师 | 冰冷系 （角色等级 ≥50 级）</li>
+              <li>冰冷系 | 觉醒 6 阶方法 ： 「觉醒 5 阶法典 | 法师 | 冰冷系 」 + 24 号符文 = 觉醒 6 阶法典 | 法师 | 冰冷系 （角色等级 ≥60 级）</li>
+              <li>冰冷系 | 觉醒 7 阶方法 ： 「觉醒 6 阶法典 | 法师 | 冰冷系 」 + 28 号符文 = 觉醒 7 阶法典 | 法师 | 冰冷系 （角色等级 ≥70 级）</li>
+            </ol>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">1阶觉醒效果 · 深寒</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>冰冻或冻结敌人的时间增加</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>冰冻 / 冻结时间增加：50% + 1% / 每 1 点 「角色等级」</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">2阶觉醒效果 · 碎冰</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击杀敌人后有几率爆裂出冰弹</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>触发几率：15% + 2% / 每 1 阶 「觉醒阶级」</li>
+              <li>冰弹伤害： Cold | 25 / 2 / 4 / 6 / 8 / 10 / 45 / 3 / 5 / 7 / 9 / 17 | HitShift = 8</li>
+              <li>冰冻时间：4 秒</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 20 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【角色等级】：+ 20 % 冰霜伤害 / 每 5 点 「角色等级」</li>
+                <li>【 智力 】 ：+ 20 % 冰霜伤害 / 每 10 点 「角色等级」</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成： 「法术专注」 ：该词缀可以增加技能造成的元素伤害（最大 250%）</p>
+              <ul class="feature-list awaken-branch">
+                <li>【法术贯穿】 ：投射物有几率穿透目标</li>
+                <li>【苦痛延伸】 ：施加给敌人的负面状态的时间增加</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">3阶觉醒效果 · 深耕</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>投入冰霜系的技能点数提供额外 冰霜技能 伤害加成</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>每 3 点投入冰霜系的技能点数提供的伤害加成：1% × 对应技能的 「加成系数」</li>
+              <li>「注」 ：此被动效果也对 「碎冰 | 2 阶觉醒 」 和 「冰霜绽放 | 7 阶觉醒 」 生效</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">4阶觉醒效果 · 冷静</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击杀敌人时有几率进入 「冷静」 状态</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「 冷静 」 状态：提升智力和金币获取量</li>
+              <li>智力提升：50 点 + 1 点 / 每 1 点 「角色等级」</li>
+              <li>金币获取量提升：50% + 1% / 每 1 点 「角色等级」</li>
+              <li>触发几率：5% + 1% / 从 5 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>持续时间：6 秒（受 【持久增益】 加成影响）</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">5阶觉醒效果 · 界限突破</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>所有冰霜系技能等级上限 +5</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">6阶觉醒效果 · 绝对零度</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>「冷静」 状态下冻结周围敌人</li>
+              <li>作用范围：15 码（享受 【范围扩大】 的加成）</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">7阶觉醒效果 · 冰霜绽放</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击中敌人时有几率爆裂绽放冰封球</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>触发几率：5% + 1% / 从 7 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>冰弹伤害： Cold | 200 / 0 / 0 / 0 / 0 / 0 / 300 / 0 / 0 / 0 / 0 / 0 | HitShift = 8</li>
+              <li>冰冻时间：4 秒</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 5 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【角色等级】：+ 5 % 冰霜伤害 / 每 5 点 「角色等级」</li>
+                <li>【 智力 】 ：+ 5 % 冰霜伤害 / 每 10 点 「角色等级」</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成： 「法术专注」 ：该词缀可以增加技能造成的元素伤害（最大 250%）</p>
+              <ul class="feature-list awaken-branch">
+                <li>【法术贯穿】 ：投射物有几率穿透目标</li>
+                <li>【苦痛延伸】 ：施加给敌人的负面状态的时间增加</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">8阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">9阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">闪电系觉醒</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+        <details class="fold-card awaken-sub awaken-method">
+          <summary class="fold-card-head"><span class="fold-card-title">觉醒方法（1~7阶）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">觉醒条件：角色等级达到 10 / 20 / 30 / 40 / 50 / 60 / 70 级时，可分别进行一次觉醒</p>
+            <ol class="feature-list awaken-steps">
+              <li>闪电系 | 觉醒 1 阶方法 ： 「破碎的奈非天法典」 （出生礼包附送） + 2 号符文 = 觉醒 1 阶法典 | 法师 | 闪电系 （角色等级 ≥10 级）</li>
+              <li>闪电系 | 觉醒 2 阶方法 ： 「觉醒 1 阶法典 | 法师 | 闪电系 」 + 8 号符文 = 觉醒 2 阶法典 | 法师 | 闪电系 （角色等级 ≥20 级）</li>
+              <li>闪电系 | 觉醒 3 阶方法 ： 「觉醒 2 阶法典 | 法师 | 闪电系 」 + 12 号符文 = 觉醒 3 阶法典 | 法师 | 闪电系 （角色等级 ≥30 级）</li>
+              <li>闪电系 | 觉醒 4 阶方法 ： 「觉醒 3 阶法典 | 法师 | 闪电系 」 + 16 号符文 = 觉醒 4 阶法典 | 法师 | 闪电系 （角色等级 ≥40 级）</li>
+              <li>闪电系 | 觉醒 5 阶方法 ： 「觉醒 4 阶法典 | 法师 | 闪电系 」 + 20 号符文 = 觉醒 5 阶法典 | 法师 | 闪电系 （角色等级 ≥50 级）</li>
+              <li>闪电系 | 觉醒 6 阶方法 ： 「觉醒 5 阶法典 | 法师 | 闪电系 」 + 24 号符文 = 觉醒 6 阶法典 | 法师 | 闪电系 （角色等级 ≥60 级）</li>
+              <li>闪电系 | 觉醒 7 阶方法 ： 「觉醒 6 阶法典 | 法师 | 闪电系 」 + 28 号符文 = 觉醒 7 阶法典 | 法师 | 闪电系 （角色等级 ≥70 级）</li>
+            </ol>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">1阶觉醒效果 · 分裂</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>有几率施放双倍弹道 「仅对闪电技能有效」</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>双倍弹道几率：10% + 1% / 每 10 点 「角色等级」</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">2阶觉醒效果 · 迅捷</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击杀敌人后有几率进入 「迅捷」 状态</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「迅捷」 状态：提升施法速度和移动速度</li>
+              <li>施法速度：+15% + 1% / 每 9 点 「角色等级」</li>
+              <li>移动速度：+15% + 1% / 每 9 点 「角色等级」</li>
+              <li>触发几率：5% + 1% / 从 3 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>持续时间：6 秒（受 【持久增益】 加成影响）</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">3阶觉醒效果 ·  深耕 </span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>投入闪电系的技能点数提供额外 闪电技能 伤害加成</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>每 3 点投入闪电系的技能点数提供的伤害加成：1% × 对应技能的 「加成系数」</li>
+              <li>「注」 ：此被动效果也对 「雷暴领域 | 6 阶觉醒 」 和 「神圣电击 | 7 阶觉醒 」 生效</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">4阶觉醒效果 · 雷霆</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>攻击有几率击晕敌人</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>晕眩几率：5% + 1% / 每 15 点 「角色等级」 （ 「迅捷」 状态下几率增加 10% ）</li>
+              <li>晕眩时间：1 秒 + 0.2 秒 / 每 15 点 「角色等级」 （ 「迅捷」 状态下持续时间翻倍）</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">5阶觉醒效果 · 界限突破</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>所有闪电系技能等级上限 +5</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">6阶觉醒效果 · 雷暴领域</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>「迅捷」 状态下持续电击周围敌人</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>作用范围：15 码</li>
+              <li>攻击间隔：50 帧 （相当于每 2 秒攻击 1 次）</li>
+              <li>技能伤害： ltng | 50 / 1 / 1 / 1 / 1 / 1 / 250 / 1 / 1 / 1 / 1 / 1 | HitShift = 8</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 5 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【角色等级】：+ 5 % 闪电伤害 / 每 5 点 「角色等级」</li>
+                <li>【 智力 】 ：+ 5 % 闪电伤害 / 每 10 点 「角色等级」</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成： 「法术专注」 ：该词缀可以增加技能造成的元素伤害（最大 250%）</p>
+              <ul class="feature-list awaken-branch">
+                <li>【高效灵气】 ：增加灵气的生效速度</li>
+                <li>【范围扩大】 ：使范围性伤害技能的作用范围扩大</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">7阶觉醒效果 · 不稳电流</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击中敌人时有几率发射「不稳电流」</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>触发几率：20% + 5% / 从 8 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>技能伤害： ltng | 25 / 1 / 1 / 1 / 1 / 1 / 500 / 1 / 1 / 1 / 1 / 1 | HitShift = 8</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 6 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【角色等级】：+ 6 % 闪电伤害 / 每 5 点 「角色等级」</li>
+                <li>【 智力 】 ：+ 6 % 闪电伤害 / 每 10 点 「角色等级」</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成： 「法术专注」 ：该词缀可以增加技能造成的元素伤害（最大 250%）</p>
+              <ul class="feature-list awaken-branch">
+                <li>【法术贯穿】 ：投射物有几率穿透目标</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">8阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">9阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">火焰系觉醒</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+        <details class="fold-card awaken-sub awaken-method">
+          <summary class="fold-card-head"><span class="fold-card-title">觉醒方法（1~7阶）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">觉醒条件：角色等级达到 10 / 20 / 30 / 40 / 50 / 60 / 70 级时，可分别进行一次觉醒</p>
+            <ol class="feature-list awaken-steps">
+              <li>火焰系 | 觉醒 1 阶方法 ： 「破碎的奈非天法典」 （出生礼包附送） + 3 号符文 = 觉醒 1 阶法典 | 法师 | 火焰系 （角色等级 ≥10 级）</li>
+              <li>火焰系 | 觉醒 2 阶方法 ： 「觉醒 1 阶法典 | 法师 | 火焰系 」 + 8 号符文 = 觉醒 2 阶法典 | 法师 | 火焰系 （角色等级 ≥20 级）</li>
+              <li>火焰系 | 觉醒 3 阶方法 ： 「觉醒 2 阶法典 | 法师 | 火焰系 」 + 12 号符文 = 觉醒 3 阶法典 | 法师 | 火焰系 （角色等级 ≥30 级）</li>
+              <li>火焰系 | 觉醒 4 阶方法 ： 「觉醒 3 阶法典 | 法师 | 火焰系 」 + 16 号符文 = 觉醒 4 阶法典 | 法师 | 火焰系 （角色等级 ≥40 级）</li>
+              <li>火焰系 | 觉醒 5 阶方法 ： 「觉醒 4 阶法典 | 法师 | 火焰系 」 + 20 号符文 = 觉醒 5 阶法典 | 法师 | 火焰系 （角色等级 ≥50 级）</li>
+              <li>火焰系 | 觉醒 6 阶方法 ： 「觉醒 5 阶法典 | 法师 | 火焰系 」 + 24 号符文 = 觉醒 6 阶法典 | 法师 | 火焰系 （角色等级 ≥60 级）</li>
+              <li>火焰系 | 觉醒 7 阶方法 ： 「觉醒 6 阶法典 | 法师 | 火焰系 」 + 28 号符文 = 觉醒 7 阶法典 | 法师 | 火焰系 （角色等级 ≥70 级）</li>
+            </ol>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">1阶觉醒效果 · 炽热</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>法力值越低法力恢复速度越快</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>每失去 1% 法力值，获得（1% + 1% / 每 10 点 「角色等级」 ）法力恢复</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">2阶觉醒效果 · 焚甲</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>被击中时有几率施放火焰波</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>触发几率：15% +  2% / 从 3 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>火焰波数量：4 道 （7 阶 「觉醒阶级」 时变为 8 道）</li>
+              <li>技能伤害： Fire | 20 / 1 / 1 / 1 / 1 / 1 / 35 / 1 / 1 / 1 / 1 / 1 | HitShift = 8</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 20 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【角色等级】：+ 20 % 火焰伤害 / 每 5 点 「角色等级」</li>
+                <li>【 智力 】 ：+ 20 % 火焰伤害 / 每 10 点 「角色等级」</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成： 「法术专注」 ：该词缀可以增加技能造成的元素伤害（最大 250%）</p>
+              <ul class="feature-list awaken-branch">
+                <li>【法术贯穿】 ：投射物有几率穿透目标</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">3阶觉醒效果 · 深耕</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>投入火焰系的技能点数提供额外 火焰技能 伤害加成</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>每 3 点投入火焰系的技能点数提供的伤害加成：1% × 对应技能的 「加成系数」</li>
+              <li>「注」 ：此被动效果也对 「焚甲 | 2 阶觉醒 」「火焰爆燃 | 6 阶觉醒 」 和 「地狱烈焰 | 7 阶觉醒 」 生效</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">4阶觉醒效果 · 浩劫</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击杀敌人时有几率进入 「浩劫」 状态</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「浩劫」 状态：获得火焰技能伤害加成</li>
+              <li>火焰技能伤害加成：15% + 1% / 每 5 点「角色等级」</li>
+              <li>触发几率：5% + 1% / 从 5 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>持续时间：6 秒（受 【持久增益】 加成影响）</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">5阶觉醒效果 · 界限突破</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>所有火焰系技能等级上限 +5</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">6阶觉醒效果 · 火焰爆燃</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击杀敌人时有几率爆炸</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>触发几率：20% + 2% / 从 7 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>爆炸范围：8 码</li>
+              <li>技能伤害： Fire | 100 / 1 / 1 / 1 / 1 / 1 / 150 / 1 / 1 / 1 / 1 / 1 | HitShift = 8</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 10 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【角色等级】：+ 10 % 火焰伤害 / 每 5 点 「角色等级」</li>
+                <li>【 智力 】 ：+ 10 % 火焰伤害 / 每 10 点 「角色等级」</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成： 「法术专注」 ：该词缀可以增加技能造成的元素伤害（最大 250%）</p>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">7阶觉醒效果 · 地狱烈焰</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击中敌人时有几率 「点燃」 目标</li>
+              <li>「点燃」 ：持续灼烧敌人造成无视任何防御的 「真实伤害」</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>触发几率：20% + 5% / 从 8 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>持续时间：4 秒</li>
+              <li>技能伤害： Fire | 15 / 0 / 0 / 0 / 0 / 0 / 20 / 0 / 0 / 0 / 0 / 0 | HitShift = 8</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 2 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【角色等级】：+ 2 % 火焰伤害 / 每 5 点 「角色等级」</li>
+                <li>【 智力 】 ：+ 2 % 火焰伤害 / 每 10 点 「角色等级」</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成： 「法术专注」 ：该词缀可以增加技能造成的元素伤害（最大 250%）</p>
+              <ul class="feature-list awaken-branch">
+                <li>【苦痛延伸】 ：施加给敌人的负面状态的时间增加</li>
+                <li>【强效腐蚀】 ：增加持续伤害</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">8阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">9阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        </div>
+      </details>
+      <h3 class="feature-subsection-title">亚马逊（三系觉醒）</h3>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">枪矛系觉醒</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+        <details class="fold-card awaken-sub awaken-method">
+          <summary class="fold-card-head"><span class="fold-card-title">觉醒方法（1~7阶）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">觉醒条件：角色等级达到 10 / 20 / 30 / 40 / 50 / 60 / 70 级时，可分别进行一次觉醒</p>
+            <ol class="feature-list awaken-steps">
+              <li>枪矛系 | 觉醒 1 阶方法 ： 「破碎的奈非天法典」 （出生礼包附送）+ 1 号符文 = 觉醒 1 阶法典 | 亚马逊 | 枪矛系 （角色等级 ≥10 级）</li>
+              <li>枪矛系 | 觉醒 2 阶方法 ： 「觉醒 1 阶法典 | 亚马逊 | 枪矛系 」 + 8 号符文 = 觉醒 2 阶法典 | 亚马逊 | 枪矛系 （角色等级 ≥20 级）</li>
+              <li>枪矛系 | 觉醒 3 阶方法 ： 「觉醒 2 阶法典 | 亚马逊 | 枪矛系 」 + 12 号符文 = 觉醒 3 阶法典 | 亚马逊 | 枪矛系 （角色等级 ≥30 级）</li>
+              <li>枪矛系 | 觉醒 4 阶方法 ： 「觉醒 3 阶法典 | 亚马逊 | 枪矛系 」 + 16 号符文 = 觉醒 4 阶法典 | 亚马逊 | 枪矛系 （角色等级 ≥40 级）</li>
+              <li>枪矛系 | 觉醒 5 阶方法 ： 「觉醒 4 阶法典 | 亚马逊 | 枪矛系 」 + 20 号符文 = 觉醒 5 阶法典 | 亚马逊 | 枪矛系 （角色等级 ≥50 级）</li>
+              <li>枪矛系 | 觉醒 6 阶方法 ： 「觉醒 5 阶法典 | 亚马逊 | 枪矛系 」 + 24 号符文 = 觉醒 6 阶法典 | 亚马逊 | 枪矛系 （角色等级 ≥60 级）</li>
+              <li>枪矛系 | 觉醒 7 阶方法 ： 「觉醒 6 阶法典 | 亚马逊 | 枪矛系 」 + 28 号符文 = 觉醒 7 阶法典 | 亚马逊 | 枪矛系 （角色等级 ≥70 级）</li>
+            </ol>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">1阶觉醒效果 · 复苏</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>根据血量百分比缓慢恢复生命值</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>每秒回复生命值：1 点 + 1 点 / 每 10 点 「角色等级」</li>
+              <li>血量大于 70%：回复量 100%</li>
+              <li>血量大于 40% 且小于 70%：回复量 200%</li>
+              <li>血量小于 40%：回复量 300%</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">2阶觉醒效果 · 律动</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>连击系统激活</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「连击系统」说明：每 5 次 攻击 后，强化下一次攻击的效果</li>
+              <li>【注】：所有技能（包括攻击技能、强化技能、召唤技能、位移技能等等）、普通攻击、投掷攻击、多段攻击均视作一次 攻击</li>
+              <li>【注】：以上技能无论是否击中敌人，均视作一次 攻击</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">3阶觉醒效果 · 深耕</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>投入枪矛系的技能点数提供额外 枪矛技能 伤害加成</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>每 3 点投入枪矛系的技能点数提供的伤害加成：1% × 对应技能的 「加成系数」</li>
+              <li>「注」 ：此被动效果也对 「 雷神之怒 | 6 阶觉醒 」 生效</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">4阶觉醒效果 · 坚盾</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击杀敌人时有几率获得 「荆棘之盾」</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「荆棘之盾」 ：吸收物理伤害并反弹敌人的近战伤害</li>
+              <li>触发几率：10% + 1% / 从 5 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>物理伤害吸收量：最大生命值的 6% + 1% / 每 10 点 「角色等级」</li>
+              <li>反弹伤害： DMG | 15 / 6 / 12 / 18 / 24 / 30 | HitShift = 8</li>
+              <li>持续时间：10 秒</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 5 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【角色等级】：+ 5 % 反弹伤害 / 每 5 点 「角色等级」</li>
+                <li>【 力量 】 ：+ 5 % 反弹伤害 / 每 10 点</li>
+                <li>【 敏捷 】：+ 5 % 反弹伤害 / 每 10 点</li>
+                <li>【 体力 】：+ 2 % 伤害吸收量 / 每 10 点 「× 乘算」</li>
+                <li>【 智力 】 ：+ 5 % 反弹伤害 / 每 10 点</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成：</p>
+              <ul class="feature-list awaken-branch">
+                <li>【复仇荆棘】 ：增加反弹伤害</li>
+                <li>【持久增益】 ：增加增益技能的持续时间</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">5阶觉醒效果 · 界限突破</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>所有枪矛系技能等级上限 +5</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">6阶觉醒效果 · 雷神之怒</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>攻击时有几率释放 「雷神之怒」</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「雷神之怒」 ：对附近敌人降下雷电造成闪电伤害</li>
+              <li>触发几率：20%（16 次独立计算，期望为 3.2 道闪电） 「连击可增加触发几率」</li>
+              <li>技能伤害： ltng | 25 / 1 / 1 / 1 / 1 / 1 / 500 / 1 / 1 / 1 / 1 / 1 | HitShift = 8</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 6 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【角色等级】：+ 6 % 闪电伤害 / 每 5 点 「角色等级」</li>
+                <li>【 智力 】 ：+ 6 % 闪电伤害 / 每 10 点 「角色等级」</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成： 「法术专注」 ：该词缀可以增加技能造成的元素伤害（最大 250%）</p>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">7阶觉醒效果 · 雷霆武神</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击杀敌人时有几率化身为 「雷霆武神」</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「雷霆武神」 ：提升属性并将所有非闪电的附加伤害转换为额外闪电伤害</li>
+              <li>力量/敏捷/智力/体力提升：1 点 / 每 1 点 「角色等级」</li>
+              <li>转换闪电伤害比例：100%</li>
+              <li>触发几率：8% + 2% / 从 8 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>持续时间：10 秒（受 【持久增益】 加成）</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 5 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【角色等级】：+ 5 % 转换的闪电伤害 / 每 5 点 「角色等级」</li>
+                <li>【 智力 】 ：+ 5 % 转换的 闪电伤害 / 每 10 点 「角色等级」</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成：</p>
+              <ul class="feature-list awaken-branch">
+                <li>【持久增益】 ：增加增益技能的持续时间</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">8阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">9阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">生存系觉醒</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+        <details class="fold-card awaken-sub awaken-method">
+          <summary class="fold-card-head"><span class="fold-card-title">觉醒方法（1~7阶）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">觉醒条件：角色等级达到 10 / 20 / 30 / 40 / 50 / 60 / 70 级时，可分别进行一次觉醒</p>
+            <ol class="feature-list awaken-steps">
+              <li>生存系 | 觉醒 1 阶方法 ： 「破碎的奈非天法典」 （出生礼包附送）+ 2 号符文 = 觉醒 1 阶法典 | 亚马逊 | 生存系 （角色等级 ≥10 级）</li>
+              <li>生存系 | 觉醒 2 阶方法 ： 「觉醒 1 阶法典 | 亚马逊 | 生存 系 」 + 8 号符文 = 觉醒 2 阶法典 | 亚马逊 | 生存 系 （角色等级 ≥20 级）</li>
+              <li>生存 系 | 觉醒 3 阶方法 ： 「觉醒 2 阶法典 | 亚马逊 | 生存 系 」 + 12 号符文 = 觉醒 3 阶法典 | 亚马逊 | 生存 系 （角色等级 ≥30 级）</li>
+              <li>生存 系 | 觉醒 4 阶方法 ： 「觉醒 3 阶法典 | 亚马逊 | 生存 系 」 + 16 号符文 = 觉醒 4 阶法典 | 亚马逊 | 生存 系 （角色等级 ≥40 级）</li>
+              <li>生存 系 | 觉醒 5 阶方法 ： 「觉醒 4 阶法典 | 亚马逊 | 生存 系 」 + 20 号符文 = 觉醒 5 阶法典 | 亚马逊 | 生存 系 （角色等级 ≥50 级）</li>
+              <li>生存 系 | 觉醒 6 阶方法 ： 「觉醒 5 阶法典 | 亚马逊 | 生存 系 」 + 24 号符文 = 觉醒 6 阶法典 | 亚马逊 | 生存 系 （角色等级 ≥60 级）</li>
+              <li>生存 系 | 觉醒 7 阶方法 ： 「觉醒 6 阶法典 | 亚马逊 | 生存 系 」 + 28 号符文 = 觉醒 7 阶法典 | 亚马逊 | 生存 系 （角色等级 ≥70 级）</li>
+            </ol>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">1阶觉醒效果 · 风行</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击杀敌人后有几率进入 「风行者」 状态</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「风行者」 状态：提升攻击速度和移动速度</li>
+              <li>攻击速度和移动速度：10% + 1% / 每 10 点 「角色等级」</li>
+              <li>触发几率：5% + 1% / 从 2 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>持续时间：6 秒（受 【持久增益】 加成影响）</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">2阶觉醒效果 · 律动</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>连击系统激活</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「连击系统」说明：每 5 次 攻击 后，强化下一次攻击的效果</li>
+              <li>【注】：所有技能（包括攻击技能、强化技能、召唤技能、位移技能等等）、普通攻击、投掷攻击、多段攻击均视作一次 攻击</li>
+              <li>【注】：以上技能无论是否击中敌人，均视作一次 攻击</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">3阶觉醒效果 · 深耕</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>投入生存系的技能点数提供额外 被动技能 数值和 召唤物 加成</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>每 10 点投入生存系的技能点数提供以下属性（对应被动技能）</li>
+              <li>「精准攻势」 ：5% 准确率加成</li>
+              <li>「致命攻势」 ：1% 暴击率</li>
+              <li>「贯穿攻势」 ：1% 穿透几率</li>
+              <li>「闪躲 / 闪身 / 闪避」 ：1% 三闪几率</li>
+              <li>每 10 点投入生存系的技能点数提升 召唤物 的以下属性</li>
+              <li>10 % 生命加成</li>
+              <li>10 % 防御加成</li>
+              <li>10 % 准确率加成</li>
+              <li>10 % 伤害加成</li>
+              <li>1 % 攻击和移动速度加成</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">4阶觉醒效果 · 狂风</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击中敌人时有几率触发 「旋风」</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>触发几率：5% + 1% / 从 5 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>「旋风」 持续时间：2 秒</li>
+              <li>「风行者」 状态下旋风持续时间翻倍且向周围发射小旋风</li>
+              <li>「旋风」 物理伤害： DMG | 100 / 1 / 1 / 1 / 1 / 1 / 250 / 2 / 2 / 2 / 2 / 2 | HitShift = 8</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 5 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【角色等级】：+ 5 % 旋风物理伤害 / 每 5 点 「角色等级」</li>
+                <li>【 力量 】 ：+ 5 % 旋风物理伤害 / 每 10 点</li>
+                <li>【 敏捷 】：+ 5 % 旋风物理伤害 / 每 10 点</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成： 「物理强化」 ： 该词缀可以增加技能造成的最终物理伤害（最大 250%）</p>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">5阶觉醒效果 · 界限突破</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>所有生存系技能等级上限 +5</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">6阶觉醒效果 · 战争号令</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>强化角色和周围的友军</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>伤害加成：100% + 15% / 每 10 点 「角色等级」</li>
+              <li>粉碎性打击：20% + 2% /  每 10 点 「角色等级」</li>
+              <li>攻击速度加成：20% + 2% /  每 10 点 「角色等级」</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成：</p>
+              <ul class="feature-list awaken-branch">
+                <li>【范围扩大】 ：使 「战争号令」 的作用范围扩大</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">7阶觉醒效果 · 幻影分身</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击中敌人时有几率召唤 「幻影分身」</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>触发几率：1%</li>
+              <li>「幻影分身」 等级：30 级 + 5 级 / 从 8 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>持续时间：30 秒（受 【持久增益】 加成）</li>
+              <li>技能信息：</li>
+              <li>最大召唤数量：5 个 （上限 = 15）</li>
+              <li>生命值加成：20% / 每 1 点技能等级</li>
+              <li>准确率加成：50% + 15% / 每 1 点技能等级</li>
+              <li>防御力：80 点 + 35 点 / 每 1 点技能等级</li>
+              <li>防御力加成：10% / 每 1 点技能等级</li>
+              <li>伤害加成：10% / 每 1 点技能等级</li>
+              <li>持续时间：10 秒 + 5 秒 / 每 1 点技能等级</li>
+              <li>物理伤害： DMG | 9 / 3 / 5 / 11 / 13 / 16 / 16 / 4 / 7 / 12 / 15 / 17 | HitShift = 8</li>
+              <li>附加魔法伤害： Mag | 9 / 3 / 5 / 11 / 13 / 16 / 16 / 4 / 7 / 12 / 15 / 17 | HitShift = 8 |</li>
+            </ul>
         <table class="feature-table">
           <thead><tr><th>基础属性</th><th>普通</th><th>噩梦</th><th>地狱</th></tr></thead>
           <tbody>
@@ -448,115 +898,632 @@
             <tr><td>火焰抗性</td><td>0%</td><td>0%</td><td>0%</td></tr>
             <tr><td>冰冷抗性</td><td>10%</td><td>20%</td><td>30%</td></tr>
             <tr><td>闪电抗性</td><td>0%</td><td>0%</td><td>0%</td></tr>
-            <tr><td>毒素抗性</td><td>0%</td><td>0%%</td><td>0%</td></tr>
+            <tr><td>毒素抗性</td><td>0%</td><td>0%</td><td>0%</td></tr>
             <tr><td>格挡几率</td><td>0%</td><td>0%</td><td>0%</td></tr>
             <tr><td>行走/奔跑</td><td>7 / 7</td><td></td></tr>
             <tr><td>暴击几率</td><td>0%</td><td></td></tr>
           </tbody>
         </table>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">8阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">9阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
         </div>
-      <div class="feature-subsection">
-        <h3 class="feature-subsection-title">弓弩系觉醒 <span class="muted">（亚马逊）</span></h3>
-        <ol class="feature-list awaken-steps">
-          <li>觉醒1阶方法：「破碎的奈非天法典」（出生礼包附送）+ 3号符文 = 觉醒1阶法典|亚马逊|弓弩系（<strong class="feature-stat">角色等级 ≥10级</strong>）</li>
-          <li>觉醒2阶方法：「觉醒1阶法典|亚马逊|弓弩系」+ 8号符文 = 觉醒2阶法典|亚马逊|弓弩系（<strong class="feature-stat">角色等级 ≥20级</strong>）</li>
-          <li>觉醒3阶方法：「觉醒2阶法典|亚马逊|弓弩系」+ 12号符文 = 觉醒3阶法典|亚马逊|弓弩系（<strong class="feature-stat">角色等级 ≥30级</strong>）</li>
-          <li>觉醒4阶方法：「觉醒3阶法典|亚马逊|弓弩系」+ 16号符文 = 觉醒4阶法典|亚马逊|弓弩系（<strong class="feature-stat">角色等级 ≥40级</strong>）</li>
-          <li>觉醒5阶方法：「觉醒4阶法典|亚马逊|弓弩系」+ 20号符文 = 觉醒5阶法典|亚马逊|弓弩系（<strong class="feature-stat">角色等级 ≥50级</strong>）</li>
-          <li>觉醒6阶方法：「觉醒5阶法典|亚马逊|弓弩系」+ 24号符文 = 觉醒6阶法典|亚马逊|弓弩系（<strong class="feature-stat">角色等级 ≥60级</strong>）</li>
-          <li>觉醒7阶方法：「觉醒6阶法典|亚马逊|弓弩系」+ 28号符文 = 觉醒7阶法典|亚马逊|弓弩系（<strong class="feature-stat">角色等级 ≥70级</strong>）</li>
-        </ol>
-        <p class="feature-note">彩色文字表示已生效的觉醒效果；灰色文字表示未生效的觉醒效果。</p>
-        <ul class="feature-list">
-          <li>「觉醒效果」：击杀敌人后有几率进入「精准」状态</li>
-          <li>「觉醒数值」：「精准」状态：提升攻击准确率和物理伤害加成</li>
-          <li>触发几率：<strong class="feature-stat">10%</strong> + <strong class="feature-stat">1%</strong> / 从2阶开始的每1阶「觉醒阶级」</li>
-          <li>攻击准确率：<strong class="feature-stat">25%</strong> + <strong class="feature-stat">2%</strong> / 每10点「角色等级」</li>
-          <li>物理伤害加成：<strong class="feature-stat">20%</strong> + <strong class="feature-stat">1%</strong> / 每1点「角色等级」</li>
-          <li>粉碎性打击几率：<strong class="feature-stat">15%</strong> + <strong class="feature-stat">1%</strong> / 每10点「角色等级」</li>
-          <li>持续时间：6秒（受【持久增益】加成影响）</li>
-          <li>「觉醒效果」：连击系统激活</li>
-          <li>「觉醒数值」：不同的技能拥有不同的「连击特效」，具体参见每个技能描述中的「连击」字段「连击系统」说明：每5次 攻击 后，强化下一次攻击的效果【注】：所有技能（包括攻击技能、强化技能、召唤技能、位移技能等等）、普通攻击、投掷攻击、多段攻击均视作一次 攻击</li>
-          <li>【注】：以上技能无论是否击中敌人，均视作一次 攻击</li>
-          <li>「觉醒效果」：投入弓弩系的技能点数提供额外 弓弩技能 伤害加成</li>
-          <li>「觉醒数值」：每3点投入弓弩系的技能点数提供的伤害加成：<strong class="feature-stat">1%</strong> × 对应技能的「加成系数」</li>
-          <li>「注」：此被动效果也对「箭簇风暴 | 6阶觉醒 」生效</li>
-          <li>「觉醒效果」：触发连击的攻击可「标记」敌人</li>
-          <li>「觉醒数值」：「标记」：降低目标的防御值和物理抗性</li>
-          <li>降低敌人防御值：<strong class="feature-stat">20%</strong> + <strong class="feature-stat">2%</strong> / 每10点「角色等级」</li>
-          <li>降低敌人物理抗性：<strong class="feature-stat">10%</strong> + <strong class="feature-stat">1%</strong> / 每9点「角色等级」</li>
-          <li>晕眩时间：2秒（受【苦痛延伸】影响）</li>
-          <li>持续时间：6秒（受【苦痛延伸】影响）</li>
-          <li>词缀加成：【苦痛延伸】：施加给敌人的负面状态的时间增加</li>
-          <li>「觉醒效果」：所有弓弩系技能等级上限+5</li>
-          <li>「觉醒效果」：击中敌人时有几率释放「箭簇风暴」</li>
-          <li>「觉醒数值」：「箭簇风暴」：从天而降大量箭矢攻击范围敌人</li>
-          <li>触发几率：<strong class="feature-stat">3%</strong> + <strong class="feature-stat">1%</strong> / 从7阶开始的每1阶「觉醒阶级」</li>
-          <li>「<strong class="feature-stat">100%</strong>武器伤害」</li>
-          <li>作用范围：4码（受【范围扩大】影响）</li>
-          <li>掉落频率：每25点「攻击速度」提升1次掉落频率，最多提升6次（即<strong class="feature-stat">150%</strong>「攻击速度」）</li>
-          <li>附加物理伤害：DMG  | 50 / 0 / 0 / 0 / 0 / 0 / 75 / 0 / 0 / 0 / 0 / 0 | HitShift = 8</li>
-          <li>附加魔法伤害：MAG  | 50 / 0 / 0 / 0 / 0 / 0 / 75 / 0 / 0 / 0 / 0 / 0 | HitShift = 8</li>
-          <li>属性/协同加成：「加成系数」— [ 5 ]【魔法箭】【多重箭】【引导箭】【扫射】：+ <strong class="feature-stat">5%</strong> 附加物理伤害 / 每1点 基础 技能等级</li>
-          <li>【火焰箭】【爆裂箭】【炙炎箭】【冰霜箭】【冻结箭】：+ <strong class="feature-stat">5%</strong> 附加魔法伤害 / 每1点 基础 技能等级</li>
-          <li>【力量】：+<strong class="feature-stat">5%</strong>  附加物理伤害 / 每10点</li>
-          <li>【敏捷】：+<strong class="feature-stat">5%</strong>  附加物理伤害/ 每10点</li>
-          <li>【智力】：+<strong class="feature-stat">6%</strong>  附加魔法伤害 / 每10点</li>
-          <li>【3阶觉醒「深耕」】可增加本技能伤害</li>
-          <li>词缀加成：「物理强化」：该词缀可以增加技能的 附加物理伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>「法术专注」：该词缀可以增加技能的 附加魔法伤害（最大<strong class="feature-stat">250%</strong>）</li>
-          <li>【范围扩大】：使范围性伤害技能的作用范围扩大</li>
-          <li>「觉醒效果」：攻击速度可以提高弹道飞行速度和伤害</li>
-          <li>「觉醒数值」：弹道飞行速度：+<strong class="feature-stat">1%</strong> / 每<strong class="feature-stat">3%</strong>攻击速度</li>
-          <li>伤害加成「×乘算」：+<strong class="feature-stat">1%</strong> / 每<strong class="feature-stat">3%</strong>攻击速度</li>
-        </ul>
+      </details>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">弓弩系觉醒</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+        <details class="fold-card awaken-sub awaken-method">
+          <summary class="fold-card-head"><span class="fold-card-title">觉醒方法（1~7阶）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">觉醒条件：角色等级达到 10 / 20 / 30 / 40 / 50 / 60 / 70 级时，可分别进行一次觉醒</p>
+            <ol class="feature-list awaken-steps">
+              <li>弓弩系 | 觉醒 1 阶方法 ： 「破碎的奈非天法典」 （出生礼包附送）+ 3 号符文 = 觉醒 1 阶法典 | 亚马逊 | 弓弩系 （角色等级 ≥10 级）</li>
+              <li>弓弩系 | 觉醒 2 阶方法 ： 「觉醒 1 阶法典 | 亚马逊 | 弓弩系 」 + 8 号符文 = 觉醒 2 阶法典 | 亚马逊 | 弓弩系 （角色等级 ≥20 级）</li>
+              <li>弓弩系 | 觉醒 3 阶方法 ： 「觉醒 2 阶法典 | 亚马逊 | 弓弩系 」 + 12 号符文 = 觉醒 3 阶法典 | 亚马逊 | 弓弩系 （角色等级 ≥30 级）</li>
+              <li>弓弩系 | 觉醒 4 阶方法 ： 「觉醒 3 阶法典 | 亚马逊 | 弓弩系 」 + 16 号符文 = 觉醒 4 阶法典 | 亚马逊 | 弓弩系 （角色等级 ≥40 级）</li>
+              <li>弓弩系 | 觉醒 5 阶方法 ： 「觉醒 4 阶法典 | 亚马逊 | 弓弩系 」 + 20 号符文 = 觉醒 5 阶法典 | 亚马逊 | 弓弩系 （角色等级 ≥50 级）</li>
+              <li>弓弩系 | 觉醒 6 阶方法 ： 「觉醒 5 阶法典 | 亚马逊 | 弓弩系 」 + 24 号符文 = 觉醒 6 阶法典 | 亚马逊 | 弓弩系 （角色等级 ≥60 级）</li>
+              <li>弓弩系 | 觉醒 7 阶方法 ： 「觉醒 6 阶法典 | 亚马逊 | 弓弩系 」 + 28 号符文 = 觉醒 7 阶法典 | 亚马逊 | 弓弩系 （角色等级 ≥70 级）</li>
+            </ol>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">1阶觉醒效果 · 精准</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击杀敌人后有几率进入 「精准」 状态</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「精准」 状态：提升攻击准确率和物理伤害加成</li>
+              <li>触发几率：10% + 1% / 从 2 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>攻击准确率：25% + 2% / 每 10 点 「角色等级」</li>
+              <li>物理伤害加成：20% + 1% / 每 1 点 「角色等级」</li>
+              <li>粉碎性打击几率：15% + 1% / 每 10 点 「角色等级」</li>
+              <li>持续时间：6 秒（受 【持久增益】 加成影响）</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">2阶觉醒效果 · 律动</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>连击系统激活</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「连击系统」说明：每 5 次 攻击 后，强化下一次攻击的效果</li>
+              <li>【注】：所有技能（包括攻击技能、强化技能、召唤技能、位移技能等等）、普通攻击、投掷攻击、多段攻击均视作一次 攻击</li>
+              <li>【注】：以上技能无论是否击中敌人，均视作一次 攻击</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">3阶觉醒效果 · 深耕</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>投入弓弩系的技能点数提供额外 弓弩技能 伤害加成</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>每 3 点投入弓弩系的技能点数提供的伤害加成：1% × 对应技能的 「加成系数」</li>
+              <li>「注」 ：此被动效果也对 「 箭簇风暴 | 6 阶觉醒 」 生效</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">4阶觉醒效果 · 标记</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>触发连击的攻击可 「标记」 敌人</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「标记」 ：降低目标的防御值和物理抗性</li>
+              <li>降低 敌人防御值：20% + 2% / 每 10 点 「角色等级」</li>
+              <li>降低敌人物理抗性：10% + 1% / 每 9 点 「角色等级」</li>
+              <li>晕眩时间：2 秒（受 【苦痛延伸】 影响）</li>
+              <li>持续时间：6 秒 （受 【苦痛延伸】 影响）</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成：</p>
+              <ul class="feature-list awaken-branch">
+                <li>【苦痛延伸】 ：施加给敌人的负面状态的时间增加</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">5阶觉醒效果 · 界限突破</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>所有弓弩系技能等级上限 +5</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">6阶觉醒效果 · 箭簇风暴</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击中敌人时有几率释放 「箭簇风暴」</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「箭簇风暴」 ：从天而降大量箭矢攻击范围敌人</li>
+              <li>触发几率：3% + 1% / 从 7 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>「100% 武器伤害」</li>
+              <li>作用范围：4 码（受 【范围扩大】 影响）</li>
+              <li>掉落频率：每 25 点 「攻击速度」 提升 1 次掉落频率，最多提升 6 次（即 150% 「攻击速度」 ）</li>
+              <li>附加物理伤害： DMG  | 50 / 0 / 0 / 0 / 0 / 0 / 75 / 0 / 0 / 0 / 0 / 0 | HitShift = 8</li>
+              <li>附加魔法伤害： MAG | 50 / 0 / 0 / 0 / 0 / 0 / 75 / 0 / 0 / 0 / 0 / 0 | HitShift = 8</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 5 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【魔法箭】【多重箭】【引导箭】【扫射】：+ 5 % 附加物理伤害 / 每 1 点 基础 技能等级</li>
+                <li>【火焰箭】【爆裂箭】【 炙炎 箭】【冰霜箭】【冻结箭】：+ 5 % 附加魔法伤害 / 每 1 点 基础 技能等级</li>
+                <li>【 力量 】 ：+ 5 % 附加物理伤害 / 每 10 点</li>
+                <li>【 敏捷 】：+ 5 % 附加物理伤害 / 每 10 点</li>
+                <li>【 智力 】 ：+ 6 % 附加魔法伤害 / 每 10 点</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成： 「物理强化」 ：该词缀可以增加技能的 附加物理伤害 （最大 250%） 「法术专注」 ：该词缀可以增加技能的 附加魔法伤害 （最大 250%）</p>
+              <ul class="feature-list awaken-branch">
+                <li>【范围扩大】 ：使范围性伤害技能的作用范围扩大</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">7阶觉醒效果 · 破空强弩</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>攻击速度可以提高弹道飞行速度和伤害</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>弹道飞行速度：+1% / 每 3% 攻击速度</li>
+              <li>伤害加成 「× 乘算」 ：+1% / 每 3% 攻击速度</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">8阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">9阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
         </div>
-    </article>
+      </details>
+      <h3 class="feature-subsection-title">死灵法师（三系觉醒）</h3>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">召唤系觉醒</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+        <details class="fold-card awaken-sub awaken-method">
+          <summary class="fold-card-head"><span class="fold-card-title">觉醒方法（1~7阶）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">觉醒道具： 「破碎的奈非天法典」 （出生礼包合成后获得）</p>
+          <p class="feature-note">觉醒条件：角色等级达到 12 / 20 / 28 / 36 / 44 / 52 / 60 级时，可分别进行一次觉醒</p>
+            <ol class="feature-list awaken-steps">
+              <li>召唤系 | 觉醒 1 阶方法 ： 「破碎的奈非天法典」 + 1 号符文 = 觉醒 1 阶法典 | 死灵法师 | 召唤系 （角色等级 ≥12 级）</li>
+              <li>召唤系 | 觉醒 2 阶方法 ： 「觉醒 1 阶法典 | 死灵法师 | 召唤系 」 + 08 号符文 = 觉醒 2 阶法典 | 死灵法师 | 召唤系 （角色等级 ≥20 级）</li>
+              <li>召唤系 | 觉醒 3 阶方法 ： 「觉醒 2 阶法典 | 死灵法师 | 召唤系 」 + 12 号符文 = 觉醒 3 阶法典 | 死灵法师 | 召唤系 （角色等级 ≥28 级）</li>
+              <li>召唤系 | 觉醒 4 阶方法 ： 「觉醒 3 阶法典 | 死灵法师 | 召唤系 」 + 16 号符文 = 觉醒 4 阶法典 | 死灵法师 | 召唤系 （角色等级 ≥36 级）</li>
+              <li>召唤系 | 觉醒 5 阶方法 ： 「觉醒 4 阶法典 | 死灵法师 | 召唤系 」 + 20 号符文 = 觉醒 5 阶法典 | 死灵法师 | 召唤系 （角色等级 ≥44 级）</li>
+              <li>召唤系 | 觉醒 6 阶方法 ： 「觉醒 5 阶法典 | 死灵法师 | 召唤系 」 + 24 号符文 = 觉醒 6 阶法典 | 死灵法师 | 召唤系 （角色等级 ≥52 级）</li>
+              <li>召唤系 | 觉醒 7 阶方法 ： 「觉醒 6 阶法典 | 死灵法师 | 召唤系 」 + 28 号符文 = 觉醒 7 阶法典 | 死灵法师 | 召唤系 （角色等级 ≥60 级）</li>
+            </ol>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">1阶觉醒效果 · 噬魂（一转）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>召唤物击杀为你回复生命和法力</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>生命回复：1 点 + 1 点 / 每 12 点 「召唤物等级」</li>
+              <li>法力回复：1 点 + 1 点 / 每 12 点 「召唤物等级」</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">2阶觉醒效果 · 同甘</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>生命恢復效果增加且分享給盟友</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>生命恢复效果增加：60%</li>
+              <li>分享给盟友比例：60%</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">3阶觉醒效果 · 深耕</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>投入召唤系的技能点提供 召唤物 加成</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>每 10 点投入召唤系的技能点数提升 召唤物 的以下属性</li>
+              <li>3 % 生命加成</li>
+              <li>3 % 伤害加成</li>
+              <li>5 % 防御加成</li>
+              <li>5 % 准确率加成</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">4阶觉醒效果 · 献祭（二转）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>「取消召唤」 技能可以增强友军</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>持续时间：6 秒（受 【持久增益】 加成）</li>
+              <li>暴击几率增加：10% + 1% / 每 10 点 「角色等级」</li>
+              <li>【50% 几率】附加 火焰 伤害：100 ~ 120 点</li>
+              <li>【50% 几率】附加 闪电 伤害：100 ~ 120 点</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 6 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【角色等级】：+ 6 % 附加元素伤害 / 每 5 点 「角色等级」</li>
+                <li>【 智力 】：+ 6 % 附加元素伤害 / 每 10 点</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">5阶觉醒效果 · 界限突破</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>所有召唤系技能等级上限 +5</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">6阶觉醒效果 · 同仇敌忾</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>骷髅可以享受石魔的协同加成</li>
+              <li>【注】 ：骷髅王也能享受此效果，即受到 双倍 【石魔】的协同加成</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 20 ] / [ 6 ] / [ 3 ] / [ 25 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【黏土石魔】： + 20 点 召唤物准确率 / 每 1 点基础技能等级</li>
+                <li>【火焰石魔】：+ 6 % 召唤物伤害 / 每 1 点基础技能等级</li>
+                <li>【鲜血石魔】： + 3 % 召唤物生命加成 / 每 1 点基础技能等级</li>
+                <li>【钢铁石魔】： + 25 点 召唤物防御 / 每 1 点基础技能等级</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">7阶觉醒效果 · 亡者羁绊（三转）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>强化部分属性并共享给友军</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「多重射击」： +1</li>
+              <li>「法术贯穿」： +15%</li>
+              <li>「范围扩大」： +25%</li>
+              <li>分享给盟友的比例：40% + 1% / 每 2 点 「角色等级」</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">8阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">9阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">骨毒系觉醒</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+        <details class="fold-card awaken-sub awaken-method">
+          <summary class="fold-card-head"><span class="fold-card-title">觉醒方法（1~7阶）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">觉醒道具： 「破碎的奈非天法典」 （出生礼包合成后获得）</p>
+          <p class="feature-note">觉醒条件：角色等级达到 12 / 20 / 28 / 36 / 44 / 52 / 60 级时，可分别进行一次觉醒</p>
+            <ol class="feature-list awaken-steps">
+              <li>骨毒系 | 觉醒 1 阶方法 ： 「破碎的奈非天法典」 + 2 号符文 = 觉醒 1 阶法典 | 死灵法师 | 骨毒系 （角色等级 ≥12 级）</li>
+              <li>骨毒系 | 觉醒 2 阶方法 ： 「觉醒 1 阶法典 | 死灵法师 | 骨毒系 」 + 08 号符文 = 觉醒 2 阶法典 | 死灵法师 | 骨毒系 （角色等级 ≥20 级）</li>
+              <li>骨毒系 | 觉醒 3 阶方法 ： 「觉醒 2 阶法典 | 死灵法师 | 骨毒系 」 + 12 号符文 = 觉醒 3 阶法典 | 死灵法师 | 骨毒系 （角色等级 ≥28 级）</li>
+              <li>骨毒系 | 觉醒 4 阶方法 ： 「觉醒 3 阶法典 | 死灵法师 | 骨毒系 」 + 16 号符文 = 觉醒 4 阶法典 | 死灵法师 | 骨毒系 （角色等级 ≥36 级）</li>
+              <li>骨毒系 | 觉醒 5 阶方法 ： 「觉醒 4 阶法典 | 死灵法师 | 骨毒系 」 + 20 号符文 = 觉醒 5 阶法典 | 死灵法师 | 骨毒系 （角色等级 ≥44 级）</li>
+              <li>骨毒系 | 觉醒 6 阶方法 ： 「觉醒 5 阶法典 | 死灵法师 | 骨毒系 」 + 24 号符文 = 觉醒 6 阶法典 | 死灵法师 | 骨毒系 （角色等级 ≥52 级）</li>
+              <li>骨毒系 | 觉醒 7 阶方法 ： 「觉醒 6 阶法典 | 死灵法师 | 骨毒系 」 + 28 号符文 = 觉醒 7 阶法典 | 死灵法师 | 骨毒系 （角色等级 ≥60 级）</li>
+            </ol>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">1阶觉醒效果 · 汲魄（一转）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击中敌人时吸取法力值</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>触发几率：100%</li>
+              <li>吸取法力值：</li>
+              <li>最小吸取量：1 点</li>
+              <li>最大吸取量：1 点 + 1 点 / 每 10 点 「角色等级」</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">2阶觉醒效果 · 骨御</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>被击中时有几率释放「白骨装甲」</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>触发几率：10% + 1% / 从 3 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>释放 「白骨装甲」 技能等级：9 级 + 3 级 / 从 3 阶开始的每 1 阶 「觉醒阶级」</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">3阶觉醒效果 · 深耕</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>骨毒系技能点数增加 骨毒技能 伤害</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>每 3 点投入骨毒系的技能点数提供的伤害加成：1% × 对应技能的 「加成系数」</li>
+              <li>「注」 ：此被动效果也对 「 凋零 | 4 阶觉醒 」 生效</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">4阶觉醒效果 · 凋零（二转）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击中敌人时有几率释放「凋零」</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>「凋零」：从深渊冒出的瘴气会对敌人造成毒素伤害</li>
+              <li>「凋零」等级：1 级 + 1 级 / 从 5 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>触发几率：8% + 1% / 从 5 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>持续时间：3 秒</li>
+              <li>造成毒素伤害： Pois | 10 / 8 / 8 / 8 / 8/ 8 / 12 / 10 / 10 / 10 / 10 / 10 | HitShift = 6</li>
+              <li>毒素作用时效：2 秒</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 5 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【淬毒武器】【毒爆】【剧毒新星】：+ 5 % 造成毒素伤害 / 每 5 点 「角色等级」</li>
+                <li>【 智力 】：+ 5 % 造成毒素伤害 / 每 10 点</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成： 「法术专注」 ：该词缀可以增加技能造成的最终元素伤害 &lt;上限 250%&gt;</p>
+              <ul class="feature-list awaken-branch">
+                <li>【范围扩大】 ：使范围性伤害技能的作用范围扩大 &lt;上限 250%&gt;</li>
+                <li>【强效腐蚀】 ：增加持续伤害 &lt;上限 1000%&gt;</li>
+                <li>【速效剧毒】 ：加快毒素的生效速度 &lt;上限 1000%&gt;</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">5阶觉醒效果 · 界限突破</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>所有骨毒系技能等级上限 +5</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">6阶觉醒效果 · 骨肉共鳴</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>體力轉化為智力和更多生命</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>每点体力额外转化为 2 点生命值</li>
+              <li>体力转化为智力的比例：30% + 1% /  每 12 点 「角色等级」</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">7阶觉醒效果 · 索命亡魂（三转）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>击中敌人时有幾率召唤亡魂追擊敵人</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>触发几率：10% + 2% / 从 8 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>释放「亡魂」等级：1 级 + 1 级 / 从 8 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>造成魔法伤害： Mag | 50 / 10 / 10 / 10 / 10 / 10 / 60 / 12 / 12 / 12 / 12 / 12 | HitShift = 8</li>
+              <li>附加物理伤害： DMG | 50 / 10 / 10 / 10 / 10 / 10 / 60 / 12 / 12 / 12 / 12 / 12 | HitShift = 8 （20 级超凡技艺）</li>
+            </ul>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">属性/协同加成： 「加成系数」— [ 5 ]</p>
+              <ul class="feature-list awaken-branch">
+                <li>【牙】【骨矛】【白骨之魂】：+ 5 % 造成魔法伤害 / 每 5 点 「角色等级」</li>
+                <li>【 力量 】 ：+ 5 % 附加物理伤害 / 每 10 点 （20 级超凡技艺）</li>
+                <li>【 敏捷 】：+ 5 % 附加物理伤害 / 每 10 点 （20 级超凡技艺）</li>
+                <li>【 智力 】：+ 5 % 造成魔法伤害 / 每 10 点</li>
+                <li>【3 阶觉醒 「深耕」 】可增加本技能伤害</li>
+              </ul>
+            </div>
+            <div class="awaken-indent-1">
+              <p class="awaken-block-h">词缀加成： 「物理强化」 ：该词缀可以增加技能的 附加物理伤害 （最大 250%） &lt;上限 250%&gt; 「法术专注」 ：该词缀可以增加技能造成的 魔法伤害 &lt;上限 250%&gt;</p>
+            </div>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">8阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">9阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="fold-card awaken-step">
+        <summary class="fold-card-head"><span class="fold-card-title">巫术系觉醒</span><span class="fold-chevron"></span></summary>
+        <div class="fold-card-body">
+        <details class="fold-card awaken-sub awaken-method">
+          <summary class="fold-card-head"><span class="fold-card-title">觉醒方法（1~7阶）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">觉醒道具： 「破碎的奈非天法典」 （出生礼包合成后获得）</p>
+          <p class="feature-note">觉醒条件：角色等级达到 12 / 20 / 28 / 36 / 44 / 52 / 60 级时，可分别进行一次觉醒</p>
+            <ol class="feature-list awaken-steps">
+              <li>巫术系 | 觉醒 1 阶方法 ： 「破碎的奈非天法典」 + 3 号符文 = 觉醒 1 阶法典 | 死灵法师 | 骨毒系 （角色等级 ≥12 级）</li>
+              <li>巫术系 | 觉醒 2 阶方法 ： 「觉醒 1 阶法典 | 死灵法师 | 巫术系 」 + 08 号符文 = 觉醒 2 阶法典 | 死灵法师 | 巫术系 （角色等级 ≥20 级）</li>
+              <li>巫术系 | 觉醒 3 阶方法 ： 「觉醒 2 阶法典 | 死灵法师 | 巫术系 」 + 12 号符文 = 觉醒 3 阶法典 | 死灵法师 | 巫术系 （角色等级 ≥28 级）</li>
+              <li>巫术系 | 觉醒 4 阶方法 ： 「觉醒 3 阶法典 | 死灵法师 | 巫术系 」 + 16 号符文 = 觉醒 4 阶法典 | 死灵法师 | 巫术系 （角色等级 ≥36 级）</li>
+              <li>巫术系 | 觉醒 5 阶方法 ： 「觉醒 4 阶法典 | 死灵法师 | 巫术系 」 + 20 号符文 = 觉醒 5 阶法典 | 死灵法师 | 巫术系 （角色等级 ≥44 级）</li>
+              <li>巫术系 | 觉醒 6 阶方法 ： 「觉醒 5 阶法典 | 死灵法师 | 巫术系 」 + 24 号符文 = 觉醒 6 阶法典 | 死灵法师 | 巫术系 （角色等级 ≥52 级）</li>
+              <li>巫术系 | 觉醒 7 阶方法 ： 「觉醒 6 阶法典 | 死灵法师 | 巫术系 」 + 28 号符文 = 觉醒 7 阶法典 | 死灵法师 | 巫术系 （角色等级 ≥60 级）</li>
+            </ol>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">1阶觉醒效果 · 噬魂（一转）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>召唤物击杀为你回复生命和法力</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>生命回复：1 点 + 1 点 / 每 12 点 「召唤物等级」</li>
+              <li>法力回复：1 点 + 1 点 / 每 12 点 「召唤物等级」</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">2阶觉醒效果 · 恐咒</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>受到攻击时有几率吓退敌人</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>释放几率：15% + 1 % / 从 3 阶开始的每 1 阶 「觉醒阶级」</li>
+              <li>释放「恐惧」等级：1 级 + 1 级 / 3 阶开始的每 1 阶 「觉醒阶级」</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">3阶觉醒效果 · 深耕</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>巫术系技能点数增加角色属性</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>每 10 点投入巫术系的技能点数增加下列属性</li>
+              <li>3 点所有属性</li>
+              <li>1 点精魂</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">4阶觉醒效果 · 预兆（二转）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>开启特质 「死亡预兆」</li>
+              <li>基础发动几率： 10 %（死灵二转被动技能 「幽冥之力」 可提升此几率）</li>
+              <li>【注】 ：不同技能的 「死亡预兆」 效果不同，具体参见每个技能的描述</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">5阶觉醒效果 · 界限突破</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>巫术系技能等级上限 +5</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">6阶觉醒效果 · 厄运洞察</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>你的智力转化为幸运一击</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+            <ul class="feature-list">
+              <li>需要学习技能 「幽冥之力」</li>
+              <li>每 10 点智力转化为 1 % 「幸运一击」</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">7阶觉醒效果 · 腐败之域（三转）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+            <p class="awaken-block-h">「觉醒效果」</p>
+            <ul class="feature-list">
+              <li>削弱周围敌人并造成毒素伤害</li>
+            </ul>
+            <p class="awaken-block-h">「觉醒数值」</p>
+        <table class="feature-table"><thead><tr><th>类型</th><th>HitShift</th><th>最小</th><th>1级</th><th>2级</th><th>3级</th><th>4级</th><th>5级</th><th>最大</th></tr></thead><tbody><tr><td>POIS</td><td>4</td><td>25</td><td>5</td><td>10</td><td>16</td><td>22</td><td>30</td><td>45</td></tr></tbody></table>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">8阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        <details class="fold-card awaken-sub">
+          <summary class="fold-card-head"><span class="fold-card-title">9阶觉醒（暂未开放）</span><span class="fold-chevron"></span></summary>
+          <div class="fold-card-body">
+          <p class="feature-note">该阶觉醒暂未开放，敬请期待后续版本。</p>
+          </div>
+        </details>
+        </div>
+      </details>
+      </article>
 
         <a class="btn btn-ghost detail-back" href="index.html">← 返回首页</a>
       </div>
     </section>
   </main>
 
-    <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <div class="brand-line">
-          <span class="brand-mark" aria-hidden="true">王</span>
-          <span class="brand-text">新王觉醒</span>
-        </div>
-        <p class="visitor-counter">
-          <span id="busuanzi_container_site_pv">总访问 <span id="busuanzi_value_site_pv"></span> 次</span>
-          <span class="counter-sep">·</span>
-          <span id="busuanzi_container_site_uv">独立访客 <span id="busuanzi_value_site_uv"></span> 人</span>
-        </p>
-      </div>
-      <div class="footer-row">
-        <nav class="footer-links" aria-label="资料站链接">
-          <span class="footer-links-label">资料站链接</span>
-          <a href="https://ifdian.net/a/bigwang" target="_blank" rel="noopener">赞助链接</a>
-          <a href="https://www.wolai.com/v7XJECzma8UnWS71iAgKXP" target="_blank" rel="noopener">新王觉醒</a>
-          <a href="https://www.wolai.com/h64uqLTn4dD6d9RcpVWUKr" target="_blank" rel="noopener">魔王降临</a>
-          <a href="https://www.wolai.com/vooPs6mcQEAFmWxBWR8e43" target="_blank" rel="noopener">王者归来</a>
-          <a href="https://www.wolai.com/gJs5pYFZmbv8Ka356rkbk8" target="_blank" rel="noopener">Mod小站</a>
-        </nav>
-        <p class="footer-copy">By 隔壁大王</p>
-        <p class="version-badge">网站版本 v&nbsp;&nbsp;1.4.0</p>
-      </div>
-    </div>
-  </footer>
+    <div id="site-footer"></div>
 
+  <script src="./js/shared.js" defer></script>
   <script src="./js/main.js" defer></script>
-  <script>
-    (function () {
-      var h = location.hostname;
-      // 本地预览（localhost / 127.0.0.1 / file://）不加载计数器，避免外网请求拖慢
-      if (h === 'localhost' || h === '127.0.0.1' || h === '') return;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
-      document.head.appendChild(s);
-    })();
-  </script>
+
 </body>
 </html>

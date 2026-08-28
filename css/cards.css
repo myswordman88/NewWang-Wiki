@@ -1,0 +1,80 @@
+/* 卡片组件 .cards/.card/.news（首页与详情页通用） */
+
+/* 卡片（切角面板 + HUD 边角） */
+.cards { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.cards-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.cards-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .cards-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .cards-3 { grid-template-columns: 1fr; } }
+.cards-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 1180px) { .cards-5 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .cards-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .cards-5 { grid-template-columns: 1fr; } }
+.card {
+  position: relative; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.7rem 1.5rem; overflow: hidden;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.card-link { cursor: pointer; }
+.card::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); opacity: 0.75;
+}
+.card::after {
+  content: ""; position: absolute; inset: 10px; border-radius: 0; pointer-events: none;
+  opacity: 0; transition: opacity 0.25s var(--ease);
+  background:
+    linear-gradient(var(--accent-2), var(--accent-2)) left top / 16px 2px no-repeat,
+    linear-gradient(var(--accent-2), var(--accent-2)) left top / 2px 16px no-repeat,
+    linear-gradient(var(--accent-2), var(--accent-2)) right top / 16px 2px no-repeat,
+    linear-gradient(var(--accent-2), var(--accent-2)) right top / 2px 16px no-repeat,
+    linear-gradient(var(--accent-2), var(--accent-2)) left bottom / 16px 2px no-repeat,
+    linear-gradient(var(--accent-2), var(--accent-2)) left bottom / 2px 16px no-repeat,
+    linear-gradient(var(--accent-2), var(--accent-2)) right bottom / 16px 2px no-repeat,
+    linear-gradient(var(--accent-2), var(--accent-2)) right bottom / 2px 16px no-repeat;
+}
+.cards .card:hover {
+  transform: translateY(-10px); border-color: var(--accent-2); background: var(--surface-2);
+  box-shadow: 0 18px 38px rgba(201, 161, 74, 0.22), 0 0 0 1px rgba(201, 161, 74, 0.25);
+  z-index: 2;
+}
+.card:hover::before { opacity: 1; }
+.card:hover::after { opacity: 1; }
+.card-icon {
+  grid-area: icon; font-size: 1.87rem; width: 54px; height: 54px; display: grid; place-items: center;
+  border-radius: 12px; background: rgba(201, 161, 74, 0.10);
+  border: 1px solid var(--border-strong); color: var(--gold-soft); margin-bottom: 0;
+}
+.card h3 { font-size: 1.18rem; }
+.card p { color: var(--text-dim); margin: 0; font-size: 0.96rem; }
+
+/* 卡片统一布局：图标与标题并排（标题在图标右侧），介绍文字在下方整行 */
+.card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "icon title"
+    "desc desc";
+  align-items: center;
+  column-gap: 0.85rem;
+  row-gap: 0.55rem;
+}
+.card h3 { grid-area: title; margin: 0; }
+.card p { grid-area: desc; }
+
+/* 动态（左侧能量竖线） */
+.news { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.news-item {
+  position: relative; border-left: 3px solid var(--accent); padding: 1.1rem 1.3rem;
+  background: var(--surface); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: background 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.news-item:hover { background: var(--surface-2); border-left-color: var(--accent-2); transform: translateX(4px); }
+.news-item time {
+  display: inline-block; font-family: var(--font-ui); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--accent-light); background: #18120f;
+  border: 1px solid var(--border); padding: 0.15rem 0.6rem; border-radius: 999px; margin-bottom: 0.6rem;
+}
+.news-item h3 { font-size: 1.08rem; margin-bottom: 0.4rem; }
+.news-item p { color: var(--text-dim); margin: 0; font-size: 0.94rem; }

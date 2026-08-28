@@ -3,9 +3,9 @@
 # 中文名取自 objects.json (Key==armor.code): zhCN=简中, zhTW=繁体
 import csv, json, re
 
-SRC = "assets/mod/armor.txt"
-OBJ = "assets/mod/objects.json"
-OUT = "assets/mod/armor_zh.csv"
+SRC = "resource/mod/armor.txt"
+OBJ = "resource/mod/objects.json"
+OUT = "resource/mod/armor_zh.csv"
 
 def clean(s):
     if not s:

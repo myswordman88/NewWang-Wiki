@@ -1,0 +1,154 @@
+/* 手工装备：卡片式展示（对齐基底/套装装备的 .base-card 暗黑核风格） */
+
+/* ---------- 工具条：系列筛选 + 搜索（复用 .base-tabs / .base-search）---------- */
+.crafted-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+.crafted-tabs { margin-bottom: 0; }
+.crafted-part-tabs { margin-top: 0.35rem; margin-bottom: 0.55rem; }
+.crafted-search { flex: 1 1 260px; margin-bottom: 0; }
+.crafted-search-input { width: 100%; }
+
+/* ---------- 卡片：在 .base-card 基础上加系列左侧色条 ---------- */
+.crafted-card {
+  position: relative;
+  border-left: 3px solid var(--border);
+  transition: transform 0.2s var(--ease), border-color 0.2s, box-shadow 0.2s, border-left-color 0.2s;
+}
+
+/* 卡片右上角：基底装备图片框（复用基底页 .base-thumb，含 has-img 显隐与 124px 避让内边距） */
+.crafted-card.series-强击 { border-left-color: #e0826b; }
+.crafted-card.series-鲜血 { border-left-color: #e0506b; }
+.crafted-card.series-施法 { border-left-color: #c79bff; }
+.crafted-card.series-安全 { border-left-color: #79d17e; }
+.crafted-card:hover {
+  border-left-color: var(--accent-2);
+}
+
+/* 顶部：系列徽章 + 成品名 */
+.crafted-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.crafted-series {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.crafted-card.series-强击 .crafted-series { color: #e0826b; background: rgba(224, 130, 107, 0.10); }
+.crafted-card.series-鲜血 .crafted-series { color: #e0506b; background: rgba(224, 80, 107, 0.10); }
+.crafted-card.series-施法 .crafted-series { color: #c79bff; background: rgba(199, 155, 255, 0.10); }
+.crafted-card.series-安全 .crafted-series { color: #79d17e; background: rgba(121, 209, 126, 0.10); }
+.crafted-card .base-name { flex: 0 1 auto; min-width: 0; }
+/* 第一条分割线（顶部/中部之间）下移，避免与右上角基底图框接触 */
+.crafted-top + .base-divider { margin-top: 0.6rem; }
+/* 仅顶部区域为右上角基底图预留 124px 避让空间；中部(合成材料)与底部(固定词条)用满整行宽度，右侧不留空白 */
+.crafted-card.has-img .base-card-body { padding-right: 0.8rem; }
+.crafted-card.has-img .crafted-top { padding-right: 124px; }
+/* 分割线两端贴近卡片边框：抵消 has-img 的 0.8rem 右内边距与自身 0.7rem 右间距，使线横跨整卡宽度 */
+.crafted-card.has-img .base-divider {
+  margin-left: -0.8rem;
+  margin-right: calc(-0.8rem - 0.7rem);
+}
+
+/* 信息区块（基底 / 品质 / 材料 / 词条） */
+.crafted-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  padding: 0.18rem 0;
+}
+.crafted-label {
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.crafted-value {
+  font-family: var(--font-ui);
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+.crafted-code {
+  font-size: 0.96rem;   /* 英文缩写「code」字号 +1 */
+  color: var(--text-mute);
+  letter-spacing: 0.03em;
+  margin-left: 0.25rem;
+}
+/* 品质要求：「魔法品质」用 #6c6cff，可升级部分随文字色 */
+.qual-magic { color: #6c6cff; font-weight: 700; }
+.qual-upg { color: var(--text); }
+
+/* 材料：每行一个配料（带图标），去除 + 号 */
+.crafted-materials { color: var(--text); display: flex; flex-direction: column; gap: 0.32rem; }
+.crafted-materials .mat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.38rem;
+}
+.crafted-materials .mat-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+  flex-shrink: 0;
+}
+.crafted-materials .mat-name { vertical-align: middle; }
+
+/* 固定词条列表 */
+.crafted-mods-block { margin-top: 0.05rem; }
+.crafted-mods {
+  list-style: none;
+  margin: 0.1rem 0 0;
+  padding: 0;
+}
+.crafted-mods li {
+  position: relative;
+  padding-left: 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #6c6cff;   /* 固定词条文字 #6c6cff（变量除外） */
+}
+.crafted-mods li::before {
+  content: "•";
+  position: absolute;
+  left: 0.1rem;
+  color: var(--text-mute);
+}
+/* 变量（数字 / 范围）保持金色高亮 */
+.crafted-mods .prop-num { color: var(--set-num-gold); font-weight: 600; }
+.crafted-mods .prop-text { color: #6c6cff; }
+
+.crafted-empty {
+  text-align: center;
+  color: var(--text-mute);
+  padding: 2.5rem 1rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 560px) {
+  .crafted-toolbar { flex-direction: column; align-items: stretch; }
+  .crafted-search { width: 100%; }
+}

@@ -1,0 +1,972 @@
+/* 暗金装备：筛选 + 卡片网格（金色暗金主题，复用全局 .base-divider / .prop-text / .prop-num） */
+
+:root {
+  --unique-gold: #e8b339;
+  --unique-gold-dim: #c8962a;
+  --unique-gold-bg: rgba(232, 179, 57, 0.14);
+  --unique-glow: rgba(232, 179, 57, 0.16);
+  --unique-card-bg: rgba(22, 19, 14, 0.72);
+  --unique-card-border: rgba(255, 255, 255, 0.08);
+  --unique-thumb-bg: #3a352e;
+  --unique-thumb-border: #5c5346;
+  --unique-prop-blue: #8ec5ff;
+}
+
+/* ---------- 搜索栏 ---------- */
+.unique-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: flex-end;   /* 搜索框/筛选/级别下拉/排序 控件底边对齐，保证三按钮横向对齐 */
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+.unique-search-icon {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.2rem;
+  color: var(--text-mute);
+  pointer-events: none;
+}
+.unique-search-input {
+  flex: 1;
+  width: 100%;
+  padding: 0.7rem 1rem 0.7rem 2.6rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.unique-search-input:focus {
+  border-color: var(--unique-gold-dim);
+  box-shadow: 0 0 0 2px var(--unique-glow);
+}
+.unique-filter-toggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  /* 与右侧「级别」下拉同尺寸 */
+  padding: 0.5rem 0.9rem;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.unique-filter-toggle:hover,
+.unique-filter-toggle[aria-expanded="true"] {
+  border-color: var(--unique-gold-dim);
+  color: var(--unique-gold);
+  background: var(--unique-gold-bg);
+}
+.unique-filter-toggle .caret {
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+.unique-filter-toggle[aria-expanded="true"] .caret {
+  transform: rotate(180deg);
+}
+
+/* 搜索栏右侧「级别」下拉：标签置顶、左对齐，沿用基底装备页 .base-field/select 同款视觉令牌 */
+.unique-field {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  font-family: var(--font-ui);
+  color: var(--text-mute);
+  white-space: nowrap;
+}
+.unique-field .unique-field-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  padding-left: 0.1rem;
+}
+.unique-field select {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.5rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  min-width: 96px;
+}
+.unique-field select:focus {
+  outline: none;
+  border-color: var(--unique-gold-dim);
+  box-shadow: 0 0 0 2px var(--unique-glow);
+}
+.unique-field select option {
+  background: var(--bg-alt);
+  color: var(--text);
+}
+
+/* ---------- 筛选面板 ---------- */
+.unique-filter-panel {
+  margin-bottom: 1rem;
+}
+.unique-filter-panel[hidden] {
+  display: none;
+}
+.unique-filter-row[hidden] {
+  display: none;
+}
+.unique-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.unique-filter-row:last-child {
+  border-bottom: none;
+}
+.unique-filter-main .unique-chip-btn {
+  font-weight: 600;
+}
+.unique-filter-sub {
+  padding-left: 0.1rem;
+}
+/* 武器子类在「拳套（爪）」处强制换行：占满整行的空元素触发 flex-wrap 断行 */
+.unique-sub-break {
+  flex-basis: 100%;
+  height: 0;
+}
+.unique-chip-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-dim);
+  font-size: 0.86rem;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.unique-chip-btn:hover {
+  border-color: var(--unique-gold-dim);
+  color: var(--unique-gold);
+}
+.unique-chip-btn.active {
+  background: var(--unique-gold-bg);
+  border-color: var(--unique-gold);
+  color: var(--unique-gold);
+}
+.unique-chip-btn .count {
+  margin-left: 0.35rem;
+  font-size: 0.72rem;
+  opacity: 0.8;
+}
+
+/* 冠名赞助筛选按钮：置于「箭袋」右侧。未选中时与其他按钮一致（不发光）；选中后发彩虹光 */
+.unique-chip-sponsor {
+  margin-left: 0.4rem;
+}
+.unique-chip-sponsor.active {
+  border-width: 2px;
+  color: #ffb14e;
+  background: rgba(34, 38, 54, 0.45);
+  animation: sponsorChipRainbow 4s linear infinite;
+}
+@keyframes sponsorChipRainbow {
+  0% {
+    color: #ff5d5d;
+    border-color: #ff5d5d;
+    box-shadow: 0 0 5px rgba(255, 93, 93, 0.50), 0 0 12px rgba(255, 93, 93, 0.26);
+  }
+  16% {
+    color: #ffb14e;
+    border-color: #ffb14e;
+    box-shadow: 0 0 5px rgba(255, 177, 78, 0.50), 0 0 12px rgba(255, 177, 78, 0.26);
+  }
+  33% {
+    color: #ffe54e;
+    border-color: #ffe54e;
+    box-shadow: 0 0 5px rgba(255, 229, 78, 0.50), 0 0 12px rgba(255, 229, 78, 0.26);
+  }
+  50% {
+    color: #7bff7b;
+    border-color: #7bff7b;
+    box-shadow: 0 0 5px rgba(123, 255, 123, 0.50), 0 0 12px rgba(123, 255, 123, 0.26);
+  }
+  66% {
+    color: #4ec5ff;
+    border-color: #4ec5ff;
+    box-shadow: 0 0 5px rgba(78, 197, 255, 0.50), 0 0 12px rgba(78, 197, 255, 0.26);
+  }
+  83% {
+    color: #b07bff;
+    border-color: #b07bff;
+    box-shadow: 0 0 5px rgba(176, 123, 255, 0.50), 0 0 12px rgba(176, 123, 255, 0.26);
+  }
+  100% {
+    color: #ff5d5d;
+    border-color: #ff5d5d;
+    box-shadow: 0 0 5px rgba(255, 93, 93, 0.50), 0 0 12px rgba(255, 93, 93, 0.26);
+  }
+}
+
+/* ---------- 工具栏 ---------- */
+.unique-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.unique-count {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+.unique-count strong {
+  color: var(--unique-gold);
+}
+.unique-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+/* ---------- 分体排序按钮（左箭头逆序 / 右下拉选需要等级/品质等级） ---------- */
+.unique-sort-control {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-1);
+  overflow: visible;
+}
+.unique-sort-control:focus-within {
+  border-color: var(--unique-gold-dim);
+}
+.unique-sort-dir,
+.unique-sort-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  transition: color 0.2s, background 0.2s;
+}
+.unique-sort-dir {
+  border-right: 1px solid var(--border);
+  padding-inline: 0.6rem;
+  color: var(--text-mute);
+}
+.unique-sort-dir:hover {
+  color: var(--unique-gold);
+  background: var(--unique-gold-bg);
+}
+.unique-sort-dir.active {
+  color: var(--unique-gold);
+  background: rgba(232, 179, 57, 0.12);
+  text-shadow: 0 0 8px rgba(255, 215, 154, 0.45);
+}
+.unique-sort-dir-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+.unique-sort-trigger {
+  min-width: 104px;
+  justify-content: space-between;
+  color: var(--text);
+  white-space: nowrap;
+}
+.unique-sort-trigger:hover {
+  color: var(--unique-gold);
+  background: var(--unique-gold-bg);
+}
+.unique-sort-trigger[aria-expanded="true"] {
+  color: var(--unique-gold);
+}
+.unique-sort-arrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: var(--text-mute);
+  transition: color 0.2s;
+}
+
+/* 按当前搜索词临时排序按钮（搜索后动态出现） */
+.unique-propsort-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--unique-gold-bg);
+  border: 1px solid var(--unique-gold-dim);
+  border-radius: var(--radius-sm);
+  color: var(--unique-gold);
+  font-size: 0.86rem;
+  font-family: var(--font-display);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.unique-propsort-btn:hover {
+  border-color: var(--unique-gold);
+  box-shadow: 0 0 10px rgba(232, 179, 57, 0.25);
+}
+.unique-propsort-btn.active {
+  background: linear-gradient(180deg, rgba(232, 179, 57, 0.22), rgba(232, 179, 57, 0.10));
+  border-color: var(--unique-gold);
+  color: var(--unique-gold);
+  box-shadow: 0 0 12px rgba(232, 179, 57, 0.35);
+}
+.unique-propsort-btn[hidden] {
+  display: none;
+}
+.unique-propsort-dir {
+  font-size: 1rem;
+  line-height: 1;
+}
+.unique-sort-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 20;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.35rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.unique-sort-menu:not([hidden]) {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.unique-sort-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  color: var(--text-dim);
+  text-align: left;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s, padding-left 0.2s, border-color 0.2s;
+}
+.unique-sort-option:hover,
+.unique-sort-option:focus-visible {
+  color: var(--unique-gold);
+  background: var(--unique-gold-bg);
+  border-left-color: var(--unique-gold-dim);
+  padding-left: 1.1rem;
+}
+.unique-sort-option.active {
+  color: var(--unique-gold);
+  background: rgba(232, 179, 57, 0.12);
+  border-left-color: var(--unique-gold);
+}
+.unique-sort-option::after {
+  content: "";
+  display: inline-block;
+  width: 0.85em;
+  text-align: center;
+  color: var(--unique-gold);
+  font-size: 0.8rem;
+}
+.unique-sort-option.active[data-dir="asc"]::after { content: "▲"; }
+.unique-sort-option.active[data-dir="desc"]::after { content: "▼"; }
+
+/* ---------- 卡片网格（桌面三列，平板两列，手机单列） ---------- */
+.unique-grid {
+  display: grid;
+  /* minmax(0,1fr) 保证 3 列时卡片可收缩、整行不超出容器/页面宽度 */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+@media (max-width: 1024px) {
+  .unique-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .unique-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------- 卡片 ---------- */
+.unique-card {
+  position: relative;   /* 图片框绝对定位锚点，对齐基底装备页卡片 */
+  background: var(--unique-card-bg);
+  border: 1px solid var(--unique-card-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;   /* 防止卡片内长内容把列宽撑破，配合 minmax(0,1fr) 确保不溢出 */
+  transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  /* 离屏卡片跳过布局/绘制，滚动不再卡；同时离屏图片不会提前加载 */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 360px;
+}
+.unique-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--unique-gold-dim);
+  box-shadow: 0 6px 22px var(--unique-glow);
+  background: rgba(32, 27, 18, 0.82);
+}
+
+/* 顶部：名称区（图片框绝对定位右上角，文字区留白避让） */
+.unique-card-head {
+  position: relative;
+  min-height: 168px;       /* 略高于图片框底边(顶 -0.3rem 后底约 166px)，贴角不溢出 */
+  padding-right: 116px;    /* 避让负偏移后的图片框，保留约 7px 图文间距 */
+  margin-bottom: 0.2rem;
+}
+.unique-name-wrap {
+  min-width: 0;
+  flex: 1;
+}
+.unique-name {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: #cebc86;
+  margin: 0;
+  line-height: 1.25;
+  text-shadow: 0 0 16px var(--unique-glow);
+}
+/* 传奇&混沌页：装备中文名标题用橙色（与「传奇」标签呼应，仅传奇页卡片生效） */
+.unique-name.legend-name {
+  color: #ff8c42;
+  text-shadow: 0 0 16px rgba(255, 140, 66, 0.55);
+}
+/* 传奇品质标签：橙色（区别于 任务 档位的 #f2915a） */
+.base-tier.tier-传奇 {
+  color: #ff8c42;
+  border-color: rgba(255, 140, 66, 0.5);
+  background: rgba(255, 140, 66, 0.12);
+}
+.unique-name-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.14rem;
+  margin-top: 0.3rem;
+  font-size: 0.86rem;
+  color: var(--text-mute);
+}
+.unique-name-meta .nm-line {
+  display: block;
+  line-height: 1.4;
+  word-break: break-word;
+}
+.unique-name-meta .label {
+  display: inline-block;
+  min-width: 2.6em;        /* 去【】后最宽为「底材」(2字)，保证四行首字对齐 */
+  margin-right: 0.35em;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+}
+
+/* 名称下方第一行：档位 · 分类（带外框标签）
+   已统一复用基底装备页的 .base-subtitle / .base-tier / .base-cat / .base-dot（见 base-db.css），
+   故此处不再单独定义样式，保证暗金与基底两端卡片标签格式完全一致。 */
+/* 底材行已并入 .unique-name-meta 作为第四行 .nm-line（【底材】标签，无冒号，字号与 EN/简/繁 统一） */
+
+/* 装备图（暗金美术或底材图；无则占位）—— 与基底装备页卡片同款：114×171 绝对定位右上角 */
+.unique-img-wrap {
+  position: absolute;
+  top: -0.3rem;        /* 负偏移：顶进卡片内边距，贴住右上角 */
+  right: -0.3rem;
+  width: 114px;
+  aspect-ratio: 196 / 294;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(232, 179, 57, 0.10), rgba(142, 31, 26, 0.10));
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.unique-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.15rem;
+  display: block;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+}
+/* 戒指 / 项链 / 珠宝：原精灵仅 ~98px，填满 114px 框会放大发虚，缩小显示更协调 */
+.unique-img-wrap.jewel .unique-thumb {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+}
+/* Blind Eye / Quark Pact：图片框保持默认 114 大小不变，仅把图缩小一点 */
+.unique-img-wrap.charm-shrink .unique-thumb {
+  width: 50px;
+  height: auto;
+  max-height: 150px;
+  padding: 0;
+}
+/* Annihilus：图片框改回默认 114（与其他装备一致），内部图保持当前大小(62×62)、不再缩放 */
+.unique-img-wrap.anni-img .unique-thumb {
+  width: 62px;
+  height: 62px;
+  padding: 0;
+}
+/* 地狱火炬：图片框改回默认 114（与其他装备一致），内部图保持当前大小(60×120)、不再缩放 */
+.unique-img-wrap.torch-fixed .unique-thumb {
+  width: 60px;
+  height: 120px;
+  padding: 0;
+}
+.unique-thumb-ph {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-mute);
+  font-size: 0.74rem;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+/* 属性词条：默认 #6c6cff，仅范围数字使用 .prop-num 金色 */
+.unique-props {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.unique-props li {
+  color: #6c6cff;
+  padding-left: 0.1rem;
+}
+.unique-props .prop-text {
+  color: #6c6cff;
+}
+
+/* 搜索命中：命中的属性行高亮（金色左边框 + 暖金渐变底 + 微发光） */
+.unique-props li.unique-prop-hl {
+  background: linear-gradient(90deg, rgba(232, 179, 57, 0.20), rgba(232, 179, 57, 0.03));
+  border-left: 3px solid var(--unique-gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding-left: 0.6rem;
+  margin-left: -0.1rem;
+  box-shadow: 0 0 10px rgba(232, 179, 57, 0.22);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.unique-props li.unique-prop-hl .prop-text,
+.unique-props li.unique-prop-hl .prop-num {
+  color: #c9d2ff;
+}
+/* Mara 新增词条（施法速度/经验值）：仅描述用亮淡绿，范围数字沿用 .prop-num 金色不变 */
+.unique-props li.unique-prop-new .prop-text {
+  color: #8ff0a0;
+}
+/* 「装备唯一」类特殊属性：前置 + 淡红显示 */
+.unique-props li.unique-prop-eu .prop-text {
+  color: #ff9b9b;
+}
+/* 删除线属性（表示曾经有过，如混沌装备被移除的「无法破坏」），删除线用灰色 */
+.unique-props li.unique-prop-strike,
+.unique-props li.unique-prop-strike .prop-text {
+  text-decoration: line-through;
+  text-decoration-color: #9a9a9a;
+  color: #9a9a9a;
+  opacity: 0.8;
+}
+/* 特殊配色词条：绿色（混沌淬炼）/ 淡蓝（随机词条数） */
+.unique-props li.unique-prop-green .prop-text {
+  color: #74e08a;
+}
+.unique-props li.unique-prop-lightblue .prop-text {
+  color: #8ec5ff;
+}
+
+/* 第一条分割线：覆盖 .base-divider 默认右缩进，加长并左右对称（距卡片边框等距） */
+.unique-card .base-divider {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+/* 卡片底部：需求等级 + Qlvl（黑底徽章，沿用符文之语「需要等级」风格） */
+.unique-card-bot {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  margin-left: -0.5rem;     /* 与第一条分割线等距对称加长 */
+  margin-right: -0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed rgba(232, 179, 57, 0.22);  /* 第二条分割线：虚线，对齐基底装备页 */
+  color: var(--text-mute);
+  font-size: 0.8rem;
+}
+/* 需求等级 / Qlvl 黑底徽章：沿用符文之语页 .rune-req 的显示效果 */
+.unique-req {
+  flex-shrink: 0;
+  padding: 0.3rem 0.6rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  font-weight: 700;      /* 整体加粗：需求等级 + Qlvl 徽章 */
+  white-space: nowrap;
+}
+.unique-req strong {
+  color: var(--unique-gold);
+}
+
+/* Mara's Kaleidoscope 专属「冠名赞助」区块：位于【属性】与【需求等级】之间 */
+.unique-sponsor {
+  margin: 0.7rem 0 0.2rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgba(120, 170, 230, 0.40);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, rgba(70, 130, 200, 0.22), rgba(40, 80, 150, 0.08));
+  box-shadow: 0 0 10px rgba(60, 120, 200, 0.18);
+}
+.unique-sponsor-title {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  /* 彩虹文字：渐变裁切到文字 + 横向流动 */
+  background: linear-gradient(90deg, #ff5d5d, #ffb14e, #ffe54e, #7bff7b, #4ec5ff, #b07bff, #ff5d5d);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  border: 1px solid #ffb14e;
+  border-radius: 6px;
+  /* 呼吸彩虹外框 */
+  box-shadow: 0 0 8px rgba(255, 177, 78, 0.55), 0 0 18px rgba(255, 177, 78, 0.30),
+              inset 0 0 6px rgba(255, 177, 78, 0.25);
+  animation: sponsorRainbow 4s linear infinite;
+}
+@keyframes sponsorRainbow {
+  0% {
+    background-position: 0% 50%;
+    border-color: #ff5d5d;
+    box-shadow: 0 0 8px rgba(255, 93, 93, 0.55), 0 0 18px rgba(255, 93, 93, 0.30),
+                inset 0 0 6px rgba(255, 93, 93, 0.25);
+  }
+  16% {
+    border-color: #ffb14e;
+    box-shadow: 0 0 8px rgba(255, 177, 78, 0.55), 0 0 18px rgba(255, 177, 78, 0.30),
+                inset 0 0 6px rgba(255, 177, 78, 0.25);
+  }
+  33% {
+    border-color: #ffe54e;
+    box-shadow: 0 0 8px rgba(255, 229, 78, 0.55), 0 0 18px rgba(255, 229, 78, 0.30),
+                inset 0 0 6px rgba(255, 229, 78, 0.25);
+  }
+  50% {
+    border-color: #7bff7b;
+    box-shadow: 0 0 8px rgba(123, 255, 123, 0.55), 0 0 18px rgba(123, 255, 123, 0.30),
+                inset 0 0 6px rgba(123, 255, 123, 0.25);
+  }
+  66% {
+    border-color: #4ec5ff;
+    box-shadow: 0 0 8px rgba(78, 197, 255, 0.55), 0 0 18px rgba(78, 197, 255, 0.30),
+                inset 0 0 6px rgba(78, 197, 255, 0.25);
+  }
+  83% {
+    border-color: #b07bff;
+    box-shadow: 0 0 8px rgba(176, 123, 255, 0.55), 0 0 18px rgba(176, 123, 255, 0.30),
+                inset 0 0 6px rgba(176, 123, 255, 0.25);
+  }
+  100% {
+    background-position: 200% 50%;
+    border-color: #ff5d5d;
+    box-shadow: 0 0 8px rgba(255, 93, 93, 0.55), 0 0 18px rgba(255, 93, 93, 0.30),
+                inset 0 0 6px rgba(255, 93, 93, 0.25);
+  }
+}
+.unique-sponsor-line {
+  font-size: 0.86rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+/* 赞助描述（第三行）：楷体优先，更具题字感 */
+.unique-sponsor-line.unique-sponsor-desc {
+  font-family: "KaiTi", "楷体", "STKaiti", "FangSong", "STFangsong", "SimSun", "宋体", serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+}
+
+/* 空状态 */
+.unique-empty {
+  text-align: center;
+  color: var(--text-mute);
+  padding: 2rem 1rem;
+}
+.unique-empty[hidden] {
+  display: none;
+}
+
+/* ---------- 混沌装备专属（品红主题，区别于传奇橙） ---------- */
+.base-tier.tier-混沌 {
+  color: #ff5da8;
+  border-color: rgba(255, 93, 168, 0.5);
+  background: rgba(255, 93, 168, 0.12);
+}
+.unique-name.chaos-name {
+  color: #ff5da8;
+  text-shadow: 0 0 16px rgba(255, 93, 168, 0.5);
+}
+/* 混沌专属分区：虚线分隔，紧贴属性下方 */
+/* 混沌词条：可折叠内部小卡片（品红调，区别于传奇词条橙） */
+.unique-chaos {
+  margin-top: 0.7rem;
+  border: 1px solid rgba(255, 93, 168, 0.32);
+  border-radius: var(--radius, 10px);
+  background: rgba(255, 93, 168, 0.05);
+  overflow: hidden;
+}
+.unique-chaos-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+.unique-chaos-summary::-webkit-details-marker { display: none; }
+.unique-chaos-summary::marker { content: none; }
+.unique-chaos-chevron {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-right: 2px solid #ff5da8;
+  border-bottom: 2px solid #ff5da8;
+  transform: rotate(45deg);
+  transition: transform 0.28s var(--ease);
+}
+.unique-chaos[open] > .unique-chaos-summary .unique-chaos-chevron { transform: rotate(225deg); }
+.unique-chaos-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0 0.85rem 0.7rem;
+}
+.unique-chaos:not([open]) > .unique-chaos-body { display: none; }
+/* 获取方式：始终显示，位于折叠卡片之外，上方留白 */
+.unique-chaos-craft {
+  margin-top: 0.6rem;
+}
+.unique-chaos-sec {
+  min-width: 0;
+}
+.unique-chaos-head {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ff5da8;
+  margin-bottom: 0.3rem;
+}
+/* 混沌词条标题行：普通颜色（与底材文字 var(--text-mute) 一致），仅「强调词」保留品红加粗 */
+.unique-chaos-head--plain {
+  color: var(--text-mute);
+}
+/* 混沌词条强调词（如 混沌·正义之怒 / 节奏大师）上提到标题行，与【混沌词条】同行、品红加粗 */
+.unique-chaos-emph-inline {
+  color: #ff5da8;
+  font-weight: 700;
+}
+.unique-chaos-tiers,
+.unique-chaos-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.86rem;
+  line-height: 1.62;
+  color: var(--text-dim);
+}
+.unique-chaos-tiers li,
+.unique-chaos-list li {
+  position: relative;
+  padding-left: 0.95rem;
+}
+.unique-chaos-tiers li::before,
+.unique-chaos-list li::before {
+  content: "›";
+  position: absolute;
+  left: 0.1rem;
+  color: #ff5da8;
+}
+.unique-chaos-note {
+  font-size: 0.86rem;
+  line-height: 1.62;
+  color: var(--text-dim);
+}
+/* 获取方式：独立分区，上方分割线（最下方分割线，虚线，品红原色），标题紫色 */
+.unique-chaos-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0.55rem 0 0.1rem;
+}
+.unique-chaos-head.craft-head {
+  color: #c08bff;
+}
+.unique-chaos-head.craft-head::before {
+  content: "";
+}
+/* 混沌卡片顶部卡片分割线也用品红原色实线（仅对混沌装备生效，不影响传奇卡） */
+.base-divider--chaos {
+  border-top-color: rgba(255, 93, 168, 0.30);
+}
+/* 混沌词条强调行（如「混沌·正义之怒」）：去箭头、加粗 */
+.unique-chaos-tiers li.unique-chaos-tier-emph {
+  font-weight: 700;
+}
+.unique-chaos-tiers li.unique-chaos-tier-emph::before {
+  content: "";
+}
+/* 传奇专属分区：可折叠内部小卡片（橙色调，区别于混沌词条品红） */
+.unique-legend {
+  margin-top: 0.7rem;
+  border: 1px solid rgba(255, 140, 66, 0.32);
+  border-radius: var(--radius, 10px);
+  background: rgba(255, 140, 66, 0.05);
+  overflow: hidden;
+}
+.unique-legend-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+.unique-legend-summary::-webkit-details-marker { display: none; }
+.unique-legend-summary::marker { content: none; }
+.unique-legend-head {
+  flex: 1 1 auto;
+  font-family: var(--font-ui);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-mute);
+}
+.unique-legend-emph-inline {
+  color: #ff8c42;
+  font-weight: 700;
+}
+.unique-legend-class {
+  color: #8fe0a8;            /* 职业标签（死灵法师）淡绿 */
+  font-weight: 700;
+}
+.unique-legend-class--muted {  /* 职业标签（野蛮人）淡显示：浅灰 */
+  color: #cfd3da;
+}
+.unique-legend-chevron {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-right: 2px solid #ff8c42;
+  border-bottom: 2px solid #ff8c42;
+  transform: rotate(45deg);
+  transition: transform 0.28s var(--ease);
+}
+.unique-legend[open] > .unique-legend-summary .unique-legend-chevron { transform: rotate(225deg); }
+.unique-legend-body { padding: 0 0.85rem 0.7rem; }
+.unique-legend:not([open]) > .unique-legend-body { display: none; }
+.unique-legend-desc {
+  margin: 0 0 0.4rem;
+  font-size: 0.86rem;
+  line-height: 1.62;
+  color: var(--text-dim);
+}
+.unique-legend-list,
+.unique-legend-sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.86rem;
+  line-height: 1.62;
+  color: var(--text-dim);
+}
+.unique-legend-list > li,
+.unique-legend-sublist > li {
+  position: relative;
+  padding-left: 0.95rem;
+}
+.unique-legend-list > li::before,
+.unique-legend-sublist > li::before {
+  content: "›";
+  position: absolute;
+  left: 0.1rem;
+  color: #ff8c42;
+}
+.unique-legend-sublist {
+  margin: 0.2rem 0 0.3rem 0.4rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid rgba(255, 140, 66, 0.25);
+}
+.unique-legend-sublist > li { padding-left: 0.9rem; }
+
+/* 响应式微调 */
+@media (max-width: 480px) {
+  .unique-search-wrap {
+    flex-wrap: wrap;
+  }
+  .unique-search-input {
+    min-width: 0;
+  }
+  .unique-filter-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+  .unique-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .unique-tools {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

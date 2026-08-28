@@ -1,0 +1,59 @@
+/* =========================================================
+   BD 社区页样式（BD展示 / 我的BD）深色主题
+   由 css/style.css 通过 @import 引入
+   ========================================================= */
+.bd-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+.bd-card {
+  display: block;
+  text-decoration: none;
+  background: rgba(18, 18, 24, 0.92);
+  border: 1px solid rgba(201, 161, 74, 0.35);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  color: #e6e2d6;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.bd-card:hover {
+  border-color: rgba(201, 161, 74, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+.bd-card-top {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+.bd-card-class { font-size: 0.8rem; color: #e8c468; font-weight: 700; }
+.bd-card-public {
+  font-size: 0.7rem; color: #79d17e;
+  border: 1px solid rgba(121, 209, 126, 0.4);
+  border-radius: 999px; padding: 1px 8px;
+}
+.bd-card-title { margin: 0.1rem 0 0.5rem; font-size: 1.05rem; color: #f0e9d6; }
+.bd-card-title a { color: inherit; text-decoration: none; }
+.bd-card-meta { font-size: 0.8rem; color: #9b958a; }
+.bd-card-time { font-size: 0.75rem; color: #7d786c; margin-top: 0.3rem; }
+.bd-card--mine { padding-bottom: 0.8rem; cursor: pointer; }
+.bd-card-status { font-size: 0.72rem; padding: 1px 8px; border-radius: 999px; }
+.bd-card-status.on { color: #79d17e; border: 1px solid rgba(121, 209, 126, 0.4); }
+.bd-card-status.off { color: #c9a14a; border: 1px solid rgba(201, 161, 74, 0.4); }
+.bd-card-actions { display: flex; gap: 0.5rem; margin-top: 0.7rem; }
+.bd-card-actions button {
+  font-size: 0.8rem; padding: 0.35rem 0.7rem;
+  border-radius: 6px; border: 1px solid rgba(201, 161, 74, 0.4);
+  background: transparent; color: #e6e2d6; cursor: pointer;
+}
+.bd-card-actions button:hover { border-color: #e8c468; }
+.bd-list-empty {
+  color: #9b958a; font-size: 0.95rem; padding: 2rem 0; text-align: center;
+}
+.bd-my-login {
+  background: rgba(201, 161, 74, 0.1);
+  border: 1px solid rgba(201, 161, 74, 0.35);
+  border-radius: 10px; padding: 1.4rem; text-align: center; color: #e6e2d6;
+}
+.bd-my-login p { margin: 0 0 0.6rem; }

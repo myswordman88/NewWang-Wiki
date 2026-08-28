@@ -6,15 +6,15 @@
 - 孔数三档来自 npcs.json spelldescstr -> zhTW 的 [BD…] 段
 - 排除空 code 与 Expansion 分隔行（name 为空或 type 为空）
 - 中文名取自 objects.json 官方本地化表 zhCN
-输出：assets/mod/weapons_zh.csv（干净版，utf-8-sig） + js/weapon-items.js（window.WEAPON_ITEMS）
+输出：resource/mod/weapons_zh.csv（干净版，utf-8-sig） + js/weapon-items.js（window.WEAPON_ITEMS）
 """
 import csv, json, re, os
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-WEAPON = os.path.join(ROOT, "assets", "mod", "weapons.txt")
-OBJ = os.path.join(ROOT, "assets", "mod", "objects.json")
-NPC_OUT = os.path.join(ROOT, "assets", "mod", "npcs.json")
-CSV_OUT = os.path.join(ROOT, "assets", "mod", "weapons_zh.csv")
+WEAPON = os.path.join(ROOT, "resource", "mod", "weapons.txt")
+OBJ = os.path.join(ROOT, "resource", "mod", "objects.json")
+NPC_OUT = os.path.join(ROOT, "resource", "mod", "npcs.json")
+CSV_OUT = os.path.join(ROOT, "resource", "mod", "weapons_zh.csv")
 JS_OUT = os.path.join(ROOT, "js", "weapon-items.js")
 
 # type -> 大类（分组，贴近暗黑2常规译名；亚马逊变体并入对应大类）
@@ -115,8 +115,8 @@ def parse_sockets(zhtw):
         return parts
     return [parts[0], parts[0], parts[0]]
 
-# 图片映射：assets/sprite/items.json 是 [{code:{asset:"分类/文件名"}}, ...]
-SPRITE_MAP = os.path.join(ROOT, "assets", "sprite", "items.json")
+# 图片映射：resource/sprite/items.json 是 [{code:{asset:"分类/文件名"}}, ...]
+SPRITE_MAP = os.path.join(ROOT, "resource", "sprite", "items.json")
 EQUIP_WEBP_DIR = os.path.join(ROOT, "assets", "equipment")
 IMG_REL = "assets/equipment/"
 

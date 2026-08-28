@@ -5,3 +5,9 @@
 .DS_Store
 Thumbs.db
 *.log
+
+# 源数据 / 构建资源（非站点运行时文件，部署时整目录排除）
+resource/
+
+# Python 缓存
+__pycache__/

@@ -3,7 +3,7 @@
 """
 将暗黑2重制版(D2R)的 .sprite 文件 (SpA1 格式, 未压缩 RGBA8888) 转换为压缩的 webp。
 
-格式说明（实测自 assets/sprite 下样本）:
+格式说明（实测自 resource/sprite 下样本）:
   - 字节 0-3 : 魔数 "SpA1"
   - 字节 6-7 : 宽 (uint16 LE)
   - 字节 8-9 : 高 (uint16 LE)
@@ -11,14 +11,14 @@
 
 用法:
   python sprite_to_webp.py [源目录] [输出目录]
-默认: 源=assets/sprite  输出=assets/equipment
+默认: 源=resource/sprite  输出=assets/equipment
 
 特性:
-  - 递归扫描源目录（支持 assets/sprite/helmet/ 这类按分类分子目录的布局）
+  - 递归扫描源目录（支持 resource/sprite/helmet/ 这类按分类分子目录的布局）
   - 自动跳过 .lowend.sprite（低模占位，非成品图标）
   - 自动跳过非 SpA1 文件
   - 输出 webp (quality=85, 保留透明通道) 到输出目录，文件名=原 sprite 的 stem（不含分类前缀）
-  - 同时输出 _preview/*.png 供人工核对 (确认后可删)
+  - 同时输出 resource/equipment_preview/*.png 供人工核对 (确认后可删)
   - 打印压缩前后体积对比
 """
 import os
@@ -27,9 +27,9 @@ import struct
 import glob
 from PIL import Image
 
-SRC = sys.argv[1] if len(sys.argv) > 1 else "assets/sprite"
+SRC = sys.argv[1] if len(sys.argv) > 1 else "resource/sprite"
 OUT = sys.argv[2] if len(sys.argv) > 2 else "assets/equipment"
-PRE = os.path.join(OUT, "_preview")
+PRE = "resource/equipment_preview"
 WEBP_QUALITY = 85
 
 

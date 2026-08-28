@@ -1,0 +1,163 @@
+/* =========================================================
+   登录 / 注册 相关样式（深色主题）
+   由 css/style.css 通过 @import 引入，全站自动生效
+   ========================================================= */
+
+/* 导航栏右侧登录区 */
+.nav-auth-item {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.nav-auth-btn {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 13px;
+  color: #e8e2d0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 108, 0.45);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+}
+.nav-auth-btn:hover {
+  background: rgba(201, 168, 108, 0.15);
+  border-color: rgba(201, 168, 108, 0.8);
+}
+.nav-auth-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  min-width: 140px;
+  background: #16161f;
+  border: 1px solid rgba(201, 168, 108, 0.35);
+  border-radius: 10px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+.nav-auth-menu[hidden] { display: none; }
+.nav-auth-menu a,
+.nav-auth-menu button {
+  text-align: left;
+  font-size: 13px;
+  color: #e8e2d0;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.nav-auth-menu a:hover,
+.nav-auth-menu button:hover { background: rgba(201, 168, 108, 0.15); }
+
+/* 登录弹窗 */
+.auth-modal-mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+}
+.auth-modal-mask[hidden] { display: none; }
+.auth-modal {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  background: #15151c;
+  border: 1px solid rgba(201, 168, 108, 0.4);
+  border-radius: 14px;
+  padding: 28px 24px 22px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+.auth-modal h3 {
+  margin: 0 0 18px;
+  font-size: 18px;
+  color: #f0e9d6;
+  font-weight: 600;
+}
+.auth-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: 0;
+  color: #9a9486;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+.auth-modal-close:hover { color: #e8e2d0; }
+.auth-form { display: flex; flex-direction: column; gap: 14px; }
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #c9c3b4;
+}
+.auth-form input {
+  font-size: 14px;
+  color: #f0e9d6;
+  background: #0e0e14;
+  border: 1px solid rgba(201, 168, 108, 0.35);
+  border-radius: 8px;
+  padding: 10px 12px;
+  outline: none;
+}
+.auth-form input:focus { border-color: rgba(201, 168, 108, 0.85); }
+.auth-err {
+  margin: 0;
+  min-height: 16px;
+  color: #ff8a8a;
+  font-size: 12px;
+}
+.auth-form .btn-primary { width: 100%; margin-top: 2px; }
+
+/* 登录 / 注册 提交按钮：扁平简洁风格（覆盖全局 .btn-primary 的渐变/内阴影/上浮） */
+#authSubmit {
+  background: #902d2d;
+  background-image: none;
+  color: #fff5ee;
+  border: 1px solid #d65f52;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 0.7rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+#authSubmit:hover {
+  background: #c44a3e;
+  border-color: #c44a3e;
+  transform: none;
+  filter: none;
+  box-shadow: none;
+}
+#authSubmit:active { background: #b33d32; border-color: #b33d32; }
+.auth-switch {
+  margin: 14px 0 4px;
+  font-size: 13px;
+  color: #c9c3b4;
+  text-align: center;
+}
+.auth-switch a { color: #c9a86c; text-decoration: none; }
+.auth-switch a:hover { text-decoration: underline; }
+.auth-hint {
+  margin: 0;
+  font-size: 11px;
+  color: #7d786c;
+  text-align: center;
+  line-height: 1.5;
+}

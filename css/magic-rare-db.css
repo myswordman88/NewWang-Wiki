@@ -1,0 +1,452 @@
+/* 魔法&稀有词缀总表：筛选条 + 搜索 + 宽表（参考暗黑核风格） */
+
+/* ---------- 筛选条 + 搜索 ---------- */
+/* 顶部装备类型筛选：分类折叠容器 */
+.affix-eq-cats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.4rem 0 0.4rem;
+}
+.affix-eq-cat {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+.affix-eq-cat > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--gold-soft, #e8b339);
+  background: rgba(201, 161, 74, 0.12);
+  user-select: none;
+}
+.affix-eq-cat > summary::-webkit-details-marker { display: none; }
+.affix-eq-cat > summary::before {
+  content: "▸";
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+}
+.affix-eq-cat:not([open]) > summary::before { transform: rotate(0deg); }
+.affix-eq-cat[open] > summary::before { transform: rotate(90deg); }
+.affix-cat-count {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-mute, #b9b9c8);
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+  padding: 0.05rem 0.55rem;
+  font-variant-numeric: tabular-nums;
+}
+/* 每个分类内部的装备类型按钮行 */
+.affix-eq-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.6rem 0.7rem;
+  justify-content: center;
+}
+.affix-eq-btn {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.38rem 0.85rem;
+  font-size: 0.9rem;
+  font-family: var(--font-ui);
+  color: var(--text-mute, #b9b9c8);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.affix-eq-btn:hover {
+  border-color: var(--gold-soft, #e8b339);
+  color: var(--gold-soft, #e8b339);
+}
+.affix-eq-btn.active {
+  color: #0d0d14;
+  background: linear-gradient(135deg, #f0c75a, #e0a83c);
+  border-color: #e0a83c;
+  font-weight: 700;
+  box-shadow: 0 0 14px rgba(224, 168, 60, 0.35);
+}
+.affix-eq-count {
+  font-size: 0.72rem;
+  opacity: 0.8;
+  font-variant-numeric: tabular-nums;
+}
+.affix-eq-btn.active .affix-eq-count { color: #0d0d14; opacity: 0.7; }
+
+.affix-eq-current {
+  text-align: center;
+  color: var(--text-mute, #b9b9c8);
+  font-size: 0.88rem;
+  min-height: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+.affix-eq-current:not(:empty)::before { content: "当前筛选："; color: var(--gold-soft, #e8b339); }
+
+.affix-hint {
+  text-align: center;
+  color: var(--text-mute, #b9b9c8);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm, 8px);
+  padding: 1.1rem 1rem;
+  margin-bottom: 0.6rem;
+}
+
+/* 子筛选行：前缀/后缀 + 搜索（下方带分割线） */
+.affix-sub-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0.2rem 0 0.9rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(224, 168, 60, 0.22);
+}
+.affix-type-group {
+  display: inline-flex;
+  gap: 0.4rem;
+}
+.affix-type-btn {
+  padding: 0.38rem 0.9rem;
+  font-size: 0.88rem;
+  font-family: var(--font-ui);
+  color: var(--text-mute, #b9b9c8);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.affix-type-btn:hover {
+  border-color: var(--gold-soft, #e8b339);
+  color: var(--gold-soft, #e8b339);
+}
+.affix-type-btn.active {
+  color: #0d0d14;
+  background: linear-gradient(135deg, #f0c75a, #e0a83c);
+  border-color: #e0a83c;
+  font-weight: 700;
+  box-shadow: 0 0 14px rgba(224, 168, 60, 0.35);
+}
+/* 词缀类型组与装备品质组之间的分隔线 */
+.affix-grp-sep {
+  width: 1px;
+  align-self: stretch;
+  margin: 0.2rem 0.35rem;
+  background: var(--border);
+  opacity: 0.6;
+}
+
+.affix-search-wrap {
+  position: relative;
+  max-width: 420px;
+  flex: 1 1 240px;
+}
+.affix-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-mute);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+.affix-search-input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.6rem;
+  background: var(--bg-alt, #14131a);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 8px);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+.affix-search-input::placeholder { color: var(--text-mute); }
+.affix-search-input:focus {
+  outline: none;
+  border-color: var(--gold-soft, #e8b339);
+  box-shadow: 0 0 0 2px rgba(224, 168, 60, 0.18);
+}
+.affix-count {
+  text-align: center;
+  color: var(--text-mute, #b9b9c8);
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+.affix-count strong { color: var(--text); }
+
+.affix-empty {
+  text-align: center;
+  color: var(--text-mute);
+  padding: 2rem 0;
+}
+
+/* ---------- 宽表（横向滚动 + 固定表头 + 固定前两列） ---------- */
+.affix-table-wrap {
+  max-height: 720px;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface, #16151d);
+}
+
+/* 滚动条：透明轨道 + 半透明金色滑块（无白色填充）；加粗版 14px */
+.affix-table-wrap {
+  scrollbar-width: auto;
+  scrollbar-color: rgba(224, 168, 60, 0.38) transparent;
+}
+.affix-table-wrap::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+.affix-table-wrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+.affix-table-wrap::-webkit-scrollbar-thumb {
+  background: rgba(224, 168, 60, 0.35);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+.affix-table-wrap::-webkit-scrollbar-thumb:hover {
+  background: rgba(224, 168, 60, 0.55);
+}
+.affix-table-wrap::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.affix-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  font-size: 0.9rem;
+}
+.affix-table th,
+.affix-table td {
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.affix-table th:last-child,
+.affix-table td:last-child { border-right: none; }
+.affix-table tr:last-child td { border-bottom: none; }
+
+/* 表头固定（不透明底，避免滚动时与内容重叠） */
+.affix-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #362e25;
+  color: var(--gold-soft, #e8b339);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+/* 表头两行式：中文在上、英文小字（带括号）换行在下；词条列例外为单行 */
+.affix-table th .h-cn {
+  display: block;
+  line-height: 1.25;
+}
+.affix-table th .h-en {
+  display: block;
+  margin-top: 0.12rem;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.72;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+.affix-table th .h-en-inline {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-left: 0.25rem;
+}
+/* 前两列固定（类型 / 名称） */
+.affix-table th.col-type,
+.affix-table td.col-type {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  min-width: 72px;
+  background: var(--surface, #16151d);
+}
+.affix-table th.col-name,
+.affix-table td.col-name {
+  position: sticky;
+  left: 72px;
+  z-index: 3;
+  width: auto;
+  text-align: left;
+  white-space: nowrap;
+  background: var(--surface, #16151d);
+}
+/* 名称列表头居中（正文单元格保持左对齐） */
+.affix-table thead th.col-name { text-align: center; }
+.affix-table thead th.col-type,
+.affix-table thead th.col-name {
+  z-index: 4;
+  background: #413728;
+}
+/* 偶数行底纹 */
+.affix-table tbody tr:nth-child(even) td { background: rgba(255, 215, 154, 0.05); }
+.affix-table tbody tr:nth-child(even) td.col-type,
+.affix-table tbody tr:nth-child(even) td.col-name { background: rgba(255, 215, 154, 0.05); }
+
+/* 类型徽章 */
+.affix-badge {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: var(--font-ui);
+}
+.affix-badge.prefix {
+  color: #c9b3ff;
+  background: rgba(140, 108, 255, 0.16);
+  border: 1px solid rgba(140, 108, 255, 0.42);
+}
+.affix-badge.suffix {
+  color: #7fe08a;
+  background: rgba(127, 224, 138, 0.14);
+  border: 1px solid rgba(127, 224, 138, 0.45);
+}
+
+/* 装备品质标签（rare 列）：魔法 / 稀有 */
+.affix-table td.cell-rare {
+  white-space: nowrap;
+}
+.affix-rare-tags {
+  display: inline-flex;
+  gap: 0.3rem;
+  align-items: center;
+  justify-content: center;
+}
+.affix-rare-tag {
+  display: inline-block;
+  padding: 0.08rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  font-family: var(--font-ui);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.affix-rare-tag.magic {
+  color: #6c6cff;
+  background: rgba(108, 108, 255, 0.15);
+  border: 1px solid rgba(108, 108, 255, 0.45);
+}
+.affix-rare-tag.rare {
+  color: #ffcf8f;
+  background: rgba(224, 168, 60, 0.16);
+  border: 1px solid rgba(224, 168, 60, 0.45);
+}
+
+/* 名称单元格 */
+.affix-table td.col-name { font-family: var(--font-ui); color: var(--text); }
+.affix-table td.col-cn { color: var(--text); }
+
+/* 代码/参数类单元格：等宽、左对齐 */
+.affix-table td.cell-code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  text-align: left;
+  color: var(--text);
+}
+/* 属性代码：中文为主、原代码作小字副行 */
+.affix-code-cn {
+  display: block;
+  color: var(--text);
+  font-family: var(--font-ui);
+}
+.affix-code-raw {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.72rem;
+  line-height: 1.1;
+  color: var(--text-mute);
+}
+/* 数值类单元格默认居中（已继承） */
+.affix-table td.cell-empty { color: var(--text-mute); opacity: 0.35; }
+.affix-table td.cell-empty::after { content: "—"; }
+
+/* 物品/排除类型代码用小字等宽 */
+.affix-table td.cell-typecode {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  color: var(--text-mute);
+}
+
+/* 词条（可读中文）单元格：左对齐、允许换行；宽度占满剩余空间，内容过长自动换行，避免横向滚动条 */
+.affix-table td.cell-modtext {
+  text-align: left;
+  white-space: normal;
+  min-width: 200px;
+  width: 42%;
+  color: var(--text);
+  font-family: var(--font-ui);
+  line-height: 1.4;
+}
+/* 词条内数字高亮（沿用暗金装备页风格） */
+.affix-table td.cell-modtext .prop-num {
+  color: var(--set-num-gold, #f3e5ab);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+/* 多词条分隔符「 / 」：加粗 + 绿色 */
+.affix-table td.cell-modtext .mod-sep {
+  font-weight: 700;
+  color: #7fe08a;
+  margin: 0 0.2rem;
+}
+
+/* ---------- 展开全部 / 收起滚动 切换按钮（位于搜索框右侧，左侧留大间距） ---------- */
+.affix-expand-row {
+  display: flex;
+  align-items: center;
+  margin-left: 1.8rem;
+}
+.affix-expand-btn {
+  padding: 0.4rem 1.1rem;
+  font-size: 0.88rem;
+  font-family: var(--font-ui);
+  color: var(--text-mute, #b9b9c8);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.affix-expand-btn:hover {
+  border-color: var(--gold-soft, #e8b339);
+  color: var(--gold-soft, #e8b339);
+}
+.affix-expand-btn.active {
+  color: #0d0d14;
+  background: linear-gradient(135deg, #f0c75a, #e0a83c);
+  border-color: #e0a83c;
+  font-weight: 700;
+  box-shadow: 0 0 14px rgba(224, 168, 60, 0.35);
+}
+/* 展开态：去掉高度上限，全部行显示，无需滚动 */
+.affix-table-wrap.affix-expand {
+  max-height: none;
+}
