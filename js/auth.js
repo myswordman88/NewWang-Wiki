@@ -73,6 +73,14 @@
   Auth.signOut = function () {
     return window.sbClient.auth.signOut().then(function (r) { if (r.error) throw r.error; });
   };
+  Auth.resetPassword = function (email) {
+    return window.sbClient.auth.resetPasswordForEmail(email, {
+      redirectTo: location.origin + '/reset-password.html'
+    }).then(function (r) {
+      if (r.error) throw r.error;
+      return r.data;
+    });
+  };
 
   /* ---------- 导航登录区渲染 ---------- */
   Auth._render = function () {
@@ -106,6 +114,17 @@
 
   function setMode(md) {
     mode = md;
+    var pwdLabel = document.getElementById('authPwd') ? document.getElementById('authPwd').parentNode : null;
+    if (md === 'forgot') {
+      document.getElementById('authTitle').textContent = '重置密码';
+      document.getElementById('authSubmit').textContent = '发送重置邮件';
+      document.getElementById('authToggle').textContent = '返回登录';
+      document.querySelector('.auth-switch').firstChild.textContent = '想起了？';
+      if (pwdLabel) pwdLabel.style.display = 'none';
+      document.getElementById('authErr').textContent = '';
+      return;
+    }
+    if (pwdLabel) pwdLabel.style.display = '';
     document.getElementById('authTitle').textContent = md === 'signin' ? '登录' : '注册';
     document.getElementById('authSubmit').textContent = md === 'signin' ? '登 录' : '注册';
     document.getElementById('authToggle').textContent = md === 'signin' ? '去注册' : '去登录';
@@ -142,6 +161,7 @@
           '<label>邮箱<input type="email" id="authEmail" autocomplete="email" required></label>' +
           '<label>密码<input type="password" id="authPwd" autocomplete="current-password" minlength="6" required></label>' +
           '<p class="auth-err" id="authErr" role="alert"></p>' +
+          '<a href="#" id="authForgot" class="auth-forgot">忘记密码？</a>' +
           '<button type="submit" class="btn btn-primary" id="authSubmit">登 录</button>' +
         '</form>' +
         '<p class="auth-switch">还没有账号？<a href="#" id="authToggle">去注册</a></p>' +
@@ -154,7 +174,13 @@
     m.addEventListener('click', function (e) { if (e.target === m) closeModal(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modalEl.hidden) closeModal(); });
     document.getElementById('authToggle').addEventListener('click', function (e) {
-      e.preventDefault(); setMode(mode === 'signin' ? 'signup' : 'signin');
+      e.preventDefault();
+      if (mode === 'forgot') setMode('signin');
+      else setMode(mode === 'signin' ? 'signup' : 'signin');
+    });
+    var forgotLink = document.getElementById('authForgot');
+    if (forgotLink) forgotLink.addEventListener('click', function (e) {
+      e.preventDefault(); setMode('forgot');
     });
     document.getElementById('authForm').addEventListener('submit', function (e) {
       e.preventDefault();
@@ -162,6 +188,14 @@
       var pwd = document.getElementById('authPwd').value;
       var err = document.getElementById('authErr');
       err.textContent = '';
+      if (mode === 'forgot') {
+        if (!email) { err.textContent = '请填写邮箱。'; return; }
+        Auth.resetPassword(email).then(function () {
+          closeModal();
+          alert('重置密码邮件已发送，请查收邮箱（若未收到，请检查垃圾邮件）。');
+        }).catch(function (e) { err.textContent = (e && e.message) || '发送失败，请重试。'; });
+        return;
+      }
       if (!email || pwd.length < 6) { err.textContent = '请填写邮箱，密码至少 6 位。'; return; }
       (mode === 'signin' ? Auth.signIn(email, pwd) : Auth.signUp(email, pwd)).then(function () {
         closeModal();

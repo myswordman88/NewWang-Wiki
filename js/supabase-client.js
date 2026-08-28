@@ -18,7 +18,10 @@
       return;
     }
     try {
-      window.sbClient = window.supabase.createClient(c.SUPABASE_URL, c.SUPABASE_ANON_KEY);
+      // detectSessionInUrl 关闭：避免自动异步消费 URL，重置密码回调页改为手动处理
+      window.sbClient = window.supabase.createClient(c.SUPABASE_URL, c.SUPABASE_ANON_KEY, {
+        auth: { detectSessionInUrl: false }
+      });
     } catch (e) {
       console.error('[supabase] 初始化失败', e);
       window.sbClient = null;

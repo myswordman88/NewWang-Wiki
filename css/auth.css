@@ -161,3 +161,36 @@
   text-align: center;
   line-height: 1.5;
 }
+
+/* 重置密码独立页卡片容器（复用登录弹窗配色） */
+.auth-reset-wrap {
+  max-width: 380px;
+  margin: 0 auto;
+  background: #15151c;
+  border: 1px solid rgba(201, 168, 108, 0.4);
+  border-radius: 14px;
+  padding: 28px 24px 22px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+.auth-reset-wrap .auth-title {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #c9a86c;
+  text-align: center;
+}
+.auth-reset-wrap .auth-hint {
+  margin: 0 0 16px;
+  text-align: left;
+}
+.auth-reset-wrap .auth-err {
+  margin: 0 0 14px;
+  min-height: 16px;
+}
+.auth-forgot {
+  display: inline-block;
+  margin: 2px 0 12px;
+  font-size: 12px;
+  color: #8ec5ff;
+  text-decoration: none;
+}
+.auth-forgot:hover { text-decoration: underline; }
