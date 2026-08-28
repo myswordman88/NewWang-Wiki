@@ -213,7 +213,7 @@ window.LEGEND_ITEMS = [
   "img": "chaosleoricsarm",
   "sponsored": true,
   "sponsor_info": {
-   "sponsor": "隔壁大王",
+   "sponsor": "非花 <一个玩游戏的人>",
    "desc": "它不再握剑，而是握着你的灵魂"
   },
   "chaos": true
