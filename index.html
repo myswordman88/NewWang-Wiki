@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Serif+SC:wght@600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/style.css?v=1.9.12" />
 </head>
 <body>
   <!-- 跳转到主内容（无障碍） -->
@@ -38,9 +38,9 @@
         <p class="hero-sub reveal">旧王已死，新王当立。地狱的秩序，由你来书写。<br>准备好觉醒了吗，奈非天。</p>
         
         
-        <div class="countdown reveal" id="countdown" aria-label="上线倒计时">
-          <p class="countdown-label">距「死灵法师」觉醒上线</p>
-          <div class="countdown-timer">
+        <div class="countdown reveal" id="countdown" aria-label="版本状态">
+          <p class="countdown-label" id="countdownLabel">「<span class="necro-hl">死灵法师</span>」已觉醒上线</p>
+          <div class="countdown-timer" id="countdownTimer" hidden>
             <div class="cd-unit"><span class="cd-num" id="cdDays">00</span><span class="cd-cap">天</span></div>
             <span class="cd-sep">:</span>
             <div class="cd-unit"><span class="cd-num" id="cdHours">00</span><span class="cd-cap">时</span></div>
@@ -49,13 +49,14 @@
             <span class="cd-sep">:</span>
             <div class="cd-unit"><span class="cd-num" id="cdSecs">00</span><span class="cd-cap">秒</span></div>
           </div>
+          <p class="countdown-note" id="countdownNote">当前版本已开放，欢迎前往技能页查看死灵法师三系详情。</p>
         </div>
 
         <br> <br>
         <dl class="hero-meta reveal">
-          <div><dt>当前版本</dt><dd>v0.4.03</dd></div>
-          <div><dt>最后更新</dt><dd>2026/7/15</dd></div>
-          <div><dt>即将上线</dt><dd>死灵法师</dd></div>
+          <div><dt>当前版本</dt><dd>v0.5.03</dd></div>
+          <div><dt>最后更新</dt><dd>2026/8/29</dd></div>
+          <div><dt>最新职业</dt><dd>死灵法师</dd></div>
         </dl>
       </div>
       <a class="scroll-hint" href="#overview" aria-label="向下滚动">⌄</a>

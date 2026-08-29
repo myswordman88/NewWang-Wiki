@@ -200,17 +200,30 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  /* ---------- 上线倒计时（终点：2026-08-29 09:00 本地时间） ---------- */
+  /* ---------- 版本上线状态（倒计时可复用） ----------
+     下次发新职业 / 新版本时：把 RELEASED 设为 false，
+     并修改 RELEASE_TARGET（本地时间）与 RELEASE_LABEL 即可重新启用倒计时。 */
+  const RELEASED = true;                                  // 当前已发布：true=显示"已上线"，false=跑倒计时
+  const RELEASE_TARGET = new Date(2026, 7, 29, 9, 0, 0).getTime(); // 月份 7 = 8月
+  const RELEASE_LABEL = "死灵法师";
   const cdDays = document.getElementById("cdDays");
   const cdHours = document.getElementById("cdHours");
   const cdMins = document.getElementById("cdMins");
   const cdSecs = document.getElementById("cdSecs");
-  const COUNTDOWN_TARGET = new Date(2026, 7, 29, 9, 0, 0).getTime(); // 月份 7 = 8月
+  const cdLabel = document.getElementById("countdownLabel");
+  const cdTimer = document.getElementById("countdownTimer");
+  const cdNote = document.getElementById("countdownNote");
   function pad2(n) { return String(n).padStart(2, "0"); }
+  function showReleased() {
+    if (cdLabel) cdLabel.textContent = "「" + RELEASE_LABEL + "」已觉醒上线";
+    if (cdTimer) cdTimer.hidden = true;
+    if (cdNote) cdNote.hidden = false;
+  }
+  let cdInterval = null;
   function tickCountdown() {
-    if (!cdDays) return;
-    let diff = COUNTDOWN_TARGET - Date.now();
-    if (diff < 0) diff = 0;
+    if (!cdDays || !cdTimer) return;
+    let diff = RELEASE_TARGET - Date.now();
+    if (diff <= 0) { showReleased(); if (cdInterval) clearInterval(cdInterval); return; }
     const d = Math.floor(diff / 86400000);
     const h = Math.floor((diff % 86400000) / 3600000);
     const m = Math.floor((diff % 3600000) / 60000);
@@ -220,8 +233,12 @@
     cdMins.textContent = pad2(m);
     cdSecs.textContent = pad2(s);
   }
-  if (cdDays) {
+  if (RELEASED || !cdDays) {
+    showReleased();
+  } else {
+    if (cdLabel) cdLabel.textContent = "距「" + RELEASE_LABEL + "」觉醒上线";
+    if (cdNote) cdNote.hidden = true;
     tickCountdown();
-    setInterval(tickCountdown, 1000);
+    cdInterval = setInterval(tickCountdown, 1000);
   }
 })();

@@ -8,7 +8,7 @@
   "use strict";
 
   /* ===== 站点版本号（备份时只改这里，全站自动同步） ===== */
-  var SITE_VERSION = "1.9.11";
+  var SITE_VERSION = "1.9.12";
 
   /* ===== 导航数据 =====
      home  : 在 index.html（首页）中该链接使用的 href

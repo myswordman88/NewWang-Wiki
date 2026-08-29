@@ -60,6 +60,8 @@
   font-family: var(--font-ui); text-transform: uppercase; letter-spacing: 0.22em;
   font-size: 1.20rem; font-weight: 700; color: var(--accent-2); margin: 0 0 1rem;
 }
+/* 主页「死灵法师」高亮：字号 +3px、淡绿色 */
+.necro-hl { font-size: calc(1em + 3px); color: #a8e6a8; font-weight: 700; }
 .countdown-timer { display: inline-flex; gap: 0.55rem; align-items: stretch; justify-content: center; flex-wrap: wrap; }
 .cd-unit {
   position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -82,6 +84,12 @@
 .cd-sep {
   font-family: var(--font-ui); font-weight: 800; align-self: center;
   font-size: clamp(1.68rem, 6vw, 2.64rem); color: var(--accent);
+}
+/* 已发布状态下隐藏计时器（覆盖 .countdown-timer 的 inline-flex，避免元素仍占位） */
+.countdown-timer[hidden] { display: none; }
+.countdown-note {
+  margin: 1.1rem 0 0; font-family: var(--font-ui); font-size: 0.98rem;
+  letter-spacing: 0.04em; color: var(--text-dim);
 }
 
 /* ---------- 通用区块 ---------- */
