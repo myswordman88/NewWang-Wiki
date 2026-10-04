@@ -580,6 +580,16 @@
 .unique-props .prop-text {
   color: #6c6cff;
 }
+/* 传奇&混沌页 / 暗金装备页：词条数值统一暗金（非粗体） */
+.unique-props .prop-num {
+  color: #cebc86;
+  font-weight: 400;
+}
+/* 搜索命中高亮行：数值保持暗金（非粗体），文字转为高亮浅蓝 */
+.legend-page .unique-props li.unique-prop-hl .prop-num {
+  color: #cebc86;
+  font-weight: 400;
+}
 
 /* 搜索命中：命中的属性行高亮（金色左边框 + 暖金渐变底 + 微发光） */
 .unique-props li.unique-prop-hl {

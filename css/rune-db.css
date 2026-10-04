@@ -463,6 +463,11 @@
 .rune-props .prop-text {
   color: #6c6cff;
 }
+/* 词条数值统一暗金（非粗体），覆盖 set-db.css 中 .prop-num 默认淡黄加粗 */
+.rune-props .prop-num {
+  color: #cebc86;
+  font-weight: 400;
+}
 
 /* 搜索命中：命中的属性行高亮（金色左边框 + 暖金渐变底 + 微发光） */
 .rune-props li.rune-prop-hl {

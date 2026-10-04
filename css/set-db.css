@@ -256,6 +256,11 @@
 .part-props .prop-text {
   color: var(--set-prop-blue-mid);
 }
+/* 绿色套装装备卡片：词条数值统一暗金（非粗体），覆盖默认淡黄加粗 */
+#setDetailView .prop-num {
+  color: #cebc86;
+  font-weight: 400;
+}
 
 /* ---------- 部件网格（对齐基底装备：三列响应式）---------- */
 .set-parts-count {

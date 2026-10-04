@@ -56,19 +56,13 @@
   function num(v) { var n = parseInt(v, 10); return isNaN(n) ? 0 : n; }
 
   // ---- 属性文本着色 ----
-  // mode: 'range' = 中间词条：仅「范围型数字」(含 -，如 20 - 30%) 用淡黄，普通数字随文字色
-  //       'plain' = 顶部套装加成：数字不单独着色，与文字同色（淡蓝）
+  // 所有数值统一包 .prop-num，由 #setDetailView 样式控制为暗金（非粗体）
   function colorizeProp(text, mode) {
     if (!text) return '';
-    var plain = mode === "plain";
     // 拆分数字部分（支持 +/-、范围、百分号）与非数字部分
     var parts = text.split(/([+-]?\d+(?:\s*-\s*[+-]?\d+)?%?)/);
     return parts.map(function (part) {
       if (/^[+-]?\d+(?:\s*-\s*[+-]?\d+)?%?$/.test(part)) {
-        var isRange = part.indexOf("-") !== -1;
-        if (plain || !isRange) {
-          return '<span class="prop-text">' + esc(part) + '</span>';
-        }
         return '<span class="prop-num">' + esc(part) + '</span>';
       }
       return '<span class="prop-text">' + esc(part) + '</span>';

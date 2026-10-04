@@ -96,18 +96,36 @@
   // 属性文本着色：range 模式——仅「数字 - 数字」才是范围(金色)，前导负号是普通负数(蓝色)
   function colorizeProp(text, mode) {
     if (!text) return '';
-    var plain = mode === "plain";
     var parts = text.split(/([+-]?\d+(?:\s*-\s*[+-]?\d+)?%?)/);
     return parts.map(function (part) {
       if (/^[+-]?\d+(?:\s*-\s*[+-]?\d+)?%?$/.test(part)) {
-        var isRange = /^\d+\s*-\s*[+-]?\d+%?$/.test(part);
-        if (plain || !isRange) {
-          return '<span class="prop-text">' + esc(part) + '</span>';
-        }
+        // 所有数值统一包 .prop-num，由 .legend-page 样式控制为粗体暗金
         return '<span class="prop-num">' + esc(part) + '</span>';
       }
       return '<span class="prop-text">' + esc(part) + '</span>';
     }).join('');
+  }
+
+  // 词条显示文本修正：par 为空且 min/max 存在时，以 min~max 区间为数值来源，
+  // 修正 text 里写死的单值（如 nec「+3」应为「+2 ~ 3」）；
+  // 若 text 已含区间（如「20 - 35」「+2 ~ 3」）则信任 text；
+  // par 非空（具名/固定/随机技能等）数值已编码在 text 中，直接用 text。
+  function resolvePropText(x) {
+    var text = (x && x.text) || "";
+    if (!text) return "";
+    // 已含明确数值区间：直接信任 text
+    if (/[+-]?[\d.]+%?\s*[-~]\s*[+-]?[\d.]+%?/.test(text)) return text;
+    if (x.par) return text;                       // par 非空 → 数值已由 text 表达
+    var mn = (x.min || "").trim();
+    var mx = (x.max || "").trim();
+    if (!mn || !mx) return text;                 // 无区间数据 → 用 text
+    var sign = "";
+    if (text.indexOf("+") !== -1) sign = "+";
+    else if (text.indexOf("-") !== -1) sign = "-";
+    // 区间符号约定与现有数据一致：正号只在首位（"+2 ~ 3"）；负号两端都加（"-10 ~ -20"）
+    var range = (sign ? sign + mn : mn) + " ~ " + (sign === "-" ? sign + mx : mx);
+    // 替换 text 中第一个数字为区间（保留前后文）
+    return text.replace(/[+-]?[\d.]+%?/, range);
   }
 
   // 从属性中提取“含搜索词那行”的数值，用于按词条排序（取所有匹配行中最大数值）
@@ -116,7 +134,7 @@
     if (!q) return NaN;
     var best = NaN;
     for (var i = 0; i < r.props.length; i++) {
-      var t = (r.props[i].text || "").toLowerCase();
+      var t = resolvePropText(r.props[i]).toLowerCase();
       if (t.indexOf(q) === -1) continue;
       var nums = t.match(/[+-]?\d+(?:\.\d+)?/g);
       if (!nums) continue;
@@ -407,7 +425,7 @@
     var q = (state.query || '').trim().toLowerCase();
     var isMara = r.name_en === "Mara's Kaleidoscope";
     var props = r.props.map(function (x) {
-      var text = x.text || "";
+      var text = resolvePropText(x);
       var hit = q && text.toLowerCase().indexOf(q) !== -1;
       // Mara 的【施法速度】【经验值】为 mod 新增词条：描述用亮淡绿、数字不变
       var isNewProp = isMara && /施法速度|经验值/.test(text);

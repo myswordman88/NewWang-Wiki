@@ -101,17 +101,12 @@
   }
 
   // 属性文本着色：range 模式——仅「数字 - 数字」才是范围(金色)，前导负号是普通负数(蓝色)
+  // 属性文本着色：所有数值统一包 .prop-num，由 .rune-props 样式控制为暗金（非粗体）
   function colorizeProp(text, mode) {
     if (!text) return '';
-    var plain = mode === "plain";
     var parts = text.split(/([+-]?\d+(?:\s*-\s*[+-]?\d+)?%?)/);
     return parts.map(function (part) {
       if (/^[+-]?\d+(?:\s*-\s*[+-]?\d+)?%?$/.test(part)) {
-        // 范围须为「数字 连字符 数字」，前导负号(负数)不算范围
-        var isRange = /^\d+\s*-\s*[+-]?\d+%?$/.test(part);
-        if (plain || !isRange) {
-          return '<span class="prop-text">' + esc(part) + '</span>';
-        }
         return '<span class="prop-num">' + esc(part) + '</span>';
       }
       return '<span class="prop-text">' + esc(part) + '</span>';

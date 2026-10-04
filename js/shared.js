@@ -219,15 +219,46 @@
     // 返回顶部浮动按钮（右下角，滚动一段距离后出现）
     injectBackToTop();
 
-    // 不蒜子访问计数（本地预览 localhost/127.0.0.1/file:// 不加载，避免外网请求拖慢）
-    var h = location.hostname;
-    if (!(h === "localhost" || h === "127.0.0.1" || h === "")) {
-      var s = document.createElement("script");
-      s.async = true;
-      s.src = "//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
-      document.head.appendChild(s);
-    }
     bootstrapAuth();
+
+    /* ===== 站点访问统计（自建 Supabase）=====
+       原本用第三方「不蒜子」计数，但其数据接口 getPVAndUVJSON 自 2026-10 起
+       持续超时/502（脚本本体却仍能加载，页脚空白且无报错），故改为自建。
+       每次打开页面调用一次 bump_site_visit：服务端原子累加 PV、按「天+IP」去重
+       记访客，返回累计 PV 与全站去重 UV。建表脚本见 tools/site_stats.sql。
+       下方 span 的 id 沿用历史命名（busuanzi_*）仅为复用既有样式，数值与不蒜子无关。 */
+    (function initSiteStats() {
+      var SITE = "newwang";
+      var PV_ID = "busuanzi_value_site_pv";
+      var UV_ID = "busuanzi_value_site_uv";
+
+      function setNum(id, v) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = v;
+      }
+      // 取不到统计时不留空白，明确显示占位符，便于一眼看出是"服务异常"而非"没有数据"
+      function fallback() {
+        setNum(PV_ID, "—");
+        setNum(UV_ID, "—");
+      }
+      // 登录脚本链是串行 loadSeq、无就绪回调，这里轮询等待 Supabase 客户端就绪
+      function whenReady(cb, tries) {
+        if (window.sbClient && window.sbClient.rpc) { cb(window.sbClient); return; }
+        if (tries >= 60) { fallback(); return; }   // 约 12 秒仍未就绪则放弃
+        setTimeout(function () { whenReady(cb, tries + 1); }, 200);
+      }
+
+      whenReady(function (sb) {
+        sb.rpc("bump_site_visit", { p_site: SITE })
+          .then(function (res) {
+            var d = res && res.data;
+            if (!res || res.error || !d) { fallback(); return; }
+            setNum(PV_ID, d.total_pv);
+            setNum(UV_ID, d.total_uv);
+          })
+          .catch(fallback);
+      });
+    })();
   }
 
   /* 按顺序串联加载 Supabase 相关脚本（全站自动启用登录系统，无需逐页改 script 标签） */

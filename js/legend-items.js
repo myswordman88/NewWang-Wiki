@@ -416,7 +416,7 @@ window.LEGEND_ITEMS = [
   "img": "chaos_tyraelsmight",
   "sponsored": true,
   "sponsor_info": {
-   "sponsor": "隔壁大王",
+   "sponsor": "尼克斯 <此刻，光从天而降>",
    "desc": "世界崩解之时，正义陷入了疯狂"
   },
   "chaos": true,
