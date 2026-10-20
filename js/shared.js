@@ -30,13 +30,14 @@
       ]
     },
     {
-      name: "新手专区", home: "#newbie", other: "index.html#newbie",
+      name: "游戏指南", home: "#newbie", other: "index.html#newbie",
       items: [
         { name: "安装指南", home: "guide.html", other: "guide.html" },
-        { name: "便利功能", home: "faq.html", other: "faq.html" },
+        { name: "常见问题", home: "faq.html", other: "faq.html" },
         { name: "启动器相关", home: "launcher.html", other: "launcher.html" },
         { name: "视频教程", home: "video.html", other: "video.html" },
-        { name: "模组制作", home: "modmaking.html", other: "modmaking.html" }
+        { name: "模组制作", home: "modmaking.html", other: "modmaking.html" },
+        { name: "启动器与插件", home: "launcher-plugin.html", other: "launcher-plugin.html" }
       ]
     },
     {

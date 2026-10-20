@@ -23,12 +23,12 @@
       <div class="container">
         <nav class="breadcrumb" aria-label="面包屑">
           <a href="index.html">首页</a><span aria-hidden="true">/</span>
-          <a href="index.html#newbie">新手专区</a><span aria-hidden="true">/</span>
+          <a href="index.html#newbie">游戏指南</a><span aria-hidden="true">/</span>
           <span class="current">安装指南</span>
         </nav>
 
         <header class="section-head reveal">
-          <p class="section-kicker">新手专区 | <span class="kicker-num">2 · 1</span></p>
+          <p class="section-kicker">游戏指南 | <span class="kicker-num">2 · 1</span></p>
           <h2>安装指南</h2>
           <p class="section-lead">手把手教你下载，安装，使用本模组，还配有作者本人制作的系列视频教程</p>
         </header>
@@ -186,103 +186,27 @@
             <ol class="guide-steps">
               <li>
                 <span class="guide-step-h">配套教学视频</span>
-                <p class="feature-block-text">作者「隔壁大王」录制了配套教学系列视频「奈非天觉醒指南」，喜欢放空大脑跟着视频操作的朋友可点击下方演示框在 B 站观看。</p>
+                <p class="feature-block-text">作者「隔壁大王」录制了配套教学系列视频「奈非天觉醒指南」与「赫拉迪姆研究所」，喜欢放空大脑跟着视频操作的朋友可点击下方演示框在 B 站观看。</p>
               </li>
               <li>
-                <span class="guide-step-h">视频演示</span>
+                <span class="guide-step-h">「奈非天觉醒指南」视频演示</span>
                 <a class="guide-video-card" href="https://www.bilibili.com/video/BV1MztF69E73/" target="_blank" rel="noopener noreferrer">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M8 5v14l11-7z"/>
                   </svg>
-                  <span>「安装指南」视频演示</span>
+                  <span>安装指南 第 1 ~ 4 期</span>
+                </a>
+              </li>
+              <li>
+                <span class="guide-step-h">「赫拉迪姆研究所」视频演示</span>
+                <a class="guide-video-card" href="https://www.bilibili.com/video/BV1gpHn6eEZJ/" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  <span>插件介绍 第 1 期</span>
                 </a>
               </li>
             </ol>
-          </div>
-        </details>
-
-        <!-- 2.1.6 常见问题（原 2.2 常见问题页内容，移入安装指南） -->
-        <details class="fold-card guide-step">
-          <summary class="fold-card-head">
-            <span class="fold-card-title">2.1.6 闪退问题</span>
-            <span class="fold-chevron" aria-hidden="true"></span>
-          </summary>
-          <div class="fold-card-body">
-            <article class="feature-section">
-              <div class="faq-intro reveal">
-                <strong>提示：</strong>首先，能遇到闪退，说明 Mod 已经能成功加载，可根据下面罗列的情况逐一排查。
-              </div>
-
-              <div class="feature-block reveal">
-                <h4 class="feature-subsection-title">1. 版本不匹配</h4>
-                <ul class="feature-list">
-                  <li>
-                    <span class="faq-cause">闪退原因：</span>游戏本体版本与「新王觉醒」Mod 所需版本不匹配
-                    <ul class="feature-list">
-                      <li>目前「新王觉醒」Mod 3.0 及以上版本的游戏本体，包括国服 / 国际服 / 学习版</li>
-                      <li>同时必须支持术士职业，即战网端必须购买《DLC：术士君临》</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span class="faq-fix">解决方法：</span>
-                    <ul class="feature-list">
-                      <li>下载正确版本的游戏本体再尝试加载 Mod</li>
-                      <li><span class="guide-label-blue">「注」：</span>查看游戏版本的方法，进入游戏在 LOGO 界面的右下角会显示版本号</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="feature-block reveal">
-                <h4 class="feature-subsection-title">2. 存档不兼容</h4>
-                <ul class="feature-list">
-                  <li>
-                    <span class="faq-cause">闪退原因：</span>电脑里有该 Mod 之前版本的存档，与最新版本 Mod 不兼容
-                    <ul class="feature-list">
-                      <li>由于 Mod 制作中一些功能的需要会改动数据存储位数，影响存档文件，导致读取错误所以闪退</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span class="faq-fix">解决方法：</span>清除该 Mod 之前版本的所有存档（可以暂时移动到其他文件夹中）
-                    <ul class="feature-list">
-                      <li>「新王觉醒」Mod 存档路径：<span class="faq-path">C:\Users\用户（你登陆的用户名）\Saved Games\Diablo II Resurrected\mods\NewWang</span></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="feature-block reveal">
-                <h4 class="feature-subsection-title">3. 错误的命令行参数</h4>
-                <ul class="feature-list">
-                  <li>
-                    <span class="faq-cause">闪退原因：</span>加载 Mod 的参数中错误加入了 <span class="faq-param">[-txt]</span>，导致 Mod 加载出错
-                    <ul class="feature-list">
-                      <li>暗黑 2 重制版的 Mod 数据文件有两种格式：<span class="faq-param">[txt 文件]</span> 和 <span class="faq-param">[bin 文件]</span>，「新王觉醒」Mod 使用了后者，所以加载时不需要 <span class="faq-param">[-txt]</span></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span class="faq-fix">解决方法：</span>使用正确的命令行参数，删去 <span class="faq-param">[-txt]</span>
-                    <ul class="feature-list">
-                      <li>在使用第三方工具（例如「疯兔工具箱」）加载「魔王降临」Mod 时，不要勾选 <span class="faq-param">[-txt]</span></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="feature-block reveal">
-                <h4 class="feature-subsection-title">4. 其他报错情况</h4>
-                <ul class="feature-list">
-                  <li>
-                    「新王觉醒」在加载时有一定几率会闪退，多试几次能进入游戏选择画面即可
-                    <ul class="feature-list">
-                      <li>目前该闪退原因不明，猜测可能和通货箱子中的物品堆叠有关</li>
-                      <li>此种情况目前仅出现在「新王觉醒」MOD 中</li>
-                    </ul>
-                  </li>
-                  <li>游玩本 Mod 时不要切换到原版画面，可能会跳错！！</li>
-                </ul>
-              </div>
-            </article>
           </div>
         </details>
 

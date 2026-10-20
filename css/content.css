@@ -884,6 +884,10 @@
 }
 .cl-card[open] > .cl-card-head .cl-chevron { transform: rotate(225deg); }
 .cl-card-body { padding: 0 1.3rem 1.15rem; }
+/* 展开后的正文一律左对齐：本页外层是 .detail .container（默认 text-align:center），
+   会把列表项、长段落全部带成居中。卡片头部 .cl-card-head 不受影响。 */
+.cl-card-body,
+.cl-sub-body { text-align: left; }
 .cl-card-body > :first-child { margin-top: 1.05rem; }
 /* 更新日志内嵌图片（来自 wolai 截图） */
 .cl-card-body img,
